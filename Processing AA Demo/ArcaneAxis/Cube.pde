@@ -1,0 +1,11 @@
+class Cube
+{
+  // Constructor
+  Cube()
+  {
+    
+  }
+  
+  
+  
+}
