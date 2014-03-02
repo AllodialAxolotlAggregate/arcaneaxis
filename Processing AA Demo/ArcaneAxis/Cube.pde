@@ -15,7 +15,7 @@ class Cube
     this.rotationalAcceleration = new PVector(0,0,0);
     
     // Initialize with completely random color
-    this.colors = new PVector(random(0,255), random(0,255), random(0,255)); 
+    this.colors = new PVector(random(100,255), random(100,255), random(100,255)); 
     
     println("Cube created.");
     
@@ -28,7 +28,11 @@ class Cube
     
     pushMatrix();
     translate(position.x, position.y, position.z);
-    fill(colors.x, colors.y, colors.z);
+    stroke(255);
+    fill(colors.x, colors.y, colors.z, 50);
+    rotateY(TWO_PI / 2);
+    rotateX(TWO_PI / 5);
+    rotateZ(TWO_PI / 10);
     box(100);
     popMatrix();
   }
