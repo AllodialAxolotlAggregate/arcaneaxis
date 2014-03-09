@@ -12,9 +12,9 @@
  float rotY = 0;
  float velX = 0;
  float velY = 0;
- float sphereRadius = 400;
+ float sphereRadius = 200;
  float pushBack = 0;
- 
+ PVector position;
  float[] cx, cz, sphereX, sphereY, sphereZ;
  float sinLUT[];
  float cosLUT[];
@@ -25,16 +25,17 @@
    size(640, 360, P3D);
    texmap = loadImage("Data/world.jpg");
    initializeSphere(sDetail);
+   position =  new PVector(width * .5, height*.5, -5);
  }
  
  void draw() {
-  background(0);
+  background(200,200,200);
   renderSphere(); 
  }
  
  void renderSphere() {
   pushMatrix(); 
-  translate(width * 0.33, height * 0.5, pushBack);
+  translate(position.x, position.y, position.z);
   pushMatrix();
   noFill();
   stroke(255,200);
@@ -164,4 +165,17 @@ void texturedSphere(float r, PImage t) {
   vertex(sphereX[voff]*r, sphereY[voff]*r, sphereZ[voff]*r, u, v);
   endShape();
   
+}
+
+
+void keyPressed()
+{
+   if(keyCode == LEFT)
+   {
+     position.x --;
+   }
+   else if(keyCode == RIGHT)
+   {
+     position.x++;
+   }
 }
