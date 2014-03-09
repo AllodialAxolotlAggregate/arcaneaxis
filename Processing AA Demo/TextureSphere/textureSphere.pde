@@ -10,6 +10,8 @@
  int sDetail = 35; // Sphere detail
  float rotX = 0;
  float rotY = 0;
+ float rotZ = 0;
+ float velZ = 0;
  float velX = 0;
  float velY = 0;
  float sphereRadius = 200;
@@ -20,16 +22,17 @@
  float cosLUT[];
  float SINCOS_PRECISION = 0.5;
  int SINCOS_LENGTH = int(360.0 / SINCOS_PRECISION);
- 
+ boolean isZ = false;
  void setup() {
    size(640, 360, P3D);
-   texmap = loadImage("Data/world.jpg");
+   texmap = loadImage("Data/moon.jpg");
    initializeSphere(sDetail);
    position =  new PVector(width * .5, height*.5, -5);
  }
  
  void draw() {
   background(200,200,200);
+  if(isZ) background(255, 100,100);
   renderSphere(); 
  }
  
@@ -46,6 +49,7 @@
   pushMatrix();
   rotateX( radians(-rotX));
   rotateY( radians(270 - rotY));
+  rotateZ(radians(-rotZ));
   fill(200);
   noStroke();
   textureMode(IMAGE);
@@ -54,14 +58,54 @@
   popMatrix();
   rotX += velX;
   rotY += velY;
+  rotZ += velZ;
+  velZ *= .95;
   velX *= 0.95;
   velY *= 0.95;
   
   // Implements mouse control
   if(mousePressed){
-   velX += (mouseY-pmouseY) * 0.05;
-   velY -= (mouseX-pmouseX) * 0.05;
+   if(( rotX > 80 && rotX < 110) || (rotX < -80 && rotX > -110))
+   {
+     isZ = true;
+     println("STUFF");
+     velY -= (mouseY-pmouseY) * 0.05;
+     velZ += (mouseX-pmouseX) * 0.05;
+     println(velZ);
+   }
+   else
+   {
+     isZ = false;
+     velX += (mouseY-pmouseY) * 0.05;
+     velY -= (mouseX-pmouseX) * 0.05;
+   }
+   
+   
   }
+  if(rotX > 360)
+  {
+     rotX -= 360;
+  }else if(rotX < -360)
+  {
+     rotX += 360;
+  }
+  if(rotY > 360)
+  {
+     rotY -= 360;
+  }else if(rotY < -360)
+  {
+     rotY += 360;
+  }
+
+  
+  drawInfo();
+ }
+ 
+ void drawInfo()
+ {
+   fill(0);
+   textSize(20);
+   text("X Rotation: " + (int)rotX +"\nY Rotation: " + (int)rotY +"\nZ Rotation: " + (int)rotZ, 10,20);
  }
  
  void initializeSphere(int res)
@@ -117,12 +161,14 @@ void texturedSphere(float r, PImage t) {
   r /= 2;
   beginShape(TRIANGLE_STRIP);
   texture(t);
-  stroke(255);
+  //stroke(255);
   float iu=(float)(t.width-1)/(sDetail);
   float iv=(float)(t.height-1)/(sDetail);
   float u=0,v=iv;
   for (int i = 0; i < sDetail; i++) {
+    // Vertex at x,y,z, u,v where u and v are normals for tex mapping
     vertex(0, -r, 0,u,0);
+    
     vertex(sphereX[i]*r, sphereY[i]*r, sphereZ[i]*r, u, v);
     u+=iu;
   }
@@ -187,6 +233,15 @@ void keyPressed()
    else if(keyCode == DOWN)
    {
      position.y++;
+   }
+   else if(keyCode == 'R')
+   {
+     rotX = rotY = velX = velY = velZ = rotZ = 0;
+     
+   }
+   else if(keyCode == 'S')
+   {
+     velX = velY = velZ = 0;
    }
 }
 
