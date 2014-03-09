@@ -59,8 +59,8 @@
   
   // Implements mouse control
   if(mousePressed){
-   velX += (mouseY-pmouseY) * 0.01;
-   velY += (mouseX-pmouseX) * 0.01;
+   velX += (mouseY-pmouseY) * 0.05;
+   velY -= (mouseX-pmouseX) * 0.05;
   }
  }
  
@@ -113,9 +113,11 @@
 // Generic routine to draw textured sphere
 void texturedSphere(float r, PImage t) {
   int v1,v11,v2;
-  r = (r + 240 ) * 0.33;
+  //r = (r + 240 ) * 0.33; // radius stuff... MAGIC NUMBERS ARE BAD
+  r /= 2;
   beginShape(TRIANGLE_STRIP);
   texture(t);
+  stroke(255);
   float iu=(float)(t.width-1)/(sDetail);
   float iv=(float)(t.height-1)/(sDetail);
   float u=0,v=iv;
@@ -178,4 +180,19 @@ void keyPressed()
    {
      position.x++;
    }
+   else if(keyCode == UP)
+   {
+     position.y--;
+   }
+   else if(keyCode == DOWN)
+   {
+     position.y++;
+   }
+}
+
+void mouseWheel(MouseEvent event)
+{
+  float e = event.getAmount();
+  if(e < 0){ position.z += 2;} 
+  else if(e > 0){ position.z -= 2;} 
 }
