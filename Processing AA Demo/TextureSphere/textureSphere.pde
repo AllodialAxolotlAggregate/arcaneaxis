@@ -7,7 +7,7 @@
  PImage bg;
  PImage texmap;
  
- int sDetail = 35; // Sphere detail
+ int sDetail = 15; // Sphere detail
  float rotX = 0;
  float rotY = 0;
  float rotZ = 0;
@@ -32,7 +32,8 @@
  
  void draw() {
   background(200,200,200);
-  if(isZ) background(255, 100,100);
+  //if(isZ) background(255, 100,100);
+  
   renderSphere(); 
  }
  
@@ -53,6 +54,7 @@
   fill(200);
   noStroke();
   textureMode(IMAGE);
+  stroke(255);
   texturedSphere(sphereRadius, texmap);
   popMatrix();
   popMatrix();
@@ -65,20 +67,18 @@
   
   // Implements mouse control
   if(mousePressed){
-   if(( rotX > 80 && rotX < 110) || (rotX < -80 && rotX > -110))
-   {
-     isZ = true;
-     println("STUFF");
-     velY -= (mouseY-pmouseY) * 0.05;
-     velZ += (mouseX-pmouseX) * 0.05;
-     println(velZ);
-   }
+   /*if(( rotX > 80 && rotX < 110) || (rotX < -80 && rotX > -110))
+   {*/
+    // println("STUFF");
+     //velY -= (mouseY-pmouseY) * 0.05;
+    // velZ += (mouseX-pmouseX) * 0.05;
+    // println(velZ);
+  /* }
    else
-   {
-     isZ = false;
+   {*/
      velX += (mouseY-pmouseY) * 0.05;
      velY -= (mouseX-pmouseX) * 0.05;
-   }
+   //}
    
    
   }
@@ -158,7 +158,7 @@
 void texturedSphere(float r, PImage t) {
   int v1,v11,v2;
   //r = (r + 240 ) * 0.33; // radius stuff... MAGIC NUMBERS ARE BAD
-  r /= 2;
+  r /= 2; // just makes the thing fit on the screen
   beginShape(TRIANGLE_STRIP);
   texture(t);
   //stroke(255);
