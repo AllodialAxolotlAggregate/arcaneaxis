@@ -25,6 +25,9 @@
 #include <d3dcompiler.h>
 #include "DemoGame.h"
 
+#define KEYDOWN(name, key) (name[key] & 0x80)
+#define IDENTITY_MATRIX XMFLOAT4X4(1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0);
+
 #pragma region Win32 Entry Point (WinMain)
 
 // Win32 Entry Point
@@ -59,19 +62,7 @@ DemoGame::DemoGame(HINSTANCE hInstance) : DXGame(hInstance)
 
 DemoGame::~DemoGame()
 {
-	// Release all of the D3D stuff that's still hanging out
-	ReleaseMacro(vertexBuffer);
-	ReleaseMacro(indexBuffer);
-	ReleaseMacro(vertexShader);
-	ReleaseMacro(pixelShader);
-	ReleaseMacro(vsConstantBuffer);
-	ReleaseMacro(inputLayout);
-
-	if(mish != nullptr)
-		delete[] mish;
-
-	if(ma != nullptr)
-		delete ma;
+	Release();
 }
 
 #pragma endregion
@@ -89,13 +80,9 @@ bool DemoGame::Init()
 	CreateGeometryBuffers();
 	LoadShadersAndInputLayout();
 
-	// Set up view matrix (camera)
-	// In an actual game, update this when the camera moves (so every frame)
-	XMVECTOR position	= XMVectorSet(0, 0, -5, 0);
-	XMVECTOR target		= XMVectorSet(0, 0, 0, 0);
-	XMVECTOR up			= XMVectorSet(0, 1, 0, 0);
-	XMMATRIX V			= XMMatrixLookAtLH(position, target, up);
-	XMStoreFloat4x4(&viewMatrix, XMMatrixTranspose(V));
+	// New Camera stuff - camera defined in DXGame
+	camera = Camera::GetInstance();
+	camera->ComputeMatrices();
 
 	time = .01;
 
@@ -124,37 +111,37 @@ void DemoGame::CreateGeometryBuffers()
 	};
 
 	UINT indices[] = { 0, 3, 2 };
-	UINT indices2[] = { 0, 3, 2,
+	UINT indices2[] = { 0, 2, 5,
+						0, 5, 1,
+						0, 1, 4};
+	// Will not draw any amount of triangles past 2
+	/*UINT indices2[] = { 0, 3, 2,
 						0, 2, 5,
 						0, 5, 1,
 						0, 1, 4,
-						0, 4, 3 };
+						0, 4, 3 };*/
 	UINT indices3[] = { 3, 2, 0,
 						2, 1, 0};
 
-	// http://my.safaribooksonline.com/book/programming/game-programming/9781435458956/2d-rendering/ch03lev1sec4
-	D3D11_SAMPLER_DESC samplerDesc;
-	samplerDesc.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
-	samplerDesc.AddressU = D3D11_TEXTURE_ADDRESS_WRAP;
-	samplerDesc.AddressV = D3D11_TEXTURE_ADDRESS_WRAP;
-	samplerDesc.AddressW = D3D11_TEXTURE_ADDRESS_WRAP;
-	samplerDesc.MipLODBias = 0;
-	samplerDesc.MaxAnisotropy = 0;
-	samplerDesc.MinLOD = 0;
-	samplerDesc.MaxLOD = 0;
-
-	ID3D11SamplerState* ss;
-	device->CreateSamplerState(&samplerDesc, &ss);
-	ma = new Material(device, deviceContext, ss, L"wallpaper.jpg");
+	ma = new Material(device, deviceContext);
+	ma->LoadSamplerStateAndShaderResourceView(L"wallpaper.jpg");
 
 	mish = new Mesh[3];
-	mish[0] = Mesh(vertices, indices, 6, 3, device);
-	mish[1] = Mesh(vertices, indices2, 6, 15, device);
-	mish[2] = Mesh(vertices, indices3, 6, 3, device);
+	mish[0] = Mesh(ARRAYSIZE(vertices), ARRAYSIZE(indices), device, deviceContext);
+	mish[0].LoadBuffers(vertices, indices);
+	mish[1] = Mesh(ARRAYSIZE(vertices), ARRAYSIZE(indices2), device, deviceContext);
+	mish[1].LoadBuffers(vertices, indices2);
+	mish[2] = Mesh(ARRAYSIZE(vertices), ARRAYSIZE(indices3), device, deviceContext);
+	mish[2].LoadBuffers(vertices, indices3);
 
-	ge = GameEntity(&mish[0], ma, XMFLOAT3(1.0, 1.0, 1.0));
+	ge = GameEntity(&mish[0], ma, XMFLOAT3(1.0, 1.0, -2.0));
 	ge2 = GameEntity(&mish[1], ma, XMFLOAT3(0.0, 0.0, 0.0));
-	ge3 = GameEntity(&mish[2], ma, XMFLOAT3(-1.0, -1.0, -1.0));
+	ge3 = GameEntity(&mish[2], ma, XMFLOAT3(-1.0, -1.0, 1.0));
+
+	/*text = new Text();
+	text->Initialize(device, deviceContext, 800, 600, camera->r_ViewMatrix);*/
+
+	spriteBatch = std::unique_ptr<SpriteBatch>(new SpriteBatch(deviceContext));
 }
 
 // Loads shaders from compiled shader object (.cso) files, and uses the
@@ -172,40 +159,26 @@ void DemoGame::LoadShadersAndInputLayout()
 		{"TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT,		0, 28,	D3D11_INPUT_PER_VERTEX_DATA, 0}
 	};
 
+	/*D3D11_INPUT_ELEMENT_DESC polygonLayout[] =
+	{
+		{"POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT,	0, 0,								D3D11_INPUT_PER_VERTEX_DATA, 0},
+		{"TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT,		0, D3D11_APPEND_ALIGNED_ELEMENT,	D3D11_INPUT_PER_VERTEX_DATA, 0}
+	};*/
+
 	// Load Vertex Shader --------------------------------------
 	ID3DBlob* vsBlob;
+	// D3DReadFileToBlob(L"VertexShader.cso", &vsBlob);
 	D3DReadFileToBlob(L"TextureVertexShader.cso", &vsBlob);
-
-	// Create the shader on the device
-	HR(device->CreateVertexShader(
-		vsBlob->GetBufferPointer(),
-		vsBlob->GetBufferSize(),
-		NULL,
-		&vertexShader));
-
-	// Before cleaning up the data, create the input layout
-	HR(device->CreateInputLayout(
-		vertexDesc,
-		ARRAYSIZE(vertexDesc),
-		vsBlob->GetBufferPointer(),
-		vsBlob->GetBufferSize(),
-		&inputLayout));
-
-	// Clean up
-	ReleaseMacro(vsBlob);
 
 	// Load Pixel Shader ---------------------------------------
 	ID3DBlob* psBlob;
+	// D3DReadFileToBlob(L"PixelShader.cso", &psBlob);
 	D3DReadFileToBlob(L"TexturePixelShader.cso", &psBlob);
 
-	// Create the shader on the device
-	HR(device->CreatePixelShader(
-		psBlob->GetBufferPointer(),
-		psBlob->GetBufferSize(),
-		NULL,
-		&pixelShader));
+	ma->LoadShadersAndInputLayout(vsBlob, psBlob, vertexDesc, ARRAYSIZE(vertexDesc));
 
 	// Clean up
+	ReleaseMacro(vsBlob);
 	ReleaseMacro(psBlob);
 
 	// Constant buffers ----------------------------------------
@@ -216,10 +189,52 @@ void DemoGame::LoadShadersAndInputLayout()
 	cBufferDesc.CPUAccessFlags		= 0;
 	cBufferDesc.MiscFlags			= 0;
 	cBufferDesc.StructureByteStride = 0;
+
 	HR(device->CreateBuffer(
 		&cBufferDesc,
 		NULL,
 		&vsConstantBuffer));
+
+	ma->LoadAConstantBuffer(vsConstantBuffer);
+
+	D3D11_BUFFER_DESC constantBufferDesc;
+	constantBufferDesc.Usage = D3D11_USAGE_DYNAMIC;
+	constantBufferDesc.ByteWidth = sizeof(textConstantBufferData);
+    constantBufferDesc.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
+    constantBufferDesc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
+    constantBufferDesc.MiscFlags = 0;
+	constantBufferDesc.StructureByteStride = 0;
+
+	device->CreateBuffer(
+		&constantBufferDesc,
+		NULL,
+		&textConstantBuffer);
+}
+
+void DemoGame::Release()
+{
+	// Release all of the D3D stuff that's still hanging out
+	ReleaseMacro(vsConstantBuffer);
+	
+	// New Stuff
+	delete camera;
+
+	if(mish != nullptr)
+	{
+		delete[] mish;
+	}
+
+	if(ma != nullptr)
+	{
+		ma->Release();
+		delete ma;
+	}
+
+	if(text != nullptr)
+	{
+		text->Shutdown();
+		delete text;
+	}
 }
 
 #pragma endregion
@@ -233,16 +248,37 @@ void DemoGame::OnResize()
 	DXGame::OnResize();
 
 	// Update our projection matrix since the window size changed
-	XMMATRIX P = XMMatrixPerspectiveFovLH(
-		0.25f * 3.1415926535f,
-		AspectRatio(),
-		0.1f,
-		100.0f);
-	XMStoreFloat4x4(&projectionMatrix, XMMatrixTranspose(P));
+	float f = AspectRatio();
+	camera->OnResize(f);
 }
 #pragma endregion
 
 #pragma region Game Loop
+
+void DemoGame::Keyboard()
+{
+	//http://msdn.microsoft.com/en-us/library/windows/desktop/ms646293(v=vs.85).aspx
+
+	if(GetAsyncKeyState(VK_ESCAPE))
+	{
+		//Release();
+		exit(0);
+	}
+
+	if(GetAsyncKeyState('W'))
+		camera->r_Position.z += .001;
+
+	if(GetAsyncKeyState('A'))
+		camera->r_Position.x -= .001;
+
+	if(GetAsyncKeyState('S'))
+		camera->r_Position.z -= .001;
+
+	if(GetAsyncKeyState('D'))
+		camera->r_Position.x += .001;
+
+	camera->ComputeMatrices();
+}
 
 // Updates the local constant buffer and 
 // push it to the buffer on the device
@@ -252,17 +288,50 @@ void DemoGame::UpdateScene(float dt)
 	if(time <= 0)
 	{
 		time = .001;
-		ge.Move();
+		//ge.Move();
 		//ge2.Move();
 		//ge3.Move();
 	}
+
+	Keyboard();
 }
 
+// Old DrawEntity
 void DemoGame::DrawEntity(GameEntity& g)
 {
 	vsConstantBufferData.world		= g.WorldMatrix;
-	vsConstantBufferData.view		= viewMatrix;
-	vsConstantBufferData.projection	= projectionMatrix;
+	vsConstantBufferData.view		= camera->r_ViewMatrix;
+	vsConstantBufferData.projection	= camera->r_ProjectionMatrix;
+
+	deviceContext->UpdateSubresource(
+		g.material->r_ConstantBuffer,
+		0,			
+		NULL,
+		&vsConstantBufferData,
+		0,
+		0);
+
+	g.Draw(camera);
+}
+
+void DemoGame::Draw2D()
+{
+#pragma region Drawing
+
+	// Set up the input assembler
+	/*deviceContext->IASetInputLayout(text->r_FontShader->r_InputLayout);
+	deviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);*/
+
+	XMFLOAT4X4 w;
+	XMFLOAT3 worldPos = XMFLOAT3(1.0, 1.0, -1.0);
+	XMMATRIX trans = XMMatrixTranslation(worldPos.x, worldPos.y, worldPos.z);
+	XMStoreFloat4x4(&w, XMMatrixTranspose(trans));
+
+	text->Render(deviceContext, w, camera->r_ViewMatrix, camera->r_ProjectionMatrix);
+
+	/*vsConstantBufferData.world		= w;
+	vsConstantBufferData.view		= camera->r_ViewMatrix;
+	vsConstantBufferData.projection	= camera->r_ProjectionMatrix;
 	deviceContext->UpdateSubresource(
 		vsConstantBuffer,
 		0,			
@@ -270,7 +339,17 @@ void DemoGame::DrawEntity(GameEntity& g)
 		&vsConstantBufferData,
 		0,
 		0);
-	g.Draw(deviceContext);
+	g.Draw(deviceContext);//*/
+
+	// Set the current vertex and pixel shaders, as well the constant buffer for the vert shader
+	deviceContext->VSSetShader(text->r_FontShader->r_VertexShader, NULL, 0);
+	deviceContext->VSSetConstantBuffers(
+		0,	// Corresponds to the constant buffer's register in the vertex shader
+		1, 
+		&vsConstantBuffer);
+	/*deviceContext->PSSetShader(text->r_FontShader->r_PixelShader, NULL, 0);*/
+
+#pragma endregion
 }
 
 // Clear the screen, redraw everything, present
@@ -286,21 +365,20 @@ void DemoGame::DrawScene()
 		1.0f,
 		0);
 
-	// Set up the input assembler
-	deviceContext->IASetInputLayout(inputLayout);
-	deviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+	// Important to do 2D stuff
+	//Draw2D();
 
 	DrawEntity(ge);
 	DrawEntity(ge2);
 	DrawEntity(ge3);
 
-	// Set the current vertex and pixel shaders, as well the constant buffer for the vert shader
-	deviceContext->VSSetShader(vertexShader, NULL, 0);
-	deviceContext->VSSetConstantBuffers(
-		0,	// Corresponds to the constant buffer's register in the vertex shader
-		1, 
-		&vsConstantBuffer);
-	deviceContext->PSSetShader(pixelShader, NULL, 0);
+	//spriteBatch->Begin();
+	////spriteFont->DrawString(spriteBatch.get(), L"Hello, world!", XMFLOAT2(100, 100));
+	//spriteBatch->Draw(ma->r_ShaderResourceView, XMFLOAT2(200, 400));
+	//spriteBatch->End();
+
+	// Important to do 2D stuff
+	//Draw2D();
 
 	// Present the buffer
 	HR(swapChain->Present(0, 0));

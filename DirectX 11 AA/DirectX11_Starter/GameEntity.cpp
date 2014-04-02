@@ -50,26 +50,10 @@ void GameEntity::Move()
 	WorldTransition();
 }
 
-void GameEntity::Draw(ID3D11DeviceContext* deviceContext)
+void GameEntity::Draw(Camera* aCamera)
 {
-	ID3D11ShaderResourceView* t = material->SRV;
-	ID3D11SamplerState* s = material->Sampler;
-
-	deviceContext->PSSetShaderResources(0, 1, &t);
-	deviceContext->PSSetSamplers(0, 1, &s);
-
-	UINT stride = sizeof(Vertex);
-	UINT offset = 0;
-
-	ID3D11Buffer* temp = mesh->VertexBuffer;
-
-	deviceContext->IASetVertexBuffers(0, 1, &temp, &stride, &offset);
-	deviceContext->IASetIndexBuffer(mesh->IndexBuffer, DXGI_FORMAT_R32_UINT, 0);
-
-	deviceContext->DrawIndexed(
-		mesh->Indices,	// The number of indices we're using in this draw
-		0,
-		0);
+	material->Draw(aCamera);
+	mesh->Draw();
 }
 
 void GameEntity::SetMesh(Mesh* m_nMesh) { m_Mesh = m_nMesh; }

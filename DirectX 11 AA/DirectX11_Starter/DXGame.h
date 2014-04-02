@@ -17,6 +17,8 @@
 #include "dxerr.h"
 #include "GameTimer.h"
 
+#include "Camera.h"
+
 // Convenience macro for releasing a COM object
 #define ReleaseMacro(x) { if(x){ x->Release(); x = 0; } }
 
@@ -98,10 +100,18 @@ protected:
 	D3D11_VIEWPORT viewport;
 	D3D_DRIVER_TYPE driverType;
 
+	// RasterTek Stuff
+	ID3D11DepthStencilState* m_depthDisabledStencilState;
+	ID3D11BlendState* m_alphaEnableBlendingState;
+	ID3D11DepthStencilState* m_depthStencilState;
+	ID3D11BlendState* m_alphaDisableBlendingState;
+
 	// Derived class can set these in derived constructor to customize starting values.
 	std::wstring windowCaption;
 	int windowWidth;
 	int windowHeight;
 	bool enable4xMsaa;
+
+	Camera* camera;
 };
 

@@ -4,6 +4,9 @@
 #include "DXGame.h"
 #include "Mesh.h"
 #include "GameEntity.h"
+#include "Text.h"
+#include "DirectXTK\Inc\SpriteBatch.h"
+#include "DirectXTK\Inc\SpriteFont.h"
 
 // Include run-time memory checking in debug builds
 #if defined(DEBUG) || defined(_DEBUG)
@@ -13,16 +16,6 @@
 
 // For DirectX Math
 using namespace DirectX;
-
-// Struct to match vertex shader's constant buffer
-// You update one of these locally, then push it to the corresponding
-// constant buffer on the device when it needs to be updated
-struct VertexShaderConstantBuffer
-{
-	XMFLOAT4X4 world;
-	XMFLOAT4X4 view;
-	XMFLOAT4X4 projection;
-};
 
 // Demo class which extends the base DXGame class
 class DemoGame : public DXGame
@@ -42,31 +35,27 @@ public:
 	void OnMouseUp(WPARAM btnState, int x, int y);
 	void OnMouseMove(WPARAM btnState, int x, int y);
 
+	void Keyboard();
+	void Draw2D();
+
 private:
 	// Initialization for our "game" demo
 	void CreateGeometryBuffers();
 	void LoadShadersAndInputLayout();
 	void DrawEntity(GameEntity&);
+	void Release();
 
 private:
-	// Buffers to hold actual geometry
-	ID3D11Buffer* vertexBuffer;
-	ID3D11Buffer* indexBuffer;
-
 	// Our basic shaders for this example
-	ID3D11PixelShader* pixelShader;
-	ID3D11VertexShader* vertexShader;
+	/*ID3D11PixelShader* pixelShader;
+	ID3D11VertexShader* vertexShader;*/
 
 	// A few more odds and ends we'll need
-	ID3D11InputLayout* inputLayout;
 	ID3D11Buffer* vsConstantBuffer;
 	VertexShaderConstantBuffer vsConstantBufferData;
 
-	// The matrices to go from 3D model space
-	// to screen space
-	XMFLOAT4X4 worldMatrix;
-	XMFLOAT4X4 viewMatrix;
-	XMFLOAT4X4 projectionMatrix;
+	ID3D11Buffer* textConstantBuffer;
+	VertexShaderConstantBuffer* textConstantBufferData;
 
 	// Keeps track of the old mouse position.  Useful for 
 	// determining how far the mouse moved in a single frame.
@@ -77,7 +66,11 @@ private:
 	GameEntity ge2;
 	GameEntity ge3;
 	Material* ma;
+	//Camera* camera;
 	float time;
 
 	Mesh* mish;
+	Text* text;
+	std::unique_ptr<SpriteBatch> spriteBatch;
+	std::unique_ptr<SpriteFont> spriteFont;
 };

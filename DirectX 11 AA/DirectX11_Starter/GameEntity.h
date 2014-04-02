@@ -4,17 +4,35 @@
 #include <d3d11.h>
 #include "Mesh.h"
 #include "Material.h"
+#include "Camera.h"
 
 class GameEntity
 {
 public:
+	// Empty Constructor
 	GameEntity();
-	GameEntity(Mesh*, Material*, DirectX::XMFLOAT3);
+
+	// GameEntity class is an object that contains a mesh and a material
+	// to then be used to be put on the screen
+	// Needs:
+	//		A Mesh Pointer/Address,
+	//		A Material Pointer/Address,
+	//		A DirectX::XMFlOAT3 position
+	GameEntity(Mesh* aMesh, Material* aMaterial, DirectX::XMFLOAT3 aPosition);
+
+	// Empty Deconstructor - currently does nothing
 	~GameEntity();
 
+	// Translates the object's vector information into matrix information that
+	// the graphic cards uses to pixelate the location
 	void WorldTransition();
+
+	// A simple move method that moves the object back and forth
 	void Move();
-	void Draw(ID3D11DeviceContext*);
+
+	// Calls the Material's and Mesh's draws methods to render object on the screen
+	void Draw(Camera* aCamera);
+	//void DrawEntity(Camera*);
 
 #pragma region Gets/Sets
 
@@ -56,6 +74,7 @@ private:
 	float velocity;
 
 private:
+	// Resets the values to zero
 	void Reset();
 };
 

@@ -53,7 +53,12 @@ DXGame::DXGame(HINSTANCE hInstance)
 	swapChain(0),
 	depthStencilBuffer(0),
 	renderTargetView(0),
-	depthStencilView(0)
+	depthStencilView(0),
+	// RasterTek Stuff
+	m_depthDisabledStencilState(0),
+	m_alphaEnableBlendingState(0),
+	m_depthStencilState(0),
+	m_alphaDisableBlendingState(0)
 {
 	// Zero out the viewport struct
 	ZeroMemory(&viewport, sizeof(D3D11_VIEWPORT));
@@ -223,6 +228,9 @@ bool DXGame::InitDirect3D()
 	ReleaseMacro(dxgiDevice);
 	ReleaseMacro(dxgiAdapter);
 	ReleaseMacro(dxgiFactory);
+
+	// My stuff
+	camera = Camera::GetInstance();
 
 	// The remaining steps also need to happen each time the window
 	// is resized, so just run the OnResize method
