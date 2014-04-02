@@ -78,15 +78,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Entry.h" />
-    <ClInclude Include="HashMap.h" />
+    <ClInclude Include="Artifact.h" />
+    <ClInclude Include="Demo.h" />
     <ClInclude Include="Rune.h" />
+    <ClInclude Include="Spellbook.h" />
+    <ClInclude Include="SuperVector.h" />
     <ClInclude Include="Tile.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Entry.cpp" />
-    <ClCompile Include="HashMap.cpp" />
+    <ClCompile Include="Artifact.cpp" />
+    <ClCompile Include="Demo.cpp" />
     <ClCompile Include="Rune.cpp" />
+    <ClCompile Include="Spellbook.cpp" />
     <ClCompile Include="Tile.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

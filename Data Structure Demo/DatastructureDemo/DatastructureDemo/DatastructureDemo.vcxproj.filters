@@ -15,30 +15,39 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Entry.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HashMap.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Rune.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Tile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Artifact.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Spellbook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SuperVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Demo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Entry.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HashMap.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Rune.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Tile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Artifact.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Spellbook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Demo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
