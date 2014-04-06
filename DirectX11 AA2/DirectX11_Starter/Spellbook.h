@@ -12,13 +12,24 @@ private:
 	// A pointer to a vector of a pointer to a vector filled with pointers to runes. 
 	SuperVector< SuperVector<Rune*>* >* m_spellbook;
 
+	SuperVector<Rune*>* m_activeSpell;
+
 public:
 	// Constructor for a blank Spellbook
 	Spellbook(void)
 	{
 		// Allocate for our super SuperVector pointer on the heap (MEGA VECTOOOORR)
 		m_spellbook = new SuperVector< SuperVector<Rune*>* >();
+
+		// Allocate for our SuperVector that will account for active spells
+		m_activeSpell = new SuperVector<Rune*>();
 	};
+
+	// To be called after a certain amount of time of no new entries
+	void ClearActiveSpell()
+	{
+		//m_activeSpell->
+	}
 
 
 	// Add a spell to the spellbook. To be used at the beginning of levels. 
@@ -51,8 +62,10 @@ public:
 	// Destructor 
 	~Spellbook(void);
 
-	// For debugging
 
+
+
+	// For debugging
 	void Print()
 	{
 		for(int i =0; i< m_spellbook->GetSize(); i++)

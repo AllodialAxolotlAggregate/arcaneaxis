@@ -141,6 +141,12 @@ public:
 		}
 	};
 
+	/* CLEAR(): pop all data from vector. */
+	void Clear()
+	{
+		//while(this->GetSize() > 0)
+	}
+
 	/* GetTop(): Returns a copy of the data on top of the vector. */
 	T GetTop(){
 
