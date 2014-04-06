@@ -1,24 +1,13 @@
-﻿Build started 4/3/2014 7:31:32 PM.
-     1>Project "C:\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" on node 2 (Build target(s)).
+﻿Build started 4/6/2014 1:58:19 PM.
+     1>Project "D:\Users\gmb9280\AAA_project\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"C:\DirectX11 AA2\\DirectXTK\inc" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt DemoGame.cpp
-         DemoGame.cpp
-     1>c:\directx11 aa2\directx11_starter\demogame.cpp(96): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\directx11 aa2\directx11_starter\demogame.cpp(94): warning C4930: 'GameManager manager(void)': prototyped function not called (was a variable definition intended?)
-     1>c:\directx11 aa2\directx11_starter\demogame.cpp(252): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\directx11 aa2\directx11_starter\demogame.cpp(383): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\directx11 aa2\directx11_starter\demogame.cpp(697): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\directx11 aa2\directx11_starter\demogame.cpp(796): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\directx11 aa2\directx11_starter\demogame.cpp(886): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\directx11 aa2\directx11_starter\demogame.cpp(1140): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>c:\directx11 aa2\directx11_starter\demogame.cpp(1143): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>c:\directx11 aa2\directx11_starter\demogame.cpp(1146): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>c:\directx11 aa2\directx11_starter\demogame.cpp(1149): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>c:\directx11 aa2\directx11_starter\demogame.cpp(1152): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>c:\directx11 aa2\directx11_starter\demogame.cpp(1155): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>c:\directx11 aa2\directx11_starter\demogame.cpp(1175): warning C4305: '=' : truncation from 'double' to 'float'
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"D:\Users\gmb9280\AAA_project\DirectX11 AA2\\DirectXTK\inc" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Rune.cpp Spellbook.cpp
+         Rune.cpp
+         Generating Code...
+         Skipping... (no relevant changes detected)
+         Spellbook.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\DirectX11 AA2\Debug\DirectX11_Starter.exe" /INCREMENTAL /NOLOGO d3d11.lib d3dcompiler.lib dinput8.lib dxguid.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\DirectX11 AA2\Debug\DirectX11_Starter.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\DirectX11 AA2\Debug\DirectX11_Starter.lib" /MACHINE:X86 Debug\Camera.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Users\gmb9280\AAA_project\DirectX11 AA2\Debug\DirectX11_Starter.exe" /INCREMENTAL /NOLOGO d3d11.lib d3dcompiler.lib dinput8.lib dxguid.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Users\gmb9280\AAA_project\DirectX11 AA2\Debug\DirectX11_Starter.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Users\gmb9280\AAA_project\DirectX11 AA2\Debug\DirectX11_Starter.lib" /MACHINE:X86 Debug\Camera.obj
          Debug\DemoGame.obj
          Debug\dxerr.obj
          Debug\DXGame.obj
@@ -29,11 +18,15 @@
          Debug\GameTimer.obj
          Debug\Material.obj
          Debug\Mesh.obj
+         Debug\Rune.obj
+         Debug\Spellbook.obj
          Debug\Text.obj
-         "C:\DirectX11 AA2\DirectX11_Starter\DirectXTK\Bin\Desktop_2012\Win32\Debug\DirectXTK.lib"
-         DirectX11_Starter.vcxproj -> C:\DirectX11 AA2\Debug\DirectX11_Starter.exe
-     1>Done Building Project "C:\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" (Build target(s)).
+         Debug\Tile.obj
+         Debug\TileMap.obj
+         "D:\Users\gmb9280\AAA_project\DirectX11 AA2\DirectX11_Starter\DirectXTK\Bin\Desktop_2012\Win32\Debug\DirectXTK.lib"
+         DirectX11_Starter.vcxproj -> D:\Users\gmb9280\AAA_project\DirectX11 AA2\Debug\DirectX11_Starter.exe
+     1>Done Building Project "D:\Users\gmb9280\AAA_project\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:03.73
+Time Elapsed 00:00:01.73

@@ -78,7 +78,11 @@
     <ClCompile Include="GameTimer.cpp" />
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="Rune.cpp" />
+    <ClCompile Include="Spellbook.cpp" />
     <ClCompile Include="Text.cpp" />
+    <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="TileMap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h" />
@@ -92,7 +96,12 @@
     <ClInclude Include="GameTimer.h" />
     <ClInclude Include="Material.h" />
     <ClInclude Include="Mesh.h" />
+    <ClInclude Include="Rune.h" />
+    <ClInclude Include="Spellbook.h" />
+    <ClInclude Include="SuperVector.h" />
     <ClInclude Include="Text.h" />
+    <ClInclude Include="Tile.h" />
+    <ClInclude Include="TileMap.h" />
     <ClInclude Include="Vertex.h" />
   </ItemGroup>
   <ItemGroup>

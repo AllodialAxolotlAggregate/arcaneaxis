@@ -1,8 +1,8 @@
-﻿Build started 4/3/2014 5:06:26 PM.
-     1>Project "C:\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" on node 2 (Build target(s)).
+﻿Build started 4/6/2014 1:40:13 PM.
+     1>Project "D:\Users\gmb9280\AAA_project\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" on node 2 (Build target(s)).
      1>Lib:
-         DirectXTK_Desktop_2012.vcxproj -> C:\DirectX11 AA2\DirectX11_Starter\DirectXTK\Bin\Desktop_2012\Win32\Debug\DirectXTK.lib
-     1>Done Building Project "C:\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" (Build target(s)).
+         DirectXTK_Desktop_2012.vcxproj -> D:\Users\gmb9280\AAA_project\DirectX11 AA2\DirectX11_Starter\DirectXTK\Bin\Desktop_2012\Win32\Debug\DirectXTK.lib
+     1>Done Building Project "D:\Users\gmb9280\AAA_project\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" (Build target(s)).
 
 Build succeeded.
 
