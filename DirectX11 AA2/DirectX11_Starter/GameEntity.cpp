@@ -50,6 +50,15 @@ void GameEntity::Move()
 	WorldTransition();
 }
 
+void GameEntity::Rotate(XMFLOAT3 rot)
+{
+	m_Rotation.x += rot.x;
+	m_Rotation.y += rot.y;
+	m_Rotation.z += rot.z;
+
+	WorldTransition();
+}
+
 void GameEntity::Draw(ID3D11DeviceContext* deviceContext)
 {
 	material->Draw(deviceContext);

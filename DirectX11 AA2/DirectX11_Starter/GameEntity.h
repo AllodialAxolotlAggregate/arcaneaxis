@@ -29,6 +29,9 @@ public:
 	// A simple move method that moves the object back and forth
 	void Move();
 
+	// Rotation method that continually rotates at the specified angle
+	void Rotate(DirectX::XMFLOAT3);
+
 	// Calls the Material's and Mesh's draws methods to render object on the screen
 	void Draw(ID3D11DeviceContext*);
 

@@ -989,7 +989,7 @@ void DemoGame::CreateGeometryBuffers()
 	D3D11_SAMPLER_DESC samplerDesc = maSphere->SamplerDescription();
 	ID3D11SamplerState* samplerTemp = maSphere->GetSamplerState();
 	device->CreateSamplerState(&samplerDesc, &samplerTemp);
-	//maSphere->SetSamplerState(samplerTemp);
+	maSphere->SetSamplerState(samplerTemp);
 
 	// setup obj gameEntity
 	ge3 = GameEntity(&mish[2], maSphere, XMFLOAT3(0.0, 0.0, 10.0));
@@ -1173,9 +1173,10 @@ void DemoGame::UpdateScene(float dt)
 		if(time <= 0)
 		{
 			time = .001;
-			ge.Move();
+			//ge.Move();
 			//ge2.Move();
 			//ge3.Move();
+			ge3.Rotate(XMFLOAT3(.001,0,0));
 		}
 	}
 	Keyboard();
@@ -1245,7 +1246,7 @@ void DemoGame::DrawObj(GameEntity& g)
 		// mat
 		ID3D11SamplerState* tempSampler = g.GetMaterial()->GetSamplerState();
 		//deviceContext->PSSetShaderResources( 0, 1, &meshSRV[material[meshSubsetTexture[i]].texArrayIndex] );
-		deviceContext->PSSetShaderResources( 0, 1, &meshSRV[0] );
+		deviceContext->PSSetShaderResources( 0, 1, &meshSRV[1] );
 		deviceContext->PSSetSamplers(0, 1, &tempSampler);
 
 		// mesh

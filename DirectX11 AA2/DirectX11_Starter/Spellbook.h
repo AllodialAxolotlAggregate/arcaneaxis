@@ -14,17 +14,12 @@ private:
 
 	SuperVector<Rune*>* m_activeSpell;
 
-	SuperVector< SuperVector<Rune*>* >* m_possibleMatches;
-
 public:
 	// Constructor for a blank Spellbook
 	Spellbook(void)
 	{
 		// Allocate for our super SuperVector pointer on the heap (MEGA VECTOOOORR)
 		m_spellbook = new SuperVector< SuperVector<Rune*>* >();
-
-		// Allocate for our list of possible matches on the heap
-		m_possibleMatches  = new SuperVector<SuperVector<Rune*>*>();
 
 		// Allocate for our SuperVector that will account for active spells
 		m_activeSpell = new SuperVector<Rune*>();
@@ -33,41 +28,11 @@ public:
 	// To be called after a certain amount of time of no new entries
 	void ClearActiveSpell()
 	{
-		m_activeSpell->Clear();
-	}
-
-	// Add a rune to the active spell
-	// Need to check against possible matches afterwards
-	void CastRune(Rune* _newrune)
-	{
-		m_activeSpell->Push(_newrune);
+		//m_activeSpell->
 	}
 
 
-	// Depending on the active runes of our m_activeSpell, narrow down which spells in 
-	// the spellbook it could possibly be
-	void CalculatePossibleMatches()
-	{
-		// If there are no spells in our possibilities vector 
-		// and we just put the first rune into our active spell
-		// then we need to calculate this fresh from ALL of the spells in the spellbook
-		for(int i = 0; i < m_spellbook->GetSize() - 1; i++)
-		{
-			// For each spell in the book... check the runes of the spell
-			for(int j = 0; j < m_activeSpell->GetSize() - 1; j++)
-			{
-				// not done yet
-			}
-		
-		}
-
-
-		// If we already have spells in our possibilities vector and we just 
-		// need to narrow it down, 
-
-	}
-
-	// Add a spell to the spellbook. To be used at the beginning of levels or game.
+	// Add a spell to the spellbook. To be used at the beginning of levels. 
 	void AddSpell( SuperVector<Rune*>* _ra)
 	{
 		this->m_spellbook->Push(_ra);
