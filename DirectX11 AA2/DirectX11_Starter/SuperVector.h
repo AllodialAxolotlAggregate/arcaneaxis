@@ -144,7 +144,10 @@ public:
 	/* CLEAR(): pop all data from vector. */
 	void Clear()
 	{
-		//while(this->GetSize() > 0)
+		while(this->GetSize() > 0)
+		{
+			this->Pop();
+		}
 	}
 
 	/* GetTop(): Returns a copy of the data on top of the vector. */
