@@ -38,16 +38,25 @@ void Camera::ComputeMatrices()
 	XMMATRIX V = XMMatrixLookAtLH(pos, target, up);
 
 	XMStoreFloat4x4(&m_ViewMatrix, XMMatrixTranspose(V));
+	
+	// set projection matrix
+	XMMATRIX P = XMMatrixPerspectiveFovLH(
+		0.4f * 3.1415926535f,
+		(float)800/600,
+		0.1f,
+		1000.0f);
+	XMStoreFloat4x4(&m_ProjectionMatrix, XMMatrixTranspose(P));
 }
 
 void Camera::OnResize(float ar)
 {
 	// Update our projection matrix since the window size changed
 	XMMATRIX P = XMMatrixPerspectiveFovLH(
-		0.25f * 3.1415926535f,
+		//0.25f * 3.1415926535f,
+		0.4f * 3.1415926535f,
 		ar,
 		0.1f,
-		100.0f);
+		1000.0f);
 	XMStoreFloat4x4(&m_ProjectionMatrix, XMMatrixTranspose(P));
 }
 

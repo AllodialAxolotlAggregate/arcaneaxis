@@ -61,7 +61,7 @@ private:
 	void CreateGeometryBuffers();
 	void LoadShadersAndInputLayout();
 	void DrawEntity(GameEntity&);
-	void DrawObj(GameEntity&);
+	void DrawObj();
 	void Release();
 
 	//Define LoadObjModel function after we create surfaceMaterial structure
@@ -100,8 +100,12 @@ private:
 	GameEntity ge;
 	GameEntity ge2;
 	GameEntity ge3;
+	GameEntity obj;
+	GameEntity obj1;
+	std::vector<GameEntity> entities;
 	Material* ma;
 	Material* maSphere;
+	Material* maPenta;
 	//Camera* camera;
 	float time;
 
@@ -110,7 +114,7 @@ private:
 
 	GameManager manager;
 
-	// Globals
+	// Obj Globals
 	ID3D11BlendState* Transparency;
 
 	ID3D11Buffer* meshVertBuff;
@@ -125,6 +129,10 @@ private:
 
 	XMMATRIX WVP;
 	XMMATRIX World;
+
+	// Obj1 Globals
+	ID3D11Buffer* meshVertBuff1;
+	ID3D11Buffer* meshIndexBuff1;
 	
 
 	// http://www.braynzarsoft.net/index.php?p=D3D11WVP

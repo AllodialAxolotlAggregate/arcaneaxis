@@ -59,7 +59,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance,
 DemoGame::DemoGame(HINSTANCE hInstance) : DXGame(hInstance)
 {
 	// Set up our custom caption and window size
-	windowCaption = L"Demo DX11 Game";
+	windowCaption = L"Arcane Axis";
 	windowWidth = 800;
 	windowHeight = 600;
 }
@@ -80,6 +80,8 @@ bool DemoGame::Init()
 	if( !DXGame::Init() )
 		return false;
 
+	meshSubsets = 0;
+
 	// Set up buffers and such
 	CreateGeometryBuffers();
 	LoadShadersAndInputLayout();
@@ -94,7 +96,6 @@ bool DemoGame::Init()
 	GameManager manager();
 
 	time = .01;
-	meshSubsets = 0;
 
 	return true;
 }
@@ -146,6 +147,9 @@ void DemoGame::LoadObjModel(ID3D11Device* device,
 	int triangleCount = 0;	//Total Triangles
 	int totalVerts = 0;
 	int meshTriangles = 0;
+
+	// set up meshMaterials to account for previous files
+	//meshMaterials.push_back(material.);
 
 	//Check to see if the file was opened
 	if (fileIn)
@@ -548,14 +552,14 @@ void DemoGame::LoadObjModel(ID3D11Device* device,
 	//sometimes "g" is defined at the very top of the file, then again before the first group of faces.
 	//This makes sure the first subset does not conatain "0" indices.
 	//if(subsetIndexStart[1] == 0)
-	if(subsetIndexStart.size() == 2)
-	{
+	//if(subsetIndexStart.size() == 2)
+	//{
 		if(subsetIndexStart[1] == 0)
 		{
 			subsetIndexStart.erase(subsetIndexStart.begin()+1);
 			meshSubsets--;
 		}
-	}
+	//}
 
 	//Make sure we have a default for the tex coord and normal
 	//if one or both are not specified
@@ -790,12 +794,13 @@ void DemoGame::LoadObjModel(ID3D11Device* device,
 
 	//Set the subsets material to the index value
 	//of the its material in our material array
-	for(int i = 0; i < meshSubsets; ++i)
+	/*for(int i = 0; i < meshSubsets; ++i)
 	{
 		bool hasMat = false;
 		for(int j = 0; j < material.size(); ++j)
 		{
-			if(meshMaterials[i] == material[j].matName)
+			//if(meshMaterials[i] == material[j].matName)
+			if(material[i].matName == material[j].matName)
 			{
 				subsetMaterialArray.push_back(j);
 				hasMat = true;
@@ -803,7 +808,7 @@ void DemoGame::LoadObjModel(ID3D11Device* device,
 		}
 		if(!hasMat)
 			subsetMaterialArray.push_back(0); //Use first material in array
-	}
+	}*/
 
 	std::vector<Vertex> vertices;
 	Vertex tempVert;
@@ -972,18 +977,21 @@ void DemoGame::CreateGeometryBuffers()
 	mish[1] = Mesh(vertices, indices2, 6, 15, device);
 	//mish[2] = Mesh(vertices, indices3, 6, 3, device);
 	mish[2] = Mesh(); // obj mesh
-	//mish[3] = Mesh(); // obj mesh
+	mish[3] = Mesh(); // obj mesh
 
 	ge = GameEntity(&mish[0], ma, XMFLOAT3(1.0, 1.0, 1.0));
 	ge2 = GameEntity(&mish[1], ma, XMFLOAT3(0.0, 0.0, 0.0));
 	//ge3 = GameEntity(&mish[2], ma, XMFLOAT3(-1.0, -1.0, -1.0));
 	
-	LoadObjModel(device, deviceContext, L"sphere.obj", &meshVertBuff, &meshIndexBuff, meshSubsetIndexStart, meshSubsetTexture, material, meshSubsets, true, false);
-	LoadObjModel(device, deviceContext, L"PentaSphere.obj", &meshVertBuff, &meshIndexBuff, meshSubsetIndexStart, meshSubsetTexture, material, meshSubsets, true, false);
+	LoadObjModel(device, deviceContext, L"PentaSphere1.obj", &meshVertBuff, &meshIndexBuff, meshSubsetIndexStart, meshSubsetTexture, material, meshSubsets, true, false);
+	LoadObjModel(device, deviceContext, L"sphere.obj", &meshVertBuff1, &meshIndexBuff1, meshSubsetIndexStart, meshSubsetTexture, material, meshSubsets, true, false);
+	
 
 	// setup obj Mesh
 	mish[2].SetVertexBuffer(meshVertBuff);
 	mish[2].SetIndexBuffer(meshIndexBuff);
+	mish[3].SetVertexBuffer(meshVertBuff1);
+	mish[3].SetIndexBuffer(meshIndexBuff1);
 
 	// setup obj Material
 	D3D11_SAMPLER_DESC samplerDesc = maSphere->SamplerDescription();
@@ -992,8 +1000,11 @@ void DemoGame::CreateGeometryBuffers()
 	maSphere->SetSamplerState(samplerTemp);
 
 	// setup obj gameEntity
-	ge3 = GameEntity(&mish[2], maSphere, XMFLOAT3(0.0, 0.0, 10.0));
+	obj = GameEntity(&mish[2], maSphere, XMFLOAT3(-5.0, 0.0, 10.0));
+	obj1 = GameEntity(&mish[3], maSphere, XMFLOAT3(5.0, 0.0, 10.0));
 
+	entities.push_back(obj);
+	entities.push_back(obj1);
 
 	text = new Text();
 	text->Initialize(device, deviceContext, 800, 600, camera->r_ViewMatrix);
@@ -1176,7 +1187,8 @@ void DemoGame::UpdateScene(float dt)
 			//ge.Move();
 			//ge2.Move();
 			//ge3.Move();
-			ge3.Rotate(XMFLOAT3(.001,0,0));
+			entities[0].Rotate(XMFLOAT3(0,.001,0));
+			entities[1].Rotate(XMFLOAT3(.001,0,0));
 		}
 	}
 	Keyboard();
@@ -1213,16 +1225,20 @@ void DemoGame::DrawEntity(GameEntity& g)
 	deviceContext->PSSetShader(g.material->r_PixelShader, NULL, 0);
 }
 
-void DemoGame::DrawObj(GameEntity& g)
+void DemoGame::DrawObj()
 {
 	UINT stride = sizeof(Vertex);
 	UINT offset = 0;
-	for(int i = 0; i <= meshSubsets; ++i)
+
+	for(int i = 0; i < entities.size(); i++)  //meshSubsets; ++i)
 	{
+		/*
 		//Set the grounds index buffer
-		deviceContext->IASetIndexBuffer( meshIndexBuff, DXGI_FORMAT_R32_UINT, 0);
+		deviceContext->IASetIndexBuffer( g.GetMesh()->GetIndexBuffer(), DXGI_FORMAT_R32_UINT, 0);
 		//Set the grounds vertex buffer
-		deviceContext->IASetVertexBuffers( 0, 1, &meshVertBuff, &stride, &offset );
+		deviceContext->IASetVertexBuffers( 0, 1, &tempVert, &stride, &offset )*/
+
+		GameEntity g = entities[i];
 
 		// Set up the input assembler
 		deviceContext->IASetInputLayout(g.material->r_InputLayout);
@@ -1246,21 +1262,20 @@ void DemoGame::DrawObj(GameEntity& g)
 		// mat
 		ID3D11SamplerState* tempSampler = g.GetMaterial()->GetSamplerState();
 		//deviceContext->PSSetShaderResources( 0, 1, &meshSRV[material[meshSubsetTexture[i]].texArrayIndex] );
-		deviceContext->PSSetShaderResources( 0, 1, &meshSRV[1] );
+		deviceContext->PSSetShaderResources( 0, 1, &meshSRV[i] );
 		deviceContext->PSSetSamplers(0, 1, &tempSampler);
 
 		// mesh
-		ID3D11Buffer* temp = g.GetMesh()->GetVertexBuffer();
-
-		deviceContext->IASetVertexBuffers(0, 1, &temp, &stride, &offset);
+		ID3D11Buffer* tempVert = g.GetMesh()->GetVertexBuffer();
+		deviceContext->IASetVertexBuffers(0, 1, &tempVert, &stride, &offset);
 		deviceContext->IASetIndexBuffer(g.GetMesh()->GetIndexBuffer(), DXGI_FORMAT_R32_UINT, 0);
 
 		int indexStart = meshSubsetIndexStart[i];
-		//int indexDrawAmount =  meshSubsetIndexStart[i+1] - meshSubsetIndexStart[i];
-		int indexDrawAmount =  meshSubsetIndexStart[i];
+		int indexDrawAmount =  meshSubsetIndexStart[i+1] - meshSubsetIndexStart[i];
+		//int indexDrawAmount =  meshSubsetIndexStart[i];
 		//if(!material[meshSubsetTexture[i]].transparent)
 			deviceContext->DrawIndexed( indexDrawAmount, indexStart, 0 );
-			deviceContext->DrawIndexed( indexDrawAmount, 0, 0 );
+			//deviceContext->DrawIndexed( indexDrawAmount, 0, 0 );
 
 		ID3D11Buffer* tempConst = g.material->r_ConstantBuffer;
 
@@ -1354,7 +1369,7 @@ void DemoGame::DrawScene()
 	//DrawEntity(ge);
 	//DrawEntity(ge2);
 	//DrawEntity(ge3);
-	DrawObj(ge3);
+	DrawObj();
 
 	// Present the buffer
 	HR(swapChain->Present(0, 0));
