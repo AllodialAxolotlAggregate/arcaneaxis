@@ -7,5 +7,23 @@ class Tile
 public:
 	Tile(void);
 	~Tile(void);
+
+	// center
+
+	// radii 
+
+	//method to check area input and see if it collides
+
+	// method to check screen area and see if it collides
+
+	// get image
+
+	// render image
+
+	// change image
+
+	// clicked
+
+	
 };
 
