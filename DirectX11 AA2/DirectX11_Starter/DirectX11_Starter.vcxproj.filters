@@ -34,6 +34,18 @@
     <Filter Include="Header Files\My Files">
       <UniqueIdentifier>{df66d525-a19a-40db-8d14-656d2d2b0bec}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\My Files\Header Files">
+      <UniqueIdentifier>{c65b3673-b4d3-461c-9dad-72442a4f6fdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\My Files\Source Files">
+      <UniqueIdentifier>{a1fd0d35-9c75-4e62-844e-690684e1b1ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Rastertek\Header Files">
+      <UniqueIdentifier>{8e2f3427-fce3-477e-b8e7-647b3c7591b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Rastertek\Source Files">
+      <UniqueIdentifier>{ad8ae295-5852-4d91-82d1-746839ad5d57}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DXGame.cpp">
@@ -46,30 +58,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="dxerr.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Mesh.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GameEntity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Material.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Camera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Font.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FontShader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Text.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GameManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Tile.cpp">
@@ -87,6 +75,30 @@
     <ClCompile Include="Artifact.cpp">
       <Filter>Header Files\Gabbystructures\Source files</Filter>
     </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Header Files\My Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEntity.cpp">
+      <Filter>Header Files\My Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>Header Files\My Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Material.cpp">
+      <Filter>Header Files\My Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Header Files\My Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Font.cpp">
+      <Filter>Header Files\Rastertek\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FontShader.cpp">
+      <Filter>Header Files\Rastertek\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Header Files\Rastertek\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DemoGame.h">
@@ -100,33 +112,6 @@
     </ClInclude>
     <ClInclude Include="GameTimer.h">
       <Filter>Header Files\Chris%27s Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Material.h">
-      <Filter>Header Files\My Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Mesh.h">
-      <Filter>Header Files\My Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Vertex.h">
-      <Filter>Header Files\My Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>Header Files\My Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GameEntity.h">
-      <Filter>Header Files\My Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Font.h">
-      <Filter>Header Files\Rastertek</Filter>
-    </ClInclude>
-    <ClInclude Include="FontShader.h">
-      <Filter>Header Files\Rastertek</Filter>
-    </ClInclude>
-    <ClInclude Include="Text.h">
-      <Filter>Header Files\Rastertek</Filter>
-    </ClInclude>
-    <ClInclude Include="GameManager.h">
-      <Filter>Header Files\My Files</Filter>
     </ClInclude>
     <ClInclude Include="Rune.h">
       <Filter>Header Files\Gabbystructures\Header files</Filter>
@@ -145,6 +130,33 @@
     </ClInclude>
     <ClInclude Include="Artifact.h">
       <Filter>Header Files\Gabbystructures\Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files\My Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEntity.h">
+      <Filter>Header Files\My Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>Header Files\My Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>Header Files\My Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Header Files\My Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.h">
+      <Filter>Header Files\My Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Font.h">
+      <Filter>Header Files\Rastertek\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FontShader.h">
+      <Filter>Header Files\Rastertek\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Header Files\Rastertek\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
