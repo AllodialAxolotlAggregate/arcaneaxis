@@ -67,6 +67,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Artifact.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="DemoGame.cpp" />
     <ClCompile Include="dxerr.cpp" />
@@ -85,6 +86,7 @@
     <ClCompile Include="TileMap.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Artifact.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="DemoGame.h" />
     <ClInclude Include="dxerr.h" />

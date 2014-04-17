@@ -19,9 +19,6 @@
     <Filter Include="Header Files\Chris%27s Files">
       <UniqueIdentifier>{2e0bd86c-7786-4cf2-9335-a335e661f587}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\My Files">
-      <UniqueIdentifier>{df66d525-a19a-40db-8d14-656d2d2b0bec}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Rastertek">
       <UniqueIdentifier>{4cdd1c82-8439-4b14-8cfd-f2a42d2e9dd6}</UniqueIdentifier>
     </Filter>
@@ -33,6 +30,9 @@
     </Filter>
     <Filter Include="Header Files\Gabbystructures\Source files">
       <UniqueIdentifier>{b2da2d72-8ac5-4107-8c69-7154293cd25b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\My Files">
+      <UniqueIdentifier>{df66d525-a19a-40db-8d14-656d2d2b0bec}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -82,6 +82,9 @@
       <Filter>Header Files\Gabbystructures\Source files</Filter>
     </ClCompile>
     <ClCompile Include="TileMap.cpp">
+      <Filter>Header Files\Gabbystructures\Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="Artifact.cpp">
       <Filter>Header Files\Gabbystructures\Source files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -138,6 +141,9 @@
       <Filter>Header Files\Gabbystructures\Header files</Filter>
     </ClInclude>
     <ClInclude Include="Tile.h">
+      <Filter>Header Files\Gabbystructures\Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Artifact.h">
       <Filter>Header Files\Gabbystructures\Header files</Filter>
     </ClInclude>
   </ItemGroup>
