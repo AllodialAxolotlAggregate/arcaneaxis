@@ -13,6 +13,10 @@ Mesh::Mesh()
 
 Mesh::Mesh(Vertex *verts, UINT *inds, UINT numVerts, UINT numInds, ID3D11Device* device)
 {
+
+	/* gmb9280:  for Tile purposes */
+	this->m_verts = new Vertex*(verts); // save the vertices passed in as a private member
+
 	m_NumberOfIndices = numInds;
 	m_NumberOfVertices = numVerts;
 

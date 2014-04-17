@@ -15,16 +15,17 @@ public:
 
 		// create array of tiles with position and radius info
 		int num = 100; // for testing purposes
-		this->m_tileArray = new Tile[num];
+		this->m_tileArray = new Tile*[num];
 		// allocate space for new Tiles
 		for(int i = 0; i < num; i++)
 		{
-			this->m_tileArray[i] = new Tile(); // except with more info
+			Tile* temp = new Tile();
+			this->m_tileArray[i] = temp; // except with more info
 		}
 
 	}
 
-	// Blank constructor - don't use. I don't even know why I wrote it. 
+	// Blank constructor - don't use. I don't even know why I wrote it. ¯\_(^u^)_/¯
 	Artifact()
 	{
 		this->m_tileArray = nullptr;
@@ -76,6 +77,6 @@ private:
 	// pointer to inner game entity
 	GameEntity* m_gameEntity; 
 
-	Tile* m_tileArray;
+	Tile** m_tileArray; // array of pointers to tiles
 };
 

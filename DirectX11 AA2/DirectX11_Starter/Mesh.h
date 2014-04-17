@@ -19,7 +19,7 @@ public:
 	//		Unsigned Int Pointer/Address to array of stored Indices
 	//		An Unsigned Int for the number of Vertices
 	//		An Unsigned Int for the number of indices
-	//		DirectX11 Device Ponter/Address,
+	//		DirectX11 Device Pointer/Address,
 	Mesh(Vertex* vertices, UINT* indices, UINT numberOfVertices, UINT numberOfIndices, ID3D11Device* device);
 	
 	// The Destructor - currently does nothing
@@ -56,6 +56,9 @@ private:
 
 	ID3D11Buffer *m_VertexBuffer;
 	ID3D11Buffer *m_IndexBuffer;
+
+	/* gmb9280 : for purposes of Tiles */
+	Vertex** m_verts;
 };
 
 #endif
