@@ -7,6 +7,7 @@
 #include "Vertex.h"
 #include <fstream>
 #include "DirectXTK\Inc\WICTextureLoader.h"
+#include "DirectXTK\Inc\DDSTextureLoader.h"
 
 // Based off of RasterTek tutorial 12:Font Engine
 // http://www.rastertek.com/dx11tut12.html
@@ -19,7 +20,7 @@ public:
 	//void Initialize(char*);
 	void Initialize(ID3D11Device* device,ID3D11DeviceContext* deviceContext, char* fontFilename, WCHAR* textureFilename);
 	void Shutdown();
-	void BuildVertexArray(void*, char*, float, float);
+	void BuildVertexArray(void* vertices, char* sentence, float drawX, float drawY);
 
 #pragma region Get/Set
 
@@ -35,8 +36,6 @@ public:
 
 private:
 	void LoadFontData(char*);
-	void ReleaseFontData();
-	void ReleaseTexture();
 
 private:
 	FontType* m_Font;

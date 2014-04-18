@@ -1,4 +1,7 @@
 #include "Camera.h"
+#define DEFAULT_POSITION XMFLOAT3(0, 0, -5)
+#define DEFAULT_TARGET XMFLOAT3(0, 0, 0)
+#define DEFAULT_UP XMFLOAT3(0, 1, 0)
 
 using namespace DirectX;
 
@@ -11,63 +14,55 @@ Camera* Camera::GetInstance()
 	return m_Instance;
 }
 
-Camera::Camera()
+Camera::Camera() :
+	m_Position(DEFAULT_POSITION),
+	m_Target(DEFAULT_TARGET),
+	m_Up(DEFAULT_UP)
 {
-	m_Position = XMFLOAT3(0, 0, -5);
-	/*horizontalAngle = XM_PI;
-	verticalAngle = 0.0f;
-	initialFoV = 45.0f;*/
+}
+
+Camera::Camera(XMFLOAT3 aPosition) :
+	m_Position(aPosition),
+	m_Target(DEFAULT_TARGET),
+	m_Up(DEFAULT_UP)
+{
+}
+
+Camera::Camera(XMFLOAT3 aPosition, XMFLOAT3 aTarget, XMFLOAT3 anUp) :
+	m_Position(aPosition),
+	m_Target(aTarget),
+	m_Up(anUp)
+{
 }
 
 Camera::~Camera() {}
 
-Camera Camera::operator += (XMFLOAT3 pos)
-{
-	m_Position.x += pos.x;
-	m_Position.y += pos.y;
-	m_Position.z += pos.z;
-
-	return *this;
-}
+//Camera Camera::operator += (XMFLOAT3 pos)
+//{
+//	m_Position.x += pos.x;
+//	m_Position.y += pos.y;
+//	m_Position.z += pos.z;
+//
+//	return *this;
+//}
 
 void Camera::ComputeMatrices()
 {
 	XMVECTOR pos = XMVectorSet(m_Position.x, m_Position.y, m_Position.z, 0.0);
-	XMVECTOR target = XMVectorSet(0, 0, 0, 0);
-	XMVECTOR up = XMVectorSet(0, 1, 0, 0);
+	XMVECTOR target = XMVectorSet(m_Target.x, m_Target.y, m_Target.z, 0);
+	XMVECTOR up = XMVectorSet(m_Up.x, m_Up.y, m_Up.z, 0);
 	XMMATRIX V = XMMatrixLookAtLH(pos, target, up);
 
 	XMStoreFloat4x4(&m_ViewMatrix, XMMatrixTranspose(V));
-	
-	// set projection matrix
-	XMMATRIX P = XMMatrixPerspectiveFovLH(
-		0.4f * 3.1415926535f,
-		(float)800/600,
-		0.1f,
-		1000.0f);
-	XMStoreFloat4x4(&m_ProjectionMatrix, XMMatrixTranspose(P));
 }
 
 void Camera::OnResize(float ar)
 {
 	// Update our projection matrix since the window size changed
 	XMMATRIX P = XMMatrixPerspectiveFovLH(
-		//0.25f * 3.1415926535f,
-		0.4f * 3.1415926535f,
+		0.25f * 3.1415926535f,
 		ar,
 		0.1f,
-		1000.0f);
+		100.0f);
 	XMStoreFloat4x4(&m_ProjectionMatrix, XMMatrixTranspose(P));
 }
-
-void Camera::SetViewMatrix(DirectX::XMFLOAT4X4 otherViewMatrix) { m_ViewMatrix = otherViewMatrix; }
-DirectX::XMFLOAT4X4 Camera::GetViewMatrix() { return m_ViewMatrix; }
-
-void Camera::SetProjectionMatrix(DirectX::XMFLOAT4X4 otherProjectionMatrix) { m_ProjectionMatrix = otherProjectionMatrix; }
-DirectX::XMFLOAT4X4 Camera::GetProjectionMatrix() { return m_ProjectionMatrix; }
-
-void Camera::SetOrthogoanlMatrix(DirectX::XMFLOAT4X4 otherOrthogoanlMatrix) { m_OrthogonalMatrix = otherOrthogoanlMatrix; }
-DirectX::XMFLOAT4X4 Camera::GetOrthogonalMatrix() { return m_OrthogonalMatrix; }
-
-void Camera::SetPosition(DirectX::XMFLOAT3 otherPosition) { m_Position = otherPosition; }
-DirectX::XMFLOAT3& Camera::GetPosition() { return m_Position; }

@@ -5,6 +5,19 @@
 #include <utility>
 
 // Data structure that constains various information to be used as vertices
+struct OldVertex
+{
+	DirectX::XMFLOAT3 Position;
+	DirectX::XMFLOAT4 Color;
+	DirectX::XMFLOAT2 UV;
+};
+
+struct FontVertex
+{
+	DirectX::XMFLOAT3 Position;
+	DirectX::XMFLOAT2 UV;
+};
+
 struct Vertex
 {
 	DirectX::XMFLOAT3 Position;
@@ -23,17 +36,11 @@ struct VertexShaderConstantBuffer
 	DirectX::XMFLOAT4X4 projection;
 };
 
-// Text Stuff
+// RasterTek Text Stuff
 struct FontType
 {
 	float left, right;
 	int size;
-};
-
-struct VertexType
-{
-	DirectX::XMFLOAT3 position;
-	DirectX::XMFLOAT2 texture;
 };
 
 struct PixelBufferType

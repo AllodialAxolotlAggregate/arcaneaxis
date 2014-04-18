@@ -1,21 +1,26 @@
 #include "FontShader.h"
 using namespace DirectX;
 
-FontShader::FontShader()
+FontShader::FontShader() :
+	m_VertexShader(nullptr),
+	m_PixelShader(nullptr),
+	m_Layout(nullptr),
+	m_ConstantBuffer(nullptr),
+	m_SamplerState(nullptr),
+	m_PixelBuffer(nullptr)
 {
-	m_VertexShader = nullptr;
-	m_PixelShader = nullptr;
-	m_Layout = nullptr;
-	m_ConstantBuffer = nullptr;
-	m_SamplerState = nullptr;
-	m_PixelBuffer = nullptr;
 }
 
 void FontShader::Initialize(ID3D11Device* device, WCHAR* vsFilename, WCHAR* psFilename)
 {
 	ID3DBlob* vsBlob;
 	ID3DBlob* psBlob;
-	D3D11_INPUT_ELEMENT_DESC polygonLayout[2];
+	D3D11_INPUT_ELEMENT_DESC polygonLayout[] = 
+	{
+		{"POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT,	0, 0,	D3D11_INPUT_PER_VERTEX_DATA, 0},
+		{"TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT,		0, 12,	D3D11_INPUT_PER_VERTEX_DATA, 0}
+	};
+
 	D3D11_BUFFER_DESC constantBufferDesc;
     D3D11_SAMPLER_DESC samplerDesc;
 	D3D11_BUFFER_DESC pixelBufferDesc;
@@ -26,32 +31,6 @@ void FontShader::Initialize(ID3D11Device* device, WCHAR* vsFilename, WCHAR* psFi
 	psBlob = 0;
 
 #pragma region Descriptions
-
-	// Create the vertex input layout description.
-	// This setup needs to match the VertexType stucture in the ModelClass and in the shader.
-	polygonLayout[0].SemanticName = "POSITION";
-	polygonLayout[0].SemanticIndex = 0;
-	polygonLayout[0].Format = DXGI_FORMAT_R32G32B32_FLOAT;
-	polygonLayout[0].InputSlot = 0;
-	polygonLayout[0].AlignedByteOffset = 0;
-	polygonLayout[0].InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;
-	polygonLayout[0].InstanceDataStepRate = 0;
-
-	polygonLayout[1].SemanticName = "TEXCOORD";
-	polygonLayout[1].SemanticIndex = 0;
-	polygonLayout[1].Format = DXGI_FORMAT_R32G32_FLOAT;
-	polygonLayout[1].InputSlot = 0;
-	polygonLayout[1].AlignedByteOffset = D3D11_APPEND_ALIGNED_ELEMENT;
-	polygonLayout[1].InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;
-	polygonLayout[1].InstanceDataStepRate = 0;
-
-	// Setup the description of the dynamic constant buffer that is in the vertex shader.
-    constantBufferDesc.Usage = D3D11_USAGE_DYNAMIC;
-	constantBufferDesc.ByteWidth = sizeof(VertexShaderConstantBuffer);
-    constantBufferDesc.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
-    constantBufferDesc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
-    constantBufferDesc.MiscFlags = 0;
-	constantBufferDesc.StructureByteStride = 0;
 
 	// Create a texture sampler state description.
     samplerDesc.Filter = D3D11_FILTER_MIN_MAG_MIP_LINEAR;
@@ -79,13 +58,14 @@ void FontShader::Initialize(ID3D11Device* device, WCHAR* vsFilename, WCHAR* psFi
 #pragma endregion
 
 	D3DReadFileToBlob(vsFilename, &vsBlob);
+	D3DReadFileToBlob(psFilename, &psBlob);
+
 	device->CreateVertexShader(
 		vsBlob->GetBufferPointer(),
 		vsBlob->GetBufferSize(),
 		NULL,
 		&m_VertexShader);
 
-	D3DReadFileToBlob(psFilename, &psBlob);
 	device->CreatePixelShader(
 		psBlob->GetBufferPointer(),
 		psBlob->GetBufferSize(),
@@ -99,11 +79,6 @@ void FontShader::Initialize(ID3D11Device* device, WCHAR* vsFilename, WCHAR* psFi
 		vsBlob->GetBufferSize(),
 		&m_Layout);
 
-	device->CreateBuffer(
-		&constantBufferDesc,
-		NULL,
-		&m_ConstantBuffer);
-
 	// Create the texture sampler state.
 	device->CreateSamplerState(&samplerDesc, &m_SamplerState);
 
@@ -112,27 +87,15 @@ void FontShader::Initialize(ID3D11Device* device, WCHAR* vsFilename, WCHAR* psFi
 
 	// Release the vertex shader buffer and pixel shader buffer since they are no longer needed.
 	vsBlob->Release();
-	vsBlob = 0;
+	vsBlob = nullptr;
 
 	psBlob->Release();
-	psBlob = 0;
+	psBlob = nullptr;
 }
 
 FontShader::~FontShader() {}
 
-void FontShader::Shutdown() { ShutdownShader(); }
-
-void FontShader::Render(ID3D11DeviceContext* deviceContext, int indexCount, XMFLOAT4X4 worldMatrix, XMFLOAT4X4 viewMatrix, 
-							 XMFLOAT4X4 projectionMatrix, ID3D11ShaderResourceView* texture, XMFLOAT4 pixelColor)
-{
-	// Set the shader parameters that it will use for rendering
-	SetShaderParameters(deviceContext, worldMatrix, viewMatrix, projectionMatrix, texture, pixelColor);
-
-	// Now render the prepared buffers with the shader
-	RenderShader(deviceContext, indexCount);
-}
-
-void FontShader::ShutdownShader()
+void FontShader::Shutdown()
 {
 	// Release the pixel constant buffer.
 	if(m_PixelBuffer)
@@ -177,6 +140,17 @@ void FontShader::ShutdownShader()
 	}
 }
 
+void FontShader::Render(ID3D11DeviceContext* deviceContext, int indexCount, XMFLOAT4X4 worldMatrix, XMFLOAT4X4 viewMatrix, 
+							 XMFLOAT4X4 projectionMatrix, ID3D11ShaderResourceView* texture, XMFLOAT4 pixelColor)
+{
+	// Set the shader parameters that it will use for rendering
+	SetShaderParameters(deviceContext, worldMatrix, viewMatrix, projectionMatrix, texture, pixelColor);
+
+	// Now render the prepared buffers with the shader
+	RenderShader(deviceContext, indexCount);
+}
+
+// Old SetShader Parameters
 void FontShader::SetShaderParameters(ID3D11DeviceContext* deviceContext, XMFLOAT4X4 worldMatrix, XMFLOAT4X4 viewMatrix, 
 										  XMFLOAT4X4 projectionMatrix, ID3D11ShaderResourceView* texture, XMFLOAT4 pixelColor)
 {
@@ -186,29 +160,31 @@ void FontShader::SetShaderParameters(ID3D11DeviceContext* deviceContext, XMFLOAT
 	PixelBufferType* dataPtr2;
 
 	// Lock the constant buffer so it can be written to.
-	deviceContext->Map(m_ConstantBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedResource);
+	//deviceContext->Map(m_ConstantBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedResource);
 
-	// Get a pointer to the data in the constant buffer.
-	dataPtr = (VertexShaderConstantBuffer*)mappedResource.pData;
+	//// Get a pointer to the data in the constant buffer.
+	//dataPtr = (VertexShaderConstantBuffer*)mappedResource.pData;
 
-	// Transpose the matrices to prepare them for the shader.
-	/*XMMATRIX w, v, p;
-	w = XMLoadFloat4x4(&worldMatrix);
-	XMStoreFloat4x4(&worldMatrix, XMMatrixTranspose(w));
+	//// Copy the matrices into the constant buffer.
+	//dataPtr->world = worldMatrix;
+	//dataPtr->view = viewMatrix;
+	//dataPtr->projection = projectionMatrix;
 
-	v = XMLoadFloat4x4(&viewMatrix);
-	XMStoreFloat4x4(&viewMatrix, XMMatrixTranspose(v));
+	//// Unlock the constant buffer.
+ //   deviceContext->Unmap(m_ConstantBuffer, 0);
 
-	p = XMLoadFloat4x4(&projectionMatrix);
-	XMStoreFloat4x4(&projectionMatrix, XMMatrixTranspose(p));*/
+	VertexShaderConstantBuffer vsConstantBufferData;
+	vsConstantBufferData.world		= worldMatrix;
+	vsConstantBufferData.view		= viewMatrix;
+	vsConstantBufferData.projection	= projectionMatrix;
 
-	// Copy the matrices into the constant buffer.
-	dataPtr->world = worldMatrix;
-	dataPtr->view = viewMatrix;
-	dataPtr->projection = projectionMatrix;
-
-	// Unlock the constant buffer.
-    deviceContext->Unmap(m_ConstantBuffer, 0);
+	deviceContext->UpdateSubresource(
+		m_ConstantBuffer,
+		0,			
+		NULL,
+		&vsConstantBufferData,
+		0,
+		0);
 
 	// Set the position of the constant buffer in the vertex shader.
 	bufferNumber = 0;
@@ -219,6 +195,7 @@ void FontShader::SetShaderParameters(ID3D11DeviceContext* deviceContext, XMFLOAT
 	// Set shader texture resource in the pixel shader.
 	deviceContext->PSSetShaderResources(0, 1, &texture);
 
+	// Mapping only works when localized, not from a global perspecive
 	// Lock the pixel constant buffer so it can be written to.
 	deviceContext->Map(m_PixelBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedResource);
 
@@ -236,13 +213,14 @@ void FontShader::SetShaderParameters(ID3D11DeviceContext* deviceContext, XMFLOAT
 
 	// Now set the pixel constant buffer in the pixel shader with the updated value.
     deviceContext->PSSetConstantBuffers(bufferNumber, 1, &m_PixelBuffer);
+	//deviceContext->PSSetConstantBuffers(bufferNumber, 1, &m_ConstantBuffer);
 }
-
 
 void FontShader::RenderShader(ID3D11DeviceContext* deviceContext, int indexCount)
 {
 	// Set the vertex input layout.
 	deviceContext->IASetInputLayout(m_Layout);
+	deviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
     // Set the vertex and pixel shaders that will be used to render the triangles.
     deviceContext->VSSetShader(m_VertexShader, NULL, 0);

@@ -18,6 +18,6 @@ float4 main(VertexToPixel input) : SV_TARGET
 	// - Note that this color (like all values that pass through the rasterizer)
 	//   is interpolated for each pixel between the corresponding 
 	//   vertices of the triangle
-	//return float4(input.texCoord,0,1);
+	
 	return myTexture.Sample(mySample, input.texCoord); //Use your variable names
 }

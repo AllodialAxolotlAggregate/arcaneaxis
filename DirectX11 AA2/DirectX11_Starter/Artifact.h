@@ -62,7 +62,7 @@ public:
 
 	void Draw(ID3D11DeviceContext* _deviceContext)
 	{
-		this->m_gameEntity->Draw(_deviceContext);  // draws base artifact
+		//this->m_gameEntity->Draw(_deviceContext);  // draws base artifact
 
 		// draw tile boundaries
 

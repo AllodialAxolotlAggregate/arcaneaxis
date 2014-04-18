@@ -29,36 +29,40 @@ public:
 	// A simple move method that moves the object back and forth
 	void Move();
 
-	// Rotation method that continually rotates at the specified angle
+	// Moves the entity to the provided coordinates
+	void MoveTo(DirectX::XMFLOAT3);
+
+	// Rotates the entity by the specified amount
 	void Rotate(DirectX::XMFLOAT3);
 
 	// Calls the Material's and Mesh's draws methods to render object on the screen
-	void Draw(ID3D11DeviceContext*);
+	void Draw();
+	//void DrawEntity(Camera*);
 
 #pragma region Gets/Sets
 
-	void SetMesh(Mesh* m_nMesh);
-	Mesh* GetMesh();
+	void SetMesh(Mesh* m_nMesh) { m_Mesh = m_nMesh; }
+	Mesh* GetMesh() { return m_Mesh; }
 	__declspec(property(get = GetMesh, put = SetMesh)) Mesh* mesh;
 
-	void SetMaterial(Material*);
-	Material* GetMaterial();
+	void SetMaterial(Material* m_nMaterial) { m_Material = m_nMaterial; }
+	Material* GetMaterial() { return m_Material; }
 	__declspec(property(get = GetMaterial, put = SetMaterial)) Material* material;
 
-	void SetWorldMatrix(DirectX::XMFLOAT4X4 m_nWM);
-	DirectX::XMFLOAT4X4& GetWorldMatrix();
+	void SetWorldMatrix(DirectX::XMFLOAT4X4 m_nWM) { m_WorldMatrix = m_nWM; }
+	DirectX::XMFLOAT4X4& GetWorldMatrix() { return m_WorldMatrix; }
 	__declspec(property(get = GetWorldMatrix, put = SetWorldMatrix)) DirectX::XMFLOAT4X4 WorldMatrix;
 
-	void SetPosition(DirectX::XMFLOAT3);
-	DirectX::XMFLOAT3& GetPosition();
+	void SetPosition(DirectX::XMFLOAT3 m_nPosition) { m_Position = m_nPosition; }
+	DirectX::XMFLOAT3& GetPosition() { return m_Position; }
 	__declspec(property(get = GetPosition, put = SetPosition)) DirectX::XMFLOAT3 Position;
 
-	void SetRotation(DirectX::XMFLOAT3);
-	DirectX::XMFLOAT3& GetRotation();
+	void SetRotation(DirectX::XMFLOAT3 m_nRotation) { m_Rotation = m_nRotation; }
+	DirectX::XMFLOAT3& GetRotation() { return m_Rotation; }
 	__declspec(property(get = GetRotation, put = SetRotation)) DirectX::XMFLOAT3 Rotation;
 
-	void SetScale(DirectX::XMFLOAT3);
-	DirectX::XMFLOAT3& GetScale();
+	void SetScale(DirectX::XMFLOAT3 m_nScale) { m_Scale = m_nScale; }
+	DirectX::XMFLOAT3& GetScale() { return m_Scale; }
 	__declspec(property(get = GetScale, put = SetScale)) DirectX::XMFLOAT3 Scale;
 
 #pragma endregion

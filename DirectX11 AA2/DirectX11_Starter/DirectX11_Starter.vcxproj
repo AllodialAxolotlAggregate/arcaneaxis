@@ -75,11 +75,11 @@
     <ClCompile Include="Font.cpp" />
     <ClCompile Include="FontShader.cpp" />
     <ClCompile Include="GameEntity.cpp" />
-    <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameTimer.cpp" />
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Rune.cpp" />
+    <ClCompile Include="Sentence.cpp" />
     <ClCompile Include="Spellbook.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="Tile.cpp" />
@@ -94,11 +94,11 @@
     <ClInclude Include="Font.h" />
     <ClInclude Include="FontShader.h" />
     <ClInclude Include="GameEntity.h" />
-    <ClInclude Include="GameManager.h" />
     <ClInclude Include="GameTimer.h" />
     <ClInclude Include="Material.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Rune.h" />
+    <ClInclude Include="Sentence.h" />
     <ClInclude Include="Spellbook.h" />
     <ClInclude Include="SuperVector.h" />
     <ClInclude Include="Text.h" />

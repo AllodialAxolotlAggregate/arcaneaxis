@@ -6,7 +6,6 @@
 #include "dxerr.h"
 #include <d3dcompiler.h>
 #include "DirectXTK\Inc\WICTextureLoader.h"
-#include <fstream>
 #include "Vertex.h"
 
 class FontShader
@@ -16,14 +15,11 @@ public:
 	~FontShader();
 
 	void Shutdown();
-	void Initialize(ID3D11Device*, WCHAR*, WCHAR*);
+	void Initialize(ID3D11Device* device, WCHAR* vsFilename, WCHAR* psFilename);
 	void Render(ID3D11DeviceContext* deviceContext, int indexCount, DirectX::XMFLOAT4X4 worldMatrix, DirectX::XMFLOAT4X4 viewMatrix, 
 							 DirectX::XMFLOAT4X4 projectionMatrix, ID3D11ShaderResourceView* texture, DirectX::XMFLOAT4 pixelColor);
 
-	void LoadAConstantBuffer(ID3D11Buffer* aCSBuffer)
-	{
-		m_ConstantBuffer = aCSBuffer;
-	}
+	void LoadAConstantBuffer(ID3D11Buffer* aCSBuffer) { m_ConstantBuffer = aCSBuffer; }
 
 
 #pragma region Gets/Sets
@@ -55,7 +51,6 @@ public:
 #pragma endregion
 
 private:
-	void ShutdownShader();
 	void SetShaderParameters(ID3D11DeviceContext* deviceContext, DirectX::XMFLOAT4X4 worldMatrix, DirectX::XMFLOAT4X4 viewMatrix, 
 										  DirectX::XMFLOAT4X4 projectionMatrix, ID3D11ShaderResourceView* texture, DirectX::XMFLOAT4 pixelColor);
 	void RenderShader(ID3D11DeviceContext* deviceContext, int indexCount);

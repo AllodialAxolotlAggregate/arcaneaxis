@@ -19,32 +19,14 @@
     <Filter Include="Header Files\Chris%27s Files">
       <UniqueIdentifier>{2e0bd86c-7786-4cf2-9335-a335e661f587}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Rastertek">
-      <UniqueIdentifier>{4cdd1c82-8439-4b14-8cfd-f2a42d2e9dd6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Gabbystructures">
-      <UniqueIdentifier>{a89aa997-6a16-4e4b-91e8-e37e9b64a894}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Gabbystructures\Header files">
-      <UniqueIdentifier>{2e85191a-5548-4ed9-969f-4e4cdf72a462}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Gabbystructures\Source files">
-      <UniqueIdentifier>{b2da2d72-8ac5-4107-8c69-7154293cd25b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\My Files">
       <UniqueIdentifier>{df66d525-a19a-40db-8d14-656d2d2b0bec}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\My Files\Header Files">
-      <UniqueIdentifier>{c65b3673-b4d3-461c-9dad-72442a4f6fdb}</UniqueIdentifier>
+    <Filter Include="Header Files\Rastertek">
+      <UniqueIdentifier>{4cdd1c82-8439-4b14-8cfd-f2a42d2e9dd6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\My Files\Source Files">
-      <UniqueIdentifier>{a1fd0d35-9c75-4e62-844e-690684e1b1ca}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Rastertek\Header Files">
-      <UniqueIdentifier>{8e2f3427-fce3-477e-b8e7-647b3c7591b5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Rastertek\Source Files">
-      <UniqueIdentifier>{ad8ae295-5852-4d91-82d1-746839ad5d57}</UniqueIdentifier>
+    <Filter Include="Gabbystructures">
+      <UniqueIdentifier>{5bbb7f35-ae90-411e-9ba2-3978c7eaba52}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -60,44 +42,44 @@
     <ClCompile Include="dxerr.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tile.cpp">
-      <Filter>Header Files\Gabbystructures\Source files</Filter>
-    </ClCompile>
-    <ClCompile Include="Spellbook.cpp">
-      <Filter>Header Files\Gabbystructures\Source files</Filter>
-    </ClCompile>
-    <ClCompile Include="Rune.cpp">
-      <Filter>Header Files\Gabbystructures\Source files</Filter>
-    </ClCompile>
-    <ClCompile Include="TileMap.cpp">
-      <Filter>Header Files\Gabbystructures\Source files</Filter>
-    </ClCompile>
-    <ClCompile Include="Artifact.cpp">
-      <Filter>Header Files\Gabbystructures\Source files</Filter>
-    </ClCompile>
-    <ClCompile Include="Camera.cpp">
-      <Filter>Header Files\My Files\Source Files</Filter>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameEntity.cpp">
-      <Filter>Header Files\My Files\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GameManager.cpp">
-      <Filter>Header Files\My Files\Source Files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Material.cpp">
-      <Filter>Header Files\My Files\Source Files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Mesh.cpp">
-      <Filter>Header Files\My Files\Source Files</Filter>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Font.cpp">
-      <Filter>Header Files\Rastertek\Source Files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FontShader.cpp">
-      <Filter>Header Files\Rastertek\Source Files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Text.cpp">
-      <Filter>Header Files\Rastertek\Source Files</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sentence.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Artifact.cpp">
+      <Filter>Gabbystructures</Filter>
+    </ClCompile>
+    <ClCompile Include="Rune.cpp">
+      <Filter>Gabbystructures</Filter>
+    </ClCompile>
+    <ClCompile Include="Spellbook.cpp">
+      <Filter>Gabbystructures</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Gabbystructures</Filter>
+    </ClCompile>
+    <ClCompile Include="TileMap.cpp">
+      <Filter>Gabbystructures</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -113,50 +95,50 @@
     <ClInclude Include="GameTimer.h">
       <Filter>Header Files\Chris%27s Files</Filter>
     </ClInclude>
-    <ClInclude Include="Rune.h">
-      <Filter>Header Files\Gabbystructures\Header files</Filter>
-    </ClInclude>
-    <ClInclude Include="Spellbook.h">
-      <Filter>Header Files\Gabbystructures\Header files</Filter>
-    </ClInclude>
-    <ClInclude Include="SuperVector.h">
-      <Filter>Header Files\Gabbystructures\Header files</Filter>
-    </ClInclude>
-    <ClInclude Include="TileMap.h">
-      <Filter>Header Files\Gabbystructures\Header files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tile.h">
-      <Filter>Header Files\Gabbystructures\Header files</Filter>
-    </ClInclude>
-    <ClInclude Include="Artifact.h">
-      <Filter>Header Files\Gabbystructures\Header files</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>Header Files\My Files\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GameEntity.h">
-      <Filter>Header Files\My Files\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GameManager.h">
-      <Filter>Header Files\My Files\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Material.h">
-      <Filter>Header Files\My Files\Header Files</Filter>
+      <Filter>Header Files\My Files</Filter>
     </ClInclude>
     <ClInclude Include="Mesh.h">
-      <Filter>Header Files\My Files\Header Files</Filter>
+      <Filter>Header Files\My Files</Filter>
     </ClInclude>
     <ClInclude Include="Vertex.h">
-      <Filter>Header Files\My Files\Header Files</Filter>
+      <Filter>Header Files\My Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files\My Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEntity.h">
+      <Filter>Header Files\My Files</Filter>
     </ClInclude>
     <ClInclude Include="Font.h">
-      <Filter>Header Files\Rastertek\Header Files</Filter>
+      <Filter>Header Files\Rastertek</Filter>
     </ClInclude>
     <ClInclude Include="FontShader.h">
-      <Filter>Header Files\Rastertek\Header Files</Filter>
+      <Filter>Header Files\Rastertek</Filter>
     </ClInclude>
     <ClInclude Include="Text.h">
-      <Filter>Header Files\Rastertek\Header Files</Filter>
+      <Filter>Header Files\Rastertek</Filter>
+    </ClInclude>
+    <ClInclude Include="Sentence.h">
+      <Filter>Header Files\My Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Artifact.h">
+      <Filter>Gabbystructures</Filter>
+    </ClInclude>
+    <ClInclude Include="Rune.h">
+      <Filter>Gabbystructures</Filter>
+    </ClInclude>
+    <ClInclude Include="Spellbook.h">
+      <Filter>Gabbystructures</Filter>
+    </ClInclude>
+    <ClInclude Include="SuperVector.h">
+      <Filter>Gabbystructures</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>Gabbystructures</Filter>
+    </ClInclude>
+    <ClInclude Include="TileMap.h">
+      <Filter>Gabbystructures</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

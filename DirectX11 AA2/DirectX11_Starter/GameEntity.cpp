@@ -11,16 +11,15 @@ GameEntity::GameEntity()
 	velocity = 0.01;
 }
 
-GameEntity::GameEntity(Mesh* m_nMesh, Material* m_nMaterial, XMFLOAT3 m_nPosition)
+GameEntity::GameEntity(Mesh* m_nMesh, Material* m_nMaterial, XMFLOAT3 m_nPosition) :
+	m_Mesh(m_nMesh),
+	m_Material(m_nMaterial),
+	m_Position(m_nPosition),
+	m_Rotation(XMFLOAT3(0.0, 0.0, 0.0)),
+	m_Scale(XMFLOAT3(1.0, 1.0, 1.0)),
+	velocity(0.01)
 {
-	m_Mesh = m_nMesh;
-	m_Material = m_nMaterial;
-
-	m_Position = XMFLOAT3(m_nPosition.x, m_nPosition.y, m_nPosition.z);
-	m_Rotation = XMFLOAT3(0.0, 0.0, 0.0);
-	m_Scale = XMFLOAT3(1.0, 1.0, 1.0);
 	WorldTransition();
-	velocity = 0.01;
 }
 
 GameEntity::~GameEntity() {}
@@ -50,6 +49,15 @@ void GameEntity::Move()
 	WorldTransition();
 }
 
+void GameEntity::MoveTo(XMFLOAT3 tran)
+{
+	m_Position.x = tran.x;
+	m_Position.y = tran.y;
+	m_Position.z = tran.z;
+
+	WorldTransition();
+}
+
 void GameEntity::Rotate(XMFLOAT3 rot)
 {
 	m_Rotation.x += rot.x;
@@ -59,29 +67,11 @@ void GameEntity::Rotate(XMFLOAT3 rot)
 	WorldTransition();
 }
 
-void GameEntity::Draw(ID3D11DeviceContext* deviceContext)
+void GameEntity::Draw()
 {
-	material->Draw(deviceContext);
-	mesh->Draw(deviceContext);
+	material->Draw(m_WorldMatrix);
+	mesh->Draw();
 }
-
-void GameEntity::SetMesh(Mesh* m_nMesh) { m_Mesh = m_nMesh; }
-Mesh* GameEntity::GetMesh() { return m_Mesh; }
-
-void GameEntity::SetMaterial(Material* m_nMaterial) { m_Material = m_nMaterial; }
-Material* GameEntity::GetMaterial() { return m_Material; }
-
-void GameEntity::SetWorldMatrix(XMFLOAT4X4 m_nWM) { m_WorldMatrix = m_nWM; }
-XMFLOAT4X4& GameEntity::GetWorldMatrix() { return m_WorldMatrix; }
-
-void GameEntity::SetPosition(XMFLOAT3 m_nPosition) { m_Position = m_nPosition; }
-XMFLOAT3& GameEntity::GetPosition() { return m_Position; }
-
-void GameEntity::SetRotation(XMFLOAT3 m_nRotation) { m_Rotation = m_nRotation; }
-XMFLOAT3& GameEntity::GetRotation() { return m_Rotation; }
-
-void GameEntity::SetScale(XMFLOAT3 m_nScale) { m_Scale = m_nScale; }
-XMFLOAT3& GameEntity::GetScale() { return m_Scale; }
 
 void GameEntity::Reset()
 {

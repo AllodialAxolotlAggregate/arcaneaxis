@@ -100,11 +100,13 @@ protected:
 	D3D11_VIEWPORT viewport;
 	D3D_DRIVER_TYPE driverType;
 
+	//ID3D11DepthStencilState* depthStencilState;
+
 	// RasterTek Stuff
-	ID3D11DepthStencilState* m_depthDisabledStencilState;
+	/*ID3D11DepthStencilState* m_depthDisabledStencilState;
 	ID3D11BlendState* m_alphaEnableBlendingState;
 	ID3D11DepthStencilState* m_depthStencilState;
-	ID3D11BlendState* m_alphaDisableBlendingState;
+	ID3D11BlendState* m_alphaDisableBlendingState;*/
 
 	// Derived class can set these in derived constructor to customize starting values.
 	std::wstring windowCaption;
@@ -113,5 +115,9 @@ protected:
 	bool enable4xMsaa;
 
 	Camera* camera;
+
+	ID3D11BlendState* Transparency;
+	ID3D11RasterizerState* CCWcullMode;
+	ID3D11RasterizerState* CWcullMode;
 };
 

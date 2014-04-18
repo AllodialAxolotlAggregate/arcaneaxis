@@ -1,11 +1,12 @@
 #pragma once
 
 #include <DirectXMath.h>
+#include <vector>
+#include <sstream>
 #include "DXGame.h"
-#include "Mesh.h"
 #include "GameEntity.h"
 #include "Text.h"
-#include "GameManager.h"
+#include "Sentence.h"
 
 // Include run-time memory checking in debug builds
 #if defined(DEBUG) || defined(_DEBUG)
@@ -24,15 +25,6 @@ struct SurfaceMaterial
 	bool hasTexture;
 	bool transparent;
 };
-
-/*ID3D11Buffer cbPerObject
-{
-	XMFLOAT4 WVP;
-    XMFLOAT4 World;
-
-	XMFLOAT4 difColor;
-	bool hasTexture;
-};*/
 
 // Demo class which extends the base DXGame class
 class DemoGame : public DXGame
@@ -53,69 +45,48 @@ public:
 	void OnMouseMove(WPARAM btnState, int x, int y);
 
 	void Keyboard();
-	void Draw2D(GameEntity&);
+	void Draw2D();
 
 private:
 	// Initialization for our "game" demo
-	//bool LoadObjModel(ID3D11Device*, std::wstring, GameEntity*);
 	void CreateGeometryBuffers();
 	void LoadShadersAndInputLayout();
-	void DrawEntity(GameEntity&);
-	void DrawObj();
 	void Release();
 
 	//Define LoadObjModel function after we create surfaceMaterial structure
-	void LoadObjModel(ID3D11Device* device,		// device
-		ID3D11DeviceContext* deviceContext,		// deviceContext
-		std::wstring filename,		//.obj filename
-		ID3D11Buffer** vertBuff,			//mesh vertex buffer
-		ID3D11Buffer** indexBuff,			//mesh index buffer
-		std::vector<int>& subsetIndexStart,		//start index of each subset
-		std::vector<int>& subsetMaterialArray,		//index value of material for each subset
-		std::vector<SurfaceMaterial>& material,		//vector of material structures
-		int& subsetCount,				//Number of subsets in mesh
-		bool isRHCoordSys,				//true if model was created in right hand coord system
-		bool computeNormals);				//true to compute the normals, false to use the files normals
+	void LoadObjModel(std::wstring filename,		//.obj filename
+		Material& material,							//vector of material structures
+		Mesh& mesh,									//mesh
+		bool isRHCoordSys);							//true if model was created in right hand coord system
 
 private:
-	// Our basic shaders for this example
-	/*ID3D11PixelShader* pixelShader;
-	ID3D11VertexShader* vertexShader;*/
-
 	// A few more odds and ends we'll need
 	ID3D11Buffer* vsConstantBuffer;
 	VertexShaderConstantBuffer vsConstantBufferData;
-
-	ID3D11Buffer* textConstantBuffer;
-	VertexShaderConstantBuffer* textConstantBufferData;
-
-	ID3D11Buffer* sphereConstantBuffer;
-	VertexShaderConstantBuffer sphereConstantBufferData;
 
 	// Keeps track of the old mouse position.  Useful for 
 	// determining how far the mouse moved in a single frame.
 	POINT prevMousePos;
 
 	// My Extra Stuff
-	GameEntity ge;
-	GameEntity ge2;
-	GameEntity ge3;
+	GameEntity* ges;
+	Material* ma;
+	Mesh* mish;
+	float time;
+
+	Font* font;
+	FontShader* fShader;
+	Sentence* sentence;
+
+	// Bob's Obj Globals
+	//ID3D11BlendState* Transparency;
 	GameEntity obj;
 	GameEntity obj1;
 	std::vector<GameEntity> entities;
-	Material* ma;
+
 	Material* maSphere;
-	Material* maPenta;
-	//Camera* camera;
-	float time;
-
-	Mesh* mish;
-	Text* text;
-
-	GameManager manager;
-
-	// Obj Globals
-	ID3D11BlendState* Transparency;
+	Mesh* meSphere;
+	GameEntity* okamaGameSphere;
 
 	ID3D11Buffer* meshVertBuff;
 	ID3D11Buffer* meshIndexBuff;
@@ -133,7 +104,4 @@ private:
 	// Obj1 Globals
 	ID3D11Buffer* meshVertBuff1;
 	ID3D11Buffer* meshIndexBuff1;
-	
-
-	// http://www.braynzarsoft.net/index.php?p=D3D11WVP
 };

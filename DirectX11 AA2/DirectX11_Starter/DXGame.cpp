@@ -53,12 +53,7 @@ DXGame::DXGame(HINSTANCE hInstance)
 	swapChain(0),
 	depthStencilBuffer(0),
 	renderTargetView(0),
-	depthStencilView(0),
-	// RasterTek Stuff
-	m_depthDisabledStencilState(0),
-	m_alphaEnableBlendingState(0),
-	m_depthStencilState(0),
-	m_alphaDisableBlendingState(0)
+	depthStencilView(0)
 {
 	// Zero out the viewport struct
 	ZeroMemory(&viewport, sizeof(D3D11_VIEWPORT));
@@ -83,6 +78,9 @@ DXGame::~DXGame(void)
 	// Release the context and finally the device
 	ReleaseMacro(deviceContext);
 	ReleaseMacro(device);
+	Transparency->Release();
+	/*CCWcullMode->Release();
+	CWcullMode->Release();*/
 }
 #pragma endregion
 
