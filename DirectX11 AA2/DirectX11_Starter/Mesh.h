@@ -62,11 +62,27 @@ public:
 
 #pragma endregion
 
+	// accessor for verts
+	Vertex** GetVertsStraightUp()
+	{
+		return this->m_verts;
+	}
+
+	//accessor for num verts
+	int GetNumVerts()
+	{
+		return this->m_NumberOfVertices;
+	}
+
 private:
 	int m_NumberOfVertices, m_NumberOfIndices;
 	ID3D11Buffer *m_VertexBuffer, *m_IndexBuffer;
 	ID3D11Device *m_Device;
 	ID3D11DeviceContext *m_DeviceContext;
+
+	// sorry but i have to make this too for Tiles... (Gabby)
+	Vertex** m_verts; //pointer to Vertex pointers
+	
 };
 
 #endif

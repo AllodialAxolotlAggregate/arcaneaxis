@@ -11,6 +11,7 @@ Mesh::Mesh() :
 	m_Device(nullptr),
 	m_DeviceContext(nullptr)
 {
+	this->m_verts = nullptr;
 }
 
 Mesh::Mesh(ID3D11Device* device, ID3D11DeviceContext* deviceContext) :
@@ -21,6 +22,7 @@ Mesh::Mesh(ID3D11Device* device, ID3D11DeviceContext* deviceContext) :
 	m_Device(device),
 	m_DeviceContext(deviceContext)
 {
+	this->m_verts = nullptr;
 }
 
 Mesh::~Mesh()
@@ -46,6 +48,9 @@ void Mesh::Draw()
 
 void Mesh::LoadBuffers(Vertex* vertices, UINT* indices)
 {
+	// for Tile purposes
+	this->m_verts = new Vertex*(vertices); // pointer to Vertex pointers
+
 	D3D11_BUFFER_DESC m_vbd;
     m_vbd.Usage					= D3D11_USAGE_IMMUTABLE;
 	m_vbd.ByteWidth				= sizeof(Vertex) * m_NumberOfVertices; // Number of vertices

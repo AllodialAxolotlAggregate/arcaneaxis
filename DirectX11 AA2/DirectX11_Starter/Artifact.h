@@ -10,25 +10,28 @@ public:
 	Artifact(GameEntity* _ge)
 	{
 		this->m_tileArray = nullptr; 
-
+		this->m_gameEntity = _ge;
 		// figure out how many tiles we need and where they are
 
-		// create array of tiles with position and radius info
-		int num = 100; // for testing purposes
-		this->m_tileArray = new Tile*[num];
-		// allocate space for new Tiles
-		for(int i = 0; i < num; i++)
-		{
-			Tile* temp = new Tile();
-			this->m_tileArray[i] = temp; // except with more info
-		}
-
+		this->GenTiles( this->m_gameEntity->GetVerticesStraightUp() ); // generate tiles based on 
+		// the verts of the mesh contained
 	}
 
 	// Blank constructor - don't use. I don't even know why I wrote it. ¯\_(^u^)_/¯
 	Artifact()
 	{
 		this->m_tileArray = nullptr;
+	}
+
+	// Generates tiles
+	void GenTiles(Vertex** _verts)
+	{
+		//Figure out how many verts we need
+		int numVerts = this->m_gameEntity->GetNumVertsStraightUp();
+
+		// every three verts makes a tile (triangles)
+
+
 	}
 
 	// Destructor
@@ -67,9 +70,9 @@ public:
 		// draw tile boundaries
 
 		// draw tile images
-
-
 	}
+
+
 
 #pragma endregion
 
@@ -78,5 +81,7 @@ private:
 	GameEntity* m_gameEntity; 
 
 	Tile** m_tileArray; // array of pointers to tiles
+
+	
 };
 

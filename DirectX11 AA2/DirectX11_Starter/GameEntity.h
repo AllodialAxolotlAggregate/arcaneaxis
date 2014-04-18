@@ -39,6 +39,17 @@ public:
 	void Draw();
 	//void DrawEntity(Camera*);
 
+		// gmb9280
+	Vertex** GetVerticesStraightUp()
+	{
+		return this->m_Mesh->GetVertsStraightUp();
+	}
+
+	int GetNumVertsStraightUp()
+	{
+		return this->m_Mesh->GetNumVerts();
+	}
+
 #pragma region Gets/Sets
 
 	void SetMesh(Mesh* m_nMesh) { m_Mesh = m_nMesh; }
@@ -77,6 +88,8 @@ private:
 	DirectX::XMFLOAT3 m_Scale;
 
 	float velocity;
+
+
 
 private:
 	// Resets the values to zero
