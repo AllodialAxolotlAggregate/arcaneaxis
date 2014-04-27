@@ -5,6 +5,7 @@
 #include <sstream>
 #include "DXGame.h"
 #include "GameEntity.h"
+#include "Artifact.h"
 #include "Text.h"
 #include "Sentence.h"
 
@@ -87,6 +88,10 @@ private:
 	Material* maSphere;
 	Mesh* meSphere;
 	GameEntity* okamaGameSphere;
+
+	//gmb9280: added Artifact
+	Artifact* gameArtifact;
+
 
 	ID3D11Buffer* meshVertBuff;
 	ID3D11Buffer* meshIndexBuff;

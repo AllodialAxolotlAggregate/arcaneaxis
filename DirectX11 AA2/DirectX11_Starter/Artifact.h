@@ -61,6 +61,20 @@ public:
 	}
 
 #pragma region HelperMethods
+	// get the game entity
+	GameEntity* getGameEntity()
+	{
+		if(this->m_gameEntity != nullptr)
+		{
+			return this->m_gameEntity;
+		}
+		else
+		{
+			return nullptr;
+		}
+	}
+
+
 	// Get position : returns a pointer to a XMFLOAT3
 	DirectX::XMFLOAT3& GetPosition()
 	{

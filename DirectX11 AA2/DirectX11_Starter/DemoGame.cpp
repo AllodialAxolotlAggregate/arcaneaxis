@@ -168,7 +168,14 @@ void DemoGame::CreateGeometryBuffers()
 	meSphere = new Mesh(device, deviceContext);
 
 	LoadObjModel(L"PentaSphere1.obj", *maSphere, *meSphere, true);
+
+	// Create our Artifact
 	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(-6.0, 0.0, 20.0));
+
+	// ARTIFACT
+	gameArtifact = new Artifact(okamaGameSphere);
+
+
 	/*sentence = new Sentence(device, deviceContext);
 	sentence->LoadFontAndShader(font, fShader);
 	sentence->Initialize("Gabby, Bob, Andre, and Ryan", 10, 1);*/
@@ -322,6 +329,10 @@ void DemoGame::Release()
 
 	if(okamaGameSphere != nullptr)
 		delete okamaGameSphere;
+
+	//gmb9280 : added delete for artifact
+	if(gameArtifact != nullptr)
+		delete gameArtifact;
 }
 
 #pragma endregion
@@ -430,9 +441,14 @@ void DemoGame::UpdateScene(float dt)
 		//ge.Move();
 		//ge2.Move();
 		//ge3.Move();
-
+		/*
 		okamaGameSphere->Rotate(XMFLOAT3(0.001,0,0));
 		okamaGameSphere->MoveTo(XMFLOAT3(prevMousePos.x/5,-prevMousePos.y/5,okamaGameSphere->GetPosition().z));
+		*/
+		gameArtifact->getGameEntity()->Rotate(XMFLOAT3(0.001,0,0));
+		gameArtifact->getGameEntity()->MoveTo(XMFLOAT3(prevMousePos.x/5,-prevMousePos.y/5,okamaGameSphere->GetPosition().z));
+
+	
 	}
 
 	Keyboard();
@@ -485,7 +501,9 @@ void DemoGame::DrawScene()
 	for(int i = 0; i < MAX_GAMEENTITY; ++i)
 		ges[i].Draw();
 
-	okamaGameSphere->Draw();
+	//okamaGameSphere->Draw();
+
+	gameArtifact->getGameEntity()->Draw();
 
 	// Present the buffer
 	HR(swapChain->Present(0, 0));
