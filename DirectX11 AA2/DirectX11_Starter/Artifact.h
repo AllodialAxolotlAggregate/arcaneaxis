@@ -13,8 +13,10 @@ public:
 		this->m_gameEntity = _ge;
 		// figure out how many tiles we need and where they are
 
-		this->GenTiles( this->m_gameEntity->GetVerticesStraightUp() ); // generate tiles based on 
+		// generate tiles based on 
 		// the verts of the mesh contained
+		this->GenTiles( this->m_gameEntity->GetVerticesStraightUp() ); 
+		
 	}
 
 	// Blank constructor - don't use. I don't even know why I wrote it. ¯\_(^u^)_/¯
@@ -30,7 +32,15 @@ public:
 		int numVerts = this->m_gameEntity->GetNumVertsStraightUp();
 
 		// every three verts makes a tile (triangles)
-
+		this->m_tileArray = new Tile*();
+		
+		for(int i = 0; i< (numVerts / 3); i++)
+		{
+			
+			this->m_tileArray[i] = new Tile(_verts[ 3*i], 
+												_verts[(3*i) + 1],
+												_verts[(3*i) + 2]);
+		}
 
 	}
 

@@ -1,5 +1,6 @@
 #pragma once
 #include <d3d11.h>
+#include "Vertex.h"
 /* This class describes the geometrical area that a rune will be displayed in and its relationships
  * to the world and the artifact that it is contained inside. */
 
@@ -9,11 +10,19 @@
 class Tile
 {
 public:
-	Tile(void);
+	Tile(Vertex* _v1, Vertex* _v2, Vertex* _v3)
+	{
+		this->m_tileVerts = new Vertex*();
+		this->m_tileVerts[0] = _v1;
+		this->m_tileVerts[1] = _v2;
+		this->m_tileVerts[2] = _v3;
+	}
+
 	~Tile(void);
 
 	
 private: 
+	Vertex** m_tileVerts;
 	// center
 
 	// radii 
