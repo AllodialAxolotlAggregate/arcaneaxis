@@ -33,14 +33,16 @@ public:
 
 		// every three verts makes a tile (triangles)
 		this->m_tileArray = new Tile*();
-		
+		/*
 		for(int i = 0; i< (numVerts / 3); i++)
 		{
-			
+			if(_verts[3*i] != nullptr && _verts[(3*i) + 1] != nullptr && _verts[(3*i) + 2] != nullptr)
+			{
 			this->m_tileArray[i] = new Tile(_verts[ 3*i], 
 												_verts[(3*i) + 1],
 												_verts[(3*i) + 2]);
-		}
+			}
+		}*/
 
 	}
 
