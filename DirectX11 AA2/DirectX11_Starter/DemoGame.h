@@ -92,6 +92,11 @@ private:
 	//gmb9280: added Artifact
 	Artifact* gameArtifact;
 
+	// obj verts and inds
+	Vertex* objVertices; // array of vertices
+	UINT* objListOfIndices; // list of indices
+	int objMeshTraingles; // number of triangles
+
 
 	ID3D11Buffer* meshVertBuff;
 	ID3D11Buffer* meshIndexBuff;

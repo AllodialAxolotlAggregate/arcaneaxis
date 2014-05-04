@@ -1,6 +1,7 @@
 #pragma once
 #include "GameEntity.h"
 #include "Tile.h"
+#include <iostream>
 
 class Artifact
 {
@@ -14,9 +15,8 @@ public:
 		// figure out how many tiles we need and where they are
 
 		// generate tiles based on 
-		// the verts of the mesh contained
-		this->GenTiles( this->m_gameEntity->GetVerticesStraightUp() ); 
-		
+		// the verts of the mesh contained		
+		// (Do this after these values are initialized....)
 	}
 
 	// Blank constructor - don't use. I don't even know why I wrote it. ¯\_(^u^)_/¯
@@ -26,23 +26,24 @@ public:
 	}
 
 	// Generates tiles
-	void GenTiles(Vertex** _verts)
+	void GenTiles(Vertex* objVerts, UINT* listInds, int numTris)
 	{
 		//Figure out how many verts we need
-		int numVerts = this->m_gameEntity->GetNumVertsStraightUp();
+		//int numVerts = this->m_gameEntity->GetNumVertsStraightUp();
 
 		// every three verts makes a tile (triangles)
-		this->m_tileArray = new Tile*();
-		/*
-		for(int i = 0; i< (numVerts / 3); i++)
+		this->m_tileArray = new Tile*(); // new array of tile pointers
+
+		for(int i = 0; i< numTris-1; i++)
 		{
-			if(_verts[3*i] != nullptr && _verts[(3*i) + 1] != nullptr && _verts[(3*i) + 2] != nullptr)
-			{
-			this->m_tileArray[i] = new Tile(_verts[ 3*i], 
-												_verts[(3*i) + 1],
-												_verts[(3*i) + 2]);
-			}
-		}*/
+			//std::cout<< "Triangle: " << i << std::endl;
+
+			Vertex* v1 = &objVerts[listInds[(i*3)]];
+			Vertex* v2 = &objVerts[listInds[(i*3)+1]];
+			Vertex* v3 = &objVerts[listInds[(i*3)+2]];
+			this->m_tileArray[i] = new Tile( v1, v2, v3);
+		}
+		// done with generating tiles
 
 	}
 
@@ -57,12 +58,13 @@ public:
 		}
 		else 
 		{
-			m_tileArray = nullptr; 
 			delete[] m_tileArray;
 		}
 	}
 
 #pragma region HelperMethods
+
+
 	// get the game entity
 	GameEntity* getGameEntity()
 	{
@@ -88,16 +90,6 @@ public:
 	{
 		this->m_gameEntity->Rotate(_f3);
 	}
-
-	void Draw(ID3D11DeviceContext* _deviceContext)
-	{
-		//this->m_gameEntity->Draw(_deviceContext);  // draws base artifact
-
-		// draw tile boundaries
-
-		// draw tile images
-	}
-
 
 
 #pragma endregion

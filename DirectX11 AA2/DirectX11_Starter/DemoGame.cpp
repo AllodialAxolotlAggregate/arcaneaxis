@@ -174,7 +174,7 @@ void DemoGame::CreateGeometryBuffers()
 
 	// ARTIFACT
 	gameArtifact = new Artifact(okamaGameSphere);
-
+	gameArtifact->GenTiles(objVertices, objListOfIndices, objMeshTraingles);
 
 	/*sentence = new Sentence(device, deviceContext);
 	sentence->LoadFontAndShader(font, fShader);
@@ -333,6 +333,12 @@ void DemoGame::Release()
 	//gmb9280 : added delete for artifact
 	if(gameArtifact != nullptr)
 		delete gameArtifact;
+
+	if(objVertices != nullptr)
+		delete[] objVertices;
+
+	if(objListOfIndices != nullptr)
+		delete[] objListOfIndices;
 }
 
 #pragma endregion
@@ -1225,8 +1231,8 @@ void DemoGame::LoadObjModel(std::wstring filename,
 	}
 #pragma endregion
 
-	Vertex* vertices;
-	vertices = new Vertex[totalVerts];
+	//Vertex* vertices;
+	objVertices = new Vertex[totalVerts];
 	Vertex tempVert;
 
 	//Create our vertices using the information we got 
@@ -1237,21 +1243,26 @@ void DemoGame::LoadObjModel(std::wstring filename,
 		tempVert.Normal = vertNorm[vertNormIndex[j]];
 		tempVert.UV = vertTexCoord[vertTCIndex[j]];
 
-		vertices[j] = tempVert;
+		objVertices[j] = tempVert;
 	}	
 
-	UINT* listOfIndices;
-	listOfIndices = new UINT[indices.size()];
+	//UINT* listOfIndices;
+	objListOfIndices = new UINT[indices.size()];
 	for(int i = 0; i < indices.size(); ++i)
-		listOfIndices[i] = indices.at(i);
+		objListOfIndices[i] = indices.at(i);
 
 	mesh.LoadNumbers(totalVerts, indices.size());
-	mesh.LoadBuffers(vertices, listOfIndices);
+	mesh.LoadBuffers(objVertices, objListOfIndices);
 
+	// store number of triangles
+	objMeshTraingles = meshTriangles;
+
+	/*
 	delete[] vertices;
 	vertices = nullptr;
 	delete[] listOfIndices;
 	listOfIndices = nullptr;
+	*/
 }
 
 #pragma endregion

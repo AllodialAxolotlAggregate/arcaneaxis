@@ -1,16 +1,16 @@
-﻿Build started 5/2/2014 4:29:31 PM.
-     1>Project "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" on node 2 (Build target(s)).
+﻿Build started 5/4/2014 2:51:53 PM.
+     1>Project "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\DirectXTK\Inc" /ZI /nologo /W4 /WX- /Od /Oy- /D _WIN32_WINNT=0x0600 /D _WIN7_PLATFORM_UPDATE /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /arch:SSE2 /fp:fast /Zc:wchar_t /Zc:forScope /Yc"pch.h" /Fp"Bin\Desktop_2012\Win32\Debug\DirectXTK.pch" /Fo"Bin\Desktop_2012\Win32\Debug\\" /Fd"Bin\Desktop_2012\Win32\Debug\DirectXTK.pdb" /Gd /TP /analyze- /errorReport:prompt Src\pch.cpp
          pch.cpp
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\DirectXTK\Inc" /ZI /nologo /W4 /WX- /Od /Oy- /D _WIN32_WINNT=0x0600 /D _WIN7_PLATFORM_UPDATE /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /arch:SSE2 /fp:fast /Zc:wchar_t /Zc:forScope /Yu"pch.h" /Fp"Bin\Desktop_2012\Win32\Debug\DirectXTK.pch" /Fo"Bin\Desktop_2012\Win32\Debug\\" /Fd"Bin\Desktop_2012\Win32\Debug\DirectXTK.pdb" /Gd /TP /analyze- /errorReport:prompt Src\AlphaTestEffect.cpp Src\BasicEffect.cpp Src\BinaryReader.cpp Src\CommonStates.cpp Src\DDSTextureLoader.cpp Src\DGSLEffect.cpp Src\DGSLEffectFactory.cpp Src\DualTextureEffect.cpp Src\EffectCommon.cpp Src\EffectFactory.cpp Src\EnvironmentMapEffect.cpp Src\GeometricPrimitive.cpp Src\Model.cpp Src\ModelLoadCMO.cpp Src\ModelLoadSDKMESH.cpp Src\PrimitiveBatch.cpp Src\ScreenGrab.cpp Src\SkinnedEffect.cpp Src\SpriteBatch.cpp Src\SpriteFont.cpp Src\VertexTypes.cpp Src\WICTextureLoader.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\DirectXTK\Inc" /ZI /nologo /W4 /WX- /Od /Oy- /D _WIN32_WINNT=0x0600 /D _WIN7_PLATFORM_UPDATE /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /arch:SSE2 /fp:fast /Zc:wchar_t /Zc:forScope /Yu"pch.h" /Fp"Bin\Desktop_2012\Win32\Debug\DirectXTK.pch" /Fo"Bin\Desktop_2012\Win32\Debug\\" /Fd"Bin\Desktop_2012\Win32\Debug\DirectXTK.pdb" /Gd /TP /analyze- /errorReport:prompt Src\AlphaTestEffect.cpp Src\BasicEffect.cpp Src\CommonStates.cpp Src\DDSTextureLoader.cpp Src\DGSLEffect.cpp Src\DGSLEffectFactory.cpp Src\DualTextureEffect.cpp Src\BinaryReader.cpp Src\EffectCommon.cpp Src\EffectFactory.cpp Src\EnvironmentMapEffect.cpp Src\GeometricPrimitive.cpp Src\Model.cpp Src\ModelLoadCMO.cpp Src\ModelLoadSDKMESH.cpp Src\ScreenGrab.cpp Src\SkinnedEffect.cpp Src\SpriteBatch.cpp Src\PrimitiveBatch.cpp Src\SpriteFont.cpp Src\VertexTypes.cpp Src\WICTextureLoader.cpp
          WICTextureLoader.cpp
          VertexTypes.cpp
          SpriteFont.cpp
+         PrimitiveBatch.cpp
          SpriteBatch.cpp
          SkinnedEffect.cpp
          ScreenGrab.cpp
-         PrimitiveBatch.cpp
          ModelLoadSDKMESH.cpp
          ModelLoadCMO.cpp
          Model.cpp
@@ -18,12 +18,12 @@
          EnvironmentMapEffect.cpp
          EffectFactory.cpp
          EffectCommon.cpp
+         BinaryReader.cpp
          DualTextureEffect.cpp
          DGSLEffectFactory.cpp
          DGSLEffect.cpp
          DDSTextureLoader.cpp
          CommonStates.cpp
-         BinaryReader.cpp
          Generating Code...
          Compiling...
          BasicEffect.cpp
@@ -54,8 +54,8 @@
          Bin\Desktop_2012\Win32\Debug\VertexTypes.obj
          Bin\Desktop_2012\Win32\Debug\WICTextureLoader.obj
          DirectXTK_Desktop_2012.vcxproj -> D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\DirectXTK\Bin\Desktop_2012\Win32\Debug\DirectXTK.lib
-     1>Done Building Project "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" (Build target(s)).
+     1>Done Building Project "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:11.45
+Time Elapsed 00:00:11.77
