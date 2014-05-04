@@ -128,11 +128,13 @@ void DemoGame::CreateGeometryBuffers()
 						2, 1, 0};
 
 	ma = new Material[MAX_MATERIAL];
+	
 	ma[0] = Material(device, deviceContext);
 	ma[0].LoadSamplerStateAndShaderResourceView(L"Ignite.jpg");
 	ma[1] = Material(device, deviceContext);
 	ma[1].LoadSamplerStateAndShaderResourceView(L"wallpaper.jpg");
-
+	ma[2] = Material(device, deviceContext);
+	ma[2].LoadSamplerStateAndShaderResourceView(L"rune.png");
 	mish = new Mesh[MAX_MESH];
 	mish[0] = Mesh(device, deviceContext);
 	mish[0].LoadNumbers(ARRAYSIZE(vertices), ARRAYSIZE(indices));
@@ -169,7 +171,7 @@ void DemoGame::CreateGeometryBuffers()
 
 	LoadObjModel(L"PentaSphere1.obj", *maSphere, *meSphere, true);
 
-	// Create our Artifact
+	// Create our Artifact's game entity
 	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(-6.0, 0.0, 20.0));
 
 	// ARTIFACT
