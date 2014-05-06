@@ -1,92 +1,32 @@
-﻿Build started 5/4/2014 2:52:04 PM.
-     1>Project "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" on node 2 (Rebuild target(s)).
-     1>FxCompile:
-         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\fxc.exe /nologo /E"main" /T ps_4_0_level_9_3 /Fo "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontPixelShader.cso" /Od /Zi FontPixelShader.hlsl 
-         compilation object save succeeded; see D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontPixelShader.cso
-         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\fxc.exe /nologo /E"main" /T vs_4_0_level_9_3 /Fo "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontVertexShader.cso" /Od /Zi FontVertexShader.hlsl 
-         compilation object save succeeded; see D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontVertexShader.cso
-         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\fxc.exe /nologo /E"main" /T ps_4_0_level_9_3 /Fo "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\PixelShader.cso" /Od /Zi Shaders\PixelShader.hlsl 
-         compilation object save succeeded; see D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\PixelShader.cso
-         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\fxc.exe /nologo /E"main" /T ps_4_0_level_9_3 /Fo "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TexturePixelShader.cso" /Od /Zi Shaders\TexturePixelShader.hlsl 
-         compilation object save succeeded; see D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TexturePixelShader.cso
-         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\fxc.exe /nologo /E"main" /T vs_4_0_level_9_3 /Fo "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TextureVertexShader.cso" /Od /Zi Shaders\TextureVertexShader.hlsl 
-         compilation object save succeeded; see D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TextureVertexShader.cso
-         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\fxc.exe /nologo /E"main" /T vs_4_0_level_9_3 /Fo "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\VertexShader.cso" /Od /Zi Shaders\VertexShader.hlsl 
-         compilation object save succeeded; see D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\VertexShader.cso
-       ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"D:\Users\gmb9280\aaa_aa\DirectX11 AA2\\DirectXTK\inc" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Artifact.cpp Camera.cpp DemoGame.cpp dxerr.cpp DXGame.cpp Font.cpp FontShader.cpp GameEntity.cpp GameTimer.cpp Material.cpp Mesh.cpp Rune.cpp Sentence.cpp Spellbook.cpp Text.cpp Tile.cpp TileMap.cpp
-         TileMap.cpp
-         Tile.cpp
-         Text.cpp
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\text.cpp(178): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\text.cpp(179): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\text.cpp(229): warning C4101: 'result' : unreferenced local variable
-         Spellbook.cpp
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\supervector.h(202): warning C4018: '<' : signed/unsigned mismatch
-                 d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\supervector.h(198) : while compiling class template member function 'void SuperVector<T>::CopyContent(SuperVector<T> &,const SuperVector<T> &,const unsigned int)'
-                 with
-                 [
-                     T=SuperVector<Rune *> *
-                 ]
-                 d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\supervector.h(59) : see reference to function template instantiation 'void SuperVector<T>::CopyContent(SuperVector<T> &,const SuperVector<T> &,const unsigned int)' being compiled
-                 with
-                 [
-                     T=SuperVector<Rune *> *
-                 ]
-                 d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\spellbook.h(22) : see reference to class template instantiation 'SuperVector<T>' being compiled
-                 with
-                 [
-                     T=SuperVector<Rune *> *
-                 ]
-         Sentence.cpp
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\sentence.cpp(61): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\sentence.cpp(125): warning C4101: 'numLetters' : unreferenced local variable
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\sentence.cpp(126): warning C4101: 'drawY' : unreferenced local variable
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\sentence.cpp(126): warning C4101: 'drawX' : unreferenced local variable
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\sentence.cpp(170): warning C4101: 'result' : unreferenced local variable
-         Rune.cpp
-         Mesh.cpp
-         Material.cpp
-         GameTimer.cpp
-         GameEntity.cpp
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\gameentity.cpp(11): warning C4305: '=' : truncation from 'double' to 'float'
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\gameentity.cpp(21): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\gameentity.cpp(43): warning C4305: '=' : truncation from 'double' to 'float'
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\gameentity.cpp(45): warning C4305: '=' : truncation from 'double' to 'float'
-         FontShader.cpp
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\fontshader.cpp(24): warning C4101: 'constantBufferDesc' : unreferenced local variable
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\fontshader.cpp(158): warning C4101: 'dataPtr' : unreferenced local variable
-         Font.cpp
-         DXGame.cpp
-         dxerr.cpp
+﻿Build started 5/6/2014 10:17:21 AM.
+     1>Project "\\banner.main.ad.rit.edu\students\ahb9907\IGMProfile\Documents\Game Graphics Programming\Repos\May6\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"\\banner.main.ad.rit.edu\students\ahb9907\IGMProfile\Documents\Game Graphics Programming\Repos\May6\DirectX11 AA2\\DirectXTK\inc" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt DemoGame.cpp
          DemoGame.cpp
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(95): warning C4305: '=' : truncation from 'double' to 'float'
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(374): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(375): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(380): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(381): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(387): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(388): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(393): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(394): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(399): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(400): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(406): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(407): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(412): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(417): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(446): warning C4305: '=' : truncation from 'double' to 'float'
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(454): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(455): warning C4244: 'argument' : conversion from 'LONG' to 'float', possible loss of data
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(691): warning C4018: '<' : signed/unsigned mismatch
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(815): warning C4018: '<' : signed/unsigned mismatch
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(1132): warning C4018: '<' : signed/unsigned mismatch
-     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(1251): warning C4018: '<' : signed/unsigned mismatch
-         Camera.cpp
-         Artifact.cpp
-         Generating Code...
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\repos\may6\directx11 aa2\directx11_starter\demogame.cpp(95): warning C4305: '=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\repos\may6\directx11 aa2\directx11_starter\demogame.cpp(376): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\repos\may6\directx11 aa2\directx11_starter\demogame.cpp(377): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\repos\may6\directx11 aa2\directx11_starter\demogame.cpp(382): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\repos\may6\directx11 aa2\directx11_starter\demogame.cpp(383): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\repos\may6\directx11 aa2\directx11_starter\demogame.cpp(389): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\repos\may6\directx11 aa2\directx11_starter\demogame.cpp(390): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\repos\may6\directx11 aa2\directx11_starter\demogame.cpp(395): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\repos\may6\directx11 aa2\directx11_starter\demogame.cpp(396): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\repos\may6\directx11 aa2\directx11_starter\demogame.cpp(401): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\repos\may6\directx11 aa2\directx11_starter\demogame.cpp(402): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\repos\may6\directx11 aa2\directx11_starter\demogame.cpp(408): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\repos\may6\directx11 aa2\directx11_starter\demogame.cpp(409): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\repos\may6\directx11 aa2\directx11_starter\demogame.cpp(414): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\repos\may6\directx11 aa2\directx11_starter\demogame.cpp(419): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\repos\may6\directx11 aa2\directx11_starter\demogame.cpp(448): warning C4305: '=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\repos\may6\directx11 aa2\directx11_starter\demogame.cpp(456): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\repos\may6\directx11 aa2\directx11_starter\demogame.cpp(457): warning C4244: 'argument' : conversion from 'LONG' to 'float', possible loss of data
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\repos\may6\directx11 aa2\directx11_starter\demogame.cpp(693): warning C4018: '<' : signed/unsigned mismatch
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\repos\may6\directx11 aa2\directx11_starter\demogame.cpp(817): warning C4018: '<' : signed/unsigned mismatch
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\repos\may6\directx11 aa2\directx11_starter\demogame.cpp(1134): warning C4018: '<' : signed/unsigned mismatch
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\repos\may6\directx11 aa2\directx11_starter\demogame.cpp(1253): warning C4018: '<' : signed/unsigned mismatch
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\DirectX11_Starter.exe" /INCREMENTAL /NOLOGO d3d11.lib d3dcompiler.lib dinput8.lib dxguid.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\DirectX11_Starter.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\DirectX11_Starter.lib" /MACHINE:X86 Debug\Artifact.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"\\banner.main.ad.rit.edu\students\ahb9907\IGMProfile\Documents\Game Graphics Programming\Repos\May6\DirectX11 AA2\Debug\DirectX11_Starter.exe" /INCREMENTAL /NOLOGO d3d11.lib d3dcompiler.lib dinput8.lib dxguid.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"\\banner.main.ad.rit.edu\students\ahb9907\IGMProfile\Documents\Game Graphics Programming\Repos\May6\DirectX11 AA2\Debug\DirectX11_Starter.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"\\banner.main.ad.rit.edu\students\ahb9907\IGMProfile\Documents\Game Graphics Programming\Repos\May6\DirectX11 AA2\Debug\DirectX11_Starter.lib" /MACHINE:X86 Debug\Artifact.obj
          Debug\Camera.obj
          Debug\DemoGame.obj
          Debug\dxerr.obj
@@ -103,10 +43,10 @@
          Debug\Text.obj
          Debug\Tile.obj
          Debug\TileMap.obj
-         "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\DirectXTK\Bin\Desktop_2012\Win32\Debug\DirectXTK.lib"
-         DirectX11_Starter.vcxproj -> D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\DirectX11_Starter.exe
-     1>Done Building Project "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" (Rebuild target(s)).
+         "\\banner.main.ad.rit.edu\students\ahb9907\IGMProfile\Documents\Game Graphics Programming\Repos\May6\DirectX11 AA2\DirectX11_Starter\DirectXTK\Bin\Desktop_2012\Win32\Debug\DirectXTK.lib"
+         DirectX11_Starter.vcxproj -> \\banner.main.ad.rit.edu\students\ahb9907\IGMProfile\Documents\Game Graphics Programming\Repos\May6\DirectX11 AA2\Debug\DirectX11_Starter.exe
+     1>Done Building Project "\\banner.main.ad.rit.edu\students\ahb9907\IGMProfile\Documents\Game Graphics Programming\Repos\May6\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:19.68
+Time Elapsed 00:00:09.77

@@ -31,7 +31,7 @@
 #define WORD_SPEED .1
 
 // Maximum number of various things for arrays
-#define MAX_MATERIAL 2
+#define MAX_MATERIAL 3
 #define MAX_MESH 3
 #define MAX_GAMEENTITY 3
 #define MAX_LINES 2
