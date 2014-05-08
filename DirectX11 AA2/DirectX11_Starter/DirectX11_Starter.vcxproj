@@ -72,6 +72,7 @@
     <ClCompile Include="DemoGame.cpp" />
     <ClCompile Include="dxerr.cpp" />
     <ClCompile Include="DXGame.cpp" />
+    <ClCompile Include="Face.cpp" />
     <ClCompile Include="Font.cpp" />
     <ClCompile Include="FontShader.cpp" />
     <ClCompile Include="GameEntity.cpp" />
@@ -91,6 +92,7 @@
     <ClInclude Include="DemoGame.h" />
     <ClInclude Include="dxerr.h" />
     <ClInclude Include="DXGame.h" />
+    <ClInclude Include="Face.h" />
     <ClInclude Include="Font.h" />
     <ClInclude Include="FontShader.h" />
     <ClInclude Include="GameEntity.h" />

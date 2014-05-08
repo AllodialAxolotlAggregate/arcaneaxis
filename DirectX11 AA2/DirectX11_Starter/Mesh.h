@@ -4,9 +4,7 @@
 #include <d3d11.h>
 #include <DirectXMath.h>
 #include <fstream>
-#include "Vertex.h"
-
-typedef unsigned int UINT;
+#include "Face.h"
 
 class Mesh
 {
@@ -68,6 +66,10 @@ public:
 	UINT* GetIndices() { return m_Indices; }
 	__declspec(property(get = GetIndices, put = SetIndices)) UINT* r_Indices;
 
+	void SetFaces(Face* otherFaces) { m_Faces = otherFaces; }
+	Face* GetFaces() { return m_Faces; }
+	__declspec(property(get = GetFaces, put = SetFaces)) Face* r_Faces;
+
 #pragma endregion
 
 private:
@@ -77,7 +79,7 @@ private:
 	ID3D11DeviceContext *m_DeviceContext;
 	Vertex* m_Vertices;
 	UINT* m_Indices;
-	
+	Face* m_Faces;
 };
 
 #endif

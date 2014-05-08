@@ -1,6 +1,7 @@
 #ifndef VERTEX_H
 #define VERTEX_H
 
+#include <d3d11.h>
 #include <DirectXMath.h>
 #include <utility>
 

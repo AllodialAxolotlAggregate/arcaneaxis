@@ -11,7 +11,8 @@ Mesh::Mesh() :
 	m_Device(nullptr),
 	m_DeviceContext(nullptr),
 	m_Vertices(nullptr),
-	m_Indices(nullptr)
+	m_Indices(nullptr),
+	m_Faces(nullptr)
 {
 }
 
@@ -23,7 +24,8 @@ Mesh::Mesh(ID3D11Device* device, ID3D11DeviceContext* deviceContext) :
 	m_Device(device),
 	m_DeviceContext(deviceContext),
 	m_Vertices(nullptr),
-	m_Indices(nullptr)
+	m_Indices(nullptr),
+	m_Faces(nullptr)
 {
 }
 
@@ -44,11 +46,17 @@ Mesh::~Mesh()
 		m_Indices = nullptr;
 	}
 
-	/*if(m_Device != nullptr)
+	if(m_Faces != nullptr)
+	{
+		delete[] m_Faces;
+		m_Faces = nullptr;
+	}
+
+	if(m_Device != nullptr)
 		m_Device= nullptr;
 
 	if(m_DeviceContext != nullptr)
-		m_DeviceContext = nullptr;*/
+		m_DeviceContext = nullptr;
 }
 
 void Mesh::LoadNumbers(UINT numberOfVertices, UINT numberOfIndices)
@@ -57,6 +65,7 @@ void Mesh::LoadNumbers(UINT numberOfVertices, UINT numberOfIndices)
 	m_NumberOfIndices = numberOfIndices;
 	m_Vertices = new Vertex[numberOfVertices];
 	m_Indices = new UINT[numberOfIndices];
+	m_Faces = new Face[numberOfIndices/3];
 }
 
 void Mesh::Draw()
@@ -78,6 +87,19 @@ void Mesh::LoadBuffers(Vertex* vertices, UINT* indices)
 
 	for(int j = 0; j < m_NumberOfIndices; ++j)
 		m_Indices[j] = indices[j];
+
+	int num, vertNumber, triangle = 0;
+	for(triangle = 0; triangle < m_NumberOfIndices/3; ++triangle)
+	{
+		num = 3 * triangle;
+		for(vertNumber = 0; vertNumber < 3; ++vertNumber)
+		{
+			//num += vertNumber;
+			m_Faces[triangle].r_Indices[vertNumber] = indices[num];
+			m_Faces[triangle].r_Vertices[vertNumber] = vertices[m_Faces[triangle].r_Indices[vertNumber]];
+			++num;
+		}
+	}
 
 	D3D11_BUFFER_DESC m_vbd;
     m_vbd.Usage					= D3D11_USAGE_IMMUTABLE;

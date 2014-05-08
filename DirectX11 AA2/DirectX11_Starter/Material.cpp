@@ -139,8 +139,8 @@ void Material::Release()
 	ReleaseMacro(m_VertexShader);
 	ReleaseMacro(m_PixelShader);
 	ReleaseMacro(m_InputLayout);
-	ReleaseMacro(m_Device);
-	ReleaseMacro(m_DeviceContext);
+	/*ReleaseMacro(m_Device);
+	ReleaseMacro(m_DeviceContext);*/
 
 	if(m_ConstantBuffer != nullptr)
 		m_ConstantBuffer = nullptr;

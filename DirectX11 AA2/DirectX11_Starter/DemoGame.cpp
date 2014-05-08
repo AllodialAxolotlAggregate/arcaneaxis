@@ -175,44 +175,7 @@ void DemoGame::CreateGeometryBuffers()
 	// Create our Artifact's game entity
 	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(-6.0, 0.0, 0.0));
 
-	// ARTIFACT
-<<<<<<< HEAD
-	//gameArtifact = new Artifact(okamaGameSphere);
-	//gameArtifact->GenTiles(objVertices, objListOfIndices, objMeshTraingles);
-
-	/*sentence = new Sentence(device, deviceContext);
-	sentence->LoadFontAndShader(font, fShader);
-	sentence->Initialize("Gabby, Bob, Andre, and Ryan", 10, 1);*/
-
-	// load and set objs
-	//LoadObjModel(L"PentaSphere1.obj", &meshVertBuff, &meshIndexBuff, meshSubsetIndexStart, meshSubsetTexture, material, mish[3], meshSubsets, true, false);
-	//LoadObjModel(L"sphere.obj", &meshVertBuff1, &meshIndexBuff1, meshSubsetIndexStart, meshSubsetTexture, material, mish[4], meshSubsets, true, false);
-
-	//// setup obj Mesh
-	//mish[3].SetVertexBuffer(meshVertBuff);
-	//mish[3].SetIndexBuffer(meshIndexBuff);
-	//mish[4].SetVertexBuffer(meshVertBuff1);
-	//mish[4].SetIndexBuffer(meshIndexBuff1);
-
-	//// setup obj Material
-	//D3D11_SAMPLER_DESC samplerDesc = maSphere->SamplerDescription();
-	//ID3D11SamplerState* samplerTemp = maSphere->GetSamplerState();
-	//device->CreateSamplerState(&samplerDesc, &samplerTemp);
-	//maSphere->SetSamplerState(samplerTemp);
-
-	//// setup obj gameEntity
-	//obj = GameEntity(&mish[2], maSphere, XMFLOAT3(-5.0, 0.0, 10.0));
-	//obj1 = GameEntity(&mish[3], maSphere, XMFLOAT3(5.0, 0.0, 10.0));
-
-	//entities.push_back(obj);
-	//entities.push_back(obj1);
-=======
 	gameArtifact = new Artifact(okamaGameSphere);
-
-	// 5-8: gmb9280: Commented out because it causes an error in LoadShaders... ()
-	//gameArtifact->GenTiles(objVertices, objListOfIndices, objMeshTraingles);
-
->>>>>>> fb7fbaf7d48270c0ed863dc1d25ca4b3e936a8d5
 }
 
 // Loads shaders from compiled shader object (.cso) files, and uses the
@@ -262,16 +225,6 @@ void DemoGame::LoadShadersAndInputLayout()
 
 	D3D11_RENDER_TARGET_BLEND_DESC rtbd;
 	ZeroMemory( &rtbd, sizeof(rtbd) );
-
-	// Bryzander Soft
-	/*rtbd.BlendEnable			 = true;
-	rtbd.SrcBlend				 = D3D11_BLEND_SRC_COLOR;
-	rtbd.DestBlend				 = D3D11_BLEND_BLEND_FACTOR;
-	rtbd.BlendOp				 = D3D11_BLEND_OP_ADD;
-	rtbd.SrcBlendAlpha			 = D3D11_BLEND_ONE;
-	rtbd.DestBlendAlpha			 = D3D11_BLEND_ZERO;
-	rtbd.BlendOpAlpha			 = D3D11_BLEND_OP_ADD;
-	rtbd.RenderTargetWriteMask	 = D3D10_COLOR_WRITE_ENABLE_ALL;*/
 
 	// RasterTek
 	rtbd.BlendEnable			 = true;
@@ -339,8 +292,8 @@ void DemoGame::Release()
 	if(meSphere != nullptr)
 		delete meSphere;
 
-	/*if(okamaGameSphere != nullptr)
-		delete okamaGameSphere;*/
+	if(okamaGameSphere != nullptr)
+		delete okamaGameSphere;
 
 	//gmb9280 : added delete for artifact
 	if(gameArtifact != nullptr)
@@ -391,7 +344,6 @@ void DemoGame::Keyboard()
 	{
 		camera->r_Position.x -= CAMERA_SPEED;
 		camera->r_Target.x -= CAMERA_SPEED;
-		//sentence->r_Position.x -= CAMERA_SPEED;
 	}
 
 	if(GetAsyncKeyState('Q'))
@@ -410,7 +362,6 @@ void DemoGame::Keyboard()
 	{
 		camera->r_Position.x += CAMERA_SPEED;
 		camera->r_Target.x += CAMERA_SPEED;
-		//sentence->r_Position.x += CAMERA_SPEED;
 	}
 
 	if(GetAsyncKeyState('E'))
@@ -429,22 +380,6 @@ void DemoGame::Keyboard()
 		camera->r_Target.x += CAMERA_SPEED;
 	}
 
-	/*if(GetAsyncKeyState(VK_UP))
-		sentence->r_Position.y += WORD_SPEED;
-
-	if(GetAsyncKeyState(VK_DOWN))
-		sentence->r_Position.y -= WORD_SPEED;
-
-	if(GetAsyncKeyState(VK_RIGHT))
-		sentence->r_Position.x += WORD_SPEED;
-
-	if(GetAsyncKeyState(VK_LEFT))
-		sentence->r_Position.x -= WORD_SPEED;
-
-	if(GetAsyncKeyState('F'))
-		sentence->Initialize("Boop", 10, 1);*/
-
-	//sentence->WorldTransition();
 	camera->ComputeMatrices();
 }
 
@@ -456,17 +391,11 @@ void DemoGame::UpdateScene(float dt)
 	if(time <= 0)
 	{
 		time = .001;
-		//ge.Move();
-		//ge2.Move();
-		//ge3.Move();
 		
 		okamaGameSphere->Rotate(XMFLOAT3(0.001,0,0));
-		//okamaGameSphere->MoveTo(XMFLOAT3(prevMousePos.x/5,-prevMousePos.y/5,okamaGameSphere->GetPosition().z));
 		
 		/*gameArtifact->getGameEntity()->Rotate(XMFLOAT3(0.001,0,0));
 		gameArtifact->getGameEntity()->MoveTo(XMFLOAT3(prevMousePos.x/5,-prevMousePos.y/5,okamaGameSphere->GetPosition().z));*/
-
-	
 	}
 
 	Keyboard();
@@ -481,11 +410,7 @@ void DemoGame::Draw2D()
 	blendFactor[0] = 0.0f;
 	blendFactor[1] = 0.0f;
 	blendFactor[2] = 0.0f;
-	blendFactor[3] = 1.0f;//*/
-	/*blendFactor[0] = 1.0f;
-	blendFactor[1] = 1.0f;
-	blendFactor[2] = 1.0f;
-	blendFactor[3] = 1.0f;//*/
+	blendFactor[3] = 1.0f;
 
 	// Turn on the alpha blending.
 	deviceContext->OMSetBlendState(Transparency, blendFactor, 0xffffffff);
@@ -633,7 +558,7 @@ void DemoGame::LoadObjModel(std::wstring filename,
 					fileIn >> vx >> vy >> vz;	//Store the next three types
 
 					if(isRHCoordSys)	//If model is from an RH Coord System
-						vertPos.push_back(XMFLOAT3( vx, vy, vz * -1.0f));	//Invert the Z axis
+						vertPos.push_back(XMFLOAT3( vx, vy, vz));	//Invert the Z axis
 					else
 						vertPos.push_back(XMFLOAT3( vx, vy, vz));
 				}

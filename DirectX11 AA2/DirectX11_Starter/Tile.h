@@ -12,20 +12,25 @@ class Tile
 public:
 	Tile(Vertex* _v1, Vertex* _v2, Vertex* _v3)
 	{
-		this->m_tileVerts = new Vertex[3];
-		this->m_tileVerts[0] = *_v1;
-		this->m_tileVerts[1] = *_v2;
-		this->m_tileVerts[2] = *_v3;
-
-		//m_tileVerts[0] = *_v1;
+		m_tileVerts = new Vertex[3];
+		m_tileVerts[0] = *_v1;
+		m_tileVerts[1] = *_v2;
+		m_tileVerts[2] = *_v3;
 	}
 
 	Tile()
 	{
-			this->m_tileVerts = nullptr;
+		this->m_tileVerts = nullptr;
 	}
 
-	~Tile(void);
+	~Tile(void)
+	{
+		if(m_tileVerts != nullptr)
+		{
+			delete[] m_tileVerts;
+			m_tileVerts = nullptr;
+		}
+	}
 
 	
 private: 
