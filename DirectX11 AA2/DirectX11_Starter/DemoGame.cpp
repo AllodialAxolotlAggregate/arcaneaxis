@@ -194,7 +194,7 @@ void DemoGame::LoadShadersAndInputLayout()
 	};
 
 
-	// Constant buffers ----------------------------------------
+	// Vertex Constant buffers ----------------------------------------
 	D3D11_BUFFER_DESC cBufferDesc;
 	cBufferDesc.ByteWidth			= sizeof(vsConstantBufferData);
 	cBufferDesc.Usage				= D3D11_USAGE_DEFAULT;
@@ -214,9 +214,40 @@ void DemoGame::LoadShadersAndInputLayout()
 	}
 	fShader->LoadAConstantBuffer(vsConstantBuffer);
 
-	// Bob's Stuff
+	// Artifact //
+	// vertex description
+	D3D11_INPUT_ELEMENT_DESC litVertDesc[] =
+	{
+		{ "POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D11_INPUT_PER_VERTEX_DATA, 0 },  
+		{ "TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT, 0, 12, D3D11_INPUT_PER_VERTEX_DATA, 0 },  
+		{ "NORMAL",	 0, DXGI_FORMAT_R32G32B32_FLOAT,    0, 20, D3D11_INPUT_PER_VERTEX_DATA, 0}
+	};
+
+	// Pixel Constant buffers ----------------------------------------
+	D3D11_BUFFER_DESC cBufferDescPS;
+	cBufferDescPS.ByteWidth			= sizeof(cbPerFrame);
+	cBufferDescPS.Usage				= D3D11_USAGE_DEFAULT;
+	cBufferDescPS.BindFlags			= D3D11_BIND_CONSTANT_BUFFER;
+	cBufferDescPS.CPUAccessFlags		= 0;
+	cBufferDescPS.MiscFlags			= 0;
+	cBufferDescPS.StructureByteStride = 0;
+	HR(device->CreateBuffer(
+		&cBufferDescPS,
+		NULL,
+		&cbPerFrameBuffer));
+
+	//maSphere->LoadShadersAndInputLayout(L"LightVertexShader.cso", L"LightPixelShader.cso", litVertDesc, ARRAYSIZE(litVertDesc));
 	maSphere->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
-	maSphere->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
+	maSphere->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);//, cbPerFrameBuffer, &constbuffPerFrame);
+
+	//light = new Light();
+
+	light.dir = XMFLOAT3(0.25f, 0.5f, -1.0f);
+	light.pad = 0.0f;
+	light.ambient = XMFLOAT4(0.2f, 0.2f, 0.2f, 1.0f);
+	light.diffuse = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+
+	// end Artifact //
 
 	// http://www.braynzarsoft.net/index.php?p=D3D11BLENDING#still
 
@@ -258,9 +289,13 @@ void DemoGame::Release()
 {
 	// Release all of the D3D stuff that's still hanging out
 	ReleaseMacro(vsConstantBuffer);
+	ReleaseMacro(cbPerFrameBuffer);
 	
 	// New Stuff
 	delete camera;
+
+	//if(light != nullptr)
+	//	delete light;
 
 	if(mish != nullptr)
 		delete[] mish;
@@ -437,14 +472,38 @@ void DemoGame::DrawScene()
 
 	vsConstantBufferData.view		= camera->r_ViewMatrix;
 	vsConstantBufferData.projection	= camera->r_ProjectionMatrix;
+	constbuffPerFrame.light = light;
+
+	// Important to do 2D stuff
+	Draw2D();
 
 	for(int i = 0; i < MAX_GAMEENTITY; ++i)
 		ges[i].Draw();
 
-	okamaGameSphere->Draw();
+	// Artifact //
+	deviceContext->UpdateSubresource(
+		cbPerFrameBuffer,
+		0,			
+		NULL,
+		&(constbuffPerFrame),
+		0,
+		0);
 
-	// Important to do 2D stuff
-	Draw2D();
+	deviceContext->PSGetConstantBuffers(
+		0,
+		1,
+		&cbPerFrameBuffer);
+
+	// reset shaders
+	//deviceContext->VSSetShader(m_VertexShader, 0, 0);
+	//deviceContext->PSSetShader(m_PixelShader, 0, 0);
+
+	okamaGameSphere->Draw();//light);
+
+	// end Artifact
+
+	
+	
 
 	//gameArtifact->getGameEntity()->Draw();
 

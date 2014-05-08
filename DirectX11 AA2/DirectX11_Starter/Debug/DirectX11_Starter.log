@@ -1,9 +1,58 @@
-﻿Build started 5/8/2014 3:09:06 PM.
-     1>Project "D:\Users\rcr2761\AAA\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" on node 2 (Build target(s)).
-     1>Link:
-         DirectX11_Starter.vcxproj -> D:\Users\rcr2761\AAA\DirectX11 AA2\Debug\DirectX11_Starter.exe
-     1>Done Building Project "D:\Users\rcr2761\AAA\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" (Build target(s)).
+﻿Build started 5/8/2014 7:21:35 PM.
+     1>Project "\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\arcaneaxis\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" on node 2 (Build target(s)).
+     1>FxCompile:
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\fxc.exe /nologo /E"main" /T ps_4_0_level_9_3 /Fo "\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso" /Od /Zi "D:\arcaneaxis\DirectX11 AA2\DirectX11_Starter\Shaders\LightPixelShader.hlsl" 
+     1>D:\arcaneaxis\DirectX11 AA2\DirectX11_Starter\Shaders\LightPixelShader.hlsl(36,2-37): warning X3206: implicit truncation of vector type
+     1>D:\arcaneaxis\DirectX11 AA2\DirectX11_Starter\Shaders\LightPixelShader.hlsl(37,2-79): warning X3206: implicit truncation of vector type
+         
+         compilation object save succeeded; see \\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\arcaneaxis\DirectX11 AA2\\DirectXTK\inc" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt DemoGame.cpp
+         DemoGame.cpp
+     1>\\banner.main.ad.rit.edu\students\rhs9967\igmprofile\desktop\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(95): warning C4305: '=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\rhs9967\igmprofile\desktop\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(374): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\rhs9967\igmprofile\desktop\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(375): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\rhs9967\igmprofile\desktop\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(380): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\rhs9967\igmprofile\desktop\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(381): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\rhs9967\igmprofile\desktop\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(386): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\rhs9967\igmprofile\desktop\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(387): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\rhs9967\igmprofile\desktop\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(392): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\rhs9967\igmprofile\desktop\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(393): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\rhs9967\igmprofile\desktop\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(398): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\rhs9967\igmprofile\desktop\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(399): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\rhs9967\igmprofile\desktop\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(404): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\rhs9967\igmprofile\desktop\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(405): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\rhs9967\igmprofile\desktop\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(410): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\rhs9967\igmprofile\desktop\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(415): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\rhs9967\igmprofile\desktop\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(428): warning C4305: '=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\rhs9967\igmprofile\desktop\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(430): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\rhs9967\igmprofile\desktop\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(692): warning C4018: '<' : signed/unsigned mismatch
+     1>\\banner.main.ad.rit.edu\students\rhs9967\igmprofile\desktop\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(816): warning C4018: '<' : signed/unsigned mismatch
+     1>\\banner.main.ad.rit.edu\students\rhs9967\igmprofile\desktop\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(1133): warning C4018: '<' : signed/unsigned mismatch
+     1>\\banner.main.ad.rit.edu\students\rhs9967\igmprofile\desktop\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(1252): warning C4018: '<' : signed/unsigned mismatch
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\arcaneaxis\DirectX11 AA2\Debug\DirectX11_Starter.exe" /INCREMENTAL /NOLOGO d3d11.lib d3dcompiler.lib dinput8.lib dxguid.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\arcaneaxis\DirectX11 AA2\Debug\DirectX11_Starter.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\arcaneaxis\DirectX11 AA2\Debug\DirectX11_Starter.lib" /MACHINE:X86 Debug\Artifact.obj
+         Debug\Camera.obj
+         Debug\DemoGame.obj
+         Debug\dxerr.obj
+         Debug\DXGame.obj
+         Debug\Face.obj
+         Debug\Font.obj
+         Debug\FontShader.obj
+         Debug\GameEntity.obj
+         Debug\GameTimer.obj
+         Debug\Material.obj
+         Debug\Mesh.obj
+         Debug\Rune.obj
+         Debug\Sentence.obj
+         Debug\Spellbook.obj
+         Debug\Text.obj
+         Debug\Tile.obj
+         Debug\TileMap.obj
+         "\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\arcaneaxis\DirectX11 AA2\DirectX11_Starter\DirectXTK\Bin\Desktop_2012\Win32\Debug\DirectXTK.lib"
+         DirectX11_Starter.vcxproj -> \\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\arcaneaxis\DirectX11 AA2\Debug\DirectX11_Starter.exe
+     1>Done Building Project "\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\arcaneaxis\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.19
+Time Elapsed 00:00:11.06

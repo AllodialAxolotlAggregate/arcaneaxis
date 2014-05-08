@@ -18,6 +18,7 @@
 // For DirectX Math
 using namespace DirectX;
 
+// structs
 struct SurfaceMaterial
 {
 	std::wstring matName;
@@ -64,6 +65,12 @@ private:
 	// A few more odds and ends we'll need
 	ID3D11Buffer* vsConstantBuffer;
 	VertexShaderConstantBuffer vsConstantBufferData;
+
+	// Lighting
+	ID3D11Buffer* cbPerFrameBuffer;
+
+	Light light;
+	cbPerFrame constbuffPerFrame;
 
 	// Keeps track of the old mouse position.  Useful for 
 	// determining how far the mouse moved in a single frame.

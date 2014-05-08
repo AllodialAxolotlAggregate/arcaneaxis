@@ -146,10 +146,14 @@ void Material::Release()
 		m_ConstantBuffer = nullptr;
 	if(m_ConstantBufferData != nullptr)
 		m_ConstantBufferData = nullptr;
+	/*if(m_cbPerFrameBuffer != nullptr)
+		m_cbPerFrameBuffer = nullptr;
+	if(m_constbuffPerFrame != nullptr)
+		m_constbuffPerFrame = nullptr;*/
 }
 
-void Material::LoadAConstantBuffer(ID3D11Buffer* aCSBuffer, VertexShaderConstantBuffer* aConstantBufferData)
+void Material::LoadAConstantBuffer(ID3D11Buffer* aConstantBuffer, VertexShaderConstantBuffer* aConstantBufferData)
 {
-	m_ConstantBuffer = aCSBuffer;
+	m_ConstantBuffer = aConstantBuffer;
 	m_ConstantBufferData = aConstantBufferData;
 }
