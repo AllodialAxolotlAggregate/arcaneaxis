@@ -166,5 +166,11 @@
     <FxCompile Include="FontVertexShader.hlsl">
       <Filter>Shaders</Filter>
     </FxCompile>
+    <FxCompile Include="D:\arcaneaxis\DirectX11 AA2\DirectX11_Starter\Shaders\LightPixelShader.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="D:\arcaneaxis\DirectX11 AA2\DirectX11_Starter\Shaders\LightVertexShader.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

@@ -1,9 +1,30 @@
+<<<<<<< HEAD
 ﻿Build started 5/8/2014 7:15:18 PM.
      1>Project "D:\Users\rcr2761\AAA\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" on node 2 (Build target(s)).
+=======
+<<<<<<< HEAD
+﻿Build started 5/8/2014 6:14:25 PM.
+     1>Project "\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\arcaneaxis\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" on node 2 (Build target(s)).
+     1>Lib:
+         DirectXTK_Desktop_2012.vcxproj -> \\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\arcaneaxis\DirectX11 AA2\DirectX11_Starter\DirectXTK\Bin\Desktop_2012\Win32\Debug\DirectXTK.lib
+     1>Done Building Project "\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\arcaneaxis\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.90
+=======
+﻿Build started 5/8/2014 5:37:44 PM.
+     1>Project "\\banner.main.ad.rit.edu\students\ahb9907\IGMProfile\Documents\Game Graphics Programming\ArcaneAxis\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" on node 2 (Build target(s)).
+>>>>>>> 874273b3ca0126ea37d6f1b693d41f4ab4fe739f
      1>Lib:
          DirectXTK_Desktop_2012.vcxproj -> D:\Users\rcr2761\AAA\DirectX11 AA2\DirectX11_Starter\DirectXTK\Bin\Desktop_2012\Win32\Debug\DirectXTK.lib
      1>Done Building Project "D:\Users\rcr2761\AAA\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" (Build target(s)).
 
 Build succeeded.
 
+<<<<<<< HEAD
 Time Elapsed 00:00:00.09
+=======
+Time Elapsed 00:00:00.75
+>>>>>>> 08f3c126bbe3c5975b04155b654e59f5e003ebb2
+>>>>>>> 874273b3ca0126ea37d6f1b693d41f4ab4fe739f
