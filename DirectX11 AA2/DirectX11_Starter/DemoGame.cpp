@@ -166,6 +166,7 @@ void DemoGame::CreateGeometryBuffers()
 	sentence[1].LoadFontAndShader(font, fShader);
 	sentence[1].Initialize("Mouse Y", 1, -10);
 
+	// masphere is the basis for our Artifact
 	maSphere = new Material(device, deviceContext);
 	meSphere = new Mesh(device, deviceContext);
 
@@ -175,6 +176,7 @@ void DemoGame::CreateGeometryBuffers()
 	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(-6.0, 0.0, 0.0));
 
 	// ARTIFACT
+<<<<<<< HEAD
 	//gameArtifact = new Artifact(okamaGameSphere);
 	//gameArtifact->GenTiles(objVertices, objListOfIndices, objMeshTraingles);
 
@@ -204,6 +206,13 @@ void DemoGame::CreateGeometryBuffers()
 
 	//entities.push_back(obj);
 	//entities.push_back(obj1);
+=======
+	gameArtifact = new Artifact(okamaGameSphere);
+
+	// 5-8: gmb9280: Commented out because it causes an error in LoadShaders... ()
+	//gameArtifact->GenTiles(objVertices, objListOfIndices, objMeshTraingles);
+
+>>>>>>> fb7fbaf7d48270c0ed863dc1d25ca4b3e936a8d5
 }
 
 // Loads shaders from compiled shader object (.cso) files, and uses the
@@ -221,6 +230,7 @@ void DemoGame::LoadShadersAndInputLayout()
 		{"TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT,		0, 28,	D3D11_INPUT_PER_VERTEX_DATA, 0}
 	};
 
+
 	// Constant buffers ----------------------------------------
 	D3D11_BUFFER_DESC cBufferDesc;
 	cBufferDesc.ByteWidth			= sizeof(vsConstantBufferData);
@@ -232,7 +242,7 @@ void DemoGame::LoadShadersAndInputLayout()
 	HR(device->CreateBuffer(
 		&cBufferDesc,
 		NULL,
-		&vsConstantBuffer));
+		&vsConstantBuffer)); // When we create the buffer, there is too much stuff for the space allocated I think (only when GenTiles is called).
 
 	for(int i = 0; i < MAX_MATERIAL; ++i)
 	{
@@ -243,7 +253,7 @@ void DemoGame::LoadShadersAndInputLayout()
 
 	// Bob's Stuff
 	maSphere->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
-	maSphere->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);//*/
+	maSphere->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
 
 	// http://www.braynzarsoft.net/index.php?p=D3D11BLENDING#still
 
