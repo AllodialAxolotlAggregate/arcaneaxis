@@ -2,6 +2,7 @@
 #define FACE_H
 
 #include "Vertex.h"
+#include <d3d11.h>
 typedef unsigned int UINT;
 
 class Face
@@ -19,6 +20,8 @@ public:
 	void SetIndices(UINT* otherIndices) { m_Indices = otherIndices; }
 	UINT* GetIndices() { return m_Indices; }
 	__declspec(property(get = GetIndices, put = SetIndices)) UINT* r_Indices;
+
+	bool PointInFace(float x, float y);
 
 #pragma endregion
 

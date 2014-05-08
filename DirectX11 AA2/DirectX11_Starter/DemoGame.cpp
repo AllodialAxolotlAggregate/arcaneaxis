@@ -1001,7 +1001,7 @@ void DemoGame::LoadObjModel(std::wstring filename,
 	//Close the obj file, and open the mtl file
 	fileIn.close();
 	fileIn.open(meshMatLib.c_str());
-#pragma endregion
+#pragma u
 
 #pragma region MTL File Loader
 
