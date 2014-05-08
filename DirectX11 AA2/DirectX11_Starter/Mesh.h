@@ -42,6 +42,10 @@ public:
 	int GetNumberOfVertices() { return m_NumberOfVertices; }
 	__declspec(property(get = GetNumberOfVertices, put = SetNumberOfVertices)) int r_NumberOfVertices;
 
+	void SetNumberOfTriangles(int number) { m_NumberOfFaces = number; }
+	int GetNumberOfTriangles() { return m_NumberOfFaces; }
+	__declspec(property(get = GetNumberOfTriangles, put = SetNumberOfTriangles)) int r_NumberOfFaces;
+
 	void SetVertexBuffer(ID3D11Buffer *otherVertexBuffer) { m_VertexBuffer = otherVertexBuffer; }
 	ID3D11Buffer* GetVertexBuffer() { return m_VertexBuffer; }
 	__declspec(property(get = GetVertexBuffer, put = SetVertexBuffer)) ID3D11Buffer* r_VertexBuffer;
@@ -73,7 +77,7 @@ public:
 #pragma endregion
 
 private:
-	int m_NumberOfVertices, m_NumberOfIndices;
+	int m_NumberOfVertices, m_NumberOfIndices, m_NumberOfFaces;
 	ID3D11Buffer *m_VertexBuffer, *m_IndexBuffer;
 	ID3D11Device *m_Device;
 	ID3D11DeviceContext *m_DeviceContext;

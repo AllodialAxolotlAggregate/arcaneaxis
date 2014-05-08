@@ -6,6 +6,7 @@ using namespace DirectX;
 Mesh::Mesh() :
 	m_NumberOfVertices(0),
 	m_NumberOfIndices(0),
+	m_NumberOfFaces(0),
 	m_VertexBuffer(nullptr),
 	m_IndexBuffer(nullptr),
 	m_Device(nullptr),
@@ -19,6 +20,7 @@ Mesh::Mesh() :
 Mesh::Mesh(ID3D11Device* device, ID3D11DeviceContext* deviceContext) :
 	m_NumberOfVertices(0),
 	m_NumberOfIndices(0),
+	m_NumberOfFaces(0),
 	m_VertexBuffer(nullptr),
 	m_IndexBuffer(nullptr),
 	m_Device(device),
@@ -33,6 +35,7 @@ Mesh::~Mesh()
 {
 	m_NumberOfVertices = 0;
 	m_NumberOfIndices = 0;
+	m_NumberOfFaces = 0;
 
 	if(m_Vertices != nullptr)
 	{
@@ -63,9 +66,10 @@ void Mesh::LoadNumbers(UINT numberOfVertices, UINT numberOfIndices)
 {
 	m_NumberOfVertices = numberOfVertices;
 	m_NumberOfIndices = numberOfIndices;
+	m_NumberOfFaces = numberOfIndices/3;
 	m_Vertices = new Vertex[numberOfVertices];
 	m_Indices = new UINT[numberOfIndices];
-	m_Faces = new Face[numberOfIndices/3];
+	m_Faces = new Face[m_NumberOfFaces];
 }
 
 void Mesh::Draw()
@@ -89,7 +93,7 @@ void Mesh::LoadBuffers(Vertex* vertices, UINT* indices)
 		m_Indices[j] = indices[j];
 
 	int num, vertNumber, triangle = 0;
-	for(triangle = 0; triangle < m_NumberOfIndices/3; ++triangle)
+	for(triangle = 0; triangle < m_NumberOfFaces; ++triangle)
 	{
 		num = 3 * triangle;
 		for(vertNumber = 0; vertNumber < 3; ++vertNumber)

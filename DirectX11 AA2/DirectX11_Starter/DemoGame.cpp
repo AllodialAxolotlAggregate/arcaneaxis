@@ -212,6 +212,7 @@ void DemoGame::LoadShadersAndInputLayout()
 		ma[i].LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
 		ma[i].LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
 	}
+	gameArtifact->LoadStuff(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc), vsConstantBuffer, &vsConstantBufferData);
 	fShader->LoadAConstantBuffer(vsConstantBuffer);
 
 	// Bob's Stuff
@@ -392,7 +393,7 @@ void DemoGame::UpdateScene(float dt)
 	{
 		time = .001;
 		
-		okamaGameSphere->Rotate(XMFLOAT3(0.001,0,0));
+		//okamaGameSphere->Rotate(XMFLOAT3(0.001,0,0));
 		
 		/*gameArtifact->getGameEntity()->Rotate(XMFLOAT3(0.001,0,0));
 		gameArtifact->getGameEntity()->MoveTo(XMFLOAT3(prevMousePos.x/5,-prevMousePos.y/5,okamaGameSphere->GetPosition().z));*/
@@ -441,12 +442,13 @@ void DemoGame::DrawScene()
 	for(int i = 0; i < MAX_GAMEENTITY; ++i)
 		ges[i].Draw();
 
-	okamaGameSphere->Draw();
+	//okamaGameSphere->Draw();
 
 	// Important to do 2D stuff
 	Draw2D();
 
 	//gameArtifact->getGameEntity()->Draw();
+	gameArtifact->Draw();
 
 	// Present the buffer
 	HR(swapChain->Present(0, 0));
@@ -479,7 +481,7 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 	float newX = (-camera->r_Position.z * mouseX) + camera->r_Position.x;
 	float newY = (-camera->r_Position.z * mouseY) + camera->r_Position.y;
 
-	okamaGameSphere->MoveTo(XMFLOAT3(newX, newY, okamaGameSphere->Position.z));
+	//okamaGameSphere->MoveTo(XMFLOAT3(newX, newY, okamaGameSphere->Position.z));
 
 	/*char stringX[10];
 	char stringY[10];
