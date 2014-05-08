@@ -1,9 +1,9 @@
-﻿Build started 5/6/2014 10:12:41 AM.
-     1>Project "\\banner.main.ad.rit.edu\students\ahb9907\IGMProfile\Documents\Game Graphics Programming\Repos\May6\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" on node 2 (Build target(s)).
+﻿Build started 5/8/2014 9:59:27 AM.
+     1>Project "D:\Users\rcr2761\AAA\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" on node 2 (Build target(s)).
      1>Lib:
-         DirectXTK_Desktop_2012.vcxproj -> \\banner.main.ad.rit.edu\students\ahb9907\IGMProfile\Documents\Game Graphics Programming\Repos\May6\DirectX11 AA2\DirectX11_Starter\DirectXTK\Bin\Desktop_2012\Win32\Debug\DirectXTK.lib
-     1>Done Building Project "\\banner.main.ad.rit.edu\students\ahb9907\IGMProfile\Documents\Game Graphics Programming\Repos\May6\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" (Build target(s)).
+         DirectXTK_Desktop_2012.vcxproj -> D:\Users\rcr2761\AAA\DirectX11 AA2\DirectX11_Starter\DirectXTK\Bin\Desktop_2012\Win32\Debug\DirectXTK.lib
+     1>Done Building Project "D:\Users\rcr2761\AAA\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.14
+Time Elapsed 00:00:00.14

@@ -60,28 +60,23 @@ public:
 	ID3D11DeviceContext* GetDeviceContext() { return m_DeviceContext; }
 	__declspec(property(get = GetDeviceContext, put = SetDeviceContext)) ID3D11DeviceContext* r_DeviceContext;
 
+	void SetVertices(Vertex* otherVertices) { m_Vertices = otherVertices; }
+	Vertex* GetVertices() { return m_Vertices; }
+	__declspec(property(get = GetVertices, put = SetVertices)) Vertex* r_Vertices;
+
+	void SetIndices(UINT* otherIndices) { m_Indices = otherIndices; }
+	UINT* GetIndices() { return m_Indices; }
+	__declspec(property(get = GetIndices, put = SetIndices)) UINT* r_Indices;
+
 #pragma endregion
-
-	// accessor for verts
-	Vertex** GetVertsStraightUp()
-	{
-		return this->m_verts;
-	}
-
-	//accessor for num verts
-	int GetNumVerts()
-	{
-		return this->m_NumberOfVertices;
-	}
 
 private:
 	int m_NumberOfVertices, m_NumberOfIndices;
 	ID3D11Buffer *m_VertexBuffer, *m_IndexBuffer;
 	ID3D11Device *m_Device;
 	ID3D11DeviceContext *m_DeviceContext;
-
-	// sorry but i have to make this too for Tiles... (Gabby)
-	Vertex** m_verts; //pointer to Vertex pointers
+	Vertex* m_Vertices;
+	UINT* m_Indices;
 	
 };
 

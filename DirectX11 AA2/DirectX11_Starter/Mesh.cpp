@@ -9,9 +9,10 @@ Mesh::Mesh() :
 	m_VertexBuffer(nullptr),
 	m_IndexBuffer(nullptr),
 	m_Device(nullptr),
-	m_DeviceContext(nullptr)
+	m_DeviceContext(nullptr),
+	m_Vertices(nullptr),
+	m_Indices(nullptr)
 {
-	this->m_verts = nullptr;
 }
 
 Mesh::Mesh(ID3D11Device* device, ID3D11DeviceContext* deviceContext) :
@@ -20,19 +21,42 @@ Mesh::Mesh(ID3D11Device* device, ID3D11DeviceContext* deviceContext) :
 	m_VertexBuffer(nullptr),
 	m_IndexBuffer(nullptr),
 	m_Device(device),
-	m_DeviceContext(deviceContext)
+	m_DeviceContext(deviceContext),
+	m_Vertices(nullptr),
+	m_Indices(nullptr)
 {
-	this->m_verts = nullptr;
 }
 
 Mesh::~Mesh()
 {
+	m_NumberOfVertices = 0;
+	m_NumberOfIndices = 0;
+
+	if(m_Vertices != nullptr)
+	{
+		delete[] m_Vertices;
+		m_Vertices = nullptr;
+	}
+
+	if(m_Indices != nullptr)
+	{
+		delete[] m_Indices;
+		m_Indices = nullptr;
+	}
+
+	/*if(m_Device != nullptr)
+		m_Device= nullptr;
+
+	if(m_DeviceContext != nullptr)
+		m_DeviceContext = nullptr;*/
 }
 
 void Mesh::LoadNumbers(UINT numberOfVertices, UINT numberOfIndices)
 {
 	m_NumberOfVertices = numberOfVertices;
 	m_NumberOfIndices = numberOfIndices;
+	m_Vertices = new Vertex[numberOfVertices];
+	m_Indices = new UINT[numberOfIndices];
 }
 
 void Mesh::Draw()
@@ -49,7 +73,11 @@ void Mesh::Draw()
 void Mesh::LoadBuffers(Vertex* vertices, UINT* indices)
 {
 	// for Tile purposes
-	this->m_verts = new Vertex*(vertices); // pointer to Vertex pointers
+	for(int i = 0; i < m_NumberOfVertices; ++i)
+		m_Vertices[i] = vertices[i];
+
+	for(int j = 0; j < m_NumberOfIndices; ++j)
+		m_Indices[j] = indices[j];
 
 	D3D11_BUFFER_DESC m_vbd;
     m_vbd.Usage					= D3D11_USAGE_IMMUTABLE;
@@ -60,7 +88,7 @@ void Mesh::LoadBuffers(Vertex* vertices, UINT* indices)
 	m_vbd.StructureByteStride	= 0;
 
 	D3D11_SUBRESOURCE_DATA m_InitialVertexData;
-	m_InitialVertexData.pSysMem	= vertices;
+	m_InitialVertexData.pSysMem	= m_Vertices;
 
 	m_Device->CreateBuffer(&m_vbd, &m_InitialVertexData, &m_VertexBuffer);
 
@@ -74,7 +102,7 @@ void Mesh::LoadBuffers(Vertex* vertices, UINT* indices)
 	m_ibd.StructureByteStride	= 0;
 
 	D3D11_SUBRESOURCE_DATA m_InitialIndexData;
-	m_InitialIndexData.pSysMem	= indices;
+	m_InitialIndexData.pSysMem	= m_Indices;
 
 	m_Device->CreateBuffer(&m_ibd, &m_InitialIndexData, &m_IndexBuffer);
 }

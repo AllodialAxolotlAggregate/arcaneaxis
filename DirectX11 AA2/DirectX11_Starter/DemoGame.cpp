@@ -172,11 +172,11 @@ void DemoGame::CreateGeometryBuffers()
 	LoadObjModel(L"PentaSphere1.obj", *maSphere, *meSphere, true);
 
 	// Create our Artifact's game entity
-	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(-6.0, 0.0, 20.0));
+	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(-6.0, 0.0, 0.0));
 
 	// ARTIFACT
-	gameArtifact = new Artifact(okamaGameSphere);
-	gameArtifact->GenTiles(objVertices, objListOfIndices, objMeshTraingles);
+	//gameArtifact = new Artifact(okamaGameSphere);
+	//gameArtifact->GenTiles(objVertices, objListOfIndices, objMeshTraingles);
 
 	/*sentence = new Sentence(device, deviceContext);
 	sentence->LoadFontAndShader(font, fShader);
@@ -329,8 +329,8 @@ void DemoGame::Release()
 	if(meSphere != nullptr)
 		delete meSphere;
 
-	if(okamaGameSphere != nullptr)
-		delete okamaGameSphere;
+	/*if(okamaGameSphere != nullptr)
+		delete okamaGameSphere;*/
 
 	//gmb9280 : added delete for artifact
 	if(gameArtifact != nullptr)
@@ -449,12 +449,12 @@ void DemoGame::UpdateScene(float dt)
 		//ge.Move();
 		//ge2.Move();
 		//ge3.Move();
-		/*
+		
 		okamaGameSphere->Rotate(XMFLOAT3(0.001,0,0));
-		okamaGameSphere->MoveTo(XMFLOAT3(prevMousePos.x/5,-prevMousePos.y/5,okamaGameSphere->GetPosition().z));
-		*/
-		gameArtifact->getGameEntity()->Rotate(XMFLOAT3(0.001,0,0));
-		gameArtifact->getGameEntity()->MoveTo(XMFLOAT3(prevMousePos.x/5,-prevMousePos.y/5,okamaGameSphere->GetPosition().z));
+		//okamaGameSphere->MoveTo(XMFLOAT3(prevMousePos.x/5,-prevMousePos.y/5,okamaGameSphere->GetPosition().z));
+		
+		/*gameArtifact->getGameEntity()->Rotate(XMFLOAT3(0.001,0,0));
+		gameArtifact->getGameEntity()->MoveTo(XMFLOAT3(prevMousePos.x/5,-prevMousePos.y/5,okamaGameSphere->GetPosition().z));*/
 
 	
 	}
@@ -500,18 +500,18 @@ void DemoGame::DrawScene()
 		1.0f,
 		0);
 
-	// Important to do 2D stuff
-	Draw2D();
-
 	vsConstantBufferData.view		= camera->r_ViewMatrix;
 	vsConstantBufferData.projection	= camera->r_ProjectionMatrix;
 
 	for(int i = 0; i < MAX_GAMEENTITY; ++i)
 		ges[i].Draw();
 
-	//okamaGameSphere->Draw();
+	okamaGameSphere->Draw();
 
-	gameArtifact->getGameEntity()->Draw();
+	// Important to do 2D stuff
+	Draw2D();
+
+	//gameArtifact->getGameEntity()->Draw();
 
 	// Present the buffer
 	HR(swapChain->Present(0, 0));
@@ -538,15 +538,20 @@ void DemoGame::OnMouseUp(WPARAM btnState, int x, int y)
 
 void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 {
-	prevMousePos.x = x-windowWidth/2;
-	prevMousePos.y = y-windowHeight/2;
+	float mouseX = (((2.0f * (float)x) / (float) windowWidth) - 1.0f)/(camera->r_ProjectionMatrix._11);
+	float mouseY = (((-2.0f * (float)y) / (float) windowHeight) + 1.0f)/(camera->r_ProjectionMatrix._22);
 
-	char stringX[10];
+	float newX = (-camera->r_Position.z * mouseX) + camera->r_Position.x;
+	float newY = (-camera->r_Position.z * mouseY) + camera->r_Position.y;
+
+	okamaGameSphere->MoveTo(XMFLOAT3(newX, newY, okamaGameSphere->Position.z));
+
+	/*char stringX[10];
 	char stringY[10];
 	sprintf_s(stringX, 10, "%d", prevMousePos.x);
 	sprintf_s(stringY, 10, "%d", prevMousePos.y);
 	sentence[0].Initialize(stringX, 1, 10);
-	sentence[1].Initialize(stringY, 1, -10);
+	sentence[1].Initialize(stringY, 1, -10);*/
 }
 #pragma endregion
 

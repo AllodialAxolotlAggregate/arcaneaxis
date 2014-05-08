@@ -16,6 +16,8 @@ public:
 		this->m_tileVerts[0] = *_v1;
 		this->m_tileVerts[1] = *_v2;
 		this->m_tileVerts[2] = *_v3;
+
+		//m_tileVerts[0] = *_v1;
 	}
 
 	Tile()
