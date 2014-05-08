@@ -33,14 +33,16 @@ public:
 
 		// every three verts makes a tile (triangles)
 		this->m_tileArray = new Tile*(); // new array of tile pointers
-
+		
 		for(int i = 0; i< numTris-1; i++)
 		{
 			//std::cout<< "Triangle: " << i << std::endl;
 
-			Vertex* v1 = &objVerts[listInds[(i*3)]];
-			Vertex* v2 = &objVerts[listInds[(i*3)+1]];
-			Vertex* v3 = &objVerts[listInds[(i*3)+2]];
+
+			
+			Vertex* v1 = new Vertex(objVerts[listInds[(i*3)]]);
+			Vertex* v2 = new Vertex(objVerts[listInds[(i*3)+1]]);
+			Vertex* v3 = new Vertex(objVerts[listInds[(i*3)+2]]);
 			this->m_tileArray[i] = new Tile( v1, v2, v3);
 		}
 		// done with generating tiles

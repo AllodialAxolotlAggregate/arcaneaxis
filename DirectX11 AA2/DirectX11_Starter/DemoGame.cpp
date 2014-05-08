@@ -166,6 +166,7 @@ void DemoGame::CreateGeometryBuffers()
 	sentence[1].LoadFontAndShader(font, fShader);
 	sentence[1].Initialize("Mouse Y", 1, -10);
 
+	// masphere is the basis for our Artifact
 	maSphere = new Material(device, deviceContext);
 	meSphere = new Mesh(device, deviceContext);
 
@@ -176,34 +177,10 @@ void DemoGame::CreateGeometryBuffers()
 
 	// ARTIFACT
 	gameArtifact = new Artifact(okamaGameSphere);
-	gameArtifact->GenTiles(objVertices, objListOfIndices, objMeshTraingles);
 
-	/*sentence = new Sentence(device, deviceContext);
-	sentence->LoadFontAndShader(font, fShader);
-	sentence->Initialize("Gabby, Bob, Andre, and Ryan", 10, 1);*/
+	// 5-8: gmb9280: Commented out because it causes an error in LoadShaders... ()
+	//gameArtifact->GenTiles(objVertices, objListOfIndices, objMeshTraingles);
 
-	// load and set objs
-	//LoadObjModel(L"PentaSphere1.obj", &meshVertBuff, &meshIndexBuff, meshSubsetIndexStart, meshSubsetTexture, material, mish[3], meshSubsets, true, false);
-	//LoadObjModel(L"sphere.obj", &meshVertBuff1, &meshIndexBuff1, meshSubsetIndexStart, meshSubsetTexture, material, mish[4], meshSubsets, true, false);
-
-	//// setup obj Mesh
-	//mish[3].SetVertexBuffer(meshVertBuff);
-	//mish[3].SetIndexBuffer(meshIndexBuff);
-	//mish[4].SetVertexBuffer(meshVertBuff1);
-	//mish[4].SetIndexBuffer(meshIndexBuff1);
-
-	//// setup obj Material
-	//D3D11_SAMPLER_DESC samplerDesc = maSphere->SamplerDescription();
-	//ID3D11SamplerState* samplerTemp = maSphere->GetSamplerState();
-	//device->CreateSamplerState(&samplerDesc, &samplerTemp);
-	//maSphere->SetSamplerState(samplerTemp);
-
-	//// setup obj gameEntity
-	//obj = GameEntity(&mish[2], maSphere, XMFLOAT3(-5.0, 0.0, 10.0));
-	//obj1 = GameEntity(&mish[3], maSphere, XMFLOAT3(5.0, 0.0, 10.0));
-
-	//entities.push_back(obj);
-	//entities.push_back(obj1);
 }
 
 // Loads shaders from compiled shader object (.cso) files, and uses the
@@ -221,6 +198,7 @@ void DemoGame::LoadShadersAndInputLayout()
 		{"TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT,		0, 28,	D3D11_INPUT_PER_VERTEX_DATA, 0}
 	};
 
+
 	// Constant buffers ----------------------------------------
 	D3D11_BUFFER_DESC cBufferDesc;
 	cBufferDesc.ByteWidth			= sizeof(vsConstantBufferData);
@@ -232,7 +210,7 @@ void DemoGame::LoadShadersAndInputLayout()
 	HR(device->CreateBuffer(
 		&cBufferDesc,
 		NULL,
-		&vsConstantBuffer));
+		&vsConstantBuffer)); // When we create the buffer, there is too much stuff for the space allocated I think (only when GenTiles is called).
 
 	for(int i = 0; i < MAX_MATERIAL; ++i)
 	{
@@ -243,7 +221,7 @@ void DemoGame::LoadShadersAndInputLayout()
 
 	// Bob's Stuff
 	maSphere->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
-	maSphere->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);//*/
+	maSphere->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
 
 	// http://www.braynzarsoft.net/index.php?p=D3D11BLENDING#still
 
