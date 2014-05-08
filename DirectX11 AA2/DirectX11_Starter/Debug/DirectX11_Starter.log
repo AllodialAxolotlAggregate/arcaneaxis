@@ -1,9 +1,53 @@
-﻿Build started 5/8/2014 5:37:46 PM.
+﻿Build started 5/8/2014 7:18:11 PM.
      1>Project "\\banner.main.ad.rit.edu\students\ahb9907\IGMProfile\Documents\Game Graphics Programming\ArcaneAxis\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" on node 2 (Build target(s)).
-     1>Link:
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"\\banner.main.ad.rit.edu\students\ahb9907\IGMProfile\Documents\Game Graphics Programming\ArcaneAxis\DirectX11 AA2\\DirectXTK\inc" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt DemoGame.cpp
+         DemoGame.cpp
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(95): warning C4305: '=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(339): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(340): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(345): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(346): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(351): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(352): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(357): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(358): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(363): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(364): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(369): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(370): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(375): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(380): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(393): warning C4305: '=' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(395): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(633): warning C4018: '<' : signed/unsigned mismatch
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(757): warning C4018: '<' : signed/unsigned mismatch
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(945): warning C4068: unknown pragma
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(1074): warning C4018: '<' : signed/unsigned mismatch
+     1>\\banner.main.ad.rit.edu\students\ahb9907\igmprofile\documents\game graphics programming\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(1193): warning C4018: '<' : signed/unsigned mismatch
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"\\banner.main.ad.rit.edu\students\ahb9907\IGMProfile\Documents\Game Graphics Programming\ArcaneAxis\DirectX11 AA2\Debug\DirectX11_Starter.exe" /INCREMENTAL /NOLOGO d3d11.lib d3dcompiler.lib dinput8.lib dxguid.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"\\banner.main.ad.rit.edu\students\ahb9907\IGMProfile\Documents\Game Graphics Programming\ArcaneAxis\DirectX11 AA2\Debug\DirectX11_Starter.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"\\banner.main.ad.rit.edu\students\ahb9907\IGMProfile\Documents\Game Graphics Programming\ArcaneAxis\DirectX11 AA2\Debug\DirectX11_Starter.lib" /MACHINE:X86 Debug\Artifact.obj
+         Debug\Camera.obj
+         Debug\DemoGame.obj
+         Debug\dxerr.obj
+         Debug\DXGame.obj
+         Debug\Face.obj
+         Debug\Font.obj
+         Debug\FontShader.obj
+         Debug\GameEntity.obj
+         Debug\GameTimer.obj
+         Debug\Material.obj
+         Debug\Mesh.obj
+         Debug\Rune.obj
+         Debug\Sentence.obj
+         Debug\Spellbook.obj
+         Debug\Text.obj
+         Debug\Tile.obj
+         Debug\TileMap.obj
+         "\\banner.main.ad.rit.edu\students\ahb9907\IGMProfile\Documents\Game Graphics Programming\ArcaneAxis\DirectX11 AA2\DirectX11_Starter\DirectXTK\Bin\Desktop_2012\Win32\Debug\DirectXTK.lib"
          DirectX11_Starter.vcxproj -> \\banner.main.ad.rit.edu\students\ahb9907\IGMProfile\Documents\Game Graphics Programming\ArcaneAxis\DirectX11 AA2\Debug\DirectX11_Starter.exe
      1>Done Building Project "\\banner.main.ad.rit.edu\students\ahb9907\IGMProfile\Documents\Game Graphics Programming\ArcaneAxis\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.16
+Time Elapsed 00:00:12.60
