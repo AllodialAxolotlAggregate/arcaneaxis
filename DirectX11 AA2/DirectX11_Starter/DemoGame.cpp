@@ -152,7 +152,6 @@ void DemoGame::CreateGeometryBuffers()
 	ges[2] = GameEntity(&mish[2], &ma[0], XMFLOAT3(-1.0, -1.0, 1.0));
 
 	font = new Font();
-	//font->Initialize(device, deviceContext, "fontdata.txt", L"font.jpg");
 	font->Initialize(device, deviceContext, "fontdata2.txt", L"font3.dds");
 	fShader = new FontShader();
 	fShader->Initialize(device, L"FontVertexShader.cso", L"FontPixelShader.cso");
@@ -213,6 +212,7 @@ void DemoGame::LoadShadersAndInputLayout()
 		ma[i].LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
 	}
 	gameArtifact->LoadStuff(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc), vsConstantBuffer, &vsConstantBufferData);
+	gameArtifact->GenTiles();
 	fShader->LoadAConstantBuffer(vsConstantBuffer);
 
 	// Bob's Stuff
@@ -440,7 +440,7 @@ void DemoGame::DrawScene()
 	vsConstantBufferData.projection	= camera->r_ProjectionMatrix;
 
 	for(int i = 0; i < MAX_GAMEENTITY; ++i)
-		ges[i].Draw();
+		ges[i].TestDraw();
 
 	//okamaGameSphere->Draw();
 

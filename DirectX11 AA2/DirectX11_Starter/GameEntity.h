@@ -37,6 +37,7 @@ public:
 
 	// Calls the Material's and Mesh's draws methods to render object on the screen
 	void Draw();
+	void TestDraw();
 	//void DrawEntity(Camera*);
 
 #pragma region Gets/Sets
@@ -77,7 +78,7 @@ private:
 	DirectX::XMFLOAT3 m_Scale;
 
 	float velocity;
-
+	ID3D11Buffer* testBuffer;
 
 
 private:

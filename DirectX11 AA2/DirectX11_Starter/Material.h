@@ -39,6 +39,9 @@ public:
 	void Release();
 	void LoadAConstantBuffer(ID3D11Buffer* aConstantBuffer, VertexShaderConstantBuffer* aConstantBufferData);
 
+	void SetUpDraw();
+	void ActuallyDraw(DirectX::XMFLOAT4X4);
+
 	#pragma region Gets/Sets
 
 	ID3D11ShaderResourceView* GetShaderResourceView() { return m_ShaderResourceView; }

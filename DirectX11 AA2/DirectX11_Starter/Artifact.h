@@ -23,11 +23,24 @@ public:
 
 		// Create a single material for all of the entities to use
 		m_SingleMaterial = new Material(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext);
-		m_SingleMaterial->LoadSamplerStateAndShaderResourceView(L"Ignite.jpg");
+		m_SingleMaterial->LoadSamplerStateAndShaderResourceView(L"venus_map.jpg");
+
+		m_otherMaterial = new Material(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext);
+		m_otherMaterial->LoadSamplerStateAndShaderResourceView(L"Ignite.jpg");
 
 		// Create as many independent meshes as there are faces
 		m_ManyMeshes = new Mesh[m_NumberOfFaces];
+	}
 
+	// Blank constructor - don't use. I don't even know why I wrote it. ¯\_(^u^)_/¯
+	Artifact()
+	{
+		this->m_tileArray = nullptr;
+	}
+
+	// Generates tiles
+	void GenTiles()
+	{
 		for(int i = 0; i < m_NumberOfFaces; ++i)
 		{
 			// Offload the meshes to a localized array of vertices
@@ -44,38 +57,8 @@ public:
 			m_ManyMeshes[i].LoadBuffers(vertices, m_gameEntity->mesh->r_Faces->r_Indices);
 
 			// load the GameEntity
-			m_Tiles[i] = GameEntity(&m_ManyMeshes[i], m_SingleMaterial, m_gameEntity->Position);
+			m_Tiles[i] = GameEntity(&m_ManyMeshes[i], m_otherMaterial, m_gameEntity->Position);
 		}
-	}
-
-	// Blank constructor - don't use. I don't even know why I wrote it. ¯\_(^u^)_/¯
-	Artifact()
-	{
-		this->m_tileArray = nullptr;
-	}
-
-	// Generates tiles
-	void GenTiles(Vertex* objVerts, UINT* listInds, int numTris)
-	{
-		//Figure out how many verts we need
-		//int numVerts = this->m_gameEntity->GetNumVertsStraightUp();
-
-		// every three verts makes a tile (triangles)
-		this->m_tileArray = new Tile*(); // new array of tile pointers
-		
-		for(int i = 0; i< numTris-1; i++)
-		{
-			//std::cout<< "Triangle: " << i << std::endl;
-
-
-			
-			Vertex* v1 = new Vertex(objVerts[listInds[(i*3)]]);
-			Vertex* v2 = new Vertex(objVerts[listInds[(i*3)+1]]);
-			Vertex* v3 = new Vertex(objVerts[listInds[(i*3)+2]]);
-			this->m_tileArray[i] = new Tile( v1, v2, v3);
-		}
-		// done with generating tiles
-
 	}
 
 	// Destructor
@@ -104,10 +87,22 @@ public:
 			m_SingleMaterial = nullptr;
 		}
 
+		if(m_otherMaterial != nullptr)
+		{
+			delete m_otherMaterial;
+			m_otherMaterial = nullptr;
+		}
+
 		if(m_ManyMeshes != nullptr)
 		{
 			delete[] m_ManyMeshes;
 			m_ManyMeshes = nullptr;
+		}
+
+		if(m_GiantMesh != nullptr)
+		{
+			delete[] m_GiantMesh;
+			m_GiantMesh = nullptr;
 		}
 	}
 
@@ -145,18 +140,22 @@ public:
 
 	void Draw()
 	{
-		//m_gameEntity->Draw();
+		m_Tiles[0].material->SetUpDraw();
 		for(int i = 0; i < m_NumberOfFaces; ++i)
-			m_Tiles[i].Draw();
+			m_Tiles[i].TestDraw();
 	}
 
 	void LoadStuff(const wchar_t* vsFile, const wchar_t* psFile, D3D11_INPUT_ELEMENT_DESC* vertexDesc, SIZE_T arraySize,ID3D11Buffer* aCSBuffer, VertexShaderConstantBuffer* aConstantBufferData)
 	{
-		for(int i = 0; i < m_NumberOfFaces; ++i)
+		/*for(int i = 0; i < m_NumberOfFaces; ++i)
 		{
 			m_Tiles[i].material->LoadShadersAndInputLayout(vsFile, psFile, vertexDesc, arraySize);
 			m_Tiles[i].material->LoadAConstantBuffer(aCSBuffer, aConstantBufferData);
-		}
+		}*/
+		m_SingleMaterial->LoadShadersAndInputLayout(vsFile, psFile, vertexDesc, arraySize);
+		m_SingleMaterial->LoadAConstantBuffer(aCSBuffer, aConstantBufferData);
+		m_otherMaterial->LoadShadersAndInputLayout(vsFile, psFile, vertexDesc, arraySize);
+		m_otherMaterial->LoadAConstantBuffer(aCSBuffer, aConstantBufferData);
 	}
 
 private: 
@@ -167,7 +166,9 @@ private:
 	// Ryan's Stuff
 	GameEntity* m_Tiles;
 	Material* m_SingleMaterial;
+	Material* m_otherMaterial;
 	Mesh* m_ManyMeshes;
+	Mesh* m_GiantMesh;
 	int m_NumberOfFaces;
 };
 

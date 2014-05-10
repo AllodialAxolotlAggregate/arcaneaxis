@@ -1,63 +1,15 @@
-﻿Build started 5/10/2014 3:02:27 PM.
+﻿Build started 5/10/2014 6:25:46 PM.
      1>Project "D:\Users\rcr2761\AAA\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" on node 2 (Build target(s)).
-     1>FxCompile:
-         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\fxc.exe /nologo /E"main" /T ps_4_0_level_9_3 /Fo "D:\Users\rcr2761\AAA\DirectX11 AA2\Debug\FontPixelShader.cso" /Od /Zi FontPixelShader.hlsl 
-         compilation object save succeeded; see D:\Users\rcr2761\AAA\DirectX11 AA2\Debug\FontPixelShader.cso
-         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\fxc.exe /nologo /E"main" /T vs_4_0_level_9_3 /Fo "D:\Users\rcr2761\AAA\DirectX11 AA2\Debug\FontVertexShader.cso" /Od /Zi FontVertexShader.hlsl 
-         compilation object save succeeded; see D:\Users\rcr2761\AAA\DirectX11 AA2\Debug\FontVertexShader.cso
-         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\fxc.exe /nologo /E"main" /T ps_4_0_level_9_3 /Fo "D:\Users\rcr2761\AAA\DirectX11 AA2\Debug\PixelShader.cso" /Od /Zi Shaders\PixelShader.hlsl 
-         compilation object save succeeded; see D:\Users\rcr2761\AAA\DirectX11 AA2\Debug\PixelShader.cso
-         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\fxc.exe /nologo /E"main" /T ps_4_0_level_9_3 /Fo "D:\Users\rcr2761\AAA\DirectX11 AA2\Debug\TexturePixelShader.cso" /Od /Zi Shaders\TexturePixelShader.hlsl 
-         compilation object save succeeded; see D:\Users\rcr2761\AAA\DirectX11 AA2\Debug\TexturePixelShader.cso
-         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\fxc.exe /nologo /E"main" /T vs_4_0_level_9_3 /Fo "D:\Users\rcr2761\AAA\DirectX11 AA2\Debug\TextureVertexShader.cso" /Od /Zi Shaders\TextureVertexShader.hlsl 
-         compilation object save succeeded; see D:\Users\rcr2761\AAA\DirectX11 AA2\Debug\TextureVertexShader.cso
-         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\fxc.exe /nologo /E"main" /T vs_4_0_level_9_3 /Fo "D:\Users\rcr2761\AAA\DirectX11 AA2\Debug\VertexShader.cso" /Od /Zi Shaders\VertexShader.hlsl 
-         compilation object save succeeded; see D:\Users\rcr2761\AAA\DirectX11 AA2\Debug\VertexShader.cso
-       ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"D:\Users\rcr2761\AAA\DirectX11 AA2\\DirectXTK\inc" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Artifact.cpp Camera.cpp DXGame.cpp DemoGame.cpp Face.cpp Font.cpp FontShader.cpp GameEntity.cpp GameTimer.cpp Material.cpp Mesh.cpp Rune.cpp Sentence.cpp Spellbook.cpp Text.cpp Tile.cpp dxerr.cpp
-         dxerr.cpp
-         Tile.cpp
-         Text.cpp
-     1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\text.cpp(178): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\text.cpp(179): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\text.cpp(229): warning C4101: 'result' : unreferenced local variable
-         Spellbook.cpp
-     1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\supervector.h(202): warning C4018: '<' : signed/unsigned mismatch
-                 d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\supervector.h(198) : while compiling class template member function 'void SuperVector<T>::CopyContent(SuperVector<T> &,const SuperVector<T> &,const unsigned int)'
-                 with
-                 [
-                     T=SuperVector<Rune *> *
-                 ]
-                 d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\supervector.h(59) : see reference to function template instantiation 'void SuperVector<T>::CopyContent(SuperVector<T> &,const SuperVector<T> &,const unsigned int)' being compiled
-                 with
-                 [
-                     T=SuperVector<Rune *> *
-                 ]
-                 d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\spellbook.h(22) : see reference to class template instantiation 'SuperVector<T>' being compiled
-                 with
-                 [
-                     T=SuperVector<Rune *> *
-                 ]
-         Sentence.cpp
-     1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\sentence.cpp(61): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\sentence.cpp(125): warning C4101: 'numLetters' : unreferenced local variable
-     1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\sentence.cpp(126): warning C4101: 'drawY' : unreferenced local variable
-     1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\sentence.cpp(126): warning C4101: 'drawX' : unreferenced local variable
-     1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\sentence.cpp(170): warning C4101: 'result' : unreferenced local variable
-         Rune.cpp
-         Mesh.cpp
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"D:\Users\rcr2761\AAA\DirectX11 AA2\\DirectXTK\inc" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Artifact.cpp DemoGame.cpp GameEntity.cpp Material.cpp
          Material.cpp
-         GameTimer.cpp
          GameEntity.cpp
      1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\gameentity.cpp(11): warning C4305: '=' : truncation from 'double' to 'float'
-     1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\gameentity.cpp(21): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\gameentity.cpp(43): warning C4305: '=' : truncation from 'double' to 'float'
+     1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\gameentity.cpp(22): warning C4305: 'initializing' : truncation from 'double' to 'float'
      1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\gameentity.cpp(45): warning C4305: '=' : truncation from 'double' to 'float'
-         FontShader.cpp
-     1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\fontshader.cpp(24): warning C4101: 'constantBufferDesc' : unreferenced local variable
-     1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\fontshader.cpp(158): warning C4101: 'dataPtr' : unreferenced local variable
-         Font.cpp
-         Face.cpp
+     1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\gameentity.cpp(47): warning C4305: '=' : truncation from 'double' to 'float'
+         Generating Code...
+         Compiling...
          DemoGame.cpp
      1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\demogame.cpp(95): warning C4305: '=' : truncation from 'double' to 'float'
      1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\demogame.cpp(340): warning C4305: '+=' : truncation from 'double' to 'float'
@@ -80,8 +32,6 @@
      1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\demogame.cpp(947): warning C4068: unknown pragma
      1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\demogame.cpp(1076): warning C4018: '<' : signed/unsigned mismatch
      1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\demogame.cpp(1195): warning C4018: '<' : signed/unsigned mismatch
-         DXGame.cpp
-         Camera.cpp
          Artifact.cpp
          Generating Code...
        Link:
@@ -109,4 +59,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:18.25
+Time Elapsed 00:00:06.51

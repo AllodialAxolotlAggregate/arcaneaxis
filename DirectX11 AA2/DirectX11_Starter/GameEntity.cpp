@@ -9,6 +9,7 @@ GameEntity::GameEntity()
 	Reset();
 	WorldTransition();
 	velocity = 0.01;
+	testBuffer = nullptr;
 }
 
 GameEntity::GameEntity(Mesh* m_nMesh, Material* m_nMaterial, XMFLOAT3 m_nPosition) :
@@ -20,6 +21,7 @@ GameEntity::GameEntity(Mesh* m_nMesh, Material* m_nMaterial, XMFLOAT3 m_nPositio
 	velocity(0.01)
 {
 	WorldTransition();
+	testBuffer = nullptr;
 }
 
 GameEntity::~GameEntity() {}
@@ -73,6 +75,30 @@ void GameEntity::Draw()
 	mesh->Draw();
 }
 
+void GameEntity::TestDraw()
+{
+	// Update the constant buffer
+	m_Material->r_ConstantBufferData->world = m_WorldMatrix;
+
+	// Update the constant buffer
+	m_Material->r_DeviceContext->UpdateSubresource(
+		m_Material->r_ConstantBuffer,
+		0,			
+		NULL,
+		&(*m_Material->r_ConstantBufferData),
+		0,
+		0);
+
+	testBuffer = m_Material->r_ConstantBuffer;
+	m_Material->r_DeviceContext->VSSetConstantBuffers(
+		0,	// Corresponds to the constant buffer's register in the vertex shader
+		1, 
+		&testBuffer);
+
+	material->ActuallyDraw(m_WorldMatrix);
+	mesh->Draw();
+}
+
 void GameEntity::Reset()
 {
 	m_Mesh = nullptr;
@@ -82,4 +108,5 @@ void GameEntity::Reset()
 	m_Position = XMFLOAT3(0.0, 0.0, 0.0);
 	m_Rotation = XMFLOAT3(0.0, 0.0, 0.0);
 	m_Scale = XMFLOAT3(1.0, 1.0, 1.0);
+	testBuffer = nullptr;
 }
