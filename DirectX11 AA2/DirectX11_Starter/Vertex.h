@@ -37,19 +37,6 @@ struct VertexShaderConstantBuffer
 	DirectX::XMFLOAT4X4 projection;
 };
 
-struct Light
-{
-	DirectX::XMFLOAT3 dir;
-	float pad;
-	DirectX::XMFLOAT4 ambient;
-	DirectX::XMFLOAT4 diffuse;
-};
-
-struct cbPerFrame
-{
-	Light light;
-};
-
 // RasterTek Text Stuff
 struct FontType
 {

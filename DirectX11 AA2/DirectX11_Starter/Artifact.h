@@ -46,11 +46,6 @@ public:
 			// load the GameEntity
 			m_Tiles[i] = GameEntity(&m_ManyMeshes[i], m_SingleMaterial, m_gameEntity->Position);
 		}
-		// figure out how many tiles we need and where they are
-
-		// generate tiles based on 
-		// the verts of the mesh contained		
-		// (Do this after these values are initialized....)
 	}
 
 	// Blank constructor - don't use. I don't even know why I wrote it. ¯\_(^u^)_/¯
@@ -150,9 +145,9 @@ public:
 
 	void Draw()
 	{
-		m_gameEntity->Draw();
-		/*for(int i = 0; i < m_NumberOfFaces; ++i)
-			m_Tiles[i].Draw();*/
+		//m_gameEntity->Draw();
+		for(int i = 0; i < m_NumberOfFaces; ++i)
+			m_Tiles[i].Draw();
 	}
 
 	void LoadStuff(const wchar_t* vsFile, const wchar_t* psFile, D3D11_INPUT_ELEMENT_DESC* vertexDesc, SIZE_T arraySize,ID3D11Buffer* aCSBuffer, VertexShaderConstantBuffer* aConstantBufferData)
