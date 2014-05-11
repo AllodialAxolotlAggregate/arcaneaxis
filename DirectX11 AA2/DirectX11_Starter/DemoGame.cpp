@@ -176,6 +176,22 @@ void DemoGame::CreateGeometryBuffers()
 	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(-6.0, 0.0, 0.0));
 
 	gameArtifact = new Artifact(okamaGameSphere);
+
+	// Lighting
+	light.dir = XMFLOAT3(0.25f,0.5f,-1.0f);
+	light.pad = 0.0f;
+	light.pad2 = 0.0f;
+	light.range = 100.0f;
+	light.att = XMFLOAT3(0.0f, 0.2f, 0.0f);
+	light.ambient = XMFLOAT4(0.2f, 0.2f, 0.2f, 1.0f);
+	light.diffuse = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	light.pos = XMFLOAT3(0.0f,0.0f,0.0f);
+
+	lightVector = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+	//lightVector = XMVector3TransformCoord(lightVector, XMLoadFloat4x4(&gameArtifact->getGameEntity()->GetWorldMatrix()));
+	//light.pos.x = XMVectorGetX(lightVector);
+	//light.pos.y = XMVectorGetY(lightVector);
+	//light.pos.z = XMVectorGetZ(lightVector);
 }
 
 // Loads shaders from compiled shader object (.cso) files, and uses the
@@ -193,6 +209,14 @@ void DemoGame::LoadShadersAndInputLayout()
 		{"TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT,		0, 28,	D3D11_INPUT_PER_VERTEX_DATA, 0}
 	};
 
+	// Light
+	D3D11_INPUT_ELEMENT_DESC lightVertexDesc[] =
+	{
+		{"POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT,	0, 0,	D3D11_INPUT_PER_VERTEX_DATA, 0},
+		{"TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT,		0, 12,	D3D11_INPUT_PER_VERTEX_DATA, 0},
+		{"NORMAL",    0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 20,	D3D11_INPUT_PER_VERTEX_DATA, 0}
+	};
+
 
 	// Constant buffers ----------------------------------------
 	D3D11_BUFFER_DESC cBufferDesc;
@@ -207,16 +231,27 @@ void DemoGame::LoadShadersAndInputLayout()
 		NULL,
 		&vsConstantBuffer)); // When we create the buffer, there is too much stuff for the space allocated I think (only when GenTiles is called).
 
+	// Light
+	D3D11_BUFFER_DESC cbbd;
+	cbbd.Usage = D3D11_USAGE_DEFAULT;
+	cbbd.ByteWidth = sizeof(cbPerFrame);
+	cbbd.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
+	cbbd.CPUAccessFlags = 0;
+	cbbd.MiscFlags = 0;
+	HR(device->CreateBuffer(&cbbd, NULL, &cbPerFrameBuffer));
+
 	for(int i = 0; i < MAX_MATERIAL; ++i)
 	{
 		ma[i].LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
 		ma[i].LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
 	}
 	gameArtifact->LoadStuff(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc), vsConstantBuffer, &vsConstantBufferData);
+	//gameArtifact->LoadStuff(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc), vsConstantBuffer, &vsConstantBufferData);   LIGHTING WIP
 	fShader->LoadAConstantBuffer(vsConstantBuffer);
 
 	// Bob's Stuff
 	maSphere->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
+	//maSphere->LoadShadersAndInputLayout(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc));    LIGHTING WIP
 	maSphere->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
 
 	// http://www.braynzarsoft.net/index.php?p=D3D11BLENDING#still
@@ -259,6 +294,7 @@ void DemoGame::Release()
 {
 	// Release all of the D3D stuff that's still hanging out
 	ReleaseMacro(vsConstantBuffer);
+	ReleaseMacro(cbPerFrameBuffer);
 	
 	// New Stuff
 	delete camera;
@@ -446,6 +482,16 @@ void DemoGame::DrawScene()
 
 	// Important to do 2D stuff
 	Draw2D();
+
+	// Lighting //
+		// set constant buffer
+		constbuffPerFrame.dir = light.dir;
+		constbuffPerFrame.pad = light.pad;
+		constbuffPerFrame.ambient = light.ambient;
+		constbuffPerFrame.diffuse = light.diffuse;
+
+		deviceContext->UpdateSubresource( cbPerFrameBuffer, 0, NULL, &constbuffPerFrame, 0, 0 );
+		deviceContext->PSSetConstantBuffers(0, 1, &cbPerFrameBuffer);
 
 	//gameArtifact->getGameEntity()->Draw();
 	gameArtifact->Draw();

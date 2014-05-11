@@ -114,4 +114,11 @@ private:
 	// Obj1 Globals
 	ID3D11Buffer* meshVertBuff1;
 	ID3D11Buffer* meshIndexBuff1;
+
+
+	// Lighting
+	ID3D11Buffer* cbPerFrameBuffer;
+	cbPerFrame constbuffPerFrame;
+	Light light;
+	XMVECTOR lightVector;
 };

@@ -56,4 +56,25 @@ struct SentenceType
 	float red, green, blue;
 };
 
+// Lighting
+struct Light
+{
+	DirectX::XMFLOAT3 dir;
+	float pad;
+	DirectX::XMFLOAT3 pos;
+	float range;
+	DirectX::XMFLOAT3 att;
+	float pad2;
+	DirectX::XMFLOAT4 ambient;
+	DirectX::XMFLOAT4 diffuse;
+};
+
+struct cbPerFrame
+{
+	DirectX::XMFLOAT3 dir;
+	float pad;
+	DirectX::XMFLOAT4 ambient;
+	DirectX::XMFLOAT4 diffuse;
+};
+
 #endif
