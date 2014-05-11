@@ -212,7 +212,10 @@ void DemoGame::LoadShadersAndInputLayout()
 		ma[i].LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
 		ma[i].LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
 	}
+
+	// Load in the artifact's ability to do textures. 
 	gameArtifact->LoadStuff(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc), vsConstantBuffer, &vsConstantBufferData);
+	
 	fShader->LoadAConstantBuffer(vsConstantBuffer);
 
 	// Bob's Stuff

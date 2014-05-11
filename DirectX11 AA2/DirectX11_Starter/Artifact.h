@@ -15,19 +15,38 @@ public:
 		this->m_tileArray = nullptr; 
 		this->m_gameEntity = _ge;
 
-		// Ryan's Stuff
+		// Moved all the things to do with generating tiles to its own method (gmb9280)
+		this->GenTiles();
+	}
+
+	// Blank constructor - don't use. I don't even know why I wrote it. ¯\_(^u^)_/¯
+	Artifact()
+	{
+		this->m_tileArray = nullptr;
+	}
+
+	// Generates tiles
+	void GenTiles()
+	{
+		
+
+
+		// Ryan's changes -- generate a game entity with a material for each face
+
 		// Write down the number of faces on object
 		m_NumberOfFaces = m_gameEntity->mesh->r_NumberOfFaces;
 		// Create that many tiles GameEntities
 		m_Tiles = new GameEntity[m_NumberOfFaces];
 
 		// Create a single material for all of the entities to use
-		m_SingleMaterial = new Material(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext);
-		m_SingleMaterial->LoadSamplerStateAndShaderResourceView(L"Ignite.jpg");
+		m_SingleMaterial = new Material*();
+		m_SingleMaterial[0] = new Material(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext);
+		m_SingleMaterial[0]->LoadSamplerStateAndShaderResourceView(L"Eye.png"); // Image for the rune
 
 		// Create as many independent meshes as there are faces
 		m_ManyMeshes = new Mesh[m_NumberOfFaces];
 
+		// Initialize meshes over the faces
 		for(int i = 0; i < m_NumberOfFaces; ++i)
 		{
 			// Offload the meshes to a localized array of vertices
@@ -44,38 +63,8 @@ public:
 			m_ManyMeshes[i].LoadBuffers(vertices, m_gameEntity->mesh->r_Faces->r_Indices);
 
 			// load the GameEntity
-			m_Tiles[i] = GameEntity(&m_ManyMeshes[i], m_SingleMaterial, m_gameEntity->Position);
+			m_Tiles[i] = GameEntity(&m_ManyMeshes[i], m_SingleMaterial[0], m_gameEntity->Position);
 		}
-	}
-
-	// Blank constructor - don't use. I don't even know why I wrote it. ¯\_(^u^)_/¯
-	Artifact()
-	{
-		this->m_tileArray = nullptr;
-	}
-
-	// Generates tiles
-	void GenTiles(Vertex* objVerts, UINT* listInds, int numTris)
-	{
-		//Figure out how many verts we need
-		//int numVerts = this->m_gameEntity->GetNumVertsStraightUp();
-
-		// every three verts makes a tile (triangles)
-		this->m_tileArray = new Tile*(); // new array of tile pointers
-		
-		for(int i = 0; i< numTris-1; i++)
-		{
-			//std::cout<< "Triangle: " << i << std::endl;
-
-
-			
-			Vertex* v1 = new Vertex(objVerts[listInds[(i*3)]]);
-			Vertex* v2 = new Vertex(objVerts[listInds[(i*3)+1]]);
-			Vertex* v3 = new Vertex(objVerts[listInds[(i*3)+2]]);
-			this->m_tileArray[i] = new Tile( v1, v2, v3);
-		}
-		// done with generating tiles
-
 	}
 
 	// Destructor
@@ -150,6 +139,10 @@ public:
 			m_Tiles[i].Draw();
 	}
 
+	// TODO: Comment this method please : )
+	// My guess: 
+	// Loads in vertexshader file and pixelshader file, and all that other jazz to load textures.
+	// This way, the Artifact class itself has the ability to do textures. 
 	void LoadStuff(const wchar_t* vsFile, const wchar_t* psFile, D3D11_INPUT_ELEMENT_DESC* vertexDesc, SIZE_T arraySize,ID3D11Buffer* aCSBuffer, VertexShaderConstantBuffer* aConstantBufferData)
 	{
 		for(int i = 0; i < m_NumberOfFaces; ++i)
@@ -165,8 +158,8 @@ private:
 	Tile** m_tileArray; // array of pointers to tiles
 
 	// Ryan's Stuff
-	GameEntity* m_Tiles;
-	Material* m_SingleMaterial;
+	GameEntity* m_Tiles; // to be assigned to the tile array
+	Material** m_SingleMaterial;
 	Mesh* m_ManyMeshes;
 	int m_NumberOfFaces;
 };
