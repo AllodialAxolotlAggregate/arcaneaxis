@@ -41,6 +41,10 @@ public:
 	// Generates tiles
 	void GenTiles()
 	{
+		m_GiantMesh = new Mesh(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext);
+		m_GiantMesh->LoadNumbers(m_gameEntity->mesh->r_NumberOfVertices, m_gameEntity->mesh->r_NumberOfIndices);
+		m_GiantMesh->LoadBuffers(m_gameEntity->mesh->r_Vertices, m_gameEntity->mesh->r_Indices);
+
 		for(int i = 0; i < m_NumberOfFaces; ++i)
 		{
 			// Offload the meshes to a localized array of vertices
@@ -59,6 +63,8 @@ public:
 			// load the GameEntity
 			m_Tiles[i] = GameEntity(&m_ManyMeshes[i], m_otherMaterial, m_gameEntity->Position);
 		}
+
+		m_TestEntity = new GameEntity(m_GiantMesh, m_otherMaterial, m_gameEntity->Position);
 	}
 
 	// Destructor
@@ -104,6 +110,12 @@ public:
 			delete[] m_GiantMesh;
 			m_GiantMesh = nullptr;
 		}
+
+		if(m_TestEntity != nullptr)
+		{
+			delete m_TestEntity;
+			m_TestEntity = nullptr;
+		}
 	}
 
 #pragma region HelperMethods
@@ -140,9 +152,11 @@ public:
 
 	void Draw()
 	{
-		m_Tiles[0].material->SetUpDraw();
+		m_TestEntity->material->SetUpDraw();
+		m_TestEntity->TestDraw();
+		/*m_Tiles[0].material->SetUpDraw();
 		for(int i = 0; i < m_NumberOfFaces; ++i)
-			m_Tiles[i].TestDraw();
+			m_Tiles[i].TestDraw();*/
 	}
 
 	void LoadStuff(const wchar_t* vsFile, const wchar_t* psFile, D3D11_INPUT_ELEMENT_DESC* vertexDesc, SIZE_T arraySize,ID3D11Buffer* aCSBuffer, VertexShaderConstantBuffer* aConstantBufferData)
@@ -165,6 +179,7 @@ private:
 
 	// Ryan's Stuff
 	GameEntity* m_Tiles;
+	GameEntity* m_TestEntity;
 	Material* m_SingleMaterial;
 	Material* m_otherMaterial;
 	Mesh* m_ManyMeshes;

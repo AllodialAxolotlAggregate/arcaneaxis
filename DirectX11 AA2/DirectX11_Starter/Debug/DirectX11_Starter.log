@@ -1,13 +1,8 @@
-﻿Build started 5/10/2014 6:25:46 PM.
+﻿Build started 5/11/2014 9:55:01 PM.
      1>Project "D:\Users\rcr2761\AAA\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"D:\Users\rcr2761\AAA\DirectX11 AA2\\DirectXTK\inc" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Artifact.cpp DemoGame.cpp GameEntity.cpp Material.cpp
-         Material.cpp
-         GameEntity.cpp
-     1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\gameentity.cpp(11): warning C4305: '=' : truncation from 'double' to 'float'
-     1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\gameentity.cpp(22): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\gameentity.cpp(45): warning C4305: '=' : truncation from 'double' to 'float'
-     1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\gameentity.cpp(47): warning C4305: '=' : truncation from 'double' to 'float'
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"D:\Users\rcr2761\AAA\DirectX11 AA2\\DirectXTK\inc" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Artifact.cpp DemoGame.cpp
+         Artifact.cpp
          Generating Code...
          Compiling...
          DemoGame.cpp
@@ -32,7 +27,6 @@
      1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\demogame.cpp(947): warning C4068: unknown pragma
      1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\demogame.cpp(1076): warning C4018: '<' : signed/unsigned mismatch
      1>d:\users\rcr2761\aaa\directx11 aa2\directx11_starter\demogame.cpp(1195): warning C4018: '<' : signed/unsigned mismatch
-         Artifact.cpp
          Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Users\rcr2761\AAA\DirectX11 AA2\Debug\DirectX11_Starter.exe" /INCREMENTAL /NOLOGO d3d11.lib d3dcompiler.lib dinput8.lib dxguid.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Users\rcr2761\AAA\DirectX11 AA2\Debug\DirectX11_Starter.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Users\rcr2761\AAA\DirectX11 AA2\Debug\DirectX11_Starter.lib" /MACHINE:X86 Debug\Artifact.obj
@@ -59,4 +53,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:06.51
+Time Elapsed 00:00:04.80
