@@ -174,7 +174,8 @@ void DemoGame::CreateGeometryBuffers()
 	// Create our Artifact's game entity
 	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(-6.0, 0.0, 0.0));
 
-	gameArtifact = new Artifact(okamaGameSphere);
+	/*gameArtifact = new Artifact(okamaGameSphere);
+	gameArtifact->LoadFont(font, fShader);*/
 }
 
 // Loads shaders from compiled shader object (.cso) files, and uses the
@@ -211,8 +212,8 @@ void DemoGame::LoadShadersAndInputLayout()
 		ma[i].LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
 		ma[i].LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
 	}
-	gameArtifact->LoadStuff(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc), vsConstantBuffer, &vsConstantBufferData);
-	gameArtifact->GenTiles();
+	//gameArtifact->LoadStuff(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc), vsConstantBuffer, &vsConstantBufferData);
+	//gameArtifact->GenTiles();
 	fShader->LoadAConstantBuffer(vsConstantBuffer);
 
 	// Bob's Stuff
@@ -443,12 +444,13 @@ void DemoGame::DrawScene()
 		ges[i].TestDraw();
 
 	//okamaGameSphere->Draw();
+	okamaGameSphere->TestDraw();
 
 	// Important to do 2D stuff
 	Draw2D();
 
 	//gameArtifact->getGameEntity()->Draw();
-	gameArtifact->Draw();
+	//gameArtifact->Draw();
 
 	// Present the buffer
 	HR(swapChain->Present(0, 0));
@@ -481,7 +483,7 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 	float newX = (-camera->r_Position.z * mouseX) + camera->r_Position.x;
 	float newY = (-camera->r_Position.z * mouseY) + camera->r_Position.y;
 
-	//okamaGameSphere->MoveTo(XMFLOAT3(newX, newY, okamaGameSphere->Position.z));
+	okamaGameSphere->MoveTo(XMFLOAT3(newX, newY, okamaGameSphere->Position.z));
 
 	/*char stringX[10];
 	char stringY[10];
