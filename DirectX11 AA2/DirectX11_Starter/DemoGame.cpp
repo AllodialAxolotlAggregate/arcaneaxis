@@ -161,7 +161,7 @@ void DemoGame::CreateGeometryBuffers()
 	sentence[0] = Sentence(device, deviceContext);
 	sentence[0].LoadFontAndShader(font, fShader);
 	sentence[0].Initialize("Mouse X", 1, 10);
-
+	
 	sentence[1] = Sentence(device, deviceContext);
 	sentence[1].LoadFontAndShader(font, fShader);
 	sentence[1].Initialize("Mouse Y", 1, -10);
@@ -477,21 +477,31 @@ void DemoGame::OnMouseUp(WPARAM btnState, int x, int y)
 }
 
 void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
-{
+{/*
 	float mouseX = (((2.0f * (float)x) / (float) windowWidth) - 1.0f)/(camera->r_ProjectionMatrix._11);
 	float mouseY = (((-2.0f * (float)y) / (float) windowHeight) + 1.0f)/(camera->r_ProjectionMatrix._22);
 
 	float newX = (-camera->r_Position.z * mouseX) + camera->r_Position.x;
-	float newY = (-camera->r_Position.z * mouseY) + camera->r_Position.y;
+	float newY = (-camera->r_Position.z * mouseY) + camera->r_Position.y;*/
 
+	// get the mouse position and store it back into our variable
+	POINT cPos;
+    GetCursorPos(&cPos);
+    float _x = 0;
+   _x = cPos.x;
+    float _y = 0;
+   _y = cPos.y;
+
+	this->cursorPos.x = cPos.x; 
+	this->cursorPos.y = cPos.y;
 	//okamaGameSphere->MoveTo(XMFLOAT3(newX, newY, okamaGameSphere->Position.z));
 
-	/*char stringX[10];
-	char stringY[10];
-	sprintf_s(stringX, 10, "%d", prevMousePos.x);
-	sprintf_s(stringY, 10, "%d", prevMousePos.y);
+	char stringX[30];
+	char stringY[30];
+	sprintf_s(stringX, 30, "%d", cursorPos.x);
+	sprintf_s(stringY, 30, "%d", cursorPos.y);
 	sentence[0].Initialize(stringX, 1, 10);
-	sentence[1].Initialize(stringY, 1, -10);*/
+	sentence[1].Initialize(stringY, 1, -10);
 }
 #pragma endregion
 

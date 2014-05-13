@@ -68,7 +68,7 @@ private:
 	// Keeps track of the old mouse position.  Useful for 
 	// determining how far the mouse moved in a single frame.
 	POINT prevMousePos;
-
+	POINT cursorPos; // gmb9280 testing mouse coords
 	// My Extra Stuff
 	GameEntity* ges;
 	Material* ma;
