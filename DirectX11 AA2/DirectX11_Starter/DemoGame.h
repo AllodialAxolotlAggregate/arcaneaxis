@@ -47,6 +47,7 @@ public:
 
 	void Keyboard();
 	void Draw2D();
+	bool PointInFace(Face* _f);
 
 private:
 	// Initialization for our "game" demo

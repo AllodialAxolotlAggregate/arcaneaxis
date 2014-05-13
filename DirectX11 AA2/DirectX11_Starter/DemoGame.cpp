@@ -485,6 +485,7 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 	float newY = (-camera->r_Position.z * mouseY) + camera->r_Position.y;*/
 
 	// get the mouse position and store it back into our variable
+	// help from http://social.msdn.microsoft.com/Forums/en-US/1b563e35-8aea-4b98-8c76-490a8852ce9a/getting-the-mouse-position-in-screen-coordinates-using-c-no-net?forum=gametechnologiesdirectx101
 	POINT cPos;
     GetCursorPos(&cPos);
     float _x = 0;
@@ -492,17 +493,66 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
     float _y = 0;
    _y = cPos.y;
 
+   // Translate the mouse coords into screen coords instead of display coords
+   // TODO
+
+   // Set the private variable in Demogame
 	this->cursorPos.x = cPos.x; 
 	this->cursorPos.y = cPos.y;
 	//okamaGameSphere->MoveTo(XMFLOAT3(newX, newY, okamaGameSphere->Position.z));
 
+	// Write it out
 	char stringX[30];
 	char stringY[30];
 	sprintf_s(stringX, 30, "%d", cursorPos.x);
 	sprintf_s(stringY, 30, "%d", cursorPos.y);
 	sentence[0].Initialize(stringX, 1, 10);
 	sentence[1].Initialize(stringY, 1, -10);
+	bool collision = false;
+	// CZECK EVERYTHING
+	for(int  i =0; i<okamaGameSphere->GetMesh()->GetNumberOfTriangles(); i++)
+	{
+		if(PointInFace( &okamaGameSphere->GetMesh()->GetFaces()[0] ) )
+		{
+			// Hit! 
+			collision = true;
+		}
+	}
+	collision = false;
+
 }
+
+// gmb9280: Added Andre's method from Face.cpp that calculates if a mouse position 
+// hits a particular Face.
+bool DemoGame::PointInFace(Face* _f)
+{
+	XMVECTOR p = XMVectorSet(cursorPos.x, cursorPos.y, 0.0, 0.0);
+
+	XMVECTOR a = XMVectorSet(_f->GetVertices()[0].Position.x, _f->GetVertices()[0].Position.y, 0.0, 0.0);
+	XMVECTOR b = XMVectorSet(_f->GetVertices()[1].Position.x, _f->GetVertices()[1].Position.y, 0.0, 0.0);
+	XMVECTOR c = XMVectorSet(_f->GetVertices()[2].Position.x, _f->GetVertices()[2].Position.y, 0.0, 0.0);
+	
+	a -= p;
+	b -= p;
+	c -= p;
+
+	XMVECTOR u = XMVector2Cross(b, c);
+	XMVECTOR v = XMVector2Cross(c, a);
+	XMVECTOR d = XMVector2Dot(u,v);
+
+	if (XMVectorGetByIndex(d,0) < 0.0f)
+		return false;
+
+	XMVECTOR w = XMVector2Cross(a,b);
+	XMVECTOR e = XMVector2Dot(u,w);
+
+	if (XMVectorGetByIndex(e,0) < 0.0f)
+		return false;
+
+	return true;
+}
+
+
 #pragma endregion
 
 #pragma region ObjLoader
