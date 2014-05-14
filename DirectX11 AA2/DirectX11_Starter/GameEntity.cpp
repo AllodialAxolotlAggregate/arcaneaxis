@@ -95,7 +95,7 @@ void GameEntity::TestDraw()
 		1, 
 		&testBuffer);
 
-	material->ActuallyDraw(m_WorldMatrix);
+	material->DrawMaterial(m_WorldMatrix);
 	mesh->Draw();
 }
 

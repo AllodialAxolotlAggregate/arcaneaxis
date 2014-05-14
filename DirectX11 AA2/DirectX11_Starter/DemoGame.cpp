@@ -212,8 +212,8 @@ void DemoGame::LoadShadersAndInputLayout()
 		ma[i].LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
 		ma[i].LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
 	}
-	//gameArtifact->LoadStuff(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc), vsConstantBuffer, &vsConstantBufferData);
-	//gameArtifact->GenTiles();
+	/*gameArtifact->LoadStuff(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc), vsConstantBuffer, &vsConstantBufferData);
+	gameArtifact->GenTiles();*/
 	fShader->LoadAConstantBuffer(vsConstantBuffer);
 
 	// Bob's Stuff
@@ -441,10 +441,10 @@ void DemoGame::DrawScene()
 	vsConstantBufferData.projection	= camera->r_ProjectionMatrix;
 
 	for(int i = 0; i < MAX_GAMEENTITY; ++i)
-		ges[i].TestDraw();
+		ges[i].Draw();
 
-	//okamaGameSphere->Draw();
-	okamaGameSphere->TestDraw();
+	okamaGameSphere->Draw();
+	//okamaGameSphere->TestDraw();
 
 	// Important to do 2D stuff
 	Draw2D();

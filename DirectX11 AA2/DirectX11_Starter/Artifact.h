@@ -27,7 +27,7 @@ public:
 		m_SingleMaterial->LoadSamplerStateAndShaderResourceView(L"venus_map.jpg");
 
 		m_otherMaterial = new Material(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext);
-		m_otherMaterial->LoadSamplerStateAndShaderResourceView(L"Ignite.jpg");
+		m_otherMaterial->LoadSamplerStateAndShaderResourceView(L"font3.dds");
 
 		// Create as many independent meshes as there are faces
 		m_ManyMeshes = new Mesh[m_NumberOfFaces];
@@ -50,18 +50,10 @@ public:
 
 		FontVertex* vertices2 = new FontVertex[12];
 		memset(vertices2, 0, (sizeof(FontVertex) * 12));
-		m_Font->BuildVertexArray((void*)vertices2, "3x", 0.0, 0.0);
+		m_Font->BuildVertexArray((void*)vertices2, "! ", 0.0, 0.0);
 
 		for(int i = 0; i < m_NumberOfFaces; ++i)
 		{
-			// Offload the meshes to a localized array of vertices
-			/*Vertex vertices[] = 
-			{
-				{ m_gameEntity->mesh->r_Faces[i].r_Vertices[0].Position, m_gameEntity->mesh->r_Faces[i].r_Vertices[0].Color, XMFLOAT2(0.0, 0.0), m_gameEntity->mesh->r_Faces[i].r_Vertices[0].Normal },
-				{ m_gameEntity->mesh->r_Faces[i].r_Vertices[1].Position, m_gameEntity->mesh->r_Faces[i].r_Vertices[1].Color, XMFLOAT2(0.5, 0.5), m_gameEntity->mesh->r_Faces[i].r_Vertices[1].Normal},
-				{ m_gameEntity->mesh->r_Faces[i].r_Vertices[2].Position, m_gameEntity->mesh->r_Faces[i].r_Vertices[2].Color, XMFLOAT2(1.0, 1.0), m_gameEntity->mesh->r_Faces[i].r_Vertices[2].Normal}
-			};*/
-
 			int bloop = 0;
 			if(i%2)
 				bloop = 1;
@@ -206,9 +198,10 @@ public:
 
 	void LoadFont(Font* m_font, FontShader* m_FS)
 	{
-		m_Font = m_font;
-		m_Sentence->LoadFontAndShader(m_font, m_FS);
-		m_Sentence->Initialize("sdjklfslkdfjhoieahoikjsdfhiwuejhruiwehu", 0, 0);
+		m_Font = new Font();
+		m_Font->Initialize(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext, "CustomFontData.txt", L"CustomFont.dds");
+		/*m_Sentence->LoadFontAndShader(m_font, m_FS);
+		m_Sentence->Initialize("sdjklfslkdfjhoieahoikjsdfhiwuejhruiwehu", 0, 0);*/
 	}
 
 private: 

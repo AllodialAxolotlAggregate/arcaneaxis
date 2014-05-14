@@ -62,34 +62,49 @@ void Material::SetUpDraw()
 	m_DeviceContext->PSSetSamplers(0, 1, &m_SamplerState);
 }
 
-void Material::ActuallyDraw(XMFLOAT4X4 worldMatrix)
+void Material::DrawMaterial(XMFLOAT4X4 worldMatrix)
 {
-	//// Update the constant buffer
-	//m_ConstantBufferData->world	= worldMatrix;
-
-	//// Update the constant buffer
-	//m_DeviceContext->UpdateSubresource(
-	//	m_ConstantBuffer,
-	//	0,			
-	//	NULL,
-	//	&(*m_ConstantBufferData),
-	//	0,
-	//	0);
-
-	//// Set the current vertex and pixel shaders, as well the constant buffer for the vert shader
-	//m_DeviceContext->VSSetConstantBuffers(
-	//	0,	// Corresponds to the constant buffer's register in the vertex shader
-	//	1, 
-	//	&m_ConstantBuffer);
-
 	// Set up the Shader Resource View and the Sampler State
 	m_DeviceContext->PSSetShaderResources(0, 1, &m_ShaderResourceView);
 }
 
-void Material::Draw(XMFLOAT4X4 worldMatrix)
+void Material::TestDraw(XMFLOAT4X4 worldMatrix)
 {
 	SetUpDraw();
-	ActuallyDraw(worldMatrix);
+	DrawMaterial(worldMatrix);
+}
+
+void Material::Draw(XMFLOAT4X4 worldMatrix)
+{
+	// Update the constant buffer
+	m_ConstantBufferData->world	= worldMatrix;
+
+	// Update the constant buffer
+	m_DeviceContext->UpdateSubresource(
+		m_ConstantBuffer,
+		0,			
+		NULL,
+		&(*m_ConstantBufferData),
+		0,
+		0);
+
+	// Set up the input assembler
+	m_DeviceContext->IASetInputLayout(m_InputLayout);
+	m_DeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+
+	// Set up the Shader Resource View and the Sampler State
+	m_DeviceContext->PSSetShaderResources(0, 1, &m_ShaderResourceView);
+	m_DeviceContext->PSSetSamplers(0, 1, &m_SamplerState);
+
+	// Set up the Vertex and Pixel Shader
+	m_DeviceContext->VSSetShader(m_VertexShader, NULL, 0);
+	m_DeviceContext->PSSetShader(m_PixelShader, NULL, 0);
+
+	// Set the current vertex and pixel shaders, as well the constant buffer for the vert shader
+	m_DeviceContext->VSSetConstantBuffers(
+		0,	// Corresponds to the constant buffer's register in the vertex shader
+		1, 
+		&m_ConstantBuffer);
 }
 
 void Material::LoadSamplerStateAndShaderResourceView(const wchar_t* fileLocationName)
@@ -106,7 +121,9 @@ void Material::LoadSamplerStateAndShaderResourceView(const wchar_t* fileLocation
 
 	// http://my.safaribooksonline.com/book/programming/game-programming/9781435458956/2d-rendering/ch03lev1sec4
 	m_Device->CreateSamplerState(&samplerDesc, &m_SamplerState);
-	CreateWICTextureFromFile(m_Device, m_DeviceContext, fileLocationName, 0, &m_ShaderResourceView);
+	HRESULT hr = CreateWICTextureFromFile(m_Device, m_DeviceContext, fileLocationName, 0, &m_ShaderResourceView);
+	if (FAILED(hr))
+		CreateDDSTextureFromFile(m_Device, fileLocationName, nullptr, &m_ShaderResourceView);
 }
 
 void Material::LoadShadersAndInputLayout(const wchar_t* vsFile, const wchar_t* psFile, D3D11_INPUT_ELEMENT_DESC* vertexDesc, SIZE_T arraySize)
