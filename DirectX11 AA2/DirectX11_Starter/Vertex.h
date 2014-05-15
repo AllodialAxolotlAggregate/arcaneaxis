@@ -60,7 +60,8 @@ struct SentenceType
 struct Light
 {
 	DirectX::XMFLOAT3 dir;
-	float pad;
+	//float pad;
+	float cone;
 	DirectX::XMFLOAT3 pos;
 	float range;
 	DirectX::XMFLOAT3 att;
@@ -71,10 +72,7 @@ struct Light
 
 struct cbPerFrame
 {
-	DirectX::XMFLOAT3 dir;
-	float pad;
-	DirectX::XMFLOAT4 ambient;
-	DirectX::XMFLOAT4 diffuse;
+	Light light;
 };
 
 #endif

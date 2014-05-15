@@ -94,6 +94,9 @@ bool DemoGame::Init()
 
 	time = .01;
 
+	artifactTurnLeft = false;
+	artifactTurnRight = false;
+
 	return true;
 }
 
@@ -173,25 +176,27 @@ void DemoGame::CreateGeometryBuffers()
 	LoadObjModel(L"PentaSphere1.obj", *maSphere, *meSphere, true);
 
 	// Create our Artifact's game entity
-	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(-6.0, 0.0, 0.0));
+	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(-6.0, 0.0, 10.0));
 
 	gameArtifact = new Artifact(okamaGameSphere);
 
 	// Lighting
-	light.dir = XMFLOAT3(0.25f,0.5f,-1.0f);
-	light.pad = 0.0f;
+	light.dir = XMFLOAT3(0.0, 0.0, -1.3);//XMFLOAT3(0.25f,0.5f,-1.0f);
+	//light.pad = 0.0f;
 	light.pad2 = 0.0f;
-	light.range = 100.0f;
-	light.att = XMFLOAT3(0.0f, 0.2f, 0.0f);
-	light.ambient = XMFLOAT4(0.2f, 0.2f, 0.2f, 1.0f);
-	light.diffuse = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
-	light.pos = XMFLOAT3(0.0f,0.0f,0.0f);
+	light.range = 25.0f;
+	light.att = XMFLOAT3(0.9f, 0.9f, 0.0f); //XMFLOAT3(0.4f, 0.2f, 0.0f);
+	light.ambient = XMFLOAT4(0.3f, 0.3f, 0.3f, 1.0f);
+	light.diffuse = XMFLOAT4(0.5f, 0.5f, 0.5f, 1.0f);
+	//light.pos = gameArtifact->GetPosition();
+	light.pos = XMFLOAT3(-6.0f,0.0f,15.0f);
+	light.cone = 20.0f;
 
-	lightVector = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
-	//lightVector = XMVector3TransformCoord(lightVector, XMLoadFloat4x4(&gameArtifact->getGameEntity()->GetWorldMatrix()));
-	//light.pos.x = XMVectorGetX(lightVector);
-	//light.pos.y = XMVectorGetY(lightVector);
-	//light.pos.z = XMVectorGetZ(lightVector);
+	/*lightVector = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+	lightVector = XMVector3TransformCoord(lightVector, XMLoadFloat4x4(&gameArtifact->getGameEntity()->GetWorldMatrix()));
+	light.pos.x = XMVectorGetX(lightVector);
+	light.pos.y = XMVectorGetY(lightVector);
+	light.pos.z = XMVectorGetZ(lightVector);*/
 }
 
 // Loads shaders from compiled shader object (.cso) files, and uses the
@@ -213,8 +218,9 @@ void DemoGame::LoadShadersAndInputLayout()
 	D3D11_INPUT_ELEMENT_DESC lightVertexDesc[] =
 	{
 		{"POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT,	0, 0,	D3D11_INPUT_PER_VERTEX_DATA, 0},
-		{"TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT,		0, 12,	D3D11_INPUT_PER_VERTEX_DATA, 0},
-		{"NORMAL",    0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 20,	D3D11_INPUT_PER_VERTEX_DATA, 0}
+		{"COLOR",    0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, 12,	D3D11_INPUT_PER_VERTEX_DATA, 0},
+		{"TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT,		0, 28,	D3D11_INPUT_PER_VERTEX_DATA, 0},
+		{"NORMAL",    0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 36,	D3D11_INPUT_PER_VERTEX_DATA, 0}
 	};
 
 
@@ -231,7 +237,7 @@ void DemoGame::LoadShadersAndInputLayout()
 		NULL,
 		&vsConstantBuffer)); // When we create the buffer, there is too much stuff for the space allocated I think (only when GenTiles is called).
 
-	// Light
+	// Lighting
 	D3D11_BUFFER_DESC cbbd;
 	cbbd.Usage = D3D11_USAGE_DEFAULT;
 	cbbd.ByteWidth = sizeof(cbPerFrame);
@@ -245,13 +251,15 @@ void DemoGame::LoadShadersAndInputLayout()
 		ma[i].LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
 		ma[i].LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
 	}
-	gameArtifact->LoadStuff(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc), vsConstantBuffer, &vsConstantBufferData);
-	//gameArtifact->LoadStuff(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc), vsConstantBuffer, &vsConstantBufferData);   LIGHTING WIP
+
+	// Load in the artifact's ability to do textures. 
+	//gameArtifact->LoadStuff(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc), vsConstantBuffer, &vsConstantBufferData);
+	gameArtifact->LoadStuff(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc), vsConstantBuffer, &vsConstantBufferData);  // LIGHTING WIP
 	fShader->LoadAConstantBuffer(vsConstantBuffer);
 
 	// Bob's Stuff
-	maSphere->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
-	//maSphere->LoadShadersAndInputLayout(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc));    LIGHTING WIP
+	//maSphere->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
+	maSphere->LoadShadersAndInputLayout(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc));   // LIGHTING WIP
 	maSphere->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
 
 	// http://www.braynzarsoft.net/index.php?p=D3D11BLENDING#still
@@ -428,9 +436,24 @@ void DemoGame::UpdateScene(float dt)
 	if(time <= 0)
 	{
 		time = .001;
+
+		if(artifactTurnLeft)
+		{
+			//gameArtifact->getGameEntity()->Rotate(XMFLOAT3(0.001,0,0));
+			//gameArtifact->Rotate(XMFLOAT3(0.001,0,0));
+		} else if(artifactTurnRight){
+			//gameArtifact->getGameEntity()->Rotate(XMFLOAT3(-0.001,0,0));
+			//gameArtifact->Rotate(XMFLOAT3(-0.001,0,0));
+		}
+
+		//light.pos = gameArtifact->getGameEntity()->GetPosition();
+		//light.pos.z += 5;
+		//light.dir.x = camera->GetTarget().x - light.pos.x;
+		//light.dir.y = camera->GetTarget().y - light.pos.y;
+		//light.dir.z = camera->GetTarget().z - light.pos.z;
 		
 		//okamaGameSphere->Rotate(XMFLOAT3(0.001,0,0));
-		
+		//gameArtifact->getGameEntity()->Rotate(XMFLOAT3(0.001,0,0));
 		/*gameArtifact->getGameEntity()->Rotate(XMFLOAT3(0.001,0,0));
 		gameArtifact->getGameEntity()->MoveTo(XMFLOAT3(prevMousePos.x/5,-prevMousePos.y/5,okamaGameSphere->GetPosition().z));*/
 	}
@@ -475,6 +498,9 @@ void DemoGame::DrawScene()
 	vsConstantBufferData.view		= camera->r_ViewMatrix;
 	vsConstantBufferData.projection	= camera->r_ProjectionMatrix;
 
+	// Lighting
+	constbuffPerFrame.light = light;
+
 	for(int i = 0; i < MAX_GAMEENTITY; ++i)
 		ges[i].Draw();
 
@@ -483,15 +509,8 @@ void DemoGame::DrawScene()
 	// Important to do 2D stuff
 	Draw2D();
 
-	// Lighting //
-		// set constant buffer
-		constbuffPerFrame.dir = light.dir;
-		constbuffPerFrame.pad = light.pad;
-		constbuffPerFrame.ambient = light.ambient;
-		constbuffPerFrame.diffuse = light.diffuse;
-
-		deviceContext->UpdateSubresource( cbPerFrameBuffer, 0, NULL, &constbuffPerFrame, 0, 0 );
-		deviceContext->PSSetConstantBuffers(0, 1, &cbPerFrameBuffer);
+	deviceContext->UpdateSubresource( cbPerFrameBuffer, 0, NULL, &constbuffPerFrame, 0, 0 );
+	deviceContext->PSSetConstantBuffers(0, 1, &cbPerFrameBuffer);
 
 	//gameArtifact->getGameEntity()->Draw();
 	gameArtifact->Draw();
@@ -506,16 +525,33 @@ void DemoGame::DrawScene()
 
 // These methods don't do much currently, but can be used for mouse-related input
 
+// btnState codes, -Bob//
+// Nothing: 0
+// Left-Mouse: 1
+// Right-Mouse: 2
+// Mouse-Wheel: 16
+
 void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 {
 	prevMousePos.x = x;
 	prevMousePos.y = y;
+
+	// Left Mouse - Rotate left
+	if(btnState == 1)
+	{
+		artifactTurnLeft = true;
+	} else if(btnState == 2)
+	{
+		artifactTurnRight = true;
+	}
 
 	SetCapture(hMainWnd);
 }
 
 void DemoGame::OnMouseUp(WPARAM btnState, int x, int y)
 {
+	artifactTurnLeft = false;
+	artifactTurnRight = false;
 	ReleaseCapture();
 }
 
@@ -526,6 +562,8 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 
 	float newX = (-camera->r_Position.z * mouseX) + camera->r_Position.x;
 	float newY = (-camera->r_Position.z * mouseY) + camera->r_Position.y;
+
+
 
 	//okamaGameSphere->MoveTo(XMFLOAT3(newX, newY, okamaGameSphere->Position.z));
 
@@ -1230,6 +1268,7 @@ void DemoGame::LoadObjModel(std::wstring filename,
 	for(int j = 0 ; j < totalVerts; ++j)
 	{
 		tempVert.Position = vertPos[vertPosIndex[j]];
+		tempVert.Color = XMFLOAT4(0.0f,0.0f,0.0f,0.0f);
 		tempVert.Normal = vertNorm[vertNormIndex[j]];
 		tempVert.UV = vertTexCoord[vertTCIndex[j]];
 

@@ -1176,12 +1176,16 @@ D:\Users\rcr2761\AAA\DirectX11 AA2\Debug\TextureVertexShader.cso
 D:\Users\rcr2761\AAA\DirectX11 AA2\Debug\VertexShader.cso
 ^FontPixelShader.hlsl
 ^FontVertexShader.hlsl
+<<<<<<< HEAD
 ^Shaders\LightPixelShader.hlsl
 ^Shaders\LightVertexShader.hlsl
+=======
+>>>>>>> 37fbdb3e79ec7a8913606df1835d13883941116a
 ^Shaders\PixelShader.hlsl
 ^Shaders\TexturePixelShader.hlsl
 ^Shaders\TextureVertexShader.hlsl
 ^Shaders\VertexShader.hlsl
+<<<<<<< HEAD
 D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
 D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
 D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
@@ -1194,10 +1198,21 @@ D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
 ^FontVertexShader.hlsl
 ^Shaders\LightPixelShader.hlsl
 ^Shaders\LightVertexShader.hlsl
+=======
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\PixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+>>>>>>> 37fbdb3e79ec7a8913606df1835d13883941116a
 ^Shaders\PixelShader.hlsl
 ^Shaders\TexturePixelShader.hlsl
 ^Shaders\TextureVertexShader.hlsl
 ^Shaders\VertexShader.hlsl
+<<<<<<< HEAD
 D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
 D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
 D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
@@ -1210,10 +1225,21 @@ D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
 ^FontVertexShader.hlsl
 ^Shaders\LightPixelShader.hlsl
 ^Shaders\LightVertexShader.hlsl
+=======
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\PixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+>>>>>>> 37fbdb3e79ec7a8913606df1835d13883941116a
 ^Shaders\PixelShader.hlsl
 ^Shaders\TexturePixelShader.hlsl
 ^Shaders\TextureVertexShader.hlsl
 ^Shaders\VertexShader.hlsl
+<<<<<<< HEAD
 D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
 D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
 D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
@@ -1226,10 +1252,21 @@ D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
 ^FontVertexShader.hlsl
 ^Shaders\LightPixelShader.hlsl
 ^Shaders\LightVertexShader.hlsl
+=======
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\PixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+>>>>>>> 37fbdb3e79ec7a8913606df1835d13883941116a
 ^Shaders\PixelShader.hlsl
 ^Shaders\TexturePixelShader.hlsl
 ^Shaders\TextureVertexShader.hlsl
 ^Shaders\VertexShader.hlsl
+<<<<<<< HEAD
 D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
 D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
 D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
@@ -1242,10 +1279,21 @@ D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
 ^FontVertexShader.hlsl
 ^Shaders\LightPixelShader.hlsl
 ^Shaders\LightVertexShader.hlsl
+=======
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\PixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+>>>>>>> 37fbdb3e79ec7a8913606df1835d13883941116a
 ^Shaders\PixelShader.hlsl
 ^Shaders\TexturePixelShader.hlsl
 ^Shaders\TextureVertexShader.hlsl
 ^Shaders\VertexShader.hlsl
+<<<<<<< HEAD
 D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
 D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
 D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
@@ -1258,10 +1306,21 @@ D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
 ^FontVertexShader.hlsl
 ^Shaders\LightPixelShader.hlsl
 ^Shaders\LightVertexShader.hlsl
+=======
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\PixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+>>>>>>> 37fbdb3e79ec7a8913606df1835d13883941116a
 ^Shaders\PixelShader.hlsl
 ^Shaders\TexturePixelShader.hlsl
 ^Shaders\TextureVertexShader.hlsl
 ^Shaders\VertexShader.hlsl
+<<<<<<< HEAD
 D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
 D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
 D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
@@ -1274,10 +1333,21 @@ D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
 ^FontVertexShader.hlsl
 ^Shaders\LightPixelShader.hlsl
 ^Shaders\LightVertexShader.hlsl
+=======
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\PixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+>>>>>>> 37fbdb3e79ec7a8913606df1835d13883941116a
 ^Shaders\PixelShader.hlsl
 ^Shaders\TexturePixelShader.hlsl
 ^Shaders\TextureVertexShader.hlsl
 ^Shaders\VertexShader.hlsl
+<<<<<<< HEAD
 D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
 D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
 D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
@@ -1290,10 +1360,21 @@ D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
 ^FontVertexShader.hlsl
 ^Shaders\LightPixelShader.hlsl
 ^Shaders\LightVertexShader.hlsl
+=======
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\PixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+>>>>>>> 37fbdb3e79ec7a8913606df1835d13883941116a
 ^Shaders\PixelShader.hlsl
 ^Shaders\TexturePixelShader.hlsl
 ^Shaders\TextureVertexShader.hlsl
 ^Shaders\VertexShader.hlsl
+<<<<<<< HEAD
 D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
 D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
 D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
@@ -1306,10 +1387,21 @@ D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
 ^FontVertexShader.hlsl
 ^Shaders\LightPixelShader.hlsl
 ^Shaders\LightVertexShader.hlsl
+=======
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\PixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+>>>>>>> 37fbdb3e79ec7a8913606df1835d13883941116a
 ^Shaders\PixelShader.hlsl
 ^Shaders\TexturePixelShader.hlsl
 ^Shaders\TextureVertexShader.hlsl
 ^Shaders\VertexShader.hlsl
+<<<<<<< HEAD
 D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
 D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
 D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
@@ -1322,10 +1414,21 @@ D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
 ^FontVertexShader.hlsl
 ^Shaders\LightPixelShader.hlsl
 ^Shaders\LightVertexShader.hlsl
+=======
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\PixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+>>>>>>> 37fbdb3e79ec7a8913606df1835d13883941116a
 ^Shaders\PixelShader.hlsl
 ^Shaders\TexturePixelShader.hlsl
 ^Shaders\TextureVertexShader.hlsl
 ^Shaders\VertexShader.hlsl
+<<<<<<< HEAD
 D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
 D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
 D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
@@ -1862,3 +1965,2923 @@ D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
 \\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\GitHub\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
 \\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\GitHub\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
 \\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\GitHub\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+=======
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\PixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\VertexShader.cso
+>>>>>>> 37fbdb3e79ec7a8913606df1835d13883941116a
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\GitHub\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\GitHub\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\GitHub\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\GitHub\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\GitHub\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\GitHub\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\GitHub\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\GitHub\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\GitHub\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\GitHub\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\GitHub\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\GitHub\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\GitHub\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\GitHub\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\GitHub\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+\\banner.main.ad.rit.edu\students\rhs9967\IGMProfile\Desktop\GitHub\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso
+^FontPixelShader.hlsl
+^FontVertexShader.hlsl
+^Shaders\LightPixelShader.hlsl
+^Shaders\LightVertexShader.hlsl
+^Shaders\PixelShader.hlsl
+^Shaders\TexturePixelShader.hlsl
+^Shaders\TextureVertexShader.hlsl
+^Shaders\VertexShader.hlsl
+D:\arcaneaxis\DirectX11 AA2\Debug\FontPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\FontVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightPixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\LightVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\PixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TexturePixelShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\TextureVertexShader.cso
+D:\arcaneaxis\DirectX11 AA2\Debug\VertexShader.cso

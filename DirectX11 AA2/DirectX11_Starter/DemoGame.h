@@ -115,6 +115,10 @@ private:
 	ID3D11Buffer* meshVertBuff1;
 	ID3D11Buffer* meshIndexBuff1;
 
+	// Rotate Globals
+	bool artifactTurnLeft;
+	bool artifactTurnRight;
+	float artifactTurnRateX;
 
 	// Lighting
 	ID3D11Buffer* cbPerFrameBuffer;

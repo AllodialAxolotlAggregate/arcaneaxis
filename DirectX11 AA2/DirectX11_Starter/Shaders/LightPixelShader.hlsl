@@ -2,6 +2,7 @@
 struct Light
 {
 	float3 dir;
+	float cone;
 	float3 pos;
 	float range;
 	float3 att;
@@ -15,12 +16,6 @@ struct Light
 cbuffer perModel : register( b0 )
 {
 	Light light;
-	/*
-	float3 dir;
-	float pad;
-	float4 ambient;
-	float4 diffuse;
-	*/
 };
 
 Texture2D myTexture : register(t0); // (that’s a zero)
@@ -31,9 +26,10 @@ SamplerState mySample : register(s0);
 struct VertexToPixel
 {
 	float4 position		: SV_POSITION;
+	float4 color		: COLOR;
+	float4 worldPos		: POSTIION;
 	float2 texCoord		: TEXCOORD0;
 	float3 normal		: NORMAL;
-	//float3 worldPos		: POSTIION;
 };
 
 // Entry point for this pixel shader
@@ -48,11 +44,17 @@ float4 main(VertexToPixel input) : SV_TARGET
 	float3 finalColor = float3(0.0f, 0.0f, 0.0f);
 
 	//Create the vector between light position and pixels position
-	float3 lightToPixelVec = light.pos;// - input.worldPos;
-		
+	float3 lightToPixelVec = light.pos - input.worldPos;
+	/*
+	float3 lightToPixelVec = float3(0.0f, 0.0f, 0.0f);
+	lightToPixelVec.x = light.pos.x - input.worldPos.x;
+	lightToPixelVec.y = light.pos.y - input.worldPos.y;
+	lightToPixelVec.z = light.pos.z - input.worldPos.z;
+	*/
+
 	//Find the distance between the light pos and pixel pos
 	float d = length(lightToPixelVec);
-	d = 0.5f;
+	//d = 0.5f;
 	
 	//Create the ambient light
 	float3 finalAmbient = diffuse * light.ambient;
@@ -77,10 +79,14 @@ float4 main(VertexToPixel input) : SV_TARGET
 		
 		//Calculate Light's Falloff factor
 		finalColor /= light.att[0] + (light.att[1] * d) + (light.att[2] * (d*d));
+
+		//Calculate falloff from center to edge of pointlight cone
+		finalColor *= pow(max(dot(-lightToPixelVec, light.dir), 0.0f), light.cone);
 	}	
         
 	//make sure the values are between 1 and 0, and add the ambient
 	finalColor = saturate(finalColor + finalAmbient);
+	
 
 	//finalColor = diffuse * light.ambient;
 	//finalColor += saturate(dot(light.dir, input.normal) * light.diffuse * diffuse);
