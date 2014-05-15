@@ -27,14 +27,14 @@
 
 #define KEYDOWN(name, key) (name[key] & 0x80)
 #define IDENTITY_MATRIX XMFLOAT4X4(1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0);
-#define CAMERA_SPEED .01
+#define CAMERA_SPEED .1
 #define WORD_SPEED .1
 
 // Maximum number of various things for arrays
 #define MAX_MATERIAL 3
 #define MAX_MESH 3
 #define MAX_GAMEENTITY 3
-#define MAX_LINES 2
+#define MAX_LINES 3
 
 #pragma region Win32 Entry Point (WinMain)
 
@@ -91,6 +91,9 @@ bool DemoGame::Init()
 	// New Camera stuff - camera defined in DXGame
 	camera = Camera::GetInstance();
 	camera->ComputeMatrices();
+
+	// init GameManager
+	GameManager manager();
 
 	time = .01;
 
@@ -164,16 +167,28 @@ void DemoGame::CreateGeometryBuffers()
 	sentence[0] = Sentence(device, deviceContext);
 	sentence[0].LoadFontAndShader(font, fShader);
 	sentence[0].Initialize("Mouse X", 1, 10);
-
+	
 	sentence[1] = Sentence(device, deviceContext);
 	sentence[1].LoadFontAndShader(font, fShader);
 	sentence[1].Initialize("Mouse Y", 1, -10);
+
+	sentence[2] = Sentence(device, deviceContext);
+	sentence[2].LoadFontAndShader(font, fShader);
+	sentence[2].Initialize("State: ", -5, -15);
 
 	// masphere is the basis for our Artifact
 	maSphere = new Material(device, deviceContext);
 	meSphere = new Mesh(device, deviceContext);
 
 	LoadObjModel(L"PentaSphere1.obj", *maSphere, *meSphere, true);
+
+	// skybox loading
+	skyboxMesh = new Mesh(device, deviceContext);
+	skyboxMaterial = new Material(device, deviceContext);
+	skyboxMaterial->LoadSamplerStateAndShaderResourceView(L"skybox/skymap.dds");
+	LoadObjModel(L"SkyCube.obj", *skyboxMaterial, *skyboxMesh, true);
+	skybox = new GameEntity(skyboxMesh, skyboxMaterial, this->camera->GetPosition() ); 
+
 
 	// Create our Artifact's game entity
 	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(-6.0, 0.0, 10.0));
@@ -261,6 +276,10 @@ void DemoGame::LoadShadersAndInputLayout()
 	//maSphere->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
 	maSphere->LoadShadersAndInputLayout(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc));   // LIGHTING WIP
 	maSphere->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
+
+	// for the skybox
+	skyboxMaterial->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
+	skyboxMaterial->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
 
 	// http://www.braynzarsoft.net/index.php?p=D3D11BLENDING#still
 
@@ -424,7 +443,19 @@ void DemoGame::Keyboard()
 	{
 		camera->r_Target.x += CAMERA_SPEED;
 	}
+<<<<<<< HEAD
+	skybox->MoveTo(camera->GetPosition()); // move the skybox to teh camera
+=======
 
+	if(GetAsyncKeyState('P'))
+	{
+		if(manager.gameState == game)
+			manager.gameState = pause;
+		else if(manager.gameState == pause)
+			manager.gameState = game;
+	}
+
+>>>>>>> 272d337f3e7919be86f9d710d45c1398d32e8057
 	camera->ComputeMatrices();
 }
 
@@ -432,6 +463,9 @@ void DemoGame::Keyboard()
 // push it to the buffer on the device
 void DemoGame::UpdateScene(float dt)
 {
+	// Write out GameState
+	sentence[2].Initialize(manager.GetStateString(), -50, -15);
+
 	time -= dt;
 	if(time <= 0)
 	{
@@ -504,16 +538,21 @@ void DemoGame::DrawScene()
 	for(int i = 0; i < MAX_GAMEENTITY; ++i)
 		ges[i].Draw();
 
-	//okamaGameSphere->Draw();
+	okamaGameSphere->Draw();
 
 	// Important to do 2D stuff
 	Draw2D();
 
+<<<<<<< HEAD
 	deviceContext->UpdateSubresource( cbPerFrameBuffer, 0, NULL, &constbuffPerFrame, 0, 0 );
 	deviceContext->PSSetConstantBuffers(0, 1, &cbPerFrameBuffer);
 
 	//gameArtifact->getGameEntity()->Draw();
+=======
+>>>>>>> 0d0cb2bc65b6f4282d97acb15a52c4a250184063
 	gameArtifact->Draw();
+	skybox->Draw();
+
 
 	// Present the buffer
 	HR(swapChain->Present(0, 0));
@@ -556,24 +595,89 @@ void DemoGame::OnMouseUp(WPARAM btnState, int x, int y)
 }
 
 void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
-{
+{/*
 	float mouseX = (((2.0f * (float)x) / (float) windowWidth) - 1.0f)/(camera->r_ProjectionMatrix._11);
 	float mouseY = (((-2.0f * (float)y) / (float) windowHeight) + 1.0f)/(camera->r_ProjectionMatrix._22);
 
 	float newX = (-camera->r_Position.z * mouseX) + camera->r_Position.x;
+<<<<<<< HEAD
 	float newY = (-camera->r_Position.z * mouseY) + camera->r_Position.y;
 
 
 
+=======
+	float newY = (-camera->r_Position.z * mouseY) + camera->r_Position.y;*/
+
+	// get the mouse position and store it back into our variable
+	// help from http://social.msdn.microsoft.com/Forums/en-US/1b563e35-8aea-4b98-8c76-490a8852ce9a/getting-the-mouse-position-in-screen-coordinates-using-c-no-net?forum=gametechnologiesdirectx101
+	POINT cPos;
+    GetCursorPos(&cPos);
+    float _x = 0;
+   _x = cPos.x;
+    float _y = 0;
+   _y = cPos.y;
+
+   // Translate the mouse coords into screen coords instead of display coords
+   // TODO
+
+   // Set the private variable in Demogame
+	this->cursorPos.x = cPos.x; 
+	this->cursorPos.y = cPos.y;
+>>>>>>> 0d0cb2bc65b6f4282d97acb15a52c4a250184063
 	//okamaGameSphere->MoveTo(XMFLOAT3(newX, newY, okamaGameSphere->Position.z));
 
-	/*char stringX[10];
-	char stringY[10];
-	sprintf_s(stringX, 10, "%d", prevMousePos.x);
-	sprintf_s(stringY, 10, "%d", prevMousePos.y);
+	// Write it out
+	char stringX[30];
+	char stringY[30];
+	sprintf_s(stringX, 30, "%d", cursorPos.x);
+	sprintf_s(stringY, 30, "%d", cursorPos.y);
 	sentence[0].Initialize(stringX, 1, 10);
-	sentence[1].Initialize(stringY, 1, -10);*/
+	sentence[1].Initialize(stringY, 1, -10);
+	bool collision = false;
+	// CZECK EVERYTHING
+	for(int  i =0; i<okamaGameSphere->GetMesh()->GetNumberOfTriangles(); i++)
+	{
+		if(PointInFace( &okamaGameSphere->GetMesh()->GetFaces()[0] ) )
+		{
+			// Hit! 
+			collision = true;
+		}
+	}
+	collision = false;
+
 }
+
+// gmb9280: Added Andre's method from Face.cpp that calculates if a mouse position 
+// hits a particular Face.
+bool DemoGame::PointInFace(Face* _f)
+{
+	XMVECTOR p = XMVectorSet(cursorPos.x, cursorPos.y, 0.0, 0.0);
+
+	XMVECTOR a = XMVectorSet(_f->GetVertices()[0].Position.x, _f->GetVertices()[0].Position.y, 0.0, 0.0);
+	XMVECTOR b = XMVectorSet(_f->GetVertices()[1].Position.x, _f->GetVertices()[1].Position.y, 0.0, 0.0);
+	XMVECTOR c = XMVectorSet(_f->GetVertices()[2].Position.x, _f->GetVertices()[2].Position.y, 0.0, 0.0);
+	
+	a -= p;
+	b -= p;
+	c -= p;
+
+	XMVECTOR u = XMVector2Cross(b, c);
+	XMVECTOR v = XMVector2Cross(c, a);
+	XMVECTOR d = XMVector2Dot(u,v);
+
+	if (XMVectorGetByIndex(d,0) < 0.0f)
+		return false;
+
+	XMVECTOR w = XMVector2Cross(a,b);
+	XMVECTOR e = XMVector2Dot(u,w);
+
+	if (XMVectorGetByIndex(e,0) < 0.0f)
+		return false;
+
+	return true;
+}
+
+
 #pragma endregion
 
 #pragma region ObjLoader

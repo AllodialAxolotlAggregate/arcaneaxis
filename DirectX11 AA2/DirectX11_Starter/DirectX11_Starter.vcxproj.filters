@@ -84,6 +84,9 @@
     <ClCompile Include="Face.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DemoGame.h">
@@ -144,6 +147,9 @@
       <Filter>Gabbystructures</Filter>
     </ClInclude>
     <ClInclude Include="Face.h">
+      <Filter>Header Files\My Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
       <Filter>Header Files\My Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -8,6 +8,7 @@
 #include "Artifact.h"
 #include "Text.h"
 #include "Sentence.h"
+#include "GameManager.h"
 
 // Include run-time memory checking in debug builds
 #if defined(DEBUG) || defined(_DEBUG)
@@ -47,6 +48,7 @@ public:
 
 	void Keyboard();
 	void Draw2D();
+	bool PointInFace(Face* _f);
 
 private:
 	// Initialization for our "game" demo
@@ -68,7 +70,7 @@ private:
 	// Keeps track of the old mouse position.  Useful for 
 	// determining how far the mouse moved in a single frame.
 	POINT prevMousePos;
-
+	POINT cursorPos; // gmb9280 testing mouse coords
 	// My Extra Stuff
 	GameEntity* ges;
 	Material* ma;
@@ -98,6 +100,11 @@ private:
 	int objMeshTraingles; // number of triangles
 
 
+	// Stuff for skybox
+	Mesh* skyboxMesh;
+	Material* skyboxMaterial;
+	GameEntity* skybox;
+
 	ID3D11Buffer* meshVertBuff;
 	ID3D11Buffer* meshIndexBuff;
 	XMMATRIX meshWorld;
@@ -115,6 +122,7 @@ private:
 	ID3D11Buffer* meshVertBuff1;
 	ID3D11Buffer* meshIndexBuff1;
 
+<<<<<<< HEAD
 	// Rotate Globals
 	bool artifactTurnLeft;
 	bool artifactTurnRight;
@@ -125,4 +133,7 @@ private:
 	cbPerFrame constbuffPerFrame;
 	Light light;
 	XMVECTOR lightVector;
+=======
+	GameManager manager;
+>>>>>>> 0d0cb2bc65b6f4282d97acb15a52c4a250184063
 };
