@@ -81,6 +81,8 @@ DemoGame::~DemoGame()
 // sets up our geometry and loads the shaders (among other things)
 bool DemoGame::Init()
 {
+	mouseDragging = false;
+	dragStarted.x =0; dragStarted.y = 0;
 	if( !DXGame::Init() )
 		return false;
 
@@ -402,9 +404,9 @@ void DemoGame::Keyboard()
 	{
 		camera->r_Target.x += CAMERA_SPEED;
 	}
-<<<<<<< HEAD
+
 	skybox->MoveTo(camera->GetPosition()); // move the skybox to teh camera
-=======
+
 
 	if(GetAsyncKeyState('P'))
 	{
@@ -414,7 +416,6 @@ void DemoGame::Keyboard()
 			manager.gameState = game;
 	}
 
->>>>>>> 272d337f3e7919be86f9d710d45c1398d32e8057
 	camera->ComputeMatrices();
 }
 
@@ -502,23 +503,20 @@ void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 {
 	prevMousePos.x = x;
 	prevMousePos.y = y;
-
+	mouseDragging = true;
+	this->dragStarted.x = cursorPos.x; 
+	this->dragStarted.y = cursorPos.y;
 	SetCapture(hMainWnd);
 }
 
 void DemoGame::OnMouseUp(WPARAM btnState, int x, int y)
 {
+	mouseDragging = false;
 	ReleaseCapture();
 }
 
 void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
-{/*
-	float mouseX = (((2.0f * (float)x) / (float) windowWidth) - 1.0f)/(camera->r_ProjectionMatrix._11);
-	float mouseY = (((-2.0f * (float)y) / (float) windowHeight) + 1.0f)/(camera->r_ProjectionMatrix._22);
-
-	float newX = (-camera->r_Position.z * mouseX) + camera->r_Position.x;
-	float newY = (-camera->r_Position.z * mouseY) + camera->r_Position.y;*/
-
+{
 	// get the mouse position and store it back into our variable
 	// help from http://social.msdn.microsoft.com/Forums/en-US/1b563e35-8aea-4b98-8c76-490a8852ce9a/getting-the-mouse-position-in-screen-coordinates-using-c-no-net?forum=gametechnologiesdirectx101
 	POINT cPos;
@@ -528,13 +526,9 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
     float _y = 0;
    _y = cPos.y;
 
-   // Translate the mouse coords into screen coords instead of display coords
-   // TODO
-
    // Set the private variable in Demogame
 	this->cursorPos.x = cPos.x; 
 	this->cursorPos.y = cPos.y;
-	//okamaGameSphere->MoveTo(XMFLOAT3(newX, newY, okamaGameSphere->Position.z));
 
 	// Write it out
 	char stringX[30];
@@ -555,6 +549,21 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 	}
 	collision = false;
 
+
+	// Check for dragging
+	if(mouseDragging)
+	{
+		// Check to see if it's been dragged to the right or to the left
+		if(cursorPos.x < dragStarted.x)
+		{
+			this->gameArtifact->Rotate(XMFLOAT3(-1, 0,0));
+		}
+		else
+		{
+			this->gameArtifact->Rotate(XMFLOAT3(1, 0,0));
+		}
+	}
+	
 }
 
 // gmb9280: Added Andre's method from Face.cpp that calculates if a mouse position 

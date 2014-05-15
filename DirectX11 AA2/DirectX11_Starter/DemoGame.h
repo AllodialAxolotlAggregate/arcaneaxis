@@ -80,7 +80,8 @@ private:
 	Font* font;
 	FontShader* fShader;
 	Sentence* sentence;
-
+	bool mouseDragging;
+	POINT dragStarted; 
 	// Bob's Obj Globals
 	//ID3D11BlendState* Transparency;
 	GameEntity obj;
