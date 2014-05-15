@@ -13,6 +13,7 @@ class GameManager
 public:
 	GameManager();
 	GameState gameState;
+	char* GetStateString();
 
 private:
 };

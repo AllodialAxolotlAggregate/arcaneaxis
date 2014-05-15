@@ -8,6 +8,7 @@
 #include "Artifact.h"
 #include "Text.h"
 #include "Sentence.h"
+#include "GameManager.h"
 
 // Include run-time memory checking in debug builds
 #if defined(DEBUG) || defined(_DEBUG)
@@ -120,4 +121,6 @@ private:
 	// Obj1 Globals
 	ID3D11Buffer* meshVertBuff1;
 	ID3D11Buffer* meshIndexBuff1;
+
+	GameManager manager;
 };
