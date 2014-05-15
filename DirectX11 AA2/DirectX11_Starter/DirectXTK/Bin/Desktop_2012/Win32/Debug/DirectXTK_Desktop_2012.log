@@ -1,4 +1,20 @@
+<<<<<<< HEAD
 ﻿Build started 5/15/2014 5:51:24 PM.
+=======
+<<<<<<< HEAD
+﻿Build started 5/15/2014 5:41:37 PM.
+     1>Project "D:\arcaneaxis\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" on node 2 (Build target(s)).
+     1>Lib:
+         DirectXTK_Desktop_2012.vcxproj -> D:\arcaneaxis\DirectX11 AA2\DirectX11_Starter\DirectXTK\Bin\Desktop_2012\Win32\Debug\DirectXTK.lib
+     1>Done Building Project "D:\arcaneaxis\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.05
+=======
+<<<<<<< HEAD
+﻿Build started 5/15/2014 4:54:30 PM.
+>>>>>>> f33f97152b9bb2c1675f3761a70a95a887d038bf
      1>Project "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" on node 2 (Build target(s)).
      1>Lib:
          DirectXTK_Desktop_2012.vcxproj -> D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\DirectXTK\Bin\Desktop_2012\Win32\Debug\DirectXTK.lib
@@ -6,4 +22,13 @@
 
 Build succeeded.
 
+<<<<<<< HEAD
 Time Elapsed 00:00:00.06
+=======
+<<<<<<< HEAD
+Time Elapsed 00:00:11.46
+=======
+Time Elapsed 00:00:14.41
+>>>>>>> 272d337f3e7919be86f9d710d45c1398d32e8057
+>>>>>>> 0d0cb2bc65b6f4282d97acb15a52c4a250184063
+>>>>>>> f33f97152b9bb2c1675f3761a70a95a887d038bf

@@ -99,6 +99,9 @@ bool DemoGame::Init()
 
 	time = .01;
 
+	artifactTurnLeft = false;
+	artifactTurnRight = false;
+
 	return true;
 }
 
@@ -190,9 +193,27 @@ void DemoGame::CreateGeometryBuffers()
 
 
 	// Create our Artifact's game entity
-	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(-6.0, 0.0, 0.0));
+	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(-6.0, 0.0, 10.0));
 
 	gameArtifact = new Artifact(okamaGameSphere);
+
+	// Lighting
+	light.dir = XMFLOAT3(0.0, 0.0, -1.3);//XMFLOAT3(0.25f,0.5f,-1.0f);
+	//light.pad = 0.0f;
+	light.pad2 = 0.0f;
+	light.range = 25.0f;
+	light.att = XMFLOAT3(0.9f, 0.9f, 0.0f); //XMFLOAT3(0.4f, 0.2f, 0.0f);
+	light.ambient = XMFLOAT4(0.3f, 0.3f, 0.3f, 1.0f);
+	light.diffuse = XMFLOAT4(0.5f, 0.5f, 0.5f, 1.0f);
+	//light.pos = gameArtifact->GetPosition();
+	light.pos = XMFLOAT3(-6.0f,0.0f,15.0f);
+	light.cone = 20.0f;
+
+	/*lightVector = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+	lightVector = XMVector3TransformCoord(lightVector, XMLoadFloat4x4(&gameArtifact->getGameEntity()->GetWorldMatrix()));
+	light.pos.x = XMVectorGetX(lightVector);
+	light.pos.y = XMVectorGetY(lightVector);
+	light.pos.z = XMVectorGetZ(lightVector);*/
 }
 
 // Loads shaders from compiled shader object (.cso) files, and uses the
@@ -210,6 +231,15 @@ void DemoGame::LoadShadersAndInputLayout()
 		{"TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT,		0, 28,	D3D11_INPUT_PER_VERTEX_DATA, 0}
 	};
 
+	// Light
+	D3D11_INPUT_ELEMENT_DESC lightVertexDesc[] =
+	{
+		{"POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT,	0, 0,	D3D11_INPUT_PER_VERTEX_DATA, 0},
+		{"COLOR",    0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, 12,	D3D11_INPUT_PER_VERTEX_DATA, 0},
+		{"TEXCOORD", 0, DXGI_FORMAT_R32G32_FLOAT,		0, 28,	D3D11_INPUT_PER_VERTEX_DATA, 0},
+		{"NORMAL",    0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 36,	D3D11_INPUT_PER_VERTEX_DATA, 0}
+	};
+
 
 	// Constant buffers ----------------------------------------
 	D3D11_BUFFER_DESC cBufferDesc;
@@ -224,6 +254,15 @@ void DemoGame::LoadShadersAndInputLayout()
 		NULL,
 		&vsConstantBuffer)); // When we create the buffer, there is too much stuff for the space allocated I think (only when GenTiles is called).
 
+	// Lighting
+	D3D11_BUFFER_DESC cbbd;
+	cbbd.Usage = D3D11_USAGE_DEFAULT;
+	cbbd.ByteWidth = sizeof(cbPerFrame);
+	cbbd.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
+	cbbd.CPUAccessFlags = 0;
+	cbbd.MiscFlags = 0;
+	HR(device->CreateBuffer(&cbbd, NULL, &cbPerFrameBuffer));
+
 	for(int i = 0; i < MAX_MATERIAL; ++i)
 	{
 		ma[i].LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
@@ -231,12 +270,13 @@ void DemoGame::LoadShadersAndInputLayout()
 	}
 
 	// Load in the artifact's ability to do textures. 
-	gameArtifact->LoadStuff(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc), vsConstantBuffer, &vsConstantBufferData);
-	
+	//gameArtifact->LoadStuff(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc), vsConstantBuffer, &vsConstantBufferData);
+	gameArtifact->LoadStuff(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc), vsConstantBuffer, &vsConstantBufferData);  // LIGHTING WIP
 	fShader->LoadAConstantBuffer(vsConstantBuffer);
 
 	// Bob's Stuff
-	maSphere->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
+	//maSphere->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
+	maSphere->LoadShadersAndInputLayout(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc));   // LIGHTING WIP
 	maSphere->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
 
 	// for the skybox
@@ -283,6 +323,7 @@ void DemoGame::Release()
 {
 	// Release all of the D3D stuff that's still hanging out
 	ReleaseMacro(vsConstantBuffer);
+	ReleaseMacro(cbPerFrameBuffer);
 	
 	// New Stuff
 	delete camera;
@@ -430,9 +471,24 @@ void DemoGame::UpdateScene(float dt)
 	if(time <= 0)
 	{
 		time = .001;
+
+		if(artifactTurnLeft)
+		{
+			//gameArtifact->getGameEntity()->Rotate(XMFLOAT3(0.001,0,0));
+			//gameArtifact->Rotate(XMFLOAT3(0.001,0,0));
+		} else if(artifactTurnRight){
+			//gameArtifact->getGameEntity()->Rotate(XMFLOAT3(-0.001,0,0));
+			//gameArtifact->Rotate(XMFLOAT3(-0.001,0,0));
+		}
+
+		//light.pos = gameArtifact->getGameEntity()->GetPosition();
+		//light.pos.z += 5;
+		//light.dir.x = camera->GetTarget().x - light.pos.x;
+		//light.dir.y = camera->GetTarget().y - light.pos.y;
+		//light.dir.z = camera->GetTarget().z - light.pos.z;
 		
 		//okamaGameSphere->Rotate(XMFLOAT3(0.001,0,0));
-		
+		//gameArtifact->getGameEntity()->Rotate(XMFLOAT3(0.001,0,0));
 		/*gameArtifact->getGameEntity()->Rotate(XMFLOAT3(0.001,0,0));
 		gameArtifact->getGameEntity()->MoveTo(XMFLOAT3(prevMousePos.x/5,-prevMousePos.y/5,okamaGameSphere->GetPosition().z));*/
 	}
@@ -477,6 +533,9 @@ void DemoGame::DrawScene()
 	vsConstantBufferData.view		= camera->r_ViewMatrix;
 	vsConstantBufferData.projection	= camera->r_ProjectionMatrix;
 
+	// Lighting
+	constbuffPerFrame.light = light;
+
 	for(int i = 0; i < MAX_GAMEENTITY; ++i)
 		ges[i].Draw();
 
@@ -485,6 +544,13 @@ void DemoGame::DrawScene()
 	// Important to do 2D stuff
 	Draw2D();
 
+<<<<<<< HEAD
+	deviceContext->UpdateSubresource( cbPerFrameBuffer, 0, NULL, &constbuffPerFrame, 0, 0 );
+	deviceContext->PSSetConstantBuffers(0, 1, &cbPerFrameBuffer);
+
+	//gameArtifact->getGameEntity()->Draw();
+=======
+>>>>>>> 0d0cb2bc65b6f4282d97acb15a52c4a250184063
 	gameArtifact->Draw();
 	skybox->Draw();
 
@@ -499,24 +565,64 @@ void DemoGame::DrawScene()
 
 // These methods don't do much currently, but can be used for mouse-related input
 
+// btnState codes, -Bob//
+// Nothing: 0
+// Left-Mouse: 1
+// Right-Mouse: 2
+// Mouse-Wheel: 16
+
 void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 {
 	prevMousePos.x = x;
 	prevMousePos.y = y;
+<<<<<<< HEAD
 	mouseDragging = true;
 	this->dragStarted.x = cursorPos.x; 
 	this->dragStarted.y = cursorPos.y;
+=======
+
+	// Left Mouse - Rotate left
+	if(btnState == 1)
+	{
+		artifactTurnLeft = true;
+	} else if(btnState == 2)
+	{
+		artifactTurnRight = true;
+	}
+
+>>>>>>> f33f97152b9bb2c1675f3761a70a95a887d038bf
 	SetCapture(hMainWnd);
 }
 
 void DemoGame::OnMouseUp(WPARAM btnState, int x, int y)
 {
+<<<<<<< HEAD
 	mouseDragging = false;
+=======
+	artifactTurnLeft = false;
+	artifactTurnRight = false;
+>>>>>>> f33f97152b9bb2c1675f3761a70a95a887d038bf
 	ReleaseCapture();
 }
 
 void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
+<<<<<<< HEAD
 {
+=======
+{/*
+	float mouseX = (((2.0f * (float)x) / (float) windowWidth) - 1.0f)/(camera->r_ProjectionMatrix._11);
+	float mouseY = (((-2.0f * (float)y) / (float) windowHeight) + 1.0f)/(camera->r_ProjectionMatrix._22);
+
+	float newX = (-camera->r_Position.z * mouseX) + camera->r_Position.x;
+<<<<<<< HEAD
+	float newY = (-camera->r_Position.z * mouseY) + camera->r_Position.y;
+
+
+
+=======
+	float newY = (-camera->r_Position.z * mouseY) + camera->r_Position.y;*/
+
+>>>>>>> f33f97152b9bb2c1675f3761a70a95a887d038bf
 	// get the mouse position and store it back into our variable
 	// help from http://social.msdn.microsoft.com/Forums/en-US/1b563e35-8aea-4b98-8c76-490a8852ce9a/getting-the-mouse-position-in-screen-coordinates-using-c-no-net?forum=gametechnologiesdirectx101
 	POINT cPos;
@@ -529,6 +635,11 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
    // Set the private variable in Demogame
 	this->cursorPos.x = cPos.x; 
 	this->cursorPos.y = cPos.y;
+<<<<<<< HEAD
+=======
+>>>>>>> 0d0cb2bc65b6f4282d97acb15a52c4a250184063
+	//okamaGameSphere->MoveTo(XMFLOAT3(newX, newY, okamaGameSphere->Position.z));
+>>>>>>> f33f97152b9bb2c1675f3761a70a95a887d038bf
 
 	// Write it out
 	char stringX[30];
@@ -1291,6 +1402,7 @@ void DemoGame::LoadObjModel(std::wstring filename,
 	for(int j = 0 ; j < totalVerts; ++j)
 	{
 		tempVert.Position = vertPos[vertPosIndex[j]];
+		tempVert.Color = XMFLOAT4(0.0f,0.0f,0.0f,0.0f);
 		tempVert.Normal = vertNorm[vertNormIndex[j]];
 		tempVert.UV = vertTexCoord[vertTCIndex[j]];
 
