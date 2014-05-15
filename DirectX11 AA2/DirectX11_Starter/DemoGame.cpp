@@ -172,6 +172,14 @@ void DemoGame::CreateGeometryBuffers()
 
 	LoadObjModel(L"PentaSphere1.obj", *maSphere, *meSphere, true);
 
+	// skybox loading
+	skyboxMesh = new Mesh(device, deviceContext);
+	skyboxMaterial = new Material(device, deviceContext);
+	skyboxMaterial->LoadSamplerStateAndShaderResourceView(L"skybox/skymap.dds");
+	LoadObjModel(L"SkyCube.obj", *skyboxMaterial, *skyboxMesh, true);
+	skybox = new GameEntity(skyboxMesh, skyboxMaterial, this->camera->GetPosition() ); 
+
+
 	// Create our Artifact's game entity
 	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(-6.0, 0.0, 0.0));
 
@@ -221,6 +229,10 @@ void DemoGame::LoadShadersAndInputLayout()
 	// Bob's Stuff
 	maSphere->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
 	maSphere->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
+
+	// for the skybox
+	skyboxMaterial->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
+	skyboxMaterial->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
 
 	// http://www.braynzarsoft.net/index.php?p=D3D11BLENDING#still
 
@@ -383,7 +395,7 @@ void DemoGame::Keyboard()
 	{
 		camera->r_Target.x += CAMERA_SPEED;
 	}
-
+	skybox->MoveTo(camera->GetPosition()); // move the skybox to teh camera
 	camera->ComputeMatrices();
 }
 
@@ -445,13 +457,14 @@ void DemoGame::DrawScene()
 	for(int i = 0; i < MAX_GAMEENTITY; ++i)
 		ges[i].Draw();
 
-	//okamaGameSphere->Draw();
+	okamaGameSphere->Draw();
 
 	// Important to do 2D stuff
 	Draw2D();
 
-	//gameArtifact->getGameEntity()->Draw();
 	gameArtifact->Draw();
+	skybox->Draw();
+
 
 	// Present the buffer
 	HR(swapChain->Present(0, 0));

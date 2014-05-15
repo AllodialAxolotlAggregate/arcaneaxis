@@ -139,7 +139,6 @@ public:
 			m_Tiles[i].Draw();
 	}
 
-	// TODO: Comment this method please : )
 	// My guess: 
 	// Loads in vertexshader file and pixelshader file, and all that other jazz to load textures.
 	// This way, the Artifact class itself has the ability to do textures. 

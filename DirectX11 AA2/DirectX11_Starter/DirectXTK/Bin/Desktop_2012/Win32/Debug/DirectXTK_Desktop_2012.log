@@ -1,4 +1,4 @@
-﻿Build started 5/13/2014 9:53:34 AM.
+﻿Build started 5/15/2014 4:54:30 PM.
      1>Project "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\DirectXTK\Inc" /ZI /nologo /W4 /WX- /Od /Oy- /D _WIN32_WINNT=0x0600 /D _WIN7_PLATFORM_UPDATE /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /arch:SSE2 /fp:fast /Zc:wchar_t /Zc:forScope /Yc"pch.h" /Fp"Bin\Desktop_2012\Win32\Debug\DirectXTK.pch" /Fo"Bin\Desktop_2012\Win32\Debug\\" /Fd"Bin\Desktop_2012\Win32\Debug\DirectXTK.pdb" /Gd /TP /analyze- /errorReport:prompt Src\pch.cpp
@@ -58,4 +58,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:12.25
+Time Elapsed 00:00:11.46

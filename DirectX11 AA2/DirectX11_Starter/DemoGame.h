@@ -99,6 +99,11 @@ private:
 	int objMeshTraingles; // number of triangles
 
 
+	// Stuff for skybox
+	Mesh* skyboxMesh;
+	Material* skyboxMaterial;
+	GameEntity* skybox;
+
 	ID3D11Buffer* meshVertBuff;
 	ID3D11Buffer* meshIndexBuff;
 	XMMATRIX meshWorld;
