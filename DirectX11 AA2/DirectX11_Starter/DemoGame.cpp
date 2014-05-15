@@ -27,14 +27,14 @@
 
 #define KEYDOWN(name, key) (name[key] & 0x80)
 #define IDENTITY_MATRIX XMFLOAT4X4(1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0);
-#define CAMERA_SPEED .01
+#define CAMERA_SPEED .1
 #define WORD_SPEED .1
 
 // Maximum number of various things for arrays
 #define MAX_MATERIAL 3
 #define MAX_MESH 3
 #define MAX_GAMEENTITY 3
-#define MAX_LINES 2
+#define MAX_LINES 3
 
 #pragma region Win32 Entry Point (WinMain)
 
@@ -91,6 +91,9 @@ bool DemoGame::Init()
 	// New Camera stuff - camera defined in DXGame
 	camera = Camera::GetInstance();
 	camera->ComputeMatrices();
+
+	// init GameManager
+	GameManager manager();
 
 	time = .01;
 
@@ -165,6 +168,10 @@ void DemoGame::CreateGeometryBuffers()
 	sentence[1] = Sentence(device, deviceContext);
 	sentence[1].LoadFontAndShader(font, fShader);
 	sentence[1].Initialize("Mouse Y", 1, -10);
+
+	sentence[2] = Sentence(device, deviceContext);
+	sentence[2].LoadFontAndShader(font, fShader);
+	sentence[2].Initialize("State: ", -5, -15);
 
 	// masphere is the basis for our Artifact
 	maSphere = new Material(device, deviceContext);
@@ -384,6 +391,14 @@ void DemoGame::Keyboard()
 		camera->r_Target.x += CAMERA_SPEED;
 	}
 
+	if(GetAsyncKeyState('P'))
+	{
+		if(manager.gameState == game)
+			manager.gameState = pause;
+		else if(manager.gameState == pause)
+			manager.gameState = game;
+	}
+
 	camera->ComputeMatrices();
 }
 
@@ -391,6 +406,9 @@ void DemoGame::Keyboard()
 // push it to the buffer on the device
 void DemoGame::UpdateScene(float dt)
 {
+	// Write out GameState
+	sentence[2].Initialize(manager.GetStateString(), -50, -15);
+
 	time -= dt;
 	if(time <= 0)
 	{
