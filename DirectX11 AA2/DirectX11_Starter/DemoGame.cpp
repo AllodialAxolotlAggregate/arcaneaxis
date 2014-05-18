@@ -549,7 +549,8 @@ void DemoGame::DrawScene()
 	deviceContext->PSSetConstantBuffers(0, 1, &cbPerFrameBuffer);
 
 	//gameArtifact->getGameEntity()->Draw();
-	gameArtifact->Draw();
+	//gameArtifact->Draw();
+	gameArtifact->Spin(); // spins if we can
 	skybox->Draw();
 
 
@@ -579,13 +580,13 @@ void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 
 
 	// Left Mouse - Rotate left
-	if(btnState == 1)
+	/*if(btnState == 1)
 	{
 		artifactTurnLeft = true;
 	} else if(btnState == 2)
 	{
 		artifactTurnRight = true;
-	}
+	}*/
 
 
 	SetCapture(hMainWnd);
@@ -596,9 +597,36 @@ void DemoGame::OnMouseUp(WPARAM btnState, int x, int y)
 
 	mouseDragging = false;
 
-	artifactTurnLeft = false;
-	artifactTurnRight = false;
+	//artifactTurnLeft = false;
+	//artifactTurnRight = false;
 	ReleaseCapture();
+
+	// Release code - Give it a boost
+	// Check to see if it's been dragged to the right or to the left
+	/*if(cursorPos.x < dragStarted.x)
+	{
+		// check amount
+		float amt = 1 * (cursorPos.x - dragStarted.x);
+		this->gameArtifact->AddAccel(.002, 0);
+	}
+	else if(cursorPos.x > dragStarted.x)
+	{
+		float amt = -1 * (cursorPos.x - dragStarted.x);
+		this->gameArtifact->AddAccel(-.002, 0);
+	}
+	if(cursorPos.y < dragStarted.y)
+	{
+		float amt = -1 * (cursorPos.y - dragStarted.y);
+		this->gameArtifact->AddAccel(0, amt/100);
+	}
+	else if(cursorPos.y > dragStarted.y)
+	{
+		float amt = 1 * (cursorPos.y - dragStarted.y);
+		this->gameArtifact->AddAccel(0, amt/100);
+	}
+	*/
+	
+
 }
 
 void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
@@ -649,18 +677,31 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 	collision = false;
 
 
-	// Check for dragging
+	// Check for dragging (gmb9280)
 	if(mouseDragging)
 	{
 		// Check to see if it's been dragged to the right or to the left
 		if(cursorPos.x < dragStarted.x)
 		{
-			this->gameArtifact->Rotate(XMFLOAT3(-1, 0,0));
+			// check amount
+			float amt = -.001 * (cursorPos.x - dragStarted.x);
+			this->gameArtifact->AddAccel(.002, 0);
 		}
-		else
+		else if(cursorPos.x > dragStarted.x)
 		{
-			this->gameArtifact->Rotate(XMFLOAT3(1, 0,0));
+			float amt = .001 * (cursorPos.x - dragStarted.x);
+			this->gameArtifact->AddAccel(-.002, 0);
+		}/*
+		if(cursorPos.y < dragStarted.y)
+		{
+			float amt = -.001 * (cursorPos.y - dragStarted.y);
+			this->gameArtifact->AddAccel(0, -.001);
 		}
+		else if(cursorPos.y > dragStarted.y)
+		{
+			float amt = .001 * (cursorPos.y - dragStarted.y);
+			this->gameArtifact->AddAccel(0, .001);
+		}*/
 	}
 	
 }
