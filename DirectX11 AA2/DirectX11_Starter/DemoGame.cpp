@@ -544,13 +544,11 @@ void DemoGame::DrawScene()
 	// Important to do 2D stuff
 	Draw2D();
 
-<<<<<<< HEAD
+
 	deviceContext->UpdateSubresource( cbPerFrameBuffer, 0, NULL, &constbuffPerFrame, 0, 0 );
 	deviceContext->PSSetConstantBuffers(0, 1, &cbPerFrameBuffer);
 
 	//gameArtifact->getGameEntity()->Draw();
-=======
->>>>>>> 0d0cb2bc65b6f4282d97acb15a52c4a250184063
 	gameArtifact->Draw();
 	skybox->Draw();
 
@@ -575,11 +573,10 @@ void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 {
 	prevMousePos.x = x;
 	prevMousePos.y = y;
-<<<<<<< HEAD
 	mouseDragging = true;
 	this->dragStarted.x = cursorPos.x; 
 	this->dragStarted.y = cursorPos.y;
-=======
+
 
 	// Left Mouse - Rotate left
 	if(btnState == 1)
@@ -590,39 +587,33 @@ void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 		artifactTurnRight = true;
 	}
 
->>>>>>> f33f97152b9bb2c1675f3761a70a95a887d038bf
+
 	SetCapture(hMainWnd);
 }
 
 void DemoGame::OnMouseUp(WPARAM btnState, int x, int y)
 {
-<<<<<<< HEAD
+
 	mouseDragging = false;
-=======
+
 	artifactTurnLeft = false;
 	artifactTurnRight = false;
->>>>>>> f33f97152b9bb2c1675f3761a70a95a887d038bf
 	ReleaseCapture();
 }
 
 void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
-<<<<<<< HEAD
+
 {
-=======
-{/*
+
+/*
 	float mouseX = (((2.0f * (float)x) / (float) windowWidth) - 1.0f)/(camera->r_ProjectionMatrix._11);
 	float mouseY = (((-2.0f * (float)y) / (float) windowHeight) + 1.0f)/(camera->r_ProjectionMatrix._22);
 
 	float newX = (-camera->r_Position.z * mouseX) + camera->r_Position.x;
-<<<<<<< HEAD
 	float newY = (-camera->r_Position.z * mouseY) + camera->r_Position.y;
-
-
-
-=======
 	float newY = (-camera->r_Position.z * mouseY) + camera->r_Position.y;*/
 
->>>>>>> f33f97152b9bb2c1675f3761a70a95a887d038bf
+
 	// get the mouse position and store it back into our variable
 	// help from http://social.msdn.microsoft.com/Forums/en-US/1b563e35-8aea-4b98-8c76-490a8852ce9a/getting-the-mouse-position-in-screen-coordinates-using-c-no-net?forum=gametechnologiesdirectx101
 	POINT cPos;
@@ -635,11 +626,8 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
    // Set the private variable in Demogame
 	this->cursorPos.x = cPos.x; 
 	this->cursorPos.y = cPos.y;
-<<<<<<< HEAD
-=======
->>>>>>> 0d0cb2bc65b6f4282d97acb15a52c4a250184063
+
 	//okamaGameSphere->MoveTo(XMFLOAT3(newX, newY, okamaGameSphere->Position.z));
->>>>>>> f33f97152b9bb2c1675f3761a70a95a887d038bf
 
 	// Write it out
 	char stringX[30];

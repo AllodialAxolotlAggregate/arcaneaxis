@@ -123,7 +123,7 @@ private:
 	ID3D11Buffer* meshVertBuff1;
 	ID3D11Buffer* meshIndexBuff1;
 
-<<<<<<< HEAD
+
 	// Rotate Globals
 	bool artifactTurnLeft;
 	bool artifactTurnRight;
@@ -134,7 +134,7 @@ private:
 	cbPerFrame constbuffPerFrame;
 	Light light;
 	XMVECTOR lightVector;
-=======
+
 	GameManager manager;
->>>>>>> 0d0cb2bc65b6f4282d97acb15a52c4a250184063
+
 };
