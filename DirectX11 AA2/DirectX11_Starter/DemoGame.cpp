@@ -270,13 +270,13 @@ void DemoGame::LoadShadersAndInputLayout()
 	}
 
 	// Load in the artifact's ability to do textures. 
-	//gameArtifact->LoadStuff(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc), vsConstantBuffer, &vsConstantBufferData);
-	gameArtifact->LoadStuff(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc), vsConstantBuffer, &vsConstantBufferData);  // LIGHTING WIP
+	gameArtifact->LoadStuff(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc), vsConstantBuffer, &vsConstantBufferData);
+	//gameArtifact->LoadStuff(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc), vsConstantBuffer, &vsConstantBufferData);  // LIGHTING WIP
 	fShader->LoadAConstantBuffer(vsConstantBuffer);
 
 	// Bob's Stuff
-	//maSphere->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
-	maSphere->LoadShadersAndInputLayout(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc));   // LIGHTING WIP
+	maSphere->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
+	//maSphere->LoadShadersAndInputLayout(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc));   // LIGHTING WIP
 	maSphere->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
 
 	// for the skybox
@@ -472,6 +472,8 @@ void DemoGame::UpdateScene(float dt)
 	{
 		time = .001;
 
+		gameArtifact->Spin(); // spins if we can
+
 		if(artifactTurnLeft)
 		{
 			//gameArtifact->getGameEntity()->Rotate(XMFLOAT3(0.001,0,0));
@@ -539,8 +541,6 @@ void DemoGame::DrawScene()
 	for(int i = 0; i < MAX_GAMEENTITY; ++i)
 		ges[i].Draw();
 
-	//okamaGameSphere->Draw();
-
 	// Important to do 2D stuff
 	Draw2D();
 
@@ -548,11 +548,7 @@ void DemoGame::DrawScene()
 	deviceContext->UpdateSubresource( cbPerFrameBuffer, 0, NULL, &constbuffPerFrame, 0, 0 );
 	deviceContext->PSSetConstantBuffers(0, 1, &cbPerFrameBuffer);
 
-	//gameArtifact->getGameEntity()->Draw();
 	gameArtifact->Draw();
-	gameArtifact->Spin(); // spins if we can
-	//gameArtifact->Rotate(XMFLOAT3(0,.001, 0));
-
 	skybox->Draw();
 
 
@@ -596,54 +592,12 @@ void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 
 void DemoGame::OnMouseUp(WPARAM btnState, int x, int y)
 {
-
 	mouseDragging = false;
-
-	//artifactTurnLeft = false;
-	//artifactTurnRight = false;
 	ReleaseCapture();
-
-	// Release code - Give it a boost
-	// Check to see if it's been dragged to the right or to the left
-	/*if(cursorPos.x < dragStarted.x)
-	{
-		// check amount
-		float amt = 1 * (cursorPos.x - dragStarted.x);
-		this->gameArtifact->AddAccel(.002, 0);
-	}
-	else if(cursorPos.x > dragStarted.x)
-	{
-		float amt = -1 * (cursorPos.x - dragStarted.x);
-		this->gameArtifact->AddAccel(-.002, 0);
-	}
-	if(cursorPos.y < dragStarted.y)
-	{
-		float amt = -1 * (cursorPos.y - dragStarted.y);
-		this->gameArtifact->AddAccel(0, amt/100);
-	}
-	else if(cursorPos.y > dragStarted.y)
-	{
-		float amt = 1 * (cursorPos.y - dragStarted.y);
-		this->gameArtifact->AddAccel(0, amt/100);
-	}
-	*/
-	
-
 }
 
 void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
-
 {
-
-/*
-	float mouseX = (((2.0f * (float)x) / (float) windowWidth) - 1.0f)/(camera->r_ProjectionMatrix._11);
-	float mouseY = (((-2.0f * (float)y) / (float) windowHeight) + 1.0f)/(camera->r_ProjectionMatrix._22);
-
-	float newX = (-camera->r_Position.z * mouseX) + camera->r_Position.x;
-	float newY = (-camera->r_Position.z * mouseY) + camera->r_Position.y;
-	float newY = (-camera->r_Position.z * mouseY) + camera->r_Position.y;*/
-
-
 	// get the mouse position and store it back into our variable
 	// help from http://social.msdn.microsoft.com/Forums/en-US/1b563e35-8aea-4b98-8c76-490a8852ce9a/getting-the-mouse-position-in-screen-coordinates-using-c-no-net?forum=gametechnologiesdirectx101
 	POINT cPos;
@@ -657,8 +611,6 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 	this->cursorPos.x = cPos.x; 
 	this->cursorPos.y = cPos.y;
 
-	//okamaGameSphere->MoveTo(XMFLOAT3(newX, newY, okamaGameSphere->Position.z));
-
 	// Write it out
 	char stringX[30];
 	char stringY[30];
@@ -666,6 +618,8 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 	sprintf_s(stringY, 30, "%d", cursorPos.y);
 	sentence[0].Initialize(stringX, 1, 10);
 	sentence[1].Initialize(stringY, 1, -10);
+
+	// Check for collisions
 	bool collision = false;
 	// CZECK EVERYTHING
 	for(int  i =0; i<okamaGameSphere->GetMesh()->GetNumberOfTriangles(); i++)
@@ -682,28 +636,35 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 	// Check for dragging (gmb9280)
 	if(mouseDragging)
 	{
-		// Check to see if it's been dragged to the right or to the left
-		if(cursorPos.x < dragStarted.x)
+		if( std::abs( cursorPos.y - dragStarted.y) > std::abs(cursorPos.x - dragStarted.x))
 		{
-			// check amount
-			float amt = -.001 * (cursorPos.x - dragStarted.x);
-			this->gameArtifact->AddAccel(.002,0);
+			// Check to see if it's been dragged to the right or to the left
+			if(cursorPos.x < dragStarted.x)
+			{
+				// check amount
+				float amt = -.001 * (cursorPos.x - dragStarted.x);
+				this->gameArtifact->AddAccel(.004,0);
+			}
+			else if(cursorPos.x > dragStarted.x)
+			{
+				float amt = .001 * (cursorPos.x - dragStarted.x);
+				this->gameArtifact->AddAccel(-.004,0);
+			}
+			
 		}
-		else if(cursorPos.x > dragStarted.x)
-		{
-			float amt = .001 * (cursorPos.x - dragStarted.x);
-			this->gameArtifact->AddAccel(-.002,0);
-		}/*
-		if(cursorPos.y < dragStarted.y)
-		{
-			float amt = -.001 * (cursorPos.y - dragStarted.y);
-			this->gameArtifact->AddAccel(0, -.001);
+		else{
+			if(cursorPos.y < dragStarted.y)
+			{
+				float amt = -.001 * (cursorPos.y - dragStarted.y);
+				this->gameArtifact->AddAccel(0, -.004);
+			}
+			else if(cursorPos.y > dragStarted.y)
+			{
+				float amt = .001 * (cursorPos.y - dragStarted.y);
+				this->gameArtifact->AddAccel(0, .004);
+			}
 		}
-		else if(cursorPos.y > dragStarted.y)
-		{
-			float amt = .001 * (cursorPos.y - dragStarted.y);
-			this->gameArtifact->AddAccel(0, .001);
-		}*/
+		
 	}
 	
 }

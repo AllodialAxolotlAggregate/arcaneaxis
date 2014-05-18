@@ -27,9 +27,9 @@ GameEntity::~GameEntity() {}
 void GameEntity::WorldTransition()
 {
 	XMMATRIX trans = XMMatrixTranslation(m_Position.x, m_Position.y, m_Position.z);
-	XMMATRIX rotX = XMMatrixRotationY(m_Rotation.x);
+	XMMATRIX rotX = XMMatrixRotationX(m_Rotation.x);
 	XMMATRIX rotY = XMMatrixRotationY(m_Rotation.y);
-	XMMATRIX rotZ = XMMatrixRotationY(m_Rotation.z);
+	XMMATRIX rotZ = XMMatrixRotationZ(m_Rotation.z);
 	XMMATRIX scale = XMMatrixScaling(m_Scale.x, m_Scale.y, m_Scale.z);
 
 	XMMATRIX w = scale * rotX * rotY * rotZ * trans;
