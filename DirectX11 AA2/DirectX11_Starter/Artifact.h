@@ -29,8 +29,6 @@ public:
 	// Spin according to our physics
 	void Spin()
 	{
-		
-
 		// Add acceleration accrued
 		this->velocX += this->accX;
 		this->velocY += this->accY;
@@ -39,7 +37,7 @@ public:
 		this->velocX *= .99;
 		this->velocY *= .99;
 
-		this->Rotate( XMFLOAT3(velocX, 0, velocY));
+		this->Rotate( XMFLOAT3(velocX, velocY, 0));
 	}
 
 	// When mouse stuff happens, pass it back here
@@ -144,7 +142,7 @@ public:
 		return this->m_gameEntity->GetPosition();
 	}
 
-	// Rotate:  rotates (passes in to Artifact)
+	// Rotate:  rotates (passes in to Entity)
 	void Rotate(DirectX::XMFLOAT3 _f3)
 	{
 		this->m_gameEntity->Rotate(_f3);
@@ -155,9 +153,9 @@ public:
 
 	void Draw()
 	{
-		//m_gameEntity->Draw();
-		for(int i = 0; i < m_NumberOfFaces; ++i)
-			m_Tiles[i].Draw();
+		m_gameEntity->Draw();
+		/*for(int i = 0; i < m_NumberOfFaces; ++i)
+			m_Tiles[i].Draw();*/
 	}
 
 	// My guess: 

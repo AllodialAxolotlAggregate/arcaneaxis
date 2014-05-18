@@ -539,7 +539,7 @@ void DemoGame::DrawScene()
 	for(int i = 0; i < MAX_GAMEENTITY; ++i)
 		ges[i].Draw();
 
-	okamaGameSphere->Draw();
+	//okamaGameSphere->Draw();
 
 	// Important to do 2D stuff
 	Draw2D();
@@ -549,8 +549,10 @@ void DemoGame::DrawScene()
 	deviceContext->PSSetConstantBuffers(0, 1, &cbPerFrameBuffer);
 
 	//gameArtifact->getGameEntity()->Draw();
-	//gameArtifact->Draw();
+	gameArtifact->Draw();
 	gameArtifact->Spin(); // spins if we can
+	//gameArtifact->Rotate(XMFLOAT3(0,.001, 0));
+
 	skybox->Draw();
 
 
@@ -685,12 +687,12 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 		{
 			// check amount
 			float amt = -.001 * (cursorPos.x - dragStarted.x);
-			this->gameArtifact->AddAccel(.002, 0);
+			this->gameArtifact->AddAccel(.002,0);
 		}
 		else if(cursorPos.x > dragStarted.x)
 		{
 			float amt = .001 * (cursorPos.x - dragStarted.x);
-			this->gameArtifact->AddAccel(-.002, 0);
+			this->gameArtifact->AddAccel(-.002,0);
 		}/*
 		if(cursorPos.y < dragStarted.y)
 		{
