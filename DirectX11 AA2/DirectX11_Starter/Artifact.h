@@ -14,7 +14,8 @@ public:
 	{
 		this->m_tileArray = nullptr; 
 		this->m_gameEntity = _ge;
-
+		this->accX = 0; this->accY = 0;
+		this->velocX = 0; this->velocY = 0;
 		// Moved all the things to do with generating tiles to its own method (gmb9280)
 		this->GenTiles();
 	}
@@ -25,12 +26,30 @@ public:
 		this->m_tileArray = nullptr;
 	}
 
+	// Spin according to our physics
+	void Spin()
+	{
+		// Add acceleration accrued
+		this->velocX += this->accX;
+		this->velocY += this->accY;
+		this->accY = 0; this->accX = 0;
+
+		this->velocX *= .99;
+		this->velocY *= .99;
+
+		this->Rotate( XMFLOAT3(velocX, velocY, 0));
+	}
+
+	// When mouse stuff happens, pass it back here
+	void AddAccel(float x, float y)
+	{
+		this->accX += x; 
+		this->accY += y;
+	}
+
 	// Generates tiles
 	void GenTiles()
 	{
-		
-
-
 		// Ryan's changes -- generate a game entity with a material for each face
 
 		// Write down the number of faces on object
@@ -123,7 +142,7 @@ public:
 		return this->m_gameEntity->GetPosition();
 	}
 
-	// Rotate:  rotates (passes in to Artifact)
+	// Rotate:  rotates (passes in to Entity)
 	void Rotate(DirectX::XMFLOAT3 _f3)
 	{
 		this->m_gameEntity->Rotate(_f3);
@@ -135,8 +154,8 @@ public:
 	void Draw()
 	{
 		m_gameEntity->Draw();
-		for(int i = 0; i < m_NumberOfFaces; ++i)
-			m_Tiles[i].Draw();
+		/*for(int i = 0; i < m_NumberOfFaces; ++i)
+			m_Tiles[i].Draw();*/
 	}
 
 	// My guess: 
@@ -151,6 +170,12 @@ public:
 		}
 	}
 
+
+	// Physics stuff - for rotation
+	float velocX;
+	float velocY;
+	float accX; 
+	float accY;
 private: 
 	// pointer to inner game entity
 	GameEntity* m_gameEntity; 
