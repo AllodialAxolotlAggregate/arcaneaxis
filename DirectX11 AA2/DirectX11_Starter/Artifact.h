@@ -134,7 +134,7 @@ public:
 
 	void Draw()
 	{
-		//m_gameEntity->Draw();
+		m_gameEntity->Draw();
 		for(int i = 0; i < m_NumberOfFaces; ++i)
 			m_Tiles[i].Draw();
 	}
