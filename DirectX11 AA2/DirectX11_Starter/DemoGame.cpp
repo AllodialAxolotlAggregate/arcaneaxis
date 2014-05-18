@@ -102,6 +102,8 @@ bool DemoGame::Init()
 	artifactTurnLeft = false;
 	artifactTurnRight = false;
 
+	pausePressed = false;
+
 	return true;
 }
 
@@ -275,9 +277,15 @@ void DemoGame::LoadShadersAndInputLayout()
 	fShader->LoadAConstantBuffer(vsConstantBuffer);
 
 	// Bob's Stuff
+<<<<<<< HEAD
 	maSphere->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
 	//maSphere->LoadShadersAndInputLayout(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc));   // LIGHTING WIP
 	maSphere->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
+=======
+	//maSphere->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
+	//maSphere->LoadShadersAndInputLayout(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc));   // LIGHTING WIP
+	//maSphere->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
+>>>>>>> 7e0ec41e5cf64689ea1a4abcef35ec72f82f9fb6
 
 	// for the skybox
 	skyboxMaterial->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
@@ -451,10 +459,17 @@ void DemoGame::Keyboard()
 
 	if(GetAsyncKeyState('P'))
 	{
+		if (!pausePressed)
+			pausePressed = true;
+	}
+
+	if(!GetAsyncKeyState('P') && pausePressed)
+	{
 		if(manager.gameState == game)
-			manager.gameState = pause;
-		else if(manager.gameState == pause)
-			manager.gameState = game;
+				manager.gameState = pause;
+			else if(manager.gameState == pause)
+				manager.gameState = game;
+		pausePressed = false;
 	}
 
 	camera->ComputeMatrices();

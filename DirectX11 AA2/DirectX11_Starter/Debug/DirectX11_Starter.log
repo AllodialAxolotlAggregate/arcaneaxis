@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 5/18/2014 2:44:15 PM.
      1>Project "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -39,8 +40,53 @@
      1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(1157): warning C4068: unknown pragma
      1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(1286): warning C4018: '<' : signed/unsigned mismatch
      1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(1406): warning C4018: '<' : signed/unsigned mismatch
+=======
+﻿Build started 5/18/2014 2:43:10 PM.
+     1>Project "D:\arcaneaxis\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"D:\arcaneaxis\DirectX11 AA2\\DirectXTK\inc" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Artifact.cpp DemoGame.cpp
+         Artifact.cpp
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\artifact.h(37): warning C4305: '*=' : truncation from 'double' to 'float'
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\artifact.h(38): warning C4305: '*=' : truncation from 'double' to 'float'
+         Generating Code...
+         Compiling...
+         DemoGame.cpp
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\artifact.h(37): warning C4305: '*=' : truncation from 'double' to 'float'
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\artifact.h(38): warning C4305: '*=' : truncation from 'double' to 'float'
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(100): warning C4305: '=' : truncation from 'double' to 'float'
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(98): warning C4930: 'GameManager manager(void)': prototyped function not called (was a variable definition intended?)
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(203): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(407): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(408): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(413): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(414): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(419): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(420): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(425): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(426): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(431): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(432): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(437): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(438): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(443): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(448): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(482): warning C4305: '=' : truncation from 'double' to 'float'
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(661): warning C4244: '=' : conversion from 'LONG' to 'float', possible loss of data
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(663): warning C4244: '=' : conversion from 'LONG' to 'float', possible loss of data
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(698): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(699): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(703): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(704): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(724): warning C4244: 'argument' : conversion from 'LONG' to 'float', possible loss of data
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(893): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(1017): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(1205): warning C4068: unknown pragma
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(1334): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(1454): warning C4018: '<' : signed/unsigned mismatch
+         Generating Code...
+>>>>>>> 7e0ec41e5cf64689ea1a4abcef35ec72f82f9fb6
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\DirectX11_Starter.exe" /INCREMENTAL /NOLOGO d3d11.lib d3dcompiler.lib dinput8.lib dxguid.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\DirectX11_Starter.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\DirectX11_Starter.lib" /MACHINE:X86 Debug\Artifact.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\arcaneaxis\DirectX11 AA2\Debug\DirectX11_Starter.exe" /INCREMENTAL /NOLOGO d3d11.lib d3dcompiler.lib dinput8.lib dxguid.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\arcaneaxis\DirectX11 AA2\Debug\DirectX11_Starter.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\arcaneaxis\DirectX11 AA2\Debug\DirectX11_Starter.lib" /MACHINE:X86 Debug\Artifact.obj
          Debug\Camera.obj
          Debug\DemoGame.obj
          Debug\dxerr.obj
@@ -59,10 +105,14 @@
          Debug\Text.obj
          Debug\Tile.obj
          Debug\TileMap.obj
-         "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\DirectXTK\Bin\Desktop_2012\Win32\Debug\DirectXTK.lib"
-         DirectX11_Starter.vcxproj -> D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\DirectX11_Starter.exe
-     1>Done Building Project "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" (Build target(s)).
+         "D:\arcaneaxis\DirectX11 AA2\DirectX11_Starter\DirectXTK\Bin\Desktop_2012\Win32\Debug\DirectXTK.lib"
+         DirectX11_Starter.vcxproj -> D:\arcaneaxis\DirectX11 AA2\Debug\DirectX11_Starter.exe
+     1>Done Building Project "D:\arcaneaxis\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" (Build target(s)).
 
 Build succeeded.
 
+<<<<<<< HEAD
 Time Elapsed 00:00:02.86
+=======
+Time Elapsed 00:00:05.24
+>>>>>>> 7e0ec41e5cf64689ea1a4abcef35ec72f82f9fb6
