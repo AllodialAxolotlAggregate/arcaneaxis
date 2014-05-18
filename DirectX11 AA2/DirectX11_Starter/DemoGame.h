@@ -137,4 +137,7 @@ private:
 
 	GameManager manager;
 
+	// Menu bools
+	bool pausePressed;
+
 };

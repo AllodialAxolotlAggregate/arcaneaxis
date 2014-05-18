@@ -102,6 +102,8 @@ bool DemoGame::Init()
 	artifactTurnLeft = false;
 	artifactTurnRight = false;
 
+	pausePressed = false;
+
 	return true;
 }
 
@@ -451,10 +453,17 @@ void DemoGame::Keyboard()
 
 	if(GetAsyncKeyState('P'))
 	{
+		if (!pausePressed)
+			pausePressed = true;
+	}
+
+	if(!GetAsyncKeyState('P') && pausePressed)
+	{
 		if(manager.gameState == game)
-			manager.gameState = pause;
-		else if(manager.gameState == pause)
-			manager.gameState = game;
+				manager.gameState = pause;
+			else if(manager.gameState == pause)
+				manager.gameState = game;
+		pausePressed = false;
 	}
 
 	camera->ComputeMatrices();
