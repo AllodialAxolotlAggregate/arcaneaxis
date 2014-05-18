@@ -102,6 +102,8 @@ bool DemoGame::Init()
 	artifactTurnLeft = false;
 	artifactTurnRight = false;
 
+	pausePressed = false;
+
 	return true;
 }
 
@@ -451,10 +453,17 @@ void DemoGame::Keyboard()
 
 	if(GetAsyncKeyState('P'))
 	{
+		if (!pausePressed)
+			pausePressed = true;
+	}
+
+	if(!GetAsyncKeyState('P') && pausePressed)
+	{
 		if(manager.gameState == game)
-			manager.gameState = pause;
-		else if(manager.gameState == pause)
-			manager.gameState = game;
+				manager.gameState = pause;
+			else if(manager.gameState == pause)
+				manager.gameState = game;
+		pausePressed = false;
 	}
 
 	camera->ComputeMatrices();
@@ -551,6 +560,8 @@ void DemoGame::DrawScene()
 	//gameArtifact->getGameEntity()->Draw();
 	gameArtifact->Draw();
 	gameArtifact->Spin(); // spins if we can
+	//gameArtifact->Rotate(XMFLOAT3(0,.001, 0));
+
 	skybox->Draw();
 
 
@@ -685,12 +696,12 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 		{
 			// check amount
 			float amt = -.001 * (cursorPos.x - dragStarted.x);
-			this->gameArtifact->AddAccel(.002, 0);
+			this->gameArtifact->AddAccel(.002,0);
 		}
 		else if(cursorPos.x > dragStarted.x)
 		{
 			float amt = .001 * (cursorPos.x - dragStarted.x);
-			this->gameArtifact->AddAccel(-.002, 0);
+			this->gameArtifact->AddAccel(-.002,0);
 		}/*
 		if(cursorPos.y < dragStarted.y)
 		{

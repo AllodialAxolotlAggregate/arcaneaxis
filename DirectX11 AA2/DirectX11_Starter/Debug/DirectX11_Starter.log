@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 5/18/2014 2:37:05 PM.
      1>Project "D:\arcaneaxis\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
@@ -35,6 +36,25 @@
      1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(1194): warning C4068: unknown pragma
      1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(1323): warning C4018: '<' : signed/unsigned mismatch
      1>d:\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(1443): warning C4018: '<' : signed/unsigned mismatch
+=======
+﻿Build started 5/18/2014 2:17:17 PM.
+     1>Project "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"D:\Users\gmb9280\aaa_aa\DirectX11 AA2\\DirectXTK\inc" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Artifact.cpp DemoGame.cpp GameEntity.cpp
+         GameEntity.cpp
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\gameentity.cpp(11): warning C4305: '=' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\gameentity.cpp(21): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\gameentity.cpp(43): warning C4305: '=' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\gameentity.cpp(45): warning C4305: '=' : truncation from 'double' to 'float'
+         Generating Code...
+         Compiling...
+         Artifact.cpp
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\artifact.h(37): warning C4305: '*=' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\artifact.h(38): warning C4305: '*=' : truncation from 'double' to 'float'
+         Generating Code...
+         Skipping... (no relevant changes detected)
+         DemoGame.cpp
+>>>>>>> 822cd9f8ff9449eea7b2034beb92c67e5b7a13f5
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\arcaneaxis\DirectX11 AA2\Debug\DirectX11_Starter.exe" /INCREMENTAL /NOLOGO d3d11.lib d3dcompiler.lib dinput8.lib dxguid.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\arcaneaxis\DirectX11 AA2\Debug\DirectX11_Starter.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\arcaneaxis\DirectX11 AA2\Debug\DirectX11_Starter.lib" /MACHINE:X86 Debug\Artifact.obj
          Debug\Camera.obj
@@ -61,4 +81,8 @@
 
 Build succeeded.
 
+<<<<<<< HEAD
 Time Elapsed 00:00:03.26
+=======
+Time Elapsed 00:00:04.41
+>>>>>>> 822cd9f8ff9449eea7b2034beb92c67e5b7a13f5
