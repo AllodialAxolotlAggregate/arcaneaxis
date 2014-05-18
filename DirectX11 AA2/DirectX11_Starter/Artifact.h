@@ -148,6 +148,22 @@ public:
 	void Rotate(DirectX::XMFLOAT3 _f3)
 	{
 		this->m_gameEntity->Rotate(_f3);
+
+		// for each tile
+		for(int i = 0; i < m_NumberOfFaces; ++i)
+		{
+			// save original position
+			DirectX::XMFLOAT3 originalPosition = m_Tiles[i].GetPosition();
+
+			// move tile to center of artifact
+			m_Tiles[i].SetPosition(m_gameEntity->GetPosition());
+
+			// rotate with artifact
+			m_Tiles[i].Rotate(_f3);
+
+			// move back to original position
+			m_Tiles[i].SetPosition(originalPosition);
+		}
 	}
 
 
@@ -165,6 +181,8 @@ public:
 	// This way, the Artifact class itself has the ability to do textures. 
 	void LoadStuff(const wchar_t* vsFile, const wchar_t* psFile, D3D11_INPUT_ELEMENT_DESC* vertexDesc, SIZE_T arraySize,ID3D11Buffer* aCSBuffer, VertexShaderConstantBuffer* aConstantBufferData)
 	{
+		m_gameEntity->GetMaterial()->LoadShadersAndInputLayout(vsFile, psFile, vertexDesc, arraySize);
+		m_gameEntity->GetMaterial()->LoadAConstantBuffer(aCSBuffer, aConstantBufferData);
 		for(int i = 0; i < m_NumberOfFaces; ++i)
 		{
 			m_Tiles[i].material->LoadShadersAndInputLayout(vsFile, psFile, vertexDesc, arraySize);

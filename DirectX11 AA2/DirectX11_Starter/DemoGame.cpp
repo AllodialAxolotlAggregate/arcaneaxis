@@ -270,14 +270,14 @@ void DemoGame::LoadShadersAndInputLayout()
 	}
 
 	// Load in the artifact's ability to do textures. 
-	//gameArtifact->LoadStuff(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc), vsConstantBuffer, &vsConstantBufferData);
-	gameArtifact->LoadStuff(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc), vsConstantBuffer, &vsConstantBufferData);  // LIGHTING WIP
+	gameArtifact->LoadStuff(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc), vsConstantBuffer, &vsConstantBufferData);
+	//gameArtifact->LoadStuff(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc), vsConstantBuffer, &vsConstantBufferData);  // LIGHTING WIP
 	fShader->LoadAConstantBuffer(vsConstantBuffer);
 
 	// Bob's Stuff
 	//maSphere->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
-	maSphere->LoadShadersAndInputLayout(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc));   // LIGHTING WIP
-	maSphere->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
+	//maSphere->LoadShadersAndInputLayout(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc));   // LIGHTING WIP
+	//maSphere->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
 
 	// for the skybox
 	skyboxMaterial->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
@@ -539,7 +539,7 @@ void DemoGame::DrawScene()
 	for(int i = 0; i < MAX_GAMEENTITY; ++i)
 		ges[i].Draw();
 
-	okamaGameSphere->Draw();
+	//okamaGameSphere->Draw();
 
 	// Important to do 2D stuff
 	Draw2D();
@@ -549,7 +549,7 @@ void DemoGame::DrawScene()
 	deviceContext->PSSetConstantBuffers(0, 1, &cbPerFrameBuffer);
 
 	//gameArtifact->getGameEntity()->Draw();
-	//gameArtifact->Draw();
+	gameArtifact->Draw();
 	gameArtifact->Spin(); // spins if we can
 	skybox->Draw();
 
