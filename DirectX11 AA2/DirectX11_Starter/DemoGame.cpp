@@ -277,15 +277,12 @@ void DemoGame::LoadShadersAndInputLayout()
 	fShader->LoadAConstantBuffer(vsConstantBuffer);
 
 	// Bob's Stuff
-<<<<<<< HEAD
-	maSphere->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
-	//maSphere->LoadShadersAndInputLayout(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc));   // LIGHTING WIP
-	maSphere->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
-=======
 	//maSphere->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
 	//maSphere->LoadShadersAndInputLayout(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc));   // LIGHTING WIP
 	//maSphere->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
->>>>>>> 7e0ec41e5cf64689ea1a4abcef35ec72f82f9fb6
+	//maSphere->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
+	//maSphere->LoadShadersAndInputLayout(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc));   // LIGHTING WIP
+	//maSphere->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
 
 	// for the skybox
 	skyboxMaterial->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
@@ -559,7 +556,6 @@ void DemoGame::DrawScene()
 	// Important to do 2D stuff
 	Draw2D();
 
-
 	deviceContext->UpdateSubresource( cbPerFrameBuffer, 0, NULL, &constbuffPerFrame, 0, 0 );
 	deviceContext->PSSetConstantBuffers(0, 1, &cbPerFrameBuffer);
 
@@ -591,6 +587,12 @@ void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 	this->dragStarted.x = cursorPos.x; 
 	this->dragStarted.y = cursorPos.y;
 
+	
+	// Check collision for gameEntity
+	if(MouseIsOverEntity(&ges[1]))
+	{
+		sentence[0].Initialize("Hit!", 0, 0);
+	}
 
 	// Left Mouse - Rotate left
 	/*if(btnState == 1)
@@ -625,6 +627,13 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
    // Set the private variable in Demogame
 	this->cursorPos.x = cPos.x; 
 	this->cursorPos.y = cPos.y;
+
+	// Set the mouse world coordinates
+	float mouseX = (((2.0f * (float)x) / (float) windowWidth) - 1.0f)/(camera->r_ProjectionMatrix._11);
+	float mouseY = (((-2.0f * (float)y) / (float) windowHeight) + 1.0f)/(camera->r_ProjectionMatrix._22);
+
+	mouseWorldX = (-camera->r_Position.z * mouseX) + camera->r_Position.x;
+	mouseWorldY = (-camera->r_Position.z * mouseY) + camera->r_Position.y;
 
 	// Write it out
 	char stringX[30];
@@ -682,6 +691,45 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 		
 	}
 	
+}
+
+bool DemoGame::MouseIsOverEntity(GameEntity* e)
+{
+	float maxX = e->GetMesh()->GetVertices()[0].Position.x;
+	float minX = e->GetMesh()->GetVertices()[0].Position.x;
+	float maxY = e->GetMesh()->GetVertices()[0].Position.y;
+	float minY = e->GetMesh()->GetVertices()[0].Position.y;
+
+	for (int i = 0; i < e->GetMesh()->GetNumberOfVertices(); i++)
+	{
+		Vertex current = e->GetMesh()->GetVertices()[i];
+
+		if (current.Position.x > maxX)
+		{
+			maxX = current.Position.x;
+		}
+		if (current.Position.y > maxY)
+		{
+			maxY = current.Position.y;
+		}
+
+		if (current.Position.x < minX)
+		{
+			minX = current.Position.x;
+		}
+		if (current.Position.y < minY)
+		{
+			minY = current.Position.y;
+		}
+
+	}
+
+	if(mouseWorldX <= maxX && mouseWorldX >= minX
+		&& mouseWorldY <= maxY && mouseWorldY >= minY)
+		return true;
+
+
+	return false;
 }
 
 // gmb9280: Added Andre's method from Face.cpp that calculates if a mouse position 
