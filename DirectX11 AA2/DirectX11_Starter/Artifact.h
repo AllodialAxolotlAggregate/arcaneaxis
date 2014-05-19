@@ -34,8 +34,8 @@ public:
 		this->velocY += this->accY;
 		this->accY = 0; this->accX = 0;
 
-		this->velocX *= .99;
-		this->velocY *= .99;
+		this->velocX *= .97;
+		this->velocY *= .97;
 
 		this->Rotate( XMFLOAT3(velocX, velocY, 0));
 	}
@@ -194,6 +194,15 @@ public:
 	float velocY;
 	float accX; 
 	float accY;
+
+	GameEntity& GetTileAt(int i)
+	{
+		return m_Tiles[i];
+	}
+	const int GetNumTiles()
+	{
+		return m_NumberOfFaces;
+	}
 private: 
 	// pointer to inner game entity
 	GameEntity* m_gameEntity; 

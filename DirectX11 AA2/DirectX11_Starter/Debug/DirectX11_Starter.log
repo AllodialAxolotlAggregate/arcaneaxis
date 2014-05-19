@@ -1,9 +1,141 @@
-﻿Build started 5/18/2014 4:26:38 PM.
-     1>Project "D:\Users\ahb9907\ArcaneAxis\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" on node 2 (Build target(s)).
-     1>Link:
-         DirectX11_Starter.vcxproj -> D:\Users\ahb9907\ArcaneAxis\DirectX11 AA2\Debug\DirectX11_Starter.exe
-     1>Done Building Project "D:\Users\ahb9907\ArcaneAxis\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" (Build target(s)).
+﻿Build started 5/19/2014 2:19:53 PM.
+     1>Project "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" on node 2 (Rebuild target(s)).
+     1>FxCompile:
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\fxc.exe /nologo /E"main" /T ps_4_0_level_9_3 /Fo "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontPixelShader.cso" /Od /Zi FontPixelShader.hlsl 
+         compilation object save succeeded; see D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontPixelShader.cso
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\fxc.exe /nologo /E"main" /T vs_4_0_level_9_3 /Fo "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontVertexShader.cso" /Od /Zi FontVertexShader.hlsl 
+         compilation object save succeeded; see D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\FontVertexShader.cso
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\fxc.exe /nologo /E"main" /T ps_4_0_level_9_3 /Fo "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\LightPixelShader.cso" /Od /Zi Shaders\LightPixelShader.hlsl 
+     1>D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\Shaders\LightPixelShader.hlsl(47,27-52): warning X3206: implicit truncation of vector type
+     1>D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\Shaders\LightPixelShader.hlsl(60,9-46): warning X3206: implicit truncation of vector type
+     1>D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\Shaders\LightPixelShader.hlsl(78,3-54): warning X3206: implicit truncation of vector type
+         
+         compilation object save succeeded; see D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\LightPixelShader.cso
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\fxc.exe /nologo /E"main" /T vs_4_0_level_9_3 /Fo "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\LightVertexShader.cso" /Od /Zi Shaders\LightVertexShader.hlsl 
+     1>D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\Shaders\LightVertexShader.hlsl(46,20-45): warning X3206: 'mul': implicit truncation of vector type
+     1>D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\Shaders\LightVertexShader.hlsl(49,18-41): warning X3206: 'mul': implicit truncation of vector type
+     1>D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\Shaders\LightVertexShader.hlsl(49,2-41): warning X3206: implicit truncation of vector type
+         
+         compilation object save succeeded; see D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\LightVertexShader.cso
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\fxc.exe /nologo /E"main" /T ps_4_0_level_9_3 /Fo "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\PixelShader.cso" /Od /Zi Shaders\PixelShader.hlsl 
+         compilation object save succeeded; see D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\PixelShader.cso
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\fxc.exe /nologo /E"main" /T ps_4_0_level_9_3 /Fo "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TexturePixelShader.cso" /Od /Zi Shaders\TexturePixelShader.hlsl 
+         compilation object save succeeded; see D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TexturePixelShader.cso
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\fxc.exe /nologo /E"main" /T vs_4_0_level_9_3 /Fo "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TextureVertexShader.cso" /Od /Zi Shaders\TextureVertexShader.hlsl 
+         compilation object save succeeded; see D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\TextureVertexShader.cso
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\fxc.exe /nologo /E"main" /T vs_4_0_level_9_3 /Fo "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\VertexShader.cso" /Od /Zi Shaders\VertexShader.hlsl 
+         compilation object save succeeded; see D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\VertexShader.cso
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"D:\Users\gmb9280\aaa_aa\DirectX11 AA2\\DirectXTK\inc" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Artifact.cpp Camera.cpp DemoGame.cpp dxerr.cpp DXGame.cpp Face.cpp Font.cpp FontShader.cpp GameEntity.cpp GameManager.cpp GameTimer.cpp Material.cpp Mesh.cpp Rune.cpp Sentence.cpp Spellbook.cpp Text.cpp Tile.cpp TileMap.cpp
+         TileMap.cpp
+         Tile.cpp
+         Text.cpp
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\text.cpp(178): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\text.cpp(179): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\text.cpp(229): warning C4101: 'result' : unreferenced local variable
+         Spellbook.cpp
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\supervector.h(202): warning C4018: '<' : signed/unsigned mismatch
+                 d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\supervector.h(198) : while compiling class template member function 'void SuperVector<T>::CopyContent(SuperVector<T> &,const SuperVector<T> &,const unsigned int)'
+                 with
+                 [
+                     T=SuperVector<Rune *> *
+                 ]
+                 d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\supervector.h(59) : see reference to function template instantiation 'void SuperVector<T>::CopyContent(SuperVector<T> &,const SuperVector<T> &,const unsigned int)' being compiled
+                 with
+                 [
+                     T=SuperVector<Rune *> *
+                 ]
+                 d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\spellbook.h(22) : see reference to class template instantiation 'SuperVector<T>' being compiled
+                 with
+                 [
+                     T=SuperVector<Rune *> *
+                 ]
+         Sentence.cpp
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\sentence.cpp(61): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\sentence.cpp(125): warning C4101: 'numLetters' : unreferenced local variable
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\sentence.cpp(126): warning C4101: 'drawY' : unreferenced local variable
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\sentence.cpp(126): warning C4101: 'drawX' : unreferenced local variable
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\sentence.cpp(170): warning C4101: 'result' : unreferenced local variable
+         Rune.cpp
+         Mesh.cpp
+         Material.cpp
+         GameTimer.cpp
+         GameManager.cpp
+         GameEntity.cpp
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\gameentity.cpp(11): warning C4305: '=' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\gameentity.cpp(21): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\gameentity.cpp(43): warning C4305: '=' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\gameentity.cpp(45): warning C4305: '=' : truncation from 'double' to 'float'
+         FontShader.cpp
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\fontshader.cpp(24): warning C4101: 'constantBufferDesc' : unreferenced local variable
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\fontshader.cpp(158): warning C4101: 'dataPtr' : unreferenced local variable
+         Font.cpp
+         Face.cpp
+         DXGame.cpp
+         dxerr.cpp
+         DemoGame.cpp
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\artifact.h(37): warning C4305: '*=' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\artifact.h(38): warning C4305: '*=' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(100): warning C4305: '=' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(98): warning C4930: 'GameManager manager(void)': prototyped function not called (was a variable definition intended?)
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(203): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(410): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(411): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(416): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(417): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(422): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(423): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(428): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(429): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(434): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(435): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(440): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(441): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(446): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(451): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(485): warning C4305: '=' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(612): warning C4244: '=' : conversion from 'LONG' to 'float', possible loss of data
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(614): warning C4244: '=' : conversion from 'LONG' to 'float', possible loss of data
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(647): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(652): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(660): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(665): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(717): warning C4244: 'argument' : conversion from 'LONG' to 'float', possible loss of data
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(886): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(1010): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(1198): warning C4068: unknown pragma
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(1327): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\demogame.cpp(1447): warning C4018: '<' : signed/unsigned mismatch
+         Camera.cpp
+         Artifact.cpp
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\artifact.h(37): warning C4305: '*=' : truncation from 'double' to 'float'
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\artifact.h(38): warning C4305: '*=' : truncation from 'double' to 'float'
+         Generating Code...
+     1>d:\users\gmb9280\aaa_aa\directx11 aa2\directx11_starter\gamemanager.cpp(17): warning C4715: 'GameManager::GetStateString' : not all control paths return a value
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\DirectX11_Starter.exe" /INCREMENTAL /NOLOGO d3d11.lib d3dcompiler.lib dinput8.lib dxguid.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\DirectX11_Starter.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\DirectX11_Starter.lib" /MACHINE:X86 Debug\Artifact.obj
+         Debug\Camera.obj
+         Debug\DemoGame.obj
+         Debug\dxerr.obj
+         Debug\DXGame.obj
+         Debug\Face.obj
+         Debug\Font.obj
+         Debug\FontShader.obj
+         Debug\GameEntity.obj
+         Debug\GameManager.obj
+         Debug\GameTimer.obj
+         Debug\Material.obj
+         Debug\Mesh.obj
+         Debug\Rune.obj
+         Debug\Sentence.obj
+         Debug\Spellbook.obj
+         Debug\Text.obj
+         Debug\Tile.obj
+         Debug\TileMap.obj
+         "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\DirectXTK\Bin\Desktop_2012\Win32\Debug\DirectXTK.lib"
+         DirectX11_Starter.vcxproj -> D:\Users\gmb9280\aaa_aa\DirectX11 AA2\Debug\DirectX11_Starter.exe
+     1>Done Building Project "D:\Users\gmb9280\aaa_aa\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.19
+Time Elapsed 00:00:26.76

@@ -34,7 +34,7 @@ void GameEntity::WorldTransition()
 
 	XMMATRIX w = scale * rotX * rotY * rotZ * trans;
 
-	XMStoreFloat4x4(&m_WorldMatrix, XMMatrixTranspose(w));//*/
+	XMStoreFloat4x4(&m_WorldMatrix, XMMatrixTranspose(w));
 }
 
 void GameEntity::Move()

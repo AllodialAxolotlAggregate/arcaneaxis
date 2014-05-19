@@ -486,14 +486,6 @@ void DemoGame::UpdateScene(float dt)
 
 		gameArtifact->Spin(); // spins if we can
 
-		if(artifactTurnLeft)
-		{
-			//gameArtifact->getGameEntity()->Rotate(XMFLOAT3(0.001,0,0));
-			//gameArtifact->Rotate(XMFLOAT3(0.001,0,0));
-		} else if(artifactTurnRight){
-			//gameArtifact->getGameEntity()->Rotate(XMFLOAT3(-0.001,0,0));
-			//gameArtifact->Rotate(XMFLOAT3(-0.001,0,0));
-		}
 
 		//light.pos = gameArtifact->getGameEntity()->GetPosition();
 		//light.pos.z += 5;
@@ -534,7 +526,7 @@ void DemoGame::Draw2D()
 // Clear the screen, redraw everything, present
 void DemoGame::DrawScene()
 {
-	const float color[4] = {100/255.0f, 149/255.0f, 237/255.0f, 0.0f};
+	const float color[4] = {224/255.0f, 76/255.0f, 131/255.0f, 0.0f};
 
 	// Clear the buffer
 	deviceContext->ClearRenderTargetView(renderTargetView, color);
@@ -587,23 +579,20 @@ void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 	this->dragStarted.x = cursorPos.x; 
 	this->dragStarted.y = cursorPos.y;
 
-	
+	// TODO finish collision checking for the sphere
 	// Check collision for gameEntity
-	if(MouseIsOverEntity(&ges[1]))
+	/*if(MouseIsOverEntity(&ges[1]))
 	{
 		sentence[0].Initialize("Hit!", 0, 0);
-	}
-
-	// Left Mouse - Rotate left
-	/*if(btnState == 1)
-	{
-		artifactTurnLeft = true;
-	} else if(btnState == 2)
-	{
-		artifactTurnRight = true;
 	}*/
-
-
+	// Get and check every entity of our Artifact
+	for(int i = 0; i < gameArtifact->GetNumTiles(); i++)
+	{
+		if(MouseIsOverEntity(&gameArtifact->GetTileAt(i)))
+		{
+			sentence[0].Initialize("Hit!", 0, 0);
+		}
+	}
 	SetCapture(hMainWnd);
 }
 
@@ -643,18 +632,6 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 	sentence[0].Initialize(stringX, 1, 10);
 	sentence[1].Initialize(stringY, 1, -10);
 
-	// Check for collisions
-	bool collision = false;
-	// CZECK EVERYTHING
-	for(int  i =0; i<okamaGameSphere->GetMesh()->GetNumberOfTriangles(); i++)
-	{
-		if(PointInFace( &okamaGameSphere->GetMesh()->GetFaces()[0] ) )
-		{
-			// Hit! 
-			collision = true;
-		}
-	}
-	collision = false;
 
 
 	// Check for dragging (gmb9280)
@@ -666,25 +643,25 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 			if(cursorPos.x < dragStarted.x)
 			{
 				// check amount
-				float amt = -.001 * (cursorPos.x - dragStarted.x);
-				this->gameArtifact->AddAccel(.004,0);
+				//float amt = -.001 * (cursorPos.x - dragStarted.x);
+				this->gameArtifact->AddAccel(-.003,0);
 			}
 			else if(cursorPos.x > dragStarted.x)
 			{
-				float amt = .001 * (cursorPos.x - dragStarted.x);
-				this->gameArtifact->AddAccel(-.004,0);
+				//float amt = .001 * (cursorPos.x - dragStarted.x);
+				this->gameArtifact->AddAccel(.003,0);
 			}
 			
 		}
 		else{
 			if(cursorPos.y < dragStarted.y)
 			{
-				float amt = -.001 * (cursorPos.y - dragStarted.y);
+				//float amt = -.001 * (cursorPos.y - dragStarted.y);
 				this->gameArtifact->AddAccel(0, -.004);
 			}
 			else if(cursorPos.y > dragStarted.y)
 			{
-				float amt = .001 * (cursorPos.y - dragStarted.y);
+				//float amt = .001 * (cursorPos.y - dragStarted.y);
 				this->gameArtifact->AddAccel(0, .004);
 			}
 		}
@@ -693,6 +670,7 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 	
 }
 
+// Thanks Andre!
 bool DemoGame::MouseIsOverEntity(GameEntity* e)
 {
 	float maxX = e->GetMesh()->GetVertices()[0].Position.x;
