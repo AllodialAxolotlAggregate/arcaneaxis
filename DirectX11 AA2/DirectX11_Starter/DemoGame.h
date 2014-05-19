@@ -70,8 +70,10 @@ private:
 
 	// Keeps track of the old mouse position.  Useful for 
 	// determining how far the mouse moved in a single frame.
-	POINT prevMousePos;
 	POINT cursorPos; // gmb9280 testing mouse coords
+	POINT windowOffset;
+	bool mouseDragging;
+	POINT dragStarted; 
 	// My Extra Stuff
 	GameEntity* ges;
 	Material* ma;
@@ -81,8 +83,7 @@ private:
 	Font* font;
 	FontShader* fShader;
 	Sentence* sentence;
-	bool mouseDragging;
-	POINT dragStarted; 
+
 	// Bob's Obj Globals
 	//ID3D11BlendState* Transparency;
 	GameEntity obj;

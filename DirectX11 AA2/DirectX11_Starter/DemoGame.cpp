@@ -573,8 +573,6 @@ void DemoGame::DrawScene()
 
 void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 {
-	prevMousePos.x = x;
-	prevMousePos.y = y;
 	mouseDragging = true;
 	this->dragStarted.x = cursorPos.x; 
 	this->dragStarted.y = cursorPos.y;
@@ -606,23 +604,30 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 {
 	// get the mouse position and store it back into our variable
 	// help from http://social.msdn.microsoft.com/Forums/en-US/1b563e35-8aea-4b98-8c76-490a8852ce9a/getting-the-mouse-position-in-screen-coordinates-using-c-no-net?forum=gametechnologiesdirectx101
-	POINT cPos;
-    GetCursorPos(&cPos);
-    float _x = 0;
-   _x = cPos.x;
-    float _y = 0;
-   _y = cPos.y;
+    GetCursorPos(&cursorPos);
 
-   // Set the private variable in Demogame
-	this->cursorPos.x = cPos.x; 
-	this->cursorPos.y = cPos.y;
+	ScreenToClient(this->hMainWnd, &cursorPos); // translate to client coords
 
 	// Set the mouse world coordinates
 	float mouseX = (((2.0f * (float)x) / (float) windowWidth) - 1.0f)/(camera->r_ProjectionMatrix._11);
 	float mouseY = (((-2.0f * (float)y) / (float) windowHeight) + 1.0f)/(camera->r_ProjectionMatrix._22);
 
+	// find the width offset
+	RECT filler; 
+	GetWindowRect(this->hMainWnd, &filler); // right and bottom are width and height
+	float widthoffset = filler.right - (float)windowWidth;
+	float heightoffset = filler.bottom - (float)windowHeight;
+
+
+	windowOffset.x = widthoffset;
+	windowOffset.y = heightoffset;
 	mouseWorldX = (-camera->r_Position.z * mouseX) + camera->r_Position.x;
 	mouseWorldY = (-camera->r_Position.z * mouseY) + camera->r_Position.y;
+	//mouseWorldX -= windowOffset.x;
+	//mouseWorldY -= windowOffset.y;
+
+	//cursorPos.x -= windowOffset.x; 
+	//cursorPos.y -= windowOffset.y;
 
 	// Write it out
 	char stringX[30];
@@ -708,36 +713,6 @@ bool DemoGame::MouseIsOverEntity(GameEntity* e)
 
 
 	return false;
-}
-
-// gmb9280: Added Andre's method from Face.cpp that calculates if a mouse position 
-// hits a particular Face.
-bool DemoGame::PointInFace(Face* _f)
-{
-	XMVECTOR p = XMVectorSet(cursorPos.x, cursorPos.y, 0.0, 0.0);
-
-	XMVECTOR a = XMVectorSet(_f->GetVertices()[0].Position.x, _f->GetVertices()[0].Position.y, 0.0, 0.0);
-	XMVECTOR b = XMVectorSet(_f->GetVertices()[1].Position.x, _f->GetVertices()[1].Position.y, 0.0, 0.0);
-	XMVECTOR c = XMVectorSet(_f->GetVertices()[2].Position.x, _f->GetVertices()[2].Position.y, 0.0, 0.0);
-	
-	a -= p;
-	b -= p;
-	c -= p;
-
-	XMVECTOR u = XMVector2Cross(b, c);
-	XMVECTOR v = XMVector2Cross(c, a);
-	XMVECTOR d = XMVector2Dot(u,v);
-
-	if (XMVectorGetByIndex(d,0) < 0.0f)
-		return false;
-
-	XMVECTOR w = XMVector2Cross(a,b);
-	XMVECTOR e = XMVector2Dot(u,w);
-
-	if (XMVectorGetByIndex(e,0) < 0.0f)
-		return false;
-
-	return true;
 }
 
 
