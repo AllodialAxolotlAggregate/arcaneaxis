@@ -49,16 +49,79 @@ void Sentence::LoadFontAndShader(Font* aFont, FontShader* aFontShader)
 
 void Sentence::Initialize(char* text, int positionX, int positionY)
 {
-	//if(*m_Sentence != *text)
-	//{
-#pragma region Text - InitializeSetence Method
+	ChangePosition(positionX, positionY);
+	InitSentece(text);
+
+	// Store the color of the sentence.
+	m_Color = XMFLOAT4(1.0, 0.0, 1.0, 0.0);
+}
+
+void Sentence::Render(DirectX::XMFLOAT4X4 viewMatrix, DirectX::XMFLOAT4X4 projectionMatrix)
+{
+	unsigned int stride, offset;
+
+	// Set vertex buffer stride and offset.
+	stride = sizeof(FontVertex); 
+	offset = 0;
+
+	// Set the vertex buffer to active in the input assembler so it can be rendered.
+	m_DeviceContext->IASetVertexBuffers(0, 1, &m_VertexBuffer, &stride, &offset);
+
+    // Set the index buffer to active in the input assembler so it can be rendered.
+	m_DeviceContext->IASetIndexBuffer(m_IndexBuffer, DXGI_FORMAT_R32_UINT, 0);
+
+    // Set the type of primitive that should be rendered from this vertex buffer, in this case triangles.
+	//m_DeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+
+	// Render the text using the font shader.
+	m_FontShader->Render(m_DeviceContext, m_IndexCount, m_WorldMatrix, viewMatrix, projectionMatrix, m_Font->r_ShaderResourceView, XMFLOAT4(m_Color.x, m_Color.y, m_Color.z, 1.0));
+}
+
+void Sentence::Release()
+{
+	ReleaseMacro(m_VertexBuffer);
+	ReleaseMacro(m_IndexBuffer);
+	ReleaseMacro(m_Device);
+	ReleaseMacro(m_DeviceContext);
+
+	m_VertexCount = 0;
+	m_IndexCount = 0;
+	m_Length = 0;
+	m_Color = XMFLOAT4(0.0, 0.0, 0.0, 0.0);
+	m_Position = XMFLOAT3(0.0, 0.0, 0.0);
+}
+
+void Sentence::WorldTransition()
+{
+	XMMATRIX trans = XMMatrixTranslation(m_Position.x, m_Position.y, m_Position.z);
+	/*XMMATRIX rotX = XMMatrixRotationY(m_Rotation.x);
+	XMMATRIX rotY = XMMatrixRotationY(m_Rotation.y);
+	XMMATRIX rotZ = XMMatrixRotationY(m_Rotation.z);
+	XMMATRIX scale = XMMatrixScaling(m_Scale.x, m_Scale.y, m_Scale.z);*/
+
+	//XMMATRIX w = scale * rotX * rotY * rotZ * trans;
+
+	XMStoreFloat4x4(&m_WorldMatrix, XMMatrixTranspose(trans));
+}
+
+void Sentence::DestroyOldText()
+{
+	ReleaseMacro(m_VertexBuffer);
+	ReleaseMacro(m_IndexBuffer);
+
+	m_VertexCount = 0;
+	m_IndexCount = 0;
+	m_Length = 0;
+}
+
+void Sentence::InitSentece(char* text)
+{
+		#pragma region Text - InitializeSetence Method
 
 		FontVertex* vertices;
 		unsigned long* indices;
 		D3D11_BUFFER_DESC vertexBufferDesc, indexBufferDesc;
 		D3D11_SUBRESOURCE_DATA vertexData, indexData;
-
-		m_Position = XMFLOAT3(positionX, positionY, 0.0);
 
 		// Set the counts of the vertices and indices
 		m_Length = strlen(text);
@@ -68,9 +131,6 @@ void Sentence::Initialize(char* text, int positionX, int positionY)
 		// Create the vertex and index arrays.
 		vertices = new FontVertex[m_VertexCount];
 		indices = new unsigned long[m_IndexCount];
-
-		// Initialize vertex array to zeros at first.
-		memset(vertices, 0, (sizeof(FontVertex) * m_VertexCount));
 
 		// Initialize the index array.
 		for(int i = 0; i < m_IndexCount; i++)
@@ -110,35 +170,15 @@ void Sentence::Initialize(char* text, int positionX, int positionY)
 		m_Device->CreateBuffer(&vertexBufferDesc, &vertexData, &m_VertexBuffer);
 		m_Device->CreateBuffer(&indexBufferDesc, &indexData, &m_IndexBuffer);
 
-		// Release the vertex array as it is no longer needed.
-		delete [] vertices;
-		vertices = nullptr;
-
-		// Release the index array as it is no longer needed.
-		delete [] indices;
-		indices = nullptr;
-
 #pragma endregion
 
 #pragma region Text - UpdateSentence Method
 
-		int numLetters;
-		float drawX, drawY;
 		D3D11_MAPPED_SUBRESOURCE mappedResource;
 		FontVertex* verticesPtr;
 
-		// Store the color of the sentence.
-		m_Color = XMFLOAT4(0.0, 0.0, 1.0, 0.0);
-
-		// Create the vertex array.
-		vertices = new FontVertex[m_VertexCount];
-
 		// Initialize vertex array to zeros at first.
 		memset(vertices, 0, (sizeof(FontVertex) * m_VertexCount));
-
-		// Calculate the X and Y pixel position on the screen to start drawing to.
-		/*drawX = positionX;
-		drawY = positionY;*/
 
 		// Use the font class to build the vertex array from the sentence text and sentence draw location.
 		m_Font->BuildVertexArray((void*)vertices, text, m_Position.x, m_Position.y);
@@ -155,69 +195,24 @@ void Sentence::Initialize(char* text, int positionX, int positionY)
 		// Unlock the vertex buffer.
 		m_DeviceContext->Unmap(m_VertexBuffer, 0);
 
+#pragma endregion
+
 		// Release the vertex array as it is no longer needed.
 		delete [] vertices;
 		vertices = nullptr;
 
-#pragma endregion
-	//}
+		// Release the index array as it is no longer needed.
+		delete [] indices;
+		indices = nullptr;
 }
 
-void Sentence::Render(DirectX::XMFLOAT4X4 viewMatrix, DirectX::XMFLOAT4X4 projectionMatrix)
+void Sentence::ChangeText(char* text)
 {
-	unsigned int stride, offset;
-	XMFLOAT4 pixelColor;
-	bool result;
-
-	// Set vertex buffer stride and offset.
-	stride = sizeof(FontVertex); 
-	offset = 0;
-
-	// Set the vertex buffer to active in the input assembler so it can be rendered.
-	m_DeviceContext->IASetVertexBuffers(0, 1, &m_VertexBuffer, &stride, &offset);
-
-    // Set the index buffer to active in the input assembler so it can be rendered.
-	m_DeviceContext->IASetIndexBuffer(m_IndexBuffer, DXGI_FORMAT_R32_UINT, 0);
-
-    // Set the type of primitive that should be rendered from this vertex buffer, in this case triangles.
-	m_DeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-
-	// Create a pixel color vector with the input sentence color.
-	m_Color = XMFLOAT4(1.0, 0.0, 1.0, 1.0);
-
-	// Render the text using the font shader.
-	m_FontShader->Render(m_DeviceContext, m_IndexCount, m_WorldMatrix, viewMatrix, projectionMatrix, m_Font->r_ShaderResourceView, m_Color);
+	DestroyOldText();
+	InitSentece(text);
 }
 
-void Sentence::Release()
+void Sentence::ChangePosition(int x, int y)
 {
-	ReleaseMacro(m_VertexBuffer);
-	ReleaseMacro(m_IndexBuffer);
-	ReleaseMacro(m_Device);
-	ReleaseMacro(m_DeviceContext);
-
-	m_VertexCount = 0;
-	m_IndexCount = 0;
-	m_Length = 0;
-	m_Color = XMFLOAT4(0.0, 0.0, 0.0, 0.0);
-	m_Position = XMFLOAT3(0.0, 0.0, 0.0);
-
-	/*if(m_Font != nullptr)
-		delete m_Font;
-
-	if(m_FontShader != nullptr)
-		delete m_FontShader;*/
-}
-
-void Sentence::WorldTransition()
-{
-	XMMATRIX trans = XMMatrixTranslation(m_Position.x, m_Position.y, m_Position.z);
-	/*XMMATRIX rotX = XMMatrixRotationY(m_Rotation.x);
-	XMMATRIX rotY = XMMatrixRotationY(m_Rotation.y);
-	XMMATRIX rotZ = XMMatrixRotationY(m_Rotation.z);
-	XMMATRIX scale = XMMatrixScaling(m_Scale.x, m_Scale.y, m_Scale.z);*/
-
-	//XMMATRIX w = scale * rotX * rotY * rotZ * trans;
-
-	XMStoreFloat4x4(&m_WorldMatrix, XMMatrixTranspose(trans));
+	m_Position = XMFLOAT3(x, y, 0.0);
 }

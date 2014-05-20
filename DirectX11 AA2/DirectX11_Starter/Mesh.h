@@ -31,6 +31,9 @@ public:
 	void LoadBuffers(Vertex* vertices, UINT* indices);
 	void LoadNumbers(UINT numberOfVertices, UINT numberOfIndices);
 
+	void LoadVertices(Vertex* vertices, UINT* indices);
+	void CreateBuffers();
+
 #pragma region Gets/Sets
 
 	// http://stackoverflow.com/questions/2284610/what-is-declspec-and-when-do-i-need-to-use-it
@@ -74,6 +77,10 @@ public:
 	Face* GetFaces() { return m_Faces; }
 	__declspec(property(get = GetFaces, put = SetFaces)) Face* r_Faces;
 
+	void SetOriginalVertices(Vertex* otherVertices) { m_OriginalVertices = otherVertices; }
+	Vertex* GetOriginalVertices() { return m_OriginalVertices; }
+	__declspec(property(get = GetOriginalVertices, put = SetOriginalVertices)) Vertex* r_OriginalVertices;
+
 #pragma endregion
 
 private:
@@ -84,6 +91,7 @@ private:
 	Vertex* m_Vertices;
 	UINT* m_Indices;
 	Face* m_Faces;
+	Vertex* m_OriginalVertices;
 };
 
 #endif

@@ -67,7 +67,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Artifact.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="DemoGame.cpp" />
     <ClCompile Include="dxerr.cpp" />
@@ -80,15 +79,10 @@
     <ClCompile Include="GameTimer.cpp" />
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="Mesh.cpp" />
-    <ClCompile Include="Rune.cpp" />
+    <ClCompile Include="RyanArtifact.cpp" />
     <ClCompile Include="Sentence.cpp" />
-    <ClCompile Include="Spellbook.cpp" />
-    <ClCompile Include="Text.cpp" />
-    <ClCompile Include="Tile.cpp" />
-    <ClCompile Include="TileMap.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Artifact.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="DemoGame.h" />
     <ClInclude Include="dxerr.h" />
@@ -101,13 +95,8 @@
     <ClInclude Include="GameTimer.h" />
     <ClInclude Include="Material.h" />
     <ClInclude Include="Mesh.h" />
-    <ClInclude Include="Rune.h" />
+    <ClInclude Include="RyanArtifact.h" />
     <ClInclude Include="Sentence.h" />
-    <ClInclude Include="Spellbook.h" />
-    <ClInclude Include="SuperVector.h" />
-    <ClInclude Include="Text.h" />
-    <ClInclude Include="Tile.h" />
-    <ClInclude Include="TileMap.h" />
     <ClInclude Include="Vertex.h" />
   </ItemGroup>
   <ItemGroup>
@@ -119,11 +108,13 @@
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
     </FxCompile>
-    <FxCompile Include="Shaders\LightPixelShader.hlsl">
+    <FxCompile Include="LightPixelShader.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
     </FxCompile>
-    <FxCompile Include="Shaders\LightVertexShader.hlsl">
+    <FxCompile Include="LightVertexShader.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
     </FxCompile>
     <FxCompile Include="Shaders\PixelShader.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>

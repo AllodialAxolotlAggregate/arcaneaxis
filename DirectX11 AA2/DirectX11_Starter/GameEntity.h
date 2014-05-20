@@ -4,6 +4,7 @@
 #include <d3d11.h>
 #include "Mesh.h"
 #include "Material.h"
+#include "FontShader.h"
 
 class GameEntity
 {
@@ -37,8 +38,8 @@ public:
 
 	// Calls the Material's and Mesh's draws methods to render object on the screen
 	void Draw();
-	void GetWorldVertice();
-	//void DrawEntity(Camera*);
+	void ScaleWithFloat(float);
+	void ScaleWithXMFloat3(DirectX::XMFLOAT3);
 
 #pragma region Gets/Sets
 
@@ -66,6 +67,10 @@ public:
 	DirectX::XMFLOAT3& GetScale() { return m_Scale; }
 	__declspec(property(get = GetScale, put = SetScale)) DirectX::XMFLOAT3 Scale;
 
+	void SetRender(bool b) { render = b; }
+	bool GetRender() { return render; }
+	__declspec(property(get = GetRender, put = SetRender)) bool r_Render;
+
 #pragma endregion
 
 private:
@@ -78,8 +83,7 @@ private:
 	DirectX::XMFLOAT3 m_Scale;
 
 	float velocity;
-
-
+	bool render;
 
 private:
 	// Resets the values to zero

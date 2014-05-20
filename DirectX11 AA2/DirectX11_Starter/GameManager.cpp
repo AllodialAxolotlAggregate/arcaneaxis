@@ -1,6 +1,5 @@
 #include "GameManager.h"
 
-
 GameManager::GameManager(){
 	gameState = game;
 	debug = true;

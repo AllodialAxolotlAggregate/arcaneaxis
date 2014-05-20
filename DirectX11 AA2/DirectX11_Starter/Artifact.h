@@ -1,8 +1,8 @@
 #pragma once
 #include "GameEntity.h"
 #include "Tile.h"
+#include "Sentence.h"
 #include <iostream>
-#include "Spellbook.h"
 
 using namespace DirectX;
 
@@ -13,122 +13,97 @@ public:
 	// Constructor : must take a GameEntity and it makes tiles based on which faces are in the mesh
 	Artifact(GameEntity* _ge)
 	{
-		this->m_tileArray = nullptr; 
 		this->m_gameEntity = _ge;
-		this->accX = 0; this->accY = 0;
-		this->velocX = 0; this->velocY = 0;
-		// Moved all the things to do with generating tiles to its own method (gmb9280)
-		this->GenTiles();
-		this->spellbook = new Spellbook();
-	}
 
-	// Blank constructor - don't use. I don't even know why I wrote it. ¯\_(^u^)_/¯
-	Artifact()
-	{
-		this->m_tileArray = nullptr;
-	}
-
-	// Spin according to our physics
-	void Spin()
-	{
-		// Add acceleration accrued
-		this->velocX += this->accX;
-		this->velocY += this->accY;
-		this->accY = 0; this->accX = 0;
-
-		this->velocX *= .97;
-		this->velocY *= .97;
-
-		this->Rotate( XMFLOAT3(velocX, velocY, 0));
-	}
-
-	// When mouse stuff happens, pass it back here
-	void AddAccel(float x, float y)
-	{
-		this->accX += x; 
-		this->accY += y;
-	}
-
-	// Generates tiles
-	void GenTiles()
-	{
-		// Ryan's changes -- generate a game entity with a material for each face
-
+		// Ryan's Stuff
 		// Write down the number of faces on object
 		m_NumberOfFaces = m_gameEntity->mesh->r_NumberOfFaces;
 		// Create that many tiles GameEntities
 		m_Tiles = new GameEntity[m_NumberOfFaces];
 
-		// Create a single material for all of the entities to use
-		m_SingleMaterial = new Material*();
-		m_SingleMaterial[0] = new Material(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext);
-		m_SingleMaterial[0]->LoadSamplerStateAndShaderResourceView(L"runes/1_1.png"); // Image for the rune
-
-		m_SingleMaterial[1] = new Material(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext);
-		m_SingleMaterial[1]->LoadSamplerStateAndShaderResourceView(L"runes/2_1.png"); // Image for the rune
-
-		m_SingleMaterial[2] = new Material(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext);
-		m_SingleMaterial[2]->LoadSamplerStateAndShaderResourceView(L"runes/3_1.png"); // Image for the rune
-
-		m_SingleMaterial[3] = new Material(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext);
-		m_SingleMaterial[3]->LoadSamplerStateAndShaderResourceView(L"runes/4_1.png"); // Image for the rune
-
-		m_SingleMaterial[4] = new Material(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext);
-		m_SingleMaterial[4]->LoadSamplerStateAndShaderResourceView(L"runes/5_1.png"); // Image for the rune
-
-		m_SingleMaterial[5] = new Material(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext);
-		m_SingleMaterial[5]->LoadSamplerStateAndShaderResourceView(L"runes/6_1.png"); // Image for the rune
+		m_otherMaterial = new Material(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext);
+		m_otherMaterial->LoadSamplerStateAndShaderResourceView(L"font3.dds");
 
 		// Create as many independent meshes as there are faces
 		m_ManyMeshes = new Mesh[m_NumberOfFaces];
+	}
 
-		// Initialize meshes over the faces
+	// Blank constructor - don't use. I don't even know why I wrote it. ¯\_(^u^)_/¯
+	Artifact()
+	{
+	}
+
+	// Generates tiles
+	void GenTiles()
+	{
+		FontVertex* vertices2 = new FontVertex[6];
+		memset(vertices2, 0, (sizeof(FontVertex) * 6));
+		m_Font->BuildVertexArray((void*)vertices2, "F", 0.0, 0.0);
+
+		Vertex* verts = new Vertex[m_NumberOfFaces * 3];
+
 		for(int i = 0; i < m_NumberOfFaces; ++i)
 		{
-			// Offload the meshes to a localized array of vertices
+			int bloop = 0;
+			if(i%2)
+				bloop = 1;
+
 			Vertex vertices[] = 
 			{
-				{ m_gameEntity->mesh->r_Faces[i].r_Vertices[0].Position, m_gameEntity->mesh->r_Faces[i].r_Vertices[0].Color, XMFLOAT2(0.0, 0.0), m_gameEntity->mesh->r_Faces[i].r_Vertices[0].Normal },
-				{ m_gameEntity->mesh->r_Faces[i].r_Vertices[1].Position, m_gameEntity->mesh->r_Faces[i].r_Vertices[1].Color, XMFLOAT2(.5, 0), m_gameEntity->mesh->r_Faces[i].r_Vertices[1].Normal},
-				{ m_gameEntity->mesh->r_Faces[i].r_Vertices[2].Position, m_gameEntity->mesh->r_Faces[i].r_Vertices[2].Color, XMFLOAT2(0, .5), m_gameEntity->mesh->r_Faces[i].r_Vertices[2].Normal}
+				Vertex(m_gameEntity->mesh->r_Faces[i].r_Vertices[0].Position, m_gameEntity->mesh->r_Faces[i].r_Vertices[0].Color, vertices2[0].UV, m_gameEntity->mesh->r_Faces[i].r_Vertices[0].Normal),
+				Vertex(m_gameEntity->mesh->r_Faces[i].r_Vertices[1].Position, m_gameEntity->mesh->r_Faces[i].r_Vertices[1].Color, vertices2[1].UV, m_gameEntity->mesh->r_Faces[i].r_Vertices[1].Normal),
+				Vertex(m_gameEntity->mesh->r_Faces[i].r_Vertices[2].Position, m_gameEntity->mesh->r_Faces[i].r_Vertices[2].Color, vertices2[2].UV, m_gameEntity->mesh->r_Faces[i].r_Vertices[2].Normal)
 			};
 
+			verts[3*i] = vertices[0];
+			verts[3*i+1] = vertices[1];
+			verts[3*i+2] = vertices[2];
+
 			// add to the array of meshes
-			m_ManyMeshes[i] = Mesh(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext);
+			/*m_ManyMeshes[i] = Mesh(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext);
 			m_ManyMeshes[i].LoadNumbers(3, 3);
 			m_ManyMeshes[i].LoadBuffers(vertices, m_gameEntity->mesh->r_Faces->r_Indices);
 
-			// load the GameEntity
-			int ind = i%6 -1;
-			if(ind < 0) ind = 0;
-			else if(ind >5) ind = 5;
-			m_Tiles[i] = GameEntity(&m_ManyMeshes[i], m_SingleMaterial[ind], m_gameEntity->Position);
+			m_Tiles[i] = GameEntity(&m_ManyMeshes[i], m_otherMaterial, m_gameEntity->Position);*/
 		}
+
+		m_GiantMesh = new Mesh(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext);
+		m_GiantMesh->LoadNumbers(m_gameEntity->mesh->r_NumberOfVertices, m_gameEntity->mesh->r_NumberOfIndices);
+		m_GiantMesh->LoadBuffers(verts, m_gameEntity->mesh->r_Indices);
+		m_TestEntity = new GameEntity(m_GiantMesh, m_otherMaterial, m_gameEntity->Position);
+
+		/*Vertex* verts = new Vertex[m_NumberOfFaces * 3];
+		for(int j = 0; j < m_NumberOfFaces; ++j)
+		{
+			for(int k = 0; k < 3; ++k)
+			{
+				verts[3*j+k] = m_gameEntity->mesh->r_Vertices[3*j+k];
+				verts[3*j+k].UV = vertices2[k].UV;
+			}
+		}*/
+
+
+
+		/*m_GiantMesh = new Mesh(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext);
+		m_GiantMesh->LoadNumbers(m_gameEntity->mesh->r_NumberOfVertices, m_gameEntity->mesh->r_NumberOfIndices);
+		m_GiantMesh->LoadBuffers(m_gameEntity->mesh->r_Vertices, m_gameEntity->mesh->r_Indices);
+
+		for(int j = 0; j < 150; ++j)
+			for(int k = 0; k < 3; ++k)
+				m_GiantMesh->r_Vertices[3*j+k].UV = vertices2[k].UV;
+
+		m_TestEntity = new GameEntity(m_GiantMesh, m_otherMaterial, m_gameEntity->Position);
+		m_TestEntity->ScaleWithFloat(1.1);*/
+
+		//delete[] verts;
+		delete[] vertices2;
 	}
-
-	// Called from collision detection
-	void TileClicked(int indexOfTile)
-	{
-		//this->GetTileAt(indexOfTile)
-
-		this->spellbook->AddToActiveSpell(new Rune( (indexOfTile % 6) ));
-	}
-
-
 
 	// Destructor
 	~Artifact(void)
 	{
 		// Delete the tile array regardless of whether or not
 		// it exists yet
-		if(this->m_tileArray == nullptr)
-		{
-			delete[] m_tileArray;
-		}
-		else 
-		{
-			delete[] m_tileArray;
-		}
 
 		if(m_Tiles != nullptr)
 		{
@@ -140,6 +115,12 @@ public:
 		{
 			delete m_SingleMaterial;
 			m_SingleMaterial = nullptr;
+		}
+
+		if(m_otherMaterial != nullptr)
+		{
+			delete m_otherMaterial;
+			m_otherMaterial = nullptr;
 		}
 
 		if(m_ManyMeshes != nullptr)
@@ -172,26 +153,10 @@ public:
 		return this->m_gameEntity->GetPosition();
 	}
 
-	// Rotate:  rotates (passes in to Entity)
+	// Rotate:  rotates (passes in to Artifact)
 	void Rotate(DirectX::XMFLOAT3 _f3)
 	{
 		this->m_gameEntity->Rotate(_f3);
-
-		// for each tile
-		for(int i = 0; i < m_NumberOfFaces; ++i)
-		{
-			// save original position
-			DirectX::XMFLOAT3 originalPosition = m_Tiles[i].GetPosition();
-
-			// move tile to center of artifact
-			m_Tiles[i].SetPosition(m_gameEntity->GetPosition());
-
-			// rotate with artifact
-			m_Tiles[i].Rotate(_f3);
-
-			// move back to original position
-			m_Tiles[i].SetPosition(originalPosition);
-		}
 	}
 
 
@@ -199,51 +164,38 @@ public:
 
 	void Draw()
 	{
+		/*for(int i = 0; i < m_NumberOfFaces; ++i)
+			m_Tiles[i].Draw();*/
+
+		//m_TestEntity->Rotate(XMFLOAT3(0, 0.001, 0));
+		m_TestEntity->Draw();
 		//m_gameEntity->Draw();
-		for(int i = 0; i < m_NumberOfFaces; ++i)
-			m_Tiles[i].Draw();
 	}
 
-	// My guess: 
-	// Loads in vertexshader file and pixelshader file, and all that other jazz to load textures.
-	// This way, the Artifact class itself has the ability to do textures. 
 	void LoadStuff(const wchar_t* vsFile, const wchar_t* psFile, D3D11_INPUT_ELEMENT_DESC* vertexDesc, SIZE_T arraySize,ID3D11Buffer* aCSBuffer, VertexShaderConstantBuffer* aConstantBufferData)
 	{
-		m_gameEntity->GetMaterial()->LoadShadersAndInputLayout(vsFile, psFile, vertexDesc, arraySize);
-		m_gameEntity->GetMaterial()->LoadAConstantBuffer(aCSBuffer, aConstantBufferData);
-		for(int i = 0; i < m_NumberOfFaces; ++i)
-		{
-			m_Tiles[i].material->LoadShadersAndInputLayout(vsFile, psFile, vertexDesc, arraySize);
-			m_Tiles[i].material->LoadAConstantBuffer(aCSBuffer, aConstantBufferData);
-		}
+		m_otherMaterial->LoadShadersAndInputLayout(vsFile, psFile, vertexDesc, arraySize);
+		m_otherMaterial->LoadAConstantBuffer(aCSBuffer, aConstantBufferData);
 	}
 
-
-	// Physics stuff - for rotation
-	float velocX;
-	float velocY;
-	float accX; 
-	float accY;
-
-	GameEntity& GetTileAt(int i)
+	void LoadFont(Font* m_font, FontShader* m_FS)
 	{
-		return m_Tiles[i];
+		m_Font = new Font();
+		m_Font->Initialize(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext, "CustomFontData.txt", L"CustomFont.dds");
 	}
-	const int GetNumTiles()
-	{
-		return m_NumberOfFaces;
-	}
+
 private: 
 	// pointer to inner game entity
 	GameEntity* m_gameEntity; 
-	Tile** m_tileArray; // array of pointers to tiles
+	Font* m_Font;
 
 	// Ryan's Stuff
-	GameEntity* m_Tiles; // to be assigned to the tile array
-	Material** m_SingleMaterial;
+	GameEntity* m_Tiles;
+	GameEntity* m_TestEntity;
+	Material* m_SingleMaterial;
+	Material* m_otherMaterial;
 	Mesh* m_ManyMeshes;
+	Mesh* m_GiantMesh;
 	int m_NumberOfFaces;
-	
-	Spellbook* spellbook;
 };
 

@@ -5,7 +5,8 @@ using namespace DirectX;
 
 Font::Font() :
 	m_Font(nullptr),
-	m_ShaderResourceView(nullptr)
+	m_ShaderResourceView(nullptr),
+	m_Size(1)
 {}
 Font::~Font() {}
 
@@ -13,11 +14,7 @@ void Font::Initialize(ID3D11Device* device,ID3D11DeviceContext* deviceContext, c
 {
 	// Load in the text file containing the font data
 	LoadFontData(fontFilename);
-	//CreateWICTextureFromFile(device, deviceContext, UVFilename, 0, &m_ShaderResourceView);
 	CreateDDSTextureFromFile(device, UVFilename, nullptr, &m_ShaderResourceView);
-	//HRESULT hr = CreateDDSTextureFromFile(device, L"font2.dds", nullptr, &m_ShaderResourceView);
-	/*if (FAILED(hr))
-		CreateWICTextureFromFile(device, deviceContext, L"Ignite.jpg", 0, &m_ShaderResourceView);//*/
 }
 
 void Font::Shutdown()
@@ -85,9 +82,11 @@ void Font::BuildVertexArray(void* vertices, char* sentence, float drawX, float d
 	{
 		letter = ((int) sentence[i]) - 32;
 
+		//m_Size = 2.5;
+
 		// If the letter is a space then just move over three pixels
 		if(letter == 0)
-			drawX = drawX + 3.0f;
+			drawX = drawX + 3.0f * m_Size;
 
 		else
 		{
@@ -99,11 +98,11 @@ void Font::BuildVertexArray(void* vertices, char* sentence, float drawX, float d
 			vertexPtr[index].UV = XMFLOAT2(m_Font[letter].left, 0.0f);
 			index++;
 
-			vertexPtr[index].Position = XMFLOAT3((drawX + (m_Font[letter].size)), (drawY - 16), 0.0f);  // Bottom right.
+			vertexPtr[index].Position = XMFLOAT3((drawX + (m_Font[letter].size * m_Size)), (drawY - 16 * m_Size), 0.0f);  // Bottom right.
 			vertexPtr[index].UV = XMFLOAT2(m_Font[letter].right, UV_HEIGHT);
 			index++;
 
-			vertexPtr[index].Position = XMFLOAT3(drawX, (drawY - 16), 0.0f);  // Bottom left.
+			vertexPtr[index].Position = XMFLOAT3(drawX, (drawY - 16 * m_Size), 0.0f);  // Bottom left.
 			vertexPtr[index].UV = XMFLOAT2(m_Font[letter].left, UV_HEIGHT);
 			index++;
 
@@ -112,16 +111,16 @@ void Font::BuildVertexArray(void* vertices, char* sentence, float drawX, float d
 			vertexPtr[index].UV = XMFLOAT2(m_Font[letter].left, 0.0f);
 			index++;
 
-			vertexPtr[index].Position = XMFLOAT3(drawX + (m_Font[letter].size), drawY, 0.0f);  // Top right.
+			vertexPtr[index].Position = XMFLOAT3(drawX + (m_Font[letter].size * m_Size), drawY, 0.0f);  // Top right.
 			vertexPtr[index].UV = XMFLOAT2(m_Font[letter].right, 0.0f);
 			index++;
 
-			vertexPtr[index].Position = XMFLOAT3((drawX + (m_Font[letter].size)), (drawY - 16), 0.0f);  // Bottom right.
+			vertexPtr[index].Position = XMFLOAT3((drawX + (m_Font[letter].size * m_Size)), (drawY - 16 * m_Size), 0.0f);  // Bottom right.
 			vertexPtr[index].UV = XMFLOAT2(m_Font[letter].right, UV_HEIGHT);
 			index++;
 
 			// Update the x location for drawing by the size of the letter and one pixel.
-			drawX = drawX + m_Font[letter].size + 1.0f;
+			drawX = drawX + m_Font[letter].size * m_Size + m_Size;
 		}
 	}
 }

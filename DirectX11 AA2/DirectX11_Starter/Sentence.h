@@ -16,6 +16,8 @@ public:
 	void Render(DirectX::XMFLOAT4X4 viewMatrix, DirectX::XMFLOAT4X4 projectionMatrix);
 	void Release();
 	void WorldTransition();
+	void ChangeText(char* text);
+	void ChangePosition(int x, int y);
 
 #pragma region Gets/Sets
 
@@ -41,6 +43,10 @@ private:
 
 	ID3D11Device* m_Device;
 	ID3D11DeviceContext* m_DeviceContext;
+
+private:
+	void DestroyOldText();
+	void InitSentece(char* text);
 };
 
 #endif

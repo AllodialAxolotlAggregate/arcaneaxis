@@ -1,5 +1,5 @@
 #include "Camera.h"
-#define DEFAULT_POSITION XMFLOAT3(0, 0, -5)
+#define DEFAULT_POSITION XMFLOAT3(0, 0, -15)
 #define DEFAULT_TARGET XMFLOAT3(0, 0, 0)
 #define DEFAULT_UP XMFLOAT3(0, 1, 0)
 
@@ -37,15 +37,6 @@ Camera::Camera(XMFLOAT3 aPosition, XMFLOAT3 aTarget, XMFLOAT3 anUp) :
 
 Camera::~Camera() {}
 
-//Camera Camera::operator += (XMFLOAT3 pos)
-//{
-//	m_Position.x += pos.x;
-//	m_Position.y += pos.y;
-//	m_Position.z += pos.z;
-//
-//	return *this;
-//}
-
 void Camera::ComputeMatrices()
 {
 	XMVECTOR pos = XMVectorSet(m_Position.x, m_Position.y, m_Position.z, 0.0);
@@ -63,6 +54,6 @@ void Camera::OnResize(float ar)
 		0.25f * 3.1415926535f,
 		ar,
 		0.1f,
-		1000.0f);
+		100.0f);
 	XMStoreFloat4x4(&m_ProjectionMatrix, XMMatrixTranspose(P));
 }

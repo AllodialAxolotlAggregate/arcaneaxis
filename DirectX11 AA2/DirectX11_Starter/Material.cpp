@@ -97,7 +97,9 @@ void Material::LoadSamplerStateAndShaderResourceView(const wchar_t* fileLocation
 
 	// http://my.safaribooksonline.com/book/programming/game-programming/9781435458956/2d-rendering/ch03lev1sec4
 	m_Device->CreateSamplerState(&samplerDesc, &m_SamplerState);
-	CreateWICTextureFromFile(m_Device, m_DeviceContext, fileLocationName, 0, &m_ShaderResourceView);
+	HRESULT hr = CreateWICTextureFromFile(m_Device, m_DeviceContext, fileLocationName, 0, &m_ShaderResourceView);
+	if (FAILED(hr))
+		CreateDDSTextureFromFile(m_Device, fileLocationName, nullptr, &m_ShaderResourceView);
 }
 
 void Material::LoadShadersAndInputLayout(const wchar_t* vsFile, const wchar_t* psFile, D3D11_INPUT_ELEMENT_DESC* vertexDesc, SIZE_T arraySize)
@@ -139,8 +141,6 @@ void Material::Release()
 	ReleaseMacro(m_VertexShader);
 	ReleaseMacro(m_PixelShader);
 	ReleaseMacro(m_InputLayout);
-	/*ReleaseMacro(m_Device);
-	ReleaseMacro(m_DeviceContext);*/
 
 	if(m_ConstantBuffer != nullptr)
 		m_ConstantBuffer = nullptr;

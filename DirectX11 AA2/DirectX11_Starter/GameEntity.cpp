@@ -20,6 +20,7 @@ GameEntity::GameEntity(Mesh* m_nMesh, Material* m_nMaterial, XMFLOAT3 m_nPositio
 	velocity(0.01)
 {
 	WorldTransition();
+	render = true;
 }
 
 GameEntity::~GameEntity() {}
@@ -39,16 +40,12 @@ void GameEntity::WorldTransition()
 	if(m_Mesh != nullptr) {
 		for(int i = 0; i < m_Mesh->r_NumberOfVertices; ++i)
 		{
-			XMVECTOR v = XMLoadFloat3(&m_Mesh->r_Vertices[i].Position);
-			XMVECTOR result = XMVector3Transform(v, XMMatrixTranspose(w));
+			XMVECTOR v = XMLoadFloat3(&m_Mesh->r_OriginalVertices[i].Position);
+			XMVECTOR result = XMVector3Transform(v, w);
+			result = XMVector3Transform(v, w);
 			XMStoreFloat3(&m_Mesh->r_Vertices[i].Position, result);
 		}
 	}
-}
-
-void GameEntity::GetWorldVertice()
-{
-	//XMMATRIX x = XMLoadFloat4x4(m_WorldMatrix);
 }
 
 void GameEntity::Move()
@@ -81,11 +78,31 @@ void GameEntity::Rotate(XMFLOAT3 rot)
 	WorldTransition();
 }
 
+void GameEntity::ScaleWithFloat(float num)
+{
+	m_Scale.x = num;
+	m_Scale.y = num;
+	m_Scale.z = num;
+
+	WorldTransition();
+}
+
+void GameEntity::ScaleWithXMFloat3(XMFLOAT3 nums)
+{
+	m_Scale.x = nums.x;
+	m_Scale.y = nums.y;
+	m_Scale.z = nums.z;
+
+	WorldTransition();
+}
+
 void GameEntity::Draw()
 {
-	WorldTransition();
-	material->Draw(m_WorldMatrix);
-	mesh->Draw();
+	if(render)
+	{
+		material->Draw(m_WorldMatrix);
+		mesh->Draw();
+	}
 }
 
 void GameEntity::Reset()
@@ -97,4 +114,5 @@ void GameEntity::Reset()
 	m_Position = XMFLOAT3(0.0, 0.0, 0.0);
 	m_Rotation = XMFLOAT3(0.0, 0.0, 0.0);
 	m_Scale = XMFLOAT3(1.0, 1.0, 1.0);
+	render = true;
 }

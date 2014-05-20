@@ -21,8 +21,6 @@ public:
 	UINT* GetIndices() { return m_Indices; }
 	__declspec(property(get = GetIndices, put = SetIndices)) UINT* r_Indices;
 
-	bool PointInFace(float x, float y);
-
 #pragma endregion
 
 private:

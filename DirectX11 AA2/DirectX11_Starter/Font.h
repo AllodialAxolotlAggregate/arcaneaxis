@@ -32,6 +32,10 @@ public:
 	void SetShaderResourceView(ID3D11ShaderResourceView* otherSRV) { m_ShaderResourceView = otherSRV; }
 	__declspec(property(get = GetShaderResourceView, put = SetShaderResourceView)) ID3D11ShaderResourceView* r_ShaderResourceView;
 
+	float GetSize() { return m_Size; }
+	void SetSize(float size) { m_Size = size; }
+	__declspec(property(get = GetSize, put = SetSize)) float r_Size;
+
 #pragma endregion
 
 private:
@@ -40,6 +44,7 @@ private:
 private:
 	FontType* m_Font;
 	ID3D11ShaderResourceView* m_ShaderResourceView;
+	float m_Size;
 };
 
 #endif

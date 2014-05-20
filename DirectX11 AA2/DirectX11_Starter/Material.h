@@ -6,6 +6,7 @@
 #include <d3dcompiler.h>
 #include "dxerr.h"
 #include "DirectXTK\Inc\WICTextureLoader.h"
+#include "DirectXTK\Inc\DDSTextureLoader.h"
 #include "Vertex.h"
 #include "Camera.h"
 
@@ -31,6 +32,7 @@ public:
 	// Sends the texture information to the Graphics Cards to render on screen
 	//		Needs a DirectX11 DeviceContext Pointer/Address
 	void Draw(DirectX::XMFLOAT4X4);
+	void TestDraw(DirectX::XMFLOAT4X4);
 
 	//void LoadShadersAndInputLayout(ID3DBlob* vsBlob, ID3DBlob* psBlob, D3D11_INPUT_ELEMENT_DESC* vertexDesc, SIZE_T arraySize);
 	void LoadShadersAndInputLayout(const wchar_t* vsFile, const wchar_t* psFile, D3D11_INPUT_ELEMENT_DESC* vertexDesc, SIZE_T arraySize);

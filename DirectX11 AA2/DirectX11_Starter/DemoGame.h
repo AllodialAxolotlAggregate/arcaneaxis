@@ -1,14 +1,6 @@
 #pragma once
-
-#include <DirectXMath.h>
-#include <vector>
-#include <sstream>
-#include "DXGame.h"
-#include "GameEntity.h"
-#include "Artifact.h"
-#include "Text.h"
-#include "Sentence.h"
 #include "GameManager.h"
+#include "RyanArtifact.h"
 
 // Include run-time memory checking in debug builds
 #if defined(DEBUG) || defined(_DEBUG)
@@ -18,15 +10,6 @@
 
 // For DirectX Math
 using namespace DirectX;
-
-struct SurfaceMaterial
-{
-	std::wstring matName;
-	XMFLOAT4 difColor;
-	int texArrayIndex;
-	bool hasTexture;
-	bool transparent;
-};
 
 // Demo class which extends the base DXGame class
 class DemoGame : public DXGame
@@ -55,16 +38,10 @@ private:
 	void CreateGeometryBuffers();
 	void LoadShadersAndInputLayout();
 	void Release();
-
-	//Define LoadObjModel function after we create surfaceMaterial structure
-	void LoadObjModel(std::wstring filename,		//.obj filename
-		Material& material,							//vector of material structures
-		Mesh& mesh,									//mesh
-		bool isRHCoordSys);							//true if model was created in right hand coord system
-
 	bool MouseIsOverEntity(GameEntity* e);
 	bool PointInFace(GameEntity* e);
 	bool IsInFront(GameEntity* e);
+
 private:
 	// A few more odds and ends we'll need
 	ID3D11Buffer* vsConstantBuffer;
@@ -72,32 +49,26 @@ private:
 
 	// Keeps track of the old mouse position.  Useful for 
 	// determining how far the mouse moved in a single frame.
-	POINT cursorPos; // gmb9280 testing mouse coords
-	POINT windowOffset;
-	bool mouseDragging;
-	POINT dragStarted; 
-	// My Extra Stuff
-	GameEntity* ges;
-	Material* ma;
-	Mesh* mish;
+	POINT prevMousePos;
 	float time;
-	float elapsedTime;
+
 	Font* font;
 	FontShader* fShader;
 	Sentence* sentence;
 
-	// Bob's Obj Globals
-	//ID3D11BlendState* Transparency;
-	GameEntity obj;
-	GameEntity obj1;
-	std::vector<GameEntity> entities;
+	RyanArtifact* ryan;
+	// Rotate Globals
+	bool artifactTurnLeft;
+	bool artifactTurnRight;
+	float artifactTurnRateX;
+	POINT cursorPos; // gmb9280 testing mouse coords
+	POINT windowOffset;
+	bool mouseDragging;
+	POINT dragStarted;
 
-	Material* maSphere;
-	Mesh* meSphere;
-	GameEntity* okamaGameSphere;
+	float mouseWorldX;
+	float mouseWorldY;
 
-	//gmb9280: added Artifact
-	Artifact* gameArtifact;
 	void LockCamera()
 	{
 		if(camLock != true)
@@ -113,54 +84,19 @@ private:
 		}
 	}
 	bool camLock;
+	float elapsedTime;
 
-	// obj verts and inds
-	Vertex* objVertices; // array of vertices
-	UINT* objListOfIndices; // list of indices
-	int objMeshTraingles; // number of triangles
+	GameManager* manager;
+	// Menu bools
+	bool pausePressed;
 
-
-	// Stuff for skybox
-	Mesh* skyboxMesh;
-	Material* skyboxMaterial;
-	GameEntity* skybox;
-
-	ID3D11Buffer* meshVertBuff;
-	ID3D11Buffer* meshIndexBuff;
-	XMMATRIX meshWorld;
-	int meshSubsets;
-	std::vector<int> meshSubsetIndexStart;
-	std::vector<int> meshSubsetTexture;
-	std::vector<SurfaceMaterial> material;
-	std::vector<ID3D11ShaderResourceView*> meshSRV;
-	std::vector<std::wstring> textureNameArray;
-
-	XMMATRIX WVP;
-	XMMATRIX World;
-
-	// Obj1 Globals
-	ID3D11Buffer* meshVertBuff1;
-	ID3D11Buffer* meshIndexBuff1;
-
-
-	// Rotate Globals
-	bool artifactTurnLeft;
-	bool artifactTurnRight;
-	float artifactTurnRateX;
+	GameEntity* ges;
+	Material* ma;
+	Mesh* mish;
 
 	// Lighting
 	ID3D11Buffer* cbPerFrameBuffer;
 	cbPerFrame constbuffPerFrame;
 	Light light;
 	XMVECTOR lightVector;
-
-	GameManager* manager;
-
-	// Menu bools
-	bool pausePressed;
-
-	// Mouse World Coords
-	float mouseWorldX;
-	float mouseWorldY;
-
 };

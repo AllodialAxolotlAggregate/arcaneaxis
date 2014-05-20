@@ -25,6 +25,31 @@ struct Vertex
 	DirectX::XMFLOAT4 Color;
 	DirectX::XMFLOAT2 UV;
 	DirectX::XMFLOAT3 Normal;
+
+	Vertex() :
+		Position(DirectX::XMFLOAT3(0.0, 0.0, 0.0)),
+		Color(DirectX::XMFLOAT4(0.0, 0.0, 0.0, 0.0)),
+		UV(DirectX::XMFLOAT2(0.0, 0.0)),
+		Normal(DirectX::XMFLOAT3(0.0, 0.0, 0.0))
+	{
+
+	}
+
+	Vertex(DirectX::XMFLOAT3 position, DirectX::XMFLOAT4 color, DirectX::XMFLOAT2 uv, DirectX::XMFLOAT3 normal)
+	{
+		Position = position;
+		Color = color;
+		UV = uv;
+		Normal = normal;
+	}
+
+	Vertex(const Vertex& v)
+	{
+		Position = v.Position;
+		Color = v.Color;
+		UV = v.UV;
+		Normal = v.Normal;
+	}
 };
 
 // Struct to match vertex shader's constant buffer

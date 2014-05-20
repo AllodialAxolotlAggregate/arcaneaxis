@@ -19,6 +19,9 @@ class Rune
 
 public:
 
+	//const int MAX_VAL = 10;
+	//const int  MIN_VAL = 0;
+	// Friend operator to enable stream printing.
 	friend ostream& operator<<(ostream& os, Rune& r)
 	{
 	   // stream obj's data into os
@@ -29,21 +32,27 @@ public:
 	// Constructor that takes an integer for data.
 	Rune(int _int)
 	{
+		m_style = EGYPTIAN;
+		/*
 		// Sanitize integer input
-		if(_int > 5|| _int > 0 )
+		if(_int > MAX_VAL || _int > MIN_VAL )
 		{
-			_int = 0;
+			_int = MIN_VAL;
 		}
-		else m_int = _int;
+		else*/ m_int = _int;
 		
+
+		// TODO: set texture path to actual rune texture dynamically instead of for demo
+		m_texturePath = "images/crow.png";  // for starters
+
 		// Runes will be given a texture path based on their integer values (for now)
-		// Let's put a pin in that.
 	}
 
 	~Rune(void);
 
 
 private: 
+	runeStyle m_style;
 	int m_int;
 	char* m_texturePath;
 

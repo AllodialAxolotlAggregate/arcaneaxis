@@ -28,11 +28,7 @@ public:
 	// To be called after a certain amount of time of no new entries
 	void ClearActiveSpell()
 	{
-		this->m_activeSpell->Clear();
-	}
-	void AddToActiveSpell(Rune* r)
-	{
-		this->m_activeSpell->Push(r);
+		//m_activeSpell->
 	}
 
 

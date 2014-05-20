@@ -25,9 +25,6 @@
     <Filter Include="Header Files\Rastertek">
       <UniqueIdentifier>{4cdd1c82-8439-4b14-8cfd-f2a42d2e9dd6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Gabbystructures">
-      <UniqueIdentifier>{5bbb7f35-ae90-411e-9ba2-3978c7eaba52}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DXGame.cpp">
@@ -60,28 +57,13 @@
     <ClCompile Include="FontShader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Text.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Sentence.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Artifact.cpp">
-      <Filter>Gabbystructures</Filter>
-    </ClCompile>
-    <ClCompile Include="Rune.cpp">
-      <Filter>Gabbystructures</Filter>
-    </ClCompile>
-    <ClCompile Include="Spellbook.cpp">
-      <Filter>Gabbystructures</Filter>
-    </ClCompile>
-    <ClCompile Include="Tile.cpp">
-      <Filter>Gabbystructures</Filter>
-    </ClCompile>
-    <ClCompile Include="TileMap.cpp">
-      <Filter>Gabbystructures</Filter>
-    </ClCompile>
     <ClCompile Include="Face.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RyanArtifact.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameManager.cpp">
@@ -122,31 +104,13 @@
     <ClInclude Include="FontShader.h">
       <Filter>Header Files\Rastertek</Filter>
     </ClInclude>
-    <ClInclude Include="Text.h">
-      <Filter>Header Files\Rastertek</Filter>
-    </ClInclude>
     <ClInclude Include="Sentence.h">
       <Filter>Header Files\My Files</Filter>
     </ClInclude>
-    <ClInclude Include="Artifact.h">
-      <Filter>Gabbystructures</Filter>
-    </ClInclude>
-    <ClInclude Include="Rune.h">
-      <Filter>Gabbystructures</Filter>
-    </ClInclude>
-    <ClInclude Include="Spellbook.h">
-      <Filter>Gabbystructures</Filter>
-    </ClInclude>
-    <ClInclude Include="SuperVector.h">
-      <Filter>Gabbystructures</Filter>
-    </ClInclude>
-    <ClInclude Include="Tile.h">
-      <Filter>Gabbystructures</Filter>
-    </ClInclude>
-    <ClInclude Include="TileMap.h">
-      <Filter>Gabbystructures</Filter>
-    </ClInclude>
     <ClInclude Include="Face.h">
+      <Filter>Header Files\My Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RyanArtifact.h">
       <Filter>Header Files\My Files</Filter>
     </ClInclude>
     <ClInclude Include="GameManager.h">
@@ -172,10 +136,10 @@
     <FxCompile Include="FontVertexShader.hlsl">
       <Filter>Shaders</Filter>
     </FxCompile>
-    <FxCompile Include="Shaders\LightPixelShader.hlsl">
+    <FxCompile Include="LightPixelShader.hlsl">
       <Filter>Shaders</Filter>
     </FxCompile>
-    <FxCompile Include="Shaders\LightVertexShader.hlsl">
+    <FxCompile Include="LightVertexShader.hlsl">
       <Filter>Shaders</Filter>
     </FxCompile>
   </ItemGroup>
