@@ -578,7 +578,7 @@ void DemoGame::Draw2D()
 	/*for(int i = 0; i < MAX_LINES; ++i)
 		sentence[i].Render(camera->r_ViewMatrix, camera->r_ProjectionMatrix);*/
 
-	sentence[0].Render(camera->r_ViewMatrix, camera->r_ProjectionMatrix);
+	//sentence[0].Render(camera->r_ViewMatrix, camera->r_ProjectionMatrix);
 
 	// Turn off the alpha blending.
 	deviceContext->OMSetBlendState(0, 0, 0xffffffff);
@@ -662,7 +662,7 @@ void DemoGame::DrawScene()
 
 void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 {
-
+	mouseDragging = true;
 	if(this->manager->gameState == game)
 	// TODO finish collision checking for the sphere
 	// Check collision for gameEntity
@@ -673,29 +673,28 @@ void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 	// Get and check every entity of our Artifact
 	XMFLOAT3 rot = XMFLOAT3(0.1, 0.0, 0.0);
 	
-	for(int i = 0; i < gameArtifact->GetNumTiles(); i++)
+	/*for(int i = 0; i < gameArtifact->GetNumTiles(); i++)
 	{
-		mouseDragging = true;
+		
 		this->dragStarted.x = cursorPos.x; 
 		this->dragStarted.y = cursorPos.y;
 
 		// TODO finish collision checking for the sphere
 		// Check collision for gameEntity
-		/*if(MouseIsOverEntity(&ges[1]))
+		if(MouseIsOverEntity(&ges[1]))
 		{
 			//sentence[0].Initialize("Hit!", 0, 0);
 			//gameArtifact->GetTileAt(i).Rotate(rot);
 		}
-	}
+	}*/
 
 	for(int i = 0; i < gameArtifact->GetNumTiles();i++)
 	{
 		if(PointInFace(&gameArtifact->GetTileAt(i)))
 		{
 			sentence[0].Initialize("Hit!", 0, 0);
-
-		}*/
-
+			//this->gameArtifact->TileClicked(i);
+		}
 		SetCapture(hMainWnd);
 	}
 	
