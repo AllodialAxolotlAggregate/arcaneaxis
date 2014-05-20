@@ -579,18 +579,18 @@ void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 
 	// TODO finish collision checking for the sphere
 	// Check collision for gameEntity
-	/*if(MouseIsOverEntity(&ges[1]))
+	if(MouseIsOverEntity(&ges[1]))
 	{
 		sentence[0].Initialize("Hit!", 0, 0);
-	}*/
+	}
 	// Get and check every entity of our Artifact
-	for(int i = 0; i < gameArtifact->GetNumTiles(); i++)
+	/*for(int i = 0; i < gameArtifact->GetNumTiles(); i++)
 	{
 		if(MouseIsOverEntity(&gameArtifact->GetTileAt(i)))
 		{
 			sentence[0].Initialize("Hit!", 0, 0);
 		}
-	}
+	}*/
 	SetCapture(hMainWnd);
 }
 
@@ -678,31 +678,47 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 // Thanks Andre!
 bool DemoGame::MouseIsOverEntity(GameEntity* e)
 {
-	float maxX = e->GetMesh()->GetVertices()[0].Position.x;
+	//XMFLOAT3 newPosition = e->WorldMatrix * e->GetMesh()->GetVertices()[0].Position;
+	XMMATRIX x = XMLoadFloat4x4(&e->WorldMatrix);
+	XMVECTOR v = XMLoadFloat3(&e->GetMesh()->GetVertices()[0].Position);
+	XMVECTOR result = XMVector3Transform(v, x);
+	XMFLOAT3 end;
+	XMStoreFloat3(&end, result);
+
+	float maxX = end.x;
+	float minX = end.x;
+	float maxY = end.y;
+	float minY = end.y;
+
+	/*float maxX = e->GetMesh()->GetVertices()[0].Position.x;
 	float minX = e->GetMesh()->GetVertices()[0].Position.x;
 	float maxY = e->GetMesh()->GetVertices()[0].Position.y;
-	float minY = e->GetMesh()->GetVertices()[0].Position.y;
+	float minY = e->GetMesh()->GetVertices()[0].Position.y; */
 
 	for (int i = 0; i < e->GetMesh()->GetNumberOfVertices(); i++)
 	{
-		Vertex current = e->GetMesh()->GetVertices()[i];
+		//Vertex current = e->GetMesh()->GetVertices()[i];
+		XMVECTOR cv = XMLoadFloat3(&e->GetMesh()->GetVertices()[1].Position);
+		XMVECTOR result2 = XMVector3Transform(cv, x);
+		XMFLOAT3 current;
+		XMStoreFloat3(&current, result2);
 
-		if (current.Position.x > maxX)
+		if (current.x > maxX)
 		{
-			maxX = current.Position.x;
+			maxX = current.x;
 		}
-		if (current.Position.y > maxY)
+		if (current.y > maxY)
 		{
-			maxY = current.Position.y;
+			maxY = current.y;
 		}
 
-		if (current.Position.x < minX)
+		if (current.x < minX)
 		{
-			minX = current.Position.x;
+			minX = current.x;
 		}
-		if (current.Position.y < minY)
+		if (current.y < minY)
 		{
-			minY = current.Position.y;
+			minY = current.y;
 		}
 
 	}

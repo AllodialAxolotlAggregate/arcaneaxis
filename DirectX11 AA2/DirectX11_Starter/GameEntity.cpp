@@ -37,6 +37,11 @@ void GameEntity::WorldTransition()
 	XMStoreFloat4x4(&m_WorldMatrix, XMMatrixTranspose(w));
 }
 
+void GameEntity::GetWorldVertice()
+{
+	//XMMATRIX x = XMLoadFloat4x4(m_WorldMatrix);
+}
+
 void GameEntity::Move()
 {
 	if(m_Position.x <= -.5)

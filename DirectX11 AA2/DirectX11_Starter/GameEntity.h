@@ -37,6 +37,7 @@ public:
 
 	// Calls the Material's and Mesh's draws methods to render object on the screen
 	void Draw();
+	void GetWorldVertice();
 	//void DrawEntity(Camera*);
 
 #pragma region Gets/Sets
