@@ -31,10 +31,11 @@
 #define WORD_SPEED .1
 
 // Maximum number of various things for arrays
-#define MAX_MATERIAL 4
-#define MAX_MESH 4
-#define MAX_GAMEENTITY 4//3
-#define MAX_LINES 3
+#define MAX_MATERIAL 7
+#define MAX_MESH 7
+#define MAX_GAMEENTITY 7//3
+#define MAX_LINES 6
+#define LEVEL_TIME 20 //1000
 
 #define ARTIFACT_Z_AXIS 15.0
 
@@ -68,6 +69,7 @@ DemoGame::DemoGame(HINSTANCE hInstance) : DXGame(hInstance)
 	windowCaption = L"Arcane Axis";
 	windowWidth = 800;
 	windowHeight = 600;
+	elapsedTime = 0;
 }
 
 DemoGame::~DemoGame()
@@ -139,6 +141,27 @@ void DemoGame::CreateGeometryBuffers()
 		{ XMFLOAT3(-3.3f, -3.0f, 0.0f), white, XMFLOAT2(0, 1), XMFLOAT3(0.0f, 0.0f, 0.0f) },
 	};
 
+	// Scroll
+	Vertex vertScroll[] = 
+	{
+		{ XMFLOAT3(-1.0f, 4.2f, 0.0f), white, XMFLOAT2(0,0), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(1.0f, 4.2f, 0.0f), white, XMFLOAT2(1, 0), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(1.0f, -4.2f, 0.0f), white, XMFLOAT2(1,1), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(-1.0f, -4.2f, 0.0f), white, XMFLOAT2(0, 1), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+
+	};
+
+	// Ticker
+	Vertex vertTicker[] = 
+	{
+		{ XMFLOAT3(-1.0f, .25f, 0.0f), white, XMFLOAT2(0,0), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(1.0f, .25f, 0.0f), white, XMFLOAT2(1, 0), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(1.0f, -.25f, 0.0f), white, XMFLOAT2(1,1), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(-1.0f, -.25f, 0.0f), white, XMFLOAT2(0, 1), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+
+	};
+
+	// Button
 	Vertex vertButton[] = 
 	{
 		{ XMFLOAT3(-.9f, .125f, 0.0f), white, XMFLOAT2(0,0), XMFLOAT3(0.0f, 0.0f, 0.0f) },
@@ -180,12 +203,23 @@ void DemoGame::CreateGeometryBuffers()
 
 	// play button
 	ma[2] = Material(device, deviceContext);
+	ma[2].LoadSamplerStateAndShaderResourceView(L"buttons/play_btn.png");
 
-	ma[2].LoadSamplerStateAndShaderResourceView(L"rune.png");
 	ma[3] = Material(device, deviceContext);
 	ma[3].LoadSamplerStateAndShaderResourceView(L"bg2.jpg");
 
-	ma[2].LoadSamplerStateAndShaderResourceView(L"buttons/play_btn.png");
+
+	// Time scroll
+	ma[4] = Material(device, deviceContext);
+	ma[4].LoadSamplerStateAndShaderResourceView(L"buttons/time_meter.png");
+
+	// Time indicator
+	ma[5] = Material(device, deviceContext);
+	ma[5].LoadSamplerStateAndShaderResourceView(L"buttons/ticker.png");
+
+	
+	ma[6] = Material(device, deviceContext);
+	ma[6].LoadSamplerStateAndShaderResourceView(L"screens/gameover.png");
 
 	mish = new Mesh[MAX_MESH];
 	
@@ -193,7 +227,7 @@ void DemoGame::CreateGeometryBuffers()
 	mish[0] = Mesh(device, deviceContext);
 	mish[0].LoadNumbers(ARRAYSIZE(verts2), ARRAYSIZE(indices4));
 	mish[0].LoadBuffers(verts2, indices4);
-
+	
 	// pause
 	mish[1] = Mesh(device, deviceContext);
 	mish[1].LoadNumbers(ARRAYSIZE(verts2), ARRAYSIZE(indices4));
@@ -209,17 +243,42 @@ void DemoGame::CreateGeometryBuffers()
 	mish[3].LoadNumbers(ARRAYSIZE(vertices), ARRAYSIZE(indicesSquare));
 	mish[3].LoadBuffers(vertices, indicesSquare);
 
+	// Time scroll
+	mish[4] = Mesh(device, deviceContext);
+	mish[4].LoadNumbers(ARRAYSIZE(vertScroll), ARRAYSIZE(indices4));
+	mish[4].LoadBuffers(vertScroll, indices4);
+
+	// Time ticker
+	mish[5] = Mesh(device, deviceContext);
+	mish[5].LoadNumbers(ARRAYSIZE(vertTicker), ARRAYSIZE(indices4));
+	mish[5].LoadBuffers(vertTicker, indices4);
+
+	// end screen
+	mish[6] = Mesh(device, deviceContext);
+	mish[6].LoadNumbers(ARRAYSIZE(verts2), ARRAYSIZE(indices4));
+	mish[6].LoadBuffers(verts2, indices4);
+
+
 	ges = new GameEntity[MAX_GAMEENTITY];
-	ges[0] = GameEntity(&mish[0], &ma[0], XMFLOAT3(0.0, 0.0, 0.0)); // title screen
+	ges[0] = GameEntity(&mish[0], &ma[0], XMFLOAT3(0.0, 0.0, .8)); // title screen
 
 
-	ges[1] = GameEntity(&mish[1], &ma[1], XMFLOAT3(0.0, 0.0, 0.0)); // pause screen
+	ges[1] = GameEntity(&mish[1], &ma[1], XMFLOAT3(0.0, 0.0, .8)); // pause screen
 
 	ges[2] = GameEntity(&mish[2], &ma[2], XMFLOAT3(0.0, -.5, -.5));
 
 	// background
 	ges[3] = GameEntity(&mish[3], &ma[3], XMFLOAT3(0.0, 0.0, 0.0));
 	ges[3].SetScale(XMFLOAT3(475,475,0));
+
+	// Time scroll
+	ges[4] = GameEntity(&mish[4], &ma[4], XMFLOAT3(-4.55, 0, 5));
+
+	// Ticker
+	ges[5] = GameEntity(&mish[5], &ma[5], XMFLOAT3(-4.51, 4, 4.9));
+
+
+	ges[6] = GameEntity(&mish[6], &ma[6], XMFLOAT3(0, 0,.8)); 
 
 	font = new Font();
 	//font->Initialize(device, deviceContext, "fontdata.txt", L"font.jpg");
@@ -247,11 +306,11 @@ void DemoGame::CreateGeometryBuffers()
 	LoadObjModel(L"PentaSphere1.obj", *maSphere, *meSphere, true);
 
 	// skybox loading
-	skyboxMesh = new Mesh(device, deviceContext);
+	/*skyboxMesh = new Mesh(device, deviceContext);
 	skyboxMaterial = new Material(device, deviceContext);
 	skyboxMaterial->LoadSamplerStateAndShaderResourceView(L"skybox/skymap.dds");
 	LoadObjModel(L"SkyCube.obj", *skyboxMaterial, *skyboxMesh, true);
-	skybox = new GameEntity(skyboxMesh, skyboxMaterial, this->camera->GetPosition() ); 
+	skybox = new GameEntity(skyboxMesh, skyboxMaterial, this->camera->GetPosition() ); */
 
 
 	// Create our Artifact's game entity
@@ -344,8 +403,8 @@ void DemoGame::LoadShadersAndInputLayout()
 	//maSphere->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
 
 	// for the skybox
-	skyboxMaterial->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
-	skyboxMaterial->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
+	//skyboxMaterial->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
+	//skyboxMaterial->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
 
 	// http://www.braynzarsoft.net/index.php?p=D3D11BLENDING#still
 
@@ -511,7 +570,7 @@ void DemoGame::Keyboard()
 		}
 	}
 
-	skybox->MoveTo(camera->GetPosition()); // move the skybox to the camera
+	//skybox->MoveTo(camera->GetPosition()); // move the skybox to the camera
 
 	if(GetAsyncKeyState('P'))
 	{
@@ -530,7 +589,7 @@ void DemoGame::Keyboard()
 
 	camera->ComputeMatrices();
 	// move background accordingly
-	ges[3].MoveTo(XMFLOAT3(camera->r_Position.x, camera->r_Position.y, camera->r_Position.z + 900));
+	//ges[3].MoveTo(XMFLOAT3(camera->r_Position.x, camera->r_Position.y, camera->r_Position.z + 900));
 }
 
 // Updates the local constant buffer and 
@@ -619,14 +678,22 @@ void DemoGame::DrawScene()
 	}
 	else if( manager->gameState == game)
 	{
+		elapsedTime += .1;
 		/*for(int i = 0; i < MAX_GAMEENTITY; ++i)
 			ges[i].Draw();*/
 
 		// Important to do 2D stuff
 		Draw2D();
-		//LockCamera();
-		UnlockCamera();
+		ges[4].Draw();
+		ges[5].Draw();
+		ges[5].MoveTo(XMFLOAT3(-4.51, 3 - (6* elapsedTime/LEVEL_TIME), 4.9));
+		LockCamera();
+		//UnlockCamera();
 		gameArtifact->Draw();
+		if(elapsedTime >= LEVEL_TIME)
+		{
+			this->manager->gameState = gameOver;
+		}
 	}
 	else if(manager->gameState == pause)
 	{
@@ -639,6 +706,7 @@ void DemoGame::DrawScene()
 	else if(manager->gameState == gameOver)
 	{
 		// Game over stuff
+		ges[6].Draw();
 	}
 
 

@@ -81,7 +81,7 @@ private:
 	Material* ma;
 	Mesh* mish;
 	float time;
-
+	float elapsedTime;
 	Font* font;
 	FontShader* fShader;
 	Sentence* sentence;

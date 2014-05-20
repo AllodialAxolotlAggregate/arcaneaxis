@@ -1,9 +1,9 @@
-﻿Build started 5/20/2014 10:56:40 AM.
-     1>Project "D:\Users\ahb9907\ArcaneAxis\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" on node 2 (Build target(s)).
+﻿Build started 5/20/2014 12:24:05 PM.
+     1>Project "D:\Users\gmb9280\arcane_AXIS\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" on node 2 (Build target(s)).
      1>Lib:
-         DirectXTK_Desktop_2012.vcxproj -> D:\Users\ahb9907\ArcaneAxis\DirectX11 AA2\DirectX11_Starter\DirectXTK\Bin\Desktop_2012\Win32\Debug\DirectXTK.lib
-     1>Done Building Project "D:\Users\ahb9907\ArcaneAxis\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" (Build target(s)).
+         DirectXTK_Desktop_2012.vcxproj -> D:\Users\gmb9280\arcane_AXIS\DirectX11 AA2\DirectX11_Starter\DirectXTK\Bin\Desktop_2012\Win32\Debug\DirectXTK.lib
+     1>Done Building Project "D:\Users\gmb9280\arcane_AXIS\DirectX11 AA2\DirectX11_Starter\DirectXTK\DirectXTK_Desktop_2012.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.05
+Time Elapsed 00:00:00.04
