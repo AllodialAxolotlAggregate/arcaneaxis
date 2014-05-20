@@ -35,7 +35,7 @@
 #define MAX_MESH 7
 #define MAX_GAMEENTITY 7//3
 #define MAX_LINES 6
-#define LEVEL_TIME 20 //1000
+#define LEVEL_TIME 1000 //1000
 
 #define ARTIFACT_Z_AXIS 15.0
 

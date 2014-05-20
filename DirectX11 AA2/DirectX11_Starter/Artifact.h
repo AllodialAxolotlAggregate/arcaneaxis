@@ -62,7 +62,22 @@ public:
 		// Create a single material for all of the entities to use
 		m_SingleMaterial = new Material*();
 		m_SingleMaterial[0] = new Material(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext);
-		m_SingleMaterial[0]->LoadSamplerStateAndShaderResourceView(L"Eye.png"); // Image for the rune
+		m_SingleMaterial[0]->LoadSamplerStateAndShaderResourceView(L"runes/1_1.png"); // Image for the rune
+
+		m_SingleMaterial[1] = new Material(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext);
+		m_SingleMaterial[1]->LoadSamplerStateAndShaderResourceView(L"runes/2_1.png"); // Image for the rune
+
+		m_SingleMaterial[2] = new Material(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext);
+		m_SingleMaterial[2]->LoadSamplerStateAndShaderResourceView(L"runes/3_1.png"); // Image for the rune
+
+		m_SingleMaterial[3] = new Material(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext);
+		m_SingleMaterial[3]->LoadSamplerStateAndShaderResourceView(L"runes/4_1.png"); // Image for the rune
+
+		m_SingleMaterial[4] = new Material(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext);
+		m_SingleMaterial[4]->LoadSamplerStateAndShaderResourceView(L"runes/5_1.png"); // Image for the rune
+
+		m_SingleMaterial[5] = new Material(m_gameEntity->mesh->r_Device, m_gameEntity->mesh->r_DeviceContext);
+		m_SingleMaterial[5]->LoadSamplerStateAndShaderResourceView(L"runes/6_1.png"); // Image for the rune
 
 		// Create as many independent meshes as there are faces
 		m_ManyMeshes = new Mesh[m_NumberOfFaces];
@@ -74,8 +89,8 @@ public:
 			Vertex vertices[] = 
 			{
 				{ m_gameEntity->mesh->r_Faces[i].r_Vertices[0].Position, m_gameEntity->mesh->r_Faces[i].r_Vertices[0].Color, XMFLOAT2(0.0, 0.0), m_gameEntity->mesh->r_Faces[i].r_Vertices[0].Normal },
-				{ m_gameEntity->mesh->r_Faces[i].r_Vertices[1].Position, m_gameEntity->mesh->r_Faces[i].r_Vertices[1].Color, XMFLOAT2(0.5, 0.5), m_gameEntity->mesh->r_Faces[i].r_Vertices[1].Normal},
-				{ m_gameEntity->mesh->r_Faces[i].r_Vertices[2].Position, m_gameEntity->mesh->r_Faces[i].r_Vertices[2].Color, XMFLOAT2(1.0, 1.0), m_gameEntity->mesh->r_Faces[i].r_Vertices[2].Normal}
+				{ m_gameEntity->mesh->r_Faces[i].r_Vertices[1].Position, m_gameEntity->mesh->r_Faces[i].r_Vertices[1].Color, XMFLOAT2(.5, 0), m_gameEntity->mesh->r_Faces[i].r_Vertices[1].Normal},
+				{ m_gameEntity->mesh->r_Faces[i].r_Vertices[2].Position, m_gameEntity->mesh->r_Faces[i].r_Vertices[2].Color, XMFLOAT2(0, .5), m_gameEntity->mesh->r_Faces[i].r_Vertices[2].Normal}
 			};
 
 			// add to the array of meshes
@@ -84,7 +99,10 @@ public:
 			m_ManyMeshes[i].LoadBuffers(vertices, m_gameEntity->mesh->r_Faces->r_Indices);
 
 			// load the GameEntity
-			m_Tiles[i] = GameEntity(&m_ManyMeshes[i], m_SingleMaterial[0], m_gameEntity->Position);
+			int ind = i%6 -1;
+			if(ind < 0) ind = 0;
+			else if(ind >5) ind = 5;
+			m_Tiles[i] = GameEntity(&m_ManyMeshes[i], m_SingleMaterial[ind], m_gameEntity->Position);
 		}
 	}
 
