@@ -63,6 +63,6 @@ void Camera::OnResize(float ar)
 		0.25f * 3.1415926535f,
 		ar,
 		0.1f,
-		100.0f);
+		1000.0f);
 	XMStoreFloat4x4(&m_ProjectionMatrix, XMMatrixTranspose(P));
 }

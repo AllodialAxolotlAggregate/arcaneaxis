@@ -31,9 +31,9 @@
 #define WORD_SPEED .1
 
 // Maximum number of various things for arrays
-#define MAX_MATERIAL 3
-#define MAX_MESH 3
-#define MAX_GAMEENTITY 3
+#define MAX_MATERIAL 4
+#define MAX_MESH 4
+#define MAX_GAMEENTITY 4//3
 #define MAX_LINES 3
 
 #pragma region Win32 Entry Point (WinMain)
@@ -113,9 +113,10 @@ void DemoGame::CreateGeometryBuffers()
 	XMFLOAT4 red	= XMFLOAT4(1.0f, 0.0f, 0.0f, 1.0f);
 	XMFLOAT4 green	= XMFLOAT4(0.0f, 1.0f, 0.0f, 1.0f);
 	XMFLOAT4 blue	= XMFLOAT4(0.0f, 0.0f, 1.0f, 1.0f);
-	XMFLOAT4 white	= XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
 	XMFLOAT4 orange = XMFLOAT4(1.0f, 1.0f, 0.0f, 1.0f);
-	XMFLOAT4 purple = XMFLOAT4(1.0f, 1.0f, 0.0f, 1.0f);
+	XMFLOAT4 yellow = XMFLOAT4(0.0f, 1.0f, 1.0f, 1.0f);
+	XMFLOAT4 purple = XMFLOAT4(1.0f, 0.0f, 1.0f, 1.0f);
+	XMFLOAT4 white	= XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
 
 	// Set up the vertices
 	Vertex vertices[] = 
@@ -125,7 +126,7 @@ void DemoGame::CreateGeometryBuffers()
 		{ XMFLOAT3(-1.5f, -1.0f, +0.0f), green, XMFLOAT2(0.0, 1.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },	// 2
 		{ XMFLOAT3(+1.5f, -1.0f, +0.0f), blue, XMFLOAT2(1.0, 1.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },	// 3
 		{ XMFLOAT3(+1.5f, +1.0f, +0.0f), orange, XMFLOAT2(1.0, 0.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },	// 4
-		{ XMFLOAT3(-1.5f, +1.5f, +0.0f), purple, XMFLOAT2(0.0, 0.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },	// 5
+		{ XMFLOAT3(-1.5f, +1.0f, +0.0f), purple, XMFLOAT2(0.0, 0.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },	// 5
 	};
 
 	UINT indices[] = { 0, 3, 2 };
@@ -135,7 +136,12 @@ void DemoGame::CreateGeometryBuffers()
 						0, 4, 3,
 						0, 3, 2,};
 	UINT indices3[] = { 3, 2, 0,
-						2, 1, 0};
+						2, 5, 0};
+
+	UINT indicesSquare[] = { 3, 2, 0,
+							 2, 5, 0,
+							 5, 4, 0,
+							 4, 3, 0};
 
 	ma = new Material[MAX_MATERIAL];
 	
@@ -145,6 +151,8 @@ void DemoGame::CreateGeometryBuffers()
 	ma[1].LoadSamplerStateAndShaderResourceView(L"wallpaper.jpg");
 	ma[2] = Material(device, deviceContext);
 	ma[2].LoadSamplerStateAndShaderResourceView(L"rune.png");
+	ma[3] = Material(device, deviceContext);
+	ma[3].LoadSamplerStateAndShaderResourceView(L"bg2.jpg");
 	mish = new Mesh[MAX_MESH];
 	mish[0] = Mesh(device, deviceContext);
 	mish[0].LoadNumbers(ARRAYSIZE(vertices), ARRAYSIZE(indices));
@@ -155,11 +163,18 @@ void DemoGame::CreateGeometryBuffers()
 	mish[2] = Mesh(device, deviceContext);
 	mish[2].LoadNumbers(ARRAYSIZE(vertices), ARRAYSIZE(indices3));
 	mish[2].LoadBuffers(vertices, indices3);
+	mish[3] = Mesh(device, deviceContext);
+	mish[3].LoadNumbers(ARRAYSIZE(vertices), ARRAYSIZE(indicesSquare));
+	mish[3].LoadBuffers(vertices, indicesSquare);
 
 	ges = new GameEntity[MAX_GAMEENTITY];
 	ges[0] = GameEntity(&mish[0], &ma[0], XMFLOAT3(1.0, 1.0, -2.0));
 	ges[1] = GameEntity(&mish[1], &ma[1], XMFLOAT3(0.0, 0.0, 0.0));
 	ges[2] = GameEntity(&mish[2], &ma[0], XMFLOAT3(-1.0, -1.0, 1.0));
+
+	// background
+	ges[3] = GameEntity(&mish[3], &ma[3], XMFLOAT3(0.0, 0.0, 0.0));
+	ges[3].SetScale(XMFLOAT3(475,475,0));
 
 	font = new Font();
 	//font->Initialize(device, deviceContext, "fontdata.txt", L"font.jpg");
@@ -451,7 +466,7 @@ void DemoGame::Keyboard()
 		camera->r_Target.x += CAMERA_SPEED;
 	}
 
-	skybox->MoveTo(camera->GetPosition()); // move the skybox to teh camera
+	skybox->MoveTo(camera->GetPosition()); // move the skybox to the camera
 
 
 	if(GetAsyncKeyState('P'))
@@ -470,6 +485,8 @@ void DemoGame::Keyboard()
 	}
 
 	camera->ComputeMatrices();
+	// move background accordingly
+	ges[3].MoveTo(XMFLOAT3(camera->r_Position.x, camera->r_Position.y, camera->r_Position.z + 900));
 }
 
 // Updates the local constant buffer and 

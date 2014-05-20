@@ -69,6 +69,7 @@ void GameEntity::Rotate(XMFLOAT3 rot)
 
 void GameEntity::Draw()
 {
+	WorldTransition();
 	material->Draw(m_WorldMatrix);
 	mesh->Draw();
 }
