@@ -265,11 +265,11 @@ void DemoGame::CreateGeometryBuffers()
 
 
 	// Create our Artifact's game entity
-<<<<<<< HEAD
+
+	//okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(0.0, 0.0, 15.0));
+
 	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(0.0, 0.0, 15.0));
-=======
-	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(0.0, 0.0, 0.0));
->>>>>>> origin/Collision_Fixing
+
 
 	gameArtifact = new Artifact(okamaGameSphere);
 
@@ -679,9 +679,7 @@ void DemoGame::DrawScene()
 void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 {
 
-<<<<<<< HEAD
 	if(this->manager->gameState == game)
-=======
 	// TODO finish collision checking for the sphere
 	// Check collision for gameEntity
 	/*if(MouseIsOverEntity(&ges[1]))
@@ -692,7 +690,6 @@ void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 	XMFLOAT3 rot = XMFLOAT3(0.1, 0.0, 0.0);
 	
 	for(int i = 0; i < gameArtifact->GetNumTiles(); i++)
->>>>>>> origin/Collision_Fixing
 	{
 		mouseDragging = true;
 		this->dragStarted.x = cursorPos.x; 
@@ -712,19 +709,9 @@ void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 		if(PointInFace(&gameArtifact->GetTileAt(i)))
 		{
 			sentence[0].Initialize("Hit!", 0, 0);
-<<<<<<< HEAD
+
 		}*/
-		// Get and check every entity of our Artifact
-		for(int i = 0; i < gameArtifact->GetNumTiles(); i++)
-		{
-			if(MouseIsOverEntity(&gameArtifact->GetTileAt(i)))
-			{
-				sentence[0].Initialize("Hit!", 0, 0);
-			}
-=======
-			gameArtifact->GetTileAt(i).Rotate(rot);
->>>>>>> origin/Collision_Fixing
-		}
+
 		SetCapture(hMainWnd);
 	}
 	
