@@ -74,6 +74,10 @@ public:
 	Face* GetFaces() { return m_Faces; }
 	__declspec(property(get = GetFaces, put = SetFaces)) Face* r_Faces;
 
+	void SetOriginalVertices(Vertex* otherVertices) { m_OriginalVertices = otherVertices; }
+	Vertex* GetOriginalVertices() { return m_OriginalVertices; }
+	__declspec(property(get = GetOriginalVertices, put = SetOriginalVertices)) Vertex* r_OriginalVertices;
+
 #pragma endregion
 
 private:
@@ -84,6 +88,7 @@ private:
 	Vertex* m_Vertices;
 	UINT* m_Indices;
 	Face* m_Faces;
+	Vertex* m_OriginalVertices;
 };
 
 #endif

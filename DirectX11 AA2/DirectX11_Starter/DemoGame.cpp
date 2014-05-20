@@ -744,15 +744,13 @@ void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 	// Get and check every entity of our Artifact
 	if(this->manager->gameState == game)
 	{
-		//XMFLOAT3 rot = XMFLOAT3(0.1, 0.0, 0.0);
-	
 		mouseDragging = true;
 		this->dragStarted.x = cursorPos.x; 
 		this->dragStarted.y = cursorPos.y;
 
 		for(int i = 0; i < gameArtifact->GetNumTiles(); i++)
 		{
-			//XMFLOAT3 rot = XMFLOAT3(0.1, 0.0, 0.0);
+			XMFLOAT3 rot = XMFLOAT3(0.1, 0.0, 0.0);
 
 		
 			if(manager->gameState == game)
@@ -764,6 +762,7 @@ void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 					{
 						bool add = gameArtifact->TileClicked(i);
 						if(add == true){ this->elapsedTime -= (LEVEL_TIME / 5) / (gameArtifact->GetNumTiles()); if(this->elapsedTime <= 0){ this->elapsedTime = 0;} }
+						//tile->Rotate(rot);
 					}
 
 				}

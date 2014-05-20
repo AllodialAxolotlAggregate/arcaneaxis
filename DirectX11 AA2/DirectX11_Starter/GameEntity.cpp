@@ -39,8 +39,9 @@ void GameEntity::WorldTransition()
 	if(m_Mesh != nullptr) {
 		for(int i = 0; i < m_Mesh->r_NumberOfVertices; ++i)
 		{
-			XMVECTOR v = XMLoadFloat3(&m_Mesh->r_Vertices[i].Position);
-			XMVECTOR result = XMVector3Transform(v, XMMatrixTranspose(w));
+			XMVECTOR v = XMLoadFloat3(&m_Mesh->r_OriginalVertices[i].Position);
+			XMVECTOR result = XMVector3Transform(v, w);
+			result = XMVector3Transform(v,w);
 			XMStoreFloat3(&m_Mesh->r_Vertices[i].Position, result);
 		}
 	}

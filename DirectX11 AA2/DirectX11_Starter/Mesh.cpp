@@ -13,7 +13,8 @@ Mesh::Mesh() :
 	m_DeviceContext(nullptr),
 	m_Vertices(nullptr),
 	m_Indices(nullptr),
-	m_Faces(nullptr)
+	m_Faces(nullptr),
+	m_OriginalVertices(nullptr)
 {
 }
 
@@ -27,7 +28,8 @@ Mesh::Mesh(ID3D11Device* device, ID3D11DeviceContext* deviceContext) :
 	m_DeviceContext(deviceContext),
 	m_Vertices(nullptr),
 	m_Indices(nullptr),
-	m_Faces(nullptr)
+	m_Faces(nullptr),
+	m_OriginalVertices(nullptr)
 {
 }
 
@@ -60,6 +62,12 @@ Mesh::~Mesh()
 
 	if(m_DeviceContext != nullptr)
 		m_DeviceContext = nullptr;
+
+	if(m_OriginalVertices != nullptr)
+	{
+		delete[] m_OriginalVertices;
+		m_OriginalVertices = nullptr;
+	}
 }
 
 void Mesh::LoadNumbers(UINT numberOfVertices, UINT numberOfIndices)
@@ -70,6 +78,8 @@ void Mesh::LoadNumbers(UINT numberOfVertices, UINT numberOfIndices)
 	m_Vertices = new Vertex[numberOfVertices];
 	m_Indices = new UINT[numberOfIndices];
 	m_Faces = new Face[m_NumberOfFaces];
+
+	m_OriginalVertices = new Vertex[numberOfVertices];
 }
 
 void Mesh::Draw()
@@ -87,7 +97,10 @@ void Mesh::LoadBuffers(Vertex* vertices, UINT* indices)
 {
 	// for Tile purposes
 	for(int i = 0; i < m_NumberOfVertices; ++i)
+	{
 		m_Vertices[i] = vertices[i];
+		m_OriginalVertices[i] = vertices[i];
+	}
 
 	for(int j = 0; j < m_NumberOfIndices; ++j)
 		m_Indices[j] = indices[j];
@@ -104,6 +117,8 @@ void Mesh::LoadBuffers(Vertex* vertices, UINT* indices)
 			++num;
 		}
 	}
+
+
 
 	D3D11_BUFFER_DESC m_vbd;
     m_vbd.Usage					= D3D11_USAGE_IMMUTABLE;
