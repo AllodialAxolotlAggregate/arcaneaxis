@@ -95,10 +95,11 @@ bool DemoGame::Init()
 	camera->ComputeMatrices();
 
 	// init GameManager
-	GameManager manager();
+	this->manager = new GameManager();
+	this->manager->gameState = title;
 
 	time = .01;
-
+	camLock = true;
 	artifactTurnLeft = false;
 	artifactTurnRight = false;
 
@@ -121,12 +122,36 @@ void DemoGame::CreateGeometryBuffers()
 	// Set up the vertices
 	Vertex vertices[] = 
 	{
+<<<<<<< HEAD
 		{ XMFLOAT3(0.0f, 0.0f, 0.0f), white, XMFLOAT2(0.5, 0.5), XMFLOAT3(0.0f, 0.0f, 0.0f) },		// 0
 		{ XMFLOAT3(+0.0f, +1.0f, +0.0f), red, XMFLOAT2(0.5, 0.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },		// 1
 		{ XMFLOAT3(-1.5f, -1.0f, +0.0f), green, XMFLOAT2(0.0, 1.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },	// 2
 		{ XMFLOAT3(+1.5f, -1.0f, +0.0f), blue, XMFLOAT2(1.0, 1.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },	// 3
 		{ XMFLOAT3(+1.5f, +1.0f, +0.0f), orange, XMFLOAT2(1.0, 0.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },	// 4
 		{ XMFLOAT3(-1.5f, +1.0f, +0.0f), purple, XMFLOAT2(0.0, 0.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },	// 5
+=======
+		{ XMFLOAT3(-1.0f, 1.0f, 0.0f), white, XMFLOAT2(0.5, 0.5), XMFLOAT3(0.0f, 0.0f, 0.0f) },		// 0
+		{ XMFLOAT3(+1.0f, +1.0f, +0.0f), red, XMFLOAT2(0.5, 0.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },		// 1
+		{ XMFLOAT3(1.0f, -1.0f, +0.0f), green, XMFLOAT2(0.0, 1.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },	// 2
+		{ XMFLOAT3(1.0f, -1.0f, +0.0f), blue, XMFLOAT2(1.0, 1.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },	// 3
+	};
+
+	// For screens
+	Vertex verts2[] = 
+	{
+		{ XMFLOAT3(-3.15f, 3.0f, 0.0f), white, XMFLOAT2(0,0), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(3.15f, 3.0f, 0.0f), white, XMFLOAT2(1, 0), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(3.15f, -3.0f, 0.0f), white, XMFLOAT2(1,1), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(-3.15f, -3.0f, 0.0f), white, XMFLOAT2(0, 1), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+	};
+
+	Vertex vertButton[] = 
+	{
+		{ XMFLOAT3(-.9f, .125f, 0.0f), white, XMFLOAT2(0,0), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(.9f, .125, 0.0f), white, XMFLOAT2(1, 0), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(.9f, -.125f, 0.0f), white, XMFLOAT2(1,1), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(-.9f, -.125f, 0.0f), white, XMFLOAT2(0, 1), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+>>>>>>> 4cad1c142af91a146631bda22c3dcb4141b4c266
 	};
 
 	UINT indices[] = { 0, 3, 2 };
@@ -135,6 +160,7 @@ void DemoGame::CreateGeometryBuffers()
 						0, 1, 4,
 						0, 4, 3,
 						0, 3, 2,};
+<<<<<<< HEAD
 	UINT indices3[] = { 3, 2, 0,
 						2, 5, 0};
 
@@ -142,35 +168,64 @@ void DemoGame::CreateGeometryBuffers()
 							 2, 5, 0,
 							 5, 4, 0,
 							 4, 3, 0};
+=======
+	UINT indices3[] = { 0, 1,3};
+
+	UINT indices4[] = {2,3,1,
+						1,3,0};
+>>>>>>> 4cad1c142af91a146631bda22c3dcb4141b4c266
 
 	ma = new Material[MAX_MATERIAL];
 	
+	// GES 0 will be title screen
 	ma[0] = Material(device, deviceContext);
-	ma[0].LoadSamplerStateAndShaderResourceView(L"Ignite.jpg");
+	ma[0].LoadSamplerStateAndShaderResourceView(L"screens/titleScreen.png");
+	
+	// GES 1 is pause screen
 	ma[1] = Material(device, deviceContext);
-	ma[1].LoadSamplerStateAndShaderResourceView(L"wallpaper.jpg");
+	ma[1].LoadSamplerStateAndShaderResourceView(L"screens/paused.png");
+
+	// play button
 	ma[2] = Material(device, deviceContext);
+<<<<<<< HEAD
 	ma[2].LoadSamplerStateAndShaderResourceView(L"rune.png");
 	ma[3] = Material(device, deviceContext);
 	ma[3].LoadSamplerStateAndShaderResourceView(L"bg2.jpg");
+=======
+	ma[2].LoadSamplerStateAndShaderResourceView(L"buttons/play_btn.png");
+>>>>>>> 4cad1c142af91a146631bda22c3dcb4141b4c266
 	mish = new Mesh[MAX_MESH];
+	
+	//title
 	mish[0] = Mesh(device, deviceContext);
-	mish[0].LoadNumbers(ARRAYSIZE(vertices), ARRAYSIZE(indices));
-	mish[0].LoadBuffers(vertices, indices);
+	mish[0].LoadNumbers(ARRAYSIZE(verts2), ARRAYSIZE(indices4));
+	mish[0].LoadBuffers(verts2, indices4);
+
+	// pause
 	mish[1] = Mesh(device, deviceContext);
-	mish[1].LoadNumbers(ARRAYSIZE(vertices), ARRAYSIZE(indices2));
-	mish[1].LoadBuffers(vertices, indices2);
+	mish[1].LoadNumbers(ARRAYSIZE(verts2), ARRAYSIZE(indices4));
+	mish[1].LoadBuffers(verts2, indices4);
+
+	// play button
 	mish[2] = Mesh(device, deviceContext);
+<<<<<<< HEAD
 	mish[2].LoadNumbers(ARRAYSIZE(vertices), ARRAYSIZE(indices3));
 	mish[2].LoadBuffers(vertices, indices3);
 	mish[3] = Mesh(device, deviceContext);
 	mish[3].LoadNumbers(ARRAYSIZE(vertices), ARRAYSIZE(indicesSquare));
 	mish[3].LoadBuffers(vertices, indicesSquare);
+=======
+	mish[2].LoadNumbers(ARRAYSIZE(verts2), ARRAYSIZE(indices4));
+	mish[2].LoadBuffers(vertButton, indices4);
+>>>>>>> 4cad1c142af91a146631bda22c3dcb4141b4c266
 
 	ges = new GameEntity[MAX_GAMEENTITY];
-	ges[0] = GameEntity(&mish[0], &ma[0], XMFLOAT3(1.0, 1.0, -2.0));
-	ges[1] = GameEntity(&mish[1], &ma[1], XMFLOAT3(0.0, 0.0, 0.0));
-	ges[2] = GameEntity(&mish[2], &ma[0], XMFLOAT3(-1.0, -1.0, 1.0));
+	ges[0] = GameEntity(&mish[0], &ma[0], XMFLOAT3(0.0, 0.0, 0.0)); // title screen
+
+
+	ges[1] = GameEntity(&mish[1], &ma[1], XMFLOAT3(0.0, 0.0, 0.0)); // pause screen
+
+	ges[2] = GameEntity(&mish[2], &ma[2], XMFLOAT3(0.0, -.5, -.5));
 
 	// background
 	ges[3] = GameEntity(&mish[3], &ma[3], XMFLOAT3(0.0, 0.0, 0.0));
@@ -210,7 +265,11 @@ void DemoGame::CreateGeometryBuffers()
 
 
 	// Create our Artifact's game entity
-	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(-6.0, 0.0, 10.0));
+<<<<<<< HEAD
+	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(0.0, 0.0, 15.0));
+=======
+	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(0.0, 0.0, 0.0));
+>>>>>>> origin/Collision_Fixing
 
 	gameArtifact = new Artifact(okamaGameSphere);
 
@@ -419,54 +478,59 @@ void DemoGame::Keyboard()
 		Release();
 		exit(0);
 	}
+	if(!camLock){
+		if(GetAsyncKeyState('W'))
+		{
+			camera->r_Position.z += CAMERA_SPEED;
+			camera->r_Target.z += CAMERA_SPEED;
+		}
 
-	if(GetAsyncKeyState('W'))
-	{
-		camera->r_Position.z += CAMERA_SPEED;
-		camera->r_Target.z += CAMERA_SPEED;
-	}
+		if(GetAsyncKeyState('A'))
+		{
+			camera->r_Position.x -= CAMERA_SPEED;
+			camera->r_Target.x -= CAMERA_SPEED;
+		}
 
-	if(GetAsyncKeyState('A'))
-	{
-		camera->r_Position.x -= CAMERA_SPEED;
-		camera->r_Target.x -= CAMERA_SPEED;
-	}
+		if(GetAsyncKeyState('Q'))
+		{
+			camera->r_Position.y -= CAMERA_SPEED;
+			camera->r_Target.y -= CAMERA_SPEED;
+		}
 
-	if(GetAsyncKeyState('Q'))
-	{
-		camera->r_Position.y -= CAMERA_SPEED;
-		camera->r_Target.y -= CAMERA_SPEED;
-	}
+		if(GetAsyncKeyState('S'))
+		{
+			camera->r_Position.z -= CAMERA_SPEED;
+			camera->r_Target.z -= CAMERA_SPEED;
+		}
 
-	if(GetAsyncKeyState('S'))
-	{
-		camera->r_Position.z -= CAMERA_SPEED;
-		camera->r_Target.z -= CAMERA_SPEED;
-	}
+		if(GetAsyncKeyState('D'))
+		{
+			camera->r_Position.x += CAMERA_SPEED;
+			camera->r_Target.x += CAMERA_SPEED;
+		}
 
-	if(GetAsyncKeyState('D'))
-	{
-		camera->r_Position.x += CAMERA_SPEED;
-		camera->r_Target.x += CAMERA_SPEED;
-	}
+		if(GetAsyncKeyState('E'))
+		{
+			camera->r_Position.y += CAMERA_SPEED;
+			camera->r_Target.y += CAMERA_SPEED;
+		}
 
-	if(GetAsyncKeyState('E'))
-	{
-		camera->r_Position.y += CAMERA_SPEED;
-		camera->r_Target.y += CAMERA_SPEED;
-	}
+		if(GetAsyncKeyState('Z'))
+		{
+			camera->r_Target.x -= CAMERA_SPEED;
+		}
 
-	if(GetAsyncKeyState('Z'))
-	{
-		camera->r_Target.x -= CAMERA_SPEED;
+		if(GetAsyncKeyState('X'))
+		{
+			camera->r_Target.x += CAMERA_SPEED;
+		}
 	}
-
-	if(GetAsyncKeyState('X'))
-	{
-		camera->r_Target.x += CAMERA_SPEED;
-	}
+<<<<<<< HEAD
 
 	skybox->MoveTo(camera->GetPosition()); // move the skybox to the camera
+=======
+	skybox->MoveTo(camera->GetPosition()); // move the skybox to teh camera
+>>>>>>> 4cad1c142af91a146631bda22c3dcb4141b4c266
 
 
 	if(GetAsyncKeyState('P'))
@@ -477,10 +541,10 @@ void DemoGame::Keyboard()
 
 	if(!GetAsyncKeyState('P') && pausePressed)
 	{
-		if(manager.gameState == game)
-				manager.gameState = pause;
-			else if(manager.gameState == pause)
-				manager.gameState = game;
+		if(this->manager->gameState == game)
+				this->manager->gameState = pause;
+			else if(manager->gameState == pause)
+				manager->gameState = game;
 		pausePressed = false;
 	}
 
@@ -494,7 +558,7 @@ void DemoGame::Keyboard()
 void DemoGame::UpdateScene(float dt)
 {
 	// Write out GameState
-	sentence[2].Initialize(manager.GetStateString(), -50, -15);
+	sentence[2].Initialize("Game State", -50, -15);
 
 	time -= dt;
 	if(time <= 0)
@@ -559,17 +623,41 @@ void DemoGame::DrawScene()
 	// Lighting
 	constbuffPerFrame.light = light;
 
-	for(int i = 0; i < MAX_GAMEENTITY; ++i)
-		ges[i].Draw();
+	// Switch for game state
+	if( manager->gameState == title)
+	{
+		// do title stuff
+		this->ges[0].Draw();
+		this->ges[2].Draw();
+		LockCamera();
+	}
+	else if( manager->gameState == game)
+	{
+		/*for(int i = 0; i < MAX_GAMEENTITY; ++i)
+			ges[i].Draw();*/
 
-	// Important to do 2D stuff
-	Draw2D();
-
+		// Important to do 2D stuff
+		//Draw2D();
+		LockCamera();
+		gameArtifact->Draw();
+	}
+	else if(manager->gameState == pause)
+	{
+		// Pause stuff
+		// Important to do 2D stuff
+		//Draw2D();
+		ges[1].Draw();
+		LockCamera();
+	}
+	else if(manager->gameState == gameOver)
+	{
+		// Game over stuff
+	}
 	deviceContext->UpdateSubresource( cbPerFrameBuffer, 0, NULL, &constbuffPerFrame, 0, 0 );
 	deviceContext->PSSetConstantBuffers(0, 1, &cbPerFrameBuffer);
 
-	gameArtifact->Draw();
-	skybox->Draw();
+	
+	//skybox->Draw();
 
 
 	// Present the buffer
@@ -590,10 +678,10 @@ void DemoGame::DrawScene()
 
 void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 {
-	mouseDragging = true;
-	this->dragStarted.x = cursorPos.x; 
-	this->dragStarted.y = cursorPos.y;
 
+<<<<<<< HEAD
+	if(this->manager->gameState == game)
+=======
 	// TODO finish collision checking for the sphere
 	// Check collision for gameEntity
 	/*if(MouseIsOverEntity(&ges[1]))
@@ -601,34 +689,64 @@ void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 		sentence[0].Initialize("Hit!", 0, 0);
 	}*/
 	// Get and check every entity of our Artifact
+	XMFLOAT3 rot = XMFLOAT3(0.1, 0.0, 0.0);
+	
 	for(int i = 0; i < gameArtifact->GetNumTiles(); i++)
+>>>>>>> origin/Collision_Fixing
 	{
-		if(MouseIsOverEntity(&gameArtifact->GetTileAt(i)))
+		mouseDragging = true;
+		this->dragStarted.x = cursorPos.x; 
+		this->dragStarted.y = cursorPos.y;
+
+		// TODO finish collision checking for the sphere
+		// Check collision for gameEntity
+		/*if(MouseIsOverEntity(&ges[1]))
 		{
-			sentence[0].Initialize("Hit!", 0, 0);
+			//sentence[0].Initialize("Hit!", 0, 0);
+			//gameArtifact->GetTileAt(i).Rotate(rot);
 		}
 	}
-	SetCapture(hMainWnd);
+
+	for(int i = 0; i < gameArtifact->GetNumTiles();i++)
+	{
+		if(PointInFace(&gameArtifact->GetTileAt(i)))
+		{
+			sentence[0].Initialize("Hit!", 0, 0);
+<<<<<<< HEAD
+		}*/
+		// Get and check every entity of our Artifact
+		for(int i = 0; i < gameArtifact->GetNumTiles(); i++)
+		{
+			if(MouseIsOverEntity(&gameArtifact->GetTileAt(i)))
+			{
+				sentence[0].Initialize("Hit!", 0, 0);
+			}
+=======
+			gameArtifact->GetTileAt(i).Rotate(rot);
+>>>>>>> origin/Collision_Fixing
+		}
+		SetCapture(hMainWnd);
+	}
+	
 }
 
 void DemoGame::OnMouseUp(WPARAM btnState, int x, int y)
 {
+	if(this->manager->gameState == title)
+	{
+		this->manager->gameState = game; // TODO: button stuff
+	}
 	mouseDragging = false;
 	ReleaseCapture();
 }
 
 void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 {
-	// get the mouse position and store it back into our variable
+#pragma region MouseUpdates
 	// help from http://social.msdn.microsoft.com/Forums/en-US/1b563e35-8aea-4b98-8c76-490a8852ce9a/getting-the-mouse-position-in-screen-coordinates-using-c-no-net?forum=gametechnologiesdirectx101
     GetCursorPos(&cursorPos);
 
 	ScreenToClient(this->hMainWnd, &cursorPos); // translate to client coords
-
-	// Set the mouse world coordinates
-	float mouseX = (((2.0f * (float)x) / (float) windowWidth) - 1.0f)/(camera->r_ProjectionMatrix._11);
-	float mouseY = (((-2.0f * (float)y) / (float) windowHeight) + 1.0f)/(camera->r_ProjectionMatrix._22);
-
 	// find the width offset
 	RECT filler; 
 	GetWindowRect(this->hMainWnd, &filler); // right and bottom are width and height
@@ -638,88 +756,137 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 
 	windowOffset.x = widthoffset;
 	windowOffset.y = heightoffset;
-	mouseWorldX = (-camera->r_Position.z * mouseX) + camera->r_Position.x;
-	mouseWorldY = (-camera->r_Position.z * mouseY) + camera->r_Position.y;
-	//mouseWorldX -= windowOffset.x;
-	//mouseWorldY -= windowOffset.y;
+#pragma endregion
+	if(this->manager->gameState == game)
+	{
+		// Set the mouse world coordinates
+		float mouseX = (((2.0f * (float)x) / (float) windowWidth) - 1.0f)/(camera->r_ProjectionMatrix._11);
+		float mouseY = (((-2.0f * (float)y) / (float) windowHeight) + 1.0f)/(camera->r_ProjectionMatrix._22);
 
-	//cursorPos.x -= windowOffset.x; 
-	//cursorPos.y -= windowOffset.y;
+
+		mouseWorldX = (-camera->r_Position.z * mouseX) + camera->r_Position.x;
+		mouseWorldY = (-camera->r_Position.z * mouseY) + camera->r_Position.y;
+		//mouseWorldX -= windowOffset.x;
+		//mouseWorldY -= windowOffset.y;
+
+		//cursorPos.x -= windowOffset.x; 
+		//cursorPos.y -= windowOffset.y;
+		if(mouseDragging)
+		{
+			if( std::abs( cursorPos.y - dragStarted.y) > std::abs(cursorPos.x - dragStarted.x))
+			{
+				// Check to see if it's been dragged to the right or to the left
+				if(cursorPos.x < dragStarted.x)
+				{
+					// check amount
+					//float amt = -.001 * (cursorPos.x - dragStarted.x);
+					this->gameArtifact->AddAccel(-.003,0);
+				}
+				else if(cursorPos.x > dragStarted.x)
+				{
+					//float amt = .001 * (cursorPos.x - dragStarted.x);
+					this->gameArtifact->AddAccel(.003,0);
+				}
+			
+			}
+			else{
+				if(cursorPos.y < dragStarted.y)
+				{
+					//float amt = -.001 * (cursorPos.y - dragStarted.y);
+					this->gameArtifact->AddAccel(0, -.004);
+				}
+				else if(cursorPos.y > dragStarted.y)
+				{
+					//float amt = .001 * (cursorPos.y - dragStarted.y);
+					this->gameArtifact->AddAccel(0, .004);
+				}
+			}
+		
+		}
+	}
+
+
 
 	// Write it out
-	char stringX[30];
+	/*char stringX[30];
 	char stringY[30];
 	sprintf_s(stringX, 30, "%d", cursorPos.x);
 	sprintf_s(stringY, 30, "%d", cursorPos.y);
 	sentence[0].Initialize(stringX, 1, 10);
-	sentence[1].Initialize(stringY, 1, -10);
+	sentence[1].Initialize(stringY, 1, -10);*/
 
 
-
-	// Check for dragging (gmb9280)
-	if(mouseDragging)
-	{
-		if( std::abs( cursorPos.y - dragStarted.y) > std::abs(cursorPos.x - dragStarted.x))
-		{
-			// Check to see if it's been dragged to the right or to the left
-			if(cursorPos.x < dragStarted.x)
-			{
-				// check amount
-				//float amt = -.001 * (cursorPos.x - dragStarted.x);
-				this->gameArtifact->AddAccel(-.003,0);
-			}
-			else if(cursorPos.x > dragStarted.x)
-			{
-				//float amt = .001 * (cursorPos.x - dragStarted.x);
-				this->gameArtifact->AddAccel(.003,0);
-			}
-			
-		}
-		else{
-			if(cursorPos.y < dragStarted.y)
-			{
-				//float amt = -.001 * (cursorPos.y - dragStarted.y);
-				this->gameArtifact->AddAccel(0, -.004);
-			}
-			else if(cursorPos.y > dragStarted.y)
-			{
-				//float amt = .001 * (cursorPos.y - dragStarted.y);
-				this->gameArtifact->AddAccel(0, .004);
-			}
-		}
-		
-	}
+	
 	
 }
 
-// Thanks Andre!
+// For Triangle collision (faces)
+bool DemoGame::PointInFace(GameEntity* e)
+{
+
+	XMVECTOR p = XMVectorSet(mouseWorldX, mouseWorldY, 0.0, 0.0);
+
+	XMVECTOR a = XMVectorSet(e->GetMesh()->GetVertices()[0].Position.x, e->GetMesh()->GetVertices()[0].Position.y, 0.0, 0.0);
+	XMVECTOR b = XMVectorSet(e->GetMesh()->GetVertices()[1].Position.x, e->GetMesh()->GetVertices()[1].Position.y, 0.0, 0.0);
+	XMVECTOR c = XMVectorSet(e->GetMesh()->GetVertices()[2].Position.x, e->GetMesh()->GetVertices()[2].Position.y, 0.0, 0.0);
+	
+	a -= p;
+	b -= p;
+	c -= p;
+
+	XMVECTOR u = XMVector2Cross(b, c);
+	XMVECTOR v = XMVector2Cross(c, a);
+	XMVECTOR d = XMVector2Dot(u,v);
+
+	if (XMVectorGetByIndex(d,0) < 0.0f)
+		return false;
+
+	XMVECTOR w = XMVector2Cross(a,b);
+	XMVECTOR ev = XMVector2Dot(u,w);
+
+	if (XMVectorGetByIndex(ev,0) < 0.0f)
+		return false;
+
+	return true;
+}
+
+// Rectangle Collision
 bool DemoGame::MouseIsOverEntity(GameEntity* e)
 {
-	float maxX = e->GetMesh()->GetVertices()[0].Position.x;
-	float minX = e->GetMesh()->GetVertices()[0].Position.x;
-	float maxY = e->GetMesh()->GetVertices()[0].Position.y;
-	float minY = e->GetMesh()->GetVertices()[0].Position.y;
+	XMMATRIX x = XMLoadFloat4x4(&e->WorldMatrix);
+	XMVECTOR v = XMLoadFloat3(&e->GetMesh()->GetVertices()[2].Position);
+	XMVECTOR result = XMVector3Transform(v, x);
+	XMFLOAT3 end;
+	XMStoreFloat3(&end, result);
+
+	float maxX = end.x;
+	float minX = end.x;
+	float maxY = end.y;
+	float minY = end.y;
 
 	for (int i = 0; i < e->GetMesh()->GetNumberOfVertices(); i++)
 	{
-		Vertex current = e->GetMesh()->GetVertices()[i];
+		XMVECTOR cv = XMLoadFloat3(&e->GetMesh()->GetVertices()[i].Position);
+		XMVECTOR result2 = XMVector3Transform(cv, x);
+		XMFLOAT3 current;
+		XMStoreFloat3(&current, result2);
 
-		if (current.Position.x > maxX)
+		if (current.x > maxX)
 		{
-			maxX = current.Position.x;
+			maxX = current.x;
 		}
-		if (current.Position.y > maxY)
+		if (current.y > maxY)
 		{
-			maxY = current.Position.y;
+			maxY = current.y;
 		}
 
-		if (current.Position.x < minX)
+		if (current.x < minX)
 		{
-			minX = current.Position.x;
+			minX = current.x;
 		}
-		if (current.Position.y < minY)
+		if (current.y < minY)
 		{
-			minY = current.Position.y;
+			minY = current.y;
 		}
 
 	}

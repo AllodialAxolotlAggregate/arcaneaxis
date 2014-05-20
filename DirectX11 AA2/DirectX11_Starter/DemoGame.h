@@ -63,6 +63,7 @@ private:
 		bool isRHCoordSys);							//true if model was created in right hand coord system
 
 	bool MouseIsOverEntity(GameEntity* e);
+	bool PointInFace(GameEntity* e);
 private:
 	// A few more odds and ends we'll need
 	ID3D11Buffer* vsConstantBuffer;
@@ -96,6 +97,21 @@ private:
 
 	//gmb9280: added Artifact
 	Artifact* gameArtifact;
+	void LockCamera()
+	{
+		if(camLock != true)
+		{
+			camLock = true;
+		}
+	}
+	void UnlockCamera()
+	{
+		if(camLock == true)
+		{
+			camLock = false;
+		}
+	}
+	bool camLock;
 
 	// obj verts and inds
 	Vertex* objVertices; // array of vertices
@@ -137,7 +153,7 @@ private:
 	Light light;
 	XMVECTOR lightVector;
 
-	GameManager manager;
+	GameManager* manager;
 
 	// Menu bools
 	bool pausePressed;

@@ -14,7 +14,7 @@ public:
 	GameManager();
 	GameState gameState;
 	char* GetStateString();
-
+	bool debug;
 private:
 };
 
