@@ -1,4 +1,4 @@
-﻿Build started 5/20/2014 3:22:43 PM.
+﻿Build started 5/20/2014 3:50:33 PM.
      1>Project "D:\Users\gmb9280\arcane_AXIS\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"D:\Users\gmb9280\arcane_AXIS\DirectX11 AA2\\DirectXTK\inc" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt DemoGame.cpp
@@ -81,4 +81,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.02
+Time Elapsed 00:00:03.87
