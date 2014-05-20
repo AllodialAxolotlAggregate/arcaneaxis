@@ -64,6 +64,7 @@ private:
 
 	bool MouseIsOverEntity(GameEntity* e);
 	bool PointInFace(GameEntity* e);
+	bool IsInFront(GameEntity* e);
 private:
 	// A few more odds and ends we'll need
 	ID3D11Buffer* vsConstantBuffer;

@@ -36,6 +36,8 @@
 #define MAX_GAMEENTITY 4//3
 #define MAX_LINES 3
 
+#define ARTIFACT_Z_AXIS 15.0
+
 #pragma region Win32 Entry Point (WinMain)
 
 // Win32 Entry Point
@@ -253,7 +255,7 @@ void DemoGame::CreateGeometryBuffers()
 
 
 	// Create our Artifact's game entity
-	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(0.0, 0.0, 15.0));
+	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(0.0, 0.0, ARTIFACT_Z_AXIS));
 	gameArtifact = new Artifact(okamaGameSphere);
 
 	// Lighting
@@ -578,7 +580,7 @@ void DemoGame::Draw2D()
 	/*for(int i = 0; i < MAX_LINES; ++i)
 		sentence[i].Render(camera->r_ViewMatrix, camera->r_ProjectionMatrix);*/
 
-	sentence[0].Render(camera->r_ViewMatrix, camera->r_ProjectionMatrix);
+	//sentence[0].Render(camera->r_ViewMatrix, camera->r_ProjectionMatrix);
 
 	// Turn off the alpha blending.
 	deviceContext->OMSetBlendState(0, 0, 0xffffffff);
@@ -622,7 +624,8 @@ void DemoGame::DrawScene()
 
 		// Important to do 2D stuff
 		Draw2D();
-		LockCamera();
+		//LockCamera();
+		UnlockCamera();
 		gameArtifact->Draw();
 	}
 	else if(manager->gameState == pause)
@@ -681,21 +684,21 @@ void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 
 		// TODO finish collision checking for the sphere
 		// Check collision for gameEntity
-		/*if(MouseIsOverEntity(&ges[1]))
+		XMFLOAT3 rot = XMFLOAT3(0.1, 0.0, 0.0);
+
+		
+		if(manager->gameState == game)
 		{
-			//sentence[0].Initialize("Hit!", 0, 0);
-			//gameArtifact->GetTileAt(i).Rotate(rot);
+			for (int i = 0; i < gameArtifact->GetNumTiles(); i++)
+			{
+				GameEntity* tile = &gameArtifact->GetTileAt(i);
+				if(IsInFront(tile) && PointInFace(tile))
+				{
+					gameArtifact->GetTileAt(i).Rotate(rot);
+				}
+
+			}
 		}
-	}
-
-	for(int i = 0; i < gameArtifact->GetNumTiles();i++)
-	{
-		if(PointInFace(&gameArtifact->GetTileAt(i)))
-		{
-			sentence[0].Initialize("Hit!", 0, 0);
-
-		}*/
-
 		SetCapture(hMainWnd);
 	}
 	
@@ -870,6 +873,16 @@ bool DemoGame::MouseIsOverEntity(GameEntity* e)
 	return false;
 }
 
+// Checks to see if a gameEntity(face) is in the front of the sphere, and therefore clickable
+bool DemoGame::IsInFront(GameEntity* e)
+{
+	for(int i = 0; i < e->GetMesh()->GetNumberOfVertices(); i++)
+	{
+		if ( e->GetMesh()->GetVertices()[i].Position.z >= ARTIFACT_Z_AXIS)
+			return false;
+	}
+	return true;
+}
 
 #pragma endregion
 
