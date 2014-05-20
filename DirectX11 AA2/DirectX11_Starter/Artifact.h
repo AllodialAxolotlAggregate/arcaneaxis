@@ -2,6 +2,7 @@
 #include "GameEntity.h"
 #include "Tile.h"
 #include <iostream>
+#include "Spellbook.h"
 
 using namespace DirectX;
 
@@ -18,6 +19,7 @@ public:
 		this->velocX = 0; this->velocY = 0;
 		// Moved all the things to do with generating tiles to its own method (gmb9280)
 		this->GenTiles();
+		this->spellbook = new Spellbook();
 	}
 
 	// Blank constructor - don't use. I don't even know why I wrote it. ¯\_(^u^)_/¯
@@ -85,6 +87,16 @@ public:
 			m_Tiles[i] = GameEntity(&m_ManyMeshes[i], m_SingleMaterial[0], m_gameEntity->Position);
 		}
 	}
+
+	// Called from collision detection
+	void TileClicked(int indexOfTile)
+	{
+		//this->GetTileAt(indexOfTile)
+
+		this->spellbook->AddToActiveSpell(new Rune( (indexOfTile % 6) ));
+	}
+
+
 
 	// Destructor
 	~Artifact(void)
@@ -213,5 +225,7 @@ private:
 	Material** m_SingleMaterial;
 	Mesh* m_ManyMeshes;
 	int m_NumberOfFaces;
+	
+	Spellbook* spellbook;
 };
 
