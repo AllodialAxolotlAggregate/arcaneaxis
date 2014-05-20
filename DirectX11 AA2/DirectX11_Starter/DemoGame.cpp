@@ -122,14 +122,6 @@ void DemoGame::CreateGeometryBuffers()
 	// Set up the vertices
 	Vertex vertices[] = 
 	{
-<<<<<<< HEAD
-		{ XMFLOAT3(0.0f, 0.0f, 0.0f), white, XMFLOAT2(0.5, 0.5), XMFLOAT3(0.0f, 0.0f, 0.0f) },		// 0
-		{ XMFLOAT3(+0.0f, +1.0f, +0.0f), red, XMFLOAT2(0.5, 0.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },		// 1
-		{ XMFLOAT3(-1.5f, -1.0f, +0.0f), green, XMFLOAT2(0.0, 1.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },	// 2
-		{ XMFLOAT3(+1.5f, -1.0f, +0.0f), blue, XMFLOAT2(1.0, 1.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },	// 3
-		{ XMFLOAT3(+1.5f, +1.0f, +0.0f), orange, XMFLOAT2(1.0, 0.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },	// 4
-		{ XMFLOAT3(-1.5f, +1.0f, +0.0f), purple, XMFLOAT2(0.0, 0.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },	// 5
-=======
 		{ XMFLOAT3(-1.0f, 1.0f, 0.0f), white, XMFLOAT2(0.5, 0.5), XMFLOAT3(0.0f, 0.0f, 0.0f) },		// 0
 		{ XMFLOAT3(+1.0f, +1.0f, +0.0f), red, XMFLOAT2(0.5, 0.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },		// 1
 		{ XMFLOAT3(1.0f, -1.0f, +0.0f), green, XMFLOAT2(0.0, 1.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },	// 2
@@ -139,10 +131,10 @@ void DemoGame::CreateGeometryBuffers()
 	// For screens
 	Vertex verts2[] = 
 	{
-		{ XMFLOAT3(-3.15f, 3.0f, 0.0f), white, XMFLOAT2(0,0), XMFLOAT3(0.0f, 0.0f, 0.0f) },
-		{ XMFLOAT3(3.15f, 3.0f, 0.0f), white, XMFLOAT2(1, 0), XMFLOAT3(0.0f, 0.0f, 0.0f) },
-		{ XMFLOAT3(3.15f, -3.0f, 0.0f), white, XMFLOAT2(1,1), XMFLOAT3(0.0f, 0.0f, 0.0f) },
-		{ XMFLOAT3(-3.15f, -3.0f, 0.0f), white, XMFLOAT2(0, 1), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(-3.3f, 3.0f, 0.0f), white, XMFLOAT2(0,0), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(3.3f, 3.0f, 0.0f), white, XMFLOAT2(1, 0), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(3.3f, -3.0f, 0.0f), white, XMFLOAT2(1,1), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(-3.3f, -3.0f, 0.0f), white, XMFLOAT2(0, 1), XMFLOAT3(0.0f, 0.0f, 0.0f) },
 	};
 
 	Vertex vertButton[] = 
@@ -151,7 +143,7 @@ void DemoGame::CreateGeometryBuffers()
 		{ XMFLOAT3(.9f, .125, 0.0f), white, XMFLOAT2(1, 0), XMFLOAT3(0.0f, 0.0f, 0.0f) },
 		{ XMFLOAT3(.9f, -.125f, 0.0f), white, XMFLOAT2(1,1), XMFLOAT3(0.0f, 0.0f, 0.0f) },
 		{ XMFLOAT3(-.9f, -.125f, 0.0f), white, XMFLOAT2(0, 1), XMFLOAT3(0.0f, 0.0f, 0.0f) },
->>>>>>> 4cad1c142af91a146631bda22c3dcb4141b4c266
+
 	};
 
 	UINT indices[] = { 0, 3, 2 };
@@ -160,7 +152,7 @@ void DemoGame::CreateGeometryBuffers()
 						0, 1, 4,
 						0, 4, 3,
 						0, 3, 2,};
-<<<<<<< HEAD
+
 	UINT indices3[] = { 3, 2, 0,
 						2, 5, 0};
 
@@ -168,12 +160,11 @@ void DemoGame::CreateGeometryBuffers()
 							 2, 5, 0,
 							 5, 4, 0,
 							 4, 3, 0};
-=======
-	UINT indices3[] = { 0, 1,3};
+
 
 	UINT indices4[] = {2,3,1,
 						1,3,0};
->>>>>>> 4cad1c142af91a146631bda22c3dcb4141b4c266
+
 
 	ma = new Material[MAX_MATERIAL];
 	
@@ -187,13 +178,13 @@ void DemoGame::CreateGeometryBuffers()
 
 	// play button
 	ma[2] = Material(device, deviceContext);
-<<<<<<< HEAD
+
 	ma[2].LoadSamplerStateAndShaderResourceView(L"rune.png");
 	ma[3] = Material(device, deviceContext);
 	ma[3].LoadSamplerStateAndShaderResourceView(L"bg2.jpg");
-=======
+
 	ma[2].LoadSamplerStateAndShaderResourceView(L"buttons/play_btn.png");
->>>>>>> 4cad1c142af91a146631bda22c3dcb4141b4c266
+
 	mish = new Mesh[MAX_MESH];
 	
 	//title
@@ -208,16 +199,13 @@ void DemoGame::CreateGeometryBuffers()
 
 	// play button
 	mish[2] = Mesh(device, deviceContext);
-<<<<<<< HEAD
-	mish[2].LoadNumbers(ARRAYSIZE(vertices), ARRAYSIZE(indices3));
-	mish[2].LoadBuffers(vertices, indices3);
+	mish[2].LoadNumbers(ARRAYSIZE(verts2), ARRAYSIZE(indices4));
+	mish[2].LoadBuffers(vertButton, indices4);
+
+	// Skybox plane
 	mish[3] = Mesh(device, deviceContext);
 	mish[3].LoadNumbers(ARRAYSIZE(vertices), ARRAYSIZE(indicesSquare));
 	mish[3].LoadBuffers(vertices, indicesSquare);
-=======
-	mish[2].LoadNumbers(ARRAYSIZE(verts2), ARRAYSIZE(indices4));
-	mish[2].LoadBuffers(vertButton, indices4);
->>>>>>> 4cad1c142af91a146631bda22c3dcb4141b4c266
 
 	ges = new GameEntity[MAX_GAMEENTITY];
 	ges[0] = GameEntity(&mish[0], &ma[0], XMFLOAT3(0.0, 0.0, 0.0)); // title screen
@@ -240,7 +228,7 @@ void DemoGame::CreateGeometryBuffers()
 	sentence = new Sentence[MAX_LINES];
 	sentence[0] = Sentence(device, deviceContext);
 	sentence[0].LoadFontAndShader(font, fShader);
-	sentence[0].Initialize("Mouse X", 1, 10);
+	sentence[0].Initialize("Mouse X", -2, 3);
 	
 	sentence[1] = Sentence(device, deviceContext);
 	sentence[1].LoadFontAndShader(font, fShader);
@@ -265,12 +253,7 @@ void DemoGame::CreateGeometryBuffers()
 
 
 	// Create our Artifact's game entity
-
-	//okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(0.0, 0.0, 15.0));
-
 	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(0.0, 0.0, 15.0));
-
-
 	gameArtifact = new Artifact(okamaGameSphere);
 
 	// Lighting
@@ -525,13 +508,8 @@ void DemoGame::Keyboard()
 			camera->r_Target.x += CAMERA_SPEED;
 		}
 	}
-<<<<<<< HEAD
 
 	skybox->MoveTo(camera->GetPosition()); // move the skybox to the camera
-=======
-	skybox->MoveTo(camera->GetPosition()); // move the skybox to teh camera
->>>>>>> 4cad1c142af91a146631bda22c3dcb4141b4c266
-
 
 	if(GetAsyncKeyState('P'))
 	{
@@ -597,8 +575,10 @@ void DemoGame::Draw2D()
 	// Turn on the alpha blending.
 	deviceContext->OMSetBlendState(Transparency, blendFactor, 0xffffffff);
 
-	for(int i = 0; i < MAX_LINES; ++i)
-		sentence[i].Render(camera->r_ViewMatrix, camera->r_ProjectionMatrix);
+	/*for(int i = 0; i < MAX_LINES; ++i)
+		sentence[i].Render(camera->r_ViewMatrix, camera->r_ProjectionMatrix);*/
+
+	sentence[0].Render(camera->r_ViewMatrix, camera->r_ProjectionMatrix);
 
 	// Turn off the alpha blending.
 	deviceContext->OMSetBlendState(0, 0, 0xffffffff);
@@ -622,13 +602,17 @@ void DemoGame::DrawScene()
 
 	// Lighting
 	constbuffPerFrame.light = light;
+	
 
 	// Switch for game state
 	if( manager->gameState == title)
 	{
+		
 		// do title stuff
 		this->ges[0].Draw();
-		this->ges[2].Draw();
+		this->ges[2].Draw(); // play button
+		//make sure that we're set to however big the camera is
+
 		LockCamera();
 	}
 	else if( manager->gameState == game)
@@ -637,7 +621,7 @@ void DemoGame::DrawScene()
 			ges[i].Draw();*/
 
 		// Important to do 2D stuff
-		//Draw2D();
+		Draw2D();
 		LockCamera();
 		gameArtifact->Draw();
 	}
@@ -653,12 +637,12 @@ void DemoGame::DrawScene()
 	{
 		// Game over stuff
 	}
+
+
+
+	// Boring DX11 Stuff
 	deviceContext->UpdateSubresource( cbPerFrameBuffer, 0, NULL, &constbuffPerFrame, 0, 0 );
 	deviceContext->PSSetConstantBuffers(0, 1, &cbPerFrameBuffer);
-
-	
-	//skybox->Draw();
-
 
 	// Present the buffer
 	HR(swapChain->Present(0, 0));
