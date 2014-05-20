@@ -63,6 +63,7 @@ private:
 		bool isRHCoordSys);							//true if model was created in right hand coord system
 
 	bool MouseIsOverEntity(GameEntity* e);
+	bool PointInFace(GameEntity* e);
 private:
 	// A few more odds and ends we'll need
 	ID3D11Buffer* vsConstantBuffer;

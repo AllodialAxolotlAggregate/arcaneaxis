@@ -35,6 +35,20 @@ void GameEntity::WorldTransition()
 	XMMATRIX w = scale * rotX * rotY * rotZ * trans;
 
 	XMStoreFloat4x4(&m_WorldMatrix, XMMatrixTranspose(w));
+
+	if(m_Mesh != nullptr) {
+		for(int i = 0; i < m_Mesh->r_NumberOfVertices; ++i)
+		{
+			XMVECTOR v = XMLoadFloat3(&m_Mesh->r_Vertices[i].Position);
+			XMVECTOR result = XMVector3Transform(v, XMMatrixTranspose(w));
+			XMStoreFloat3(&m_Mesh->r_Vertices[i].Position, result);
+		}
+	}
+}
+
+void GameEntity::GetWorldVertice()
+{
+	//XMMATRIX x = XMLoadFloat4x4(m_WorldMatrix);
 }
 
 void GameEntity::Move()

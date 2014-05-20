@@ -227,7 +227,11 @@ void DemoGame::CreateGeometryBuffers()
 
 
 	// Create our Artifact's game entity
+<<<<<<< HEAD
 	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(0.0, 0.0, 15.0));
+=======
+	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(0.0, 0.0, 0.0));
+>>>>>>> origin/Collision_Fixing
 
 	gameArtifact = new Artifact(okamaGameSphere);
 
@@ -630,7 +634,20 @@ void DemoGame::DrawScene()
 void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 {
 
+<<<<<<< HEAD
 	if(this->manager->gameState == game)
+=======
+	// TODO finish collision checking for the sphere
+	// Check collision for gameEntity
+	/*if(MouseIsOverEntity(&ges[1]))
+	{
+		sentence[0].Initialize("Hit!", 0, 0);
+	}*/
+	// Get and check every entity of our Artifact
+	XMFLOAT3 rot = XMFLOAT3(0.1, 0.0, 0.0);
+	
+	for(int i = 0; i < gameArtifact->GetNumTiles(); i++)
+>>>>>>> origin/Collision_Fixing
 	{
 		mouseDragging = true;
 		this->dragStarted.x = cursorPos.x; 
@@ -640,7 +657,17 @@ void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 		// Check collision for gameEntity
 		/*if(MouseIsOverEntity(&ges[1]))
 		{
+			//sentence[0].Initialize("Hit!", 0, 0);
+			//gameArtifact->GetTileAt(i).Rotate(rot);
+		}
+	}
+
+	for(int i = 0; i < gameArtifact->GetNumTiles();i++)
+	{
+		if(PointInFace(&gameArtifact->GetTileAt(i)))
+		{
 			sentence[0].Initialize("Hit!", 0, 0);
+<<<<<<< HEAD
 		}*/
 		// Get and check every entity of our Artifact
 		for(int i = 0; i < gameArtifact->GetNumTiles(); i++)
@@ -649,6 +676,9 @@ void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 			{
 				sentence[0].Initialize("Hit!", 0, 0);
 			}
+=======
+			gameArtifact->GetTileAt(i).Rotate(rot);
+>>>>>>> origin/Collision_Fixing
 		}
 		SetCapture(hMainWnd);
 	}
@@ -745,34 +775,73 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 	
 }
 
-// Thanks Andre!
+// For Triangle collision (faces)
+bool DemoGame::PointInFace(GameEntity* e)
+{
+
+	XMVECTOR p = XMVectorSet(mouseWorldX, mouseWorldY, 0.0, 0.0);
+
+	XMVECTOR a = XMVectorSet(e->GetMesh()->GetVertices()[0].Position.x, e->GetMesh()->GetVertices()[0].Position.y, 0.0, 0.0);
+	XMVECTOR b = XMVectorSet(e->GetMesh()->GetVertices()[1].Position.x, e->GetMesh()->GetVertices()[1].Position.y, 0.0, 0.0);
+	XMVECTOR c = XMVectorSet(e->GetMesh()->GetVertices()[2].Position.x, e->GetMesh()->GetVertices()[2].Position.y, 0.0, 0.0);
+	
+	a -= p;
+	b -= p;
+	c -= p;
+
+	XMVECTOR u = XMVector2Cross(b, c);
+	XMVECTOR v = XMVector2Cross(c, a);
+	XMVECTOR d = XMVector2Dot(u,v);
+
+	if (XMVectorGetByIndex(d,0) < 0.0f)
+		return false;
+
+	XMVECTOR w = XMVector2Cross(a,b);
+	XMVECTOR ev = XMVector2Dot(u,w);
+
+	if (XMVectorGetByIndex(ev,0) < 0.0f)
+		return false;
+
+	return true;
+}
+
+// Rectangle Collision
 bool DemoGame::MouseIsOverEntity(GameEntity* e)
 {
-	float maxX = e->GetMesh()->GetVertices()[0].Position.x;
-	float minX = e->GetMesh()->GetVertices()[0].Position.x;
-	float maxY = e->GetMesh()->GetVertices()[0].Position.y;
-	float minY = e->GetMesh()->GetVertices()[0].Position.y;
+	XMMATRIX x = XMLoadFloat4x4(&e->WorldMatrix);
+	XMVECTOR v = XMLoadFloat3(&e->GetMesh()->GetVertices()[2].Position);
+	XMVECTOR result = XMVector3Transform(v, x);
+	XMFLOAT3 end;
+	XMStoreFloat3(&end, result);
+
+	float maxX = end.x;
+	float minX = end.x;
+	float maxY = end.y;
+	float minY = end.y;
 
 	for (int i = 0; i < e->GetMesh()->GetNumberOfVertices(); i++)
 	{
-		Vertex current = e->GetMesh()->GetVertices()[i];
+		XMVECTOR cv = XMLoadFloat3(&e->GetMesh()->GetVertices()[i].Position);
+		XMVECTOR result2 = XMVector3Transform(cv, x);
+		XMFLOAT3 current;
+		XMStoreFloat3(&current, result2);
 
-		if (current.Position.x > maxX)
+		if (current.x > maxX)
 		{
-			maxX = current.Position.x;
+			maxX = current.x;
 		}
-		if (current.Position.y > maxY)
+		if (current.y > maxY)
 		{
-			maxY = current.Position.y;
+			maxY = current.y;
 		}
 
-		if (current.Position.x < minX)
+		if (current.x < minX)
 		{
-			minX = current.Position.x;
+			minX = current.x;
 		}
-		if (current.Position.y < minY)
+		if (current.y < minY)
 		{
-			minY = current.Position.y;
+			minY = current.y;
 		}
 
 	}
