@@ -1,0 +1,15 @@
+﻿Build started 5/20/2014 2:39:53 PM.
+     1>Project "D:\Users\gmb9280\arcane_AXIS\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" on node 2 (Build target(s)).
+     1>FxCompile:
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\fxc.exe /nologo /E"main" /Fo "D:\Users\gmb9280\arcane_AXIS\DirectX11 AA2\Release\LightPixelShader.cso" Shaders\LightPixelShader.hlsl 
+     1>D:\Users\gmb9280\arcane_AXIS\DirectX11 AA2\DirectX11_Starter\Shaders\LightPixelShader.hlsl(47,27-52): warning X3206: implicit truncation of vector type
+     1>D:\Users\gmb9280\arcane_AXIS\DirectX11 AA2\DirectX11_Starter\Shaders\LightPixelShader.hlsl(60,9-46): warning X3206: implicit truncation of vector type
+     1>D:\Users\gmb9280\arcane_AXIS\DirectX11 AA2\DirectX11_Starter\Shaders\LightPixelShader.hlsl(78,3-54): warning X3206: implicit truncation of vector type
+     1>D:\Users\gmb9280\arcane_AXIS\DirectX11 AA2\DirectX11_Starter\Shaders\LightPixelShader.hlsl(36,34-44): error X4502: invalid vs_2_0 output semantic 'SV_TARGET'
+         
+         compilation failed; no code produced
+     1>Done Building Project "D:\Users\gmb9280\arcane_AXIS\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.21

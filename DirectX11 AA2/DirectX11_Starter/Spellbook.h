@@ -14,6 +14,7 @@ private:
 
 	SuperVector<Rune*>* m_activeSpell;
 
+
 public:
 	// Constructor for a blank Spellbook
 	Spellbook(void)
@@ -23,7 +24,9 @@ public:
 
 		// Allocate for our SuperVector that will account for active spells
 		m_activeSpell = new SuperVector<Rune*>();
+
 	};
+	bool increment; // superclass checks this to see if a combo has been scored
 
 	// To be called after a certain amount of time of no new entries
 	void ClearActiveSpell()
@@ -33,6 +36,12 @@ public:
 	void AddToActiveSpell(Rune* r)
 	{
 		this->m_activeSpell->Push(r);
+		if(this->m_activeSpell->GetSize() >= 3)
+		{
+			// Need to increment points
+			increment = true;
+			ClearActiveSpell();
+		}
 	}
 
 

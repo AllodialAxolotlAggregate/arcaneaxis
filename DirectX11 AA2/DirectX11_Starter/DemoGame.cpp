@@ -211,7 +211,7 @@ void DemoGame::CreateGeometryBuffers()
 
 	// Time scroll
 	ma[4] = Material(device, deviceContext);
-	ma[4].LoadSamplerStateAndShaderResourceView(L"buttons/time_meter.png");
+	ma[4].LoadSamplerStateAndShaderResourceView(L"buttons/time_meter2.png");
 
 	// Time indicator
 	ma[5] = Material(device, deviceContext);
@@ -240,8 +240,8 @@ void DemoGame::CreateGeometryBuffers()
 
 	// Skybox plane
 	mish[3] = Mesh(device, deviceContext);
-	mish[3].LoadNumbers(ARRAYSIZE(vertices), ARRAYSIZE(indicesSquare));
-	mish[3].LoadBuffers(vertices, indicesSquare);
+	mish[3].LoadNumbers(ARRAYSIZE(verts2), ARRAYSIZE(indices4));
+	mish[3].LoadBuffers(verts2, indices4);
 
 	// Time scroll
 	mish[4] = Mesh(device, deviceContext);
@@ -268,8 +268,8 @@ void DemoGame::CreateGeometryBuffers()
 	ges[2] = GameEntity(&mish[2], &ma[2], XMFLOAT3(0.0, -.5, -.5));
 
 	// background
-	ges[3] = GameEntity(&mish[3], &ma[3], XMFLOAT3(0.0, 0.0, 0.0));
-	ges[3].SetScale(XMFLOAT3(475,475,0));
+	ges[3] = GameEntity(&mish[3], &ma[3], XMFLOAT3(0.0, 0.0, 20));
+	ges[3].SetScale(XMFLOAT3(5,5,0));
 
 	// Time scroll
 	ges[4] = GameEntity(&mish[4], &ma[4], XMFLOAT3(-4.55, 0, 5));
@@ -277,7 +277,7 @@ void DemoGame::CreateGeometryBuffers()
 	// Ticker
 	ges[5] = GameEntity(&mish[5], &ma[5], XMFLOAT3(-4.51, 4, 4.9));
 
-
+	// End screen
 	ges[6] = GameEntity(&mish[6], &ma[6], XMFLOAT3(0, 0,.8)); 
 
 	font = new Font();
@@ -678,12 +678,13 @@ void DemoGame::DrawScene()
 	}
 	else if( manager->gameState == game)
 	{
-		elapsedTime += .1;
+		elapsedTime += 1;
 		/*for(int i = 0; i < MAX_GAMEENTITY; ++i)
 			ges[i].Draw();*/
 
 		// Important to do 2D stuff
 		Draw2D();
+		ges[3].Draw();
 		ges[4].Draw();
 		ges[5].Draw();
 		ges[5].MoveTo(XMFLOAT3(-4.51, 3 - (6* elapsedTime/LEVEL_TIME), 4.9));
@@ -733,41 +734,42 @@ void DemoGame::DrawScene()
 
 void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 {
-
-	if(this->manager->gameState == game)
 	// TODO finish collision checking for the sphere
 	// Check collision for gameEntity
 	/*if(MouseIsOverEntity(&ges[1]))
 	{
 		sentence[0].Initialize("Hit!", 0, 0);
 	}*/
+
 	// Get and check every entity of our Artifact
-	XMFLOAT3 rot = XMFLOAT3(0.1, 0.0, 0.0);
-	
-	for(int i = 0; i < gameArtifact->GetNumTiles(); i++)
+	if(this->manager->gameState == game)
 	{
+		//XMFLOAT3 rot = XMFLOAT3(0.1, 0.0, 0.0);
+	
 		mouseDragging = true;
 		this->dragStarted.x = cursorPos.x; 
 		this->dragStarted.y = cursorPos.y;
 
-		// TODO finish collision checking for the sphere
-		// Check collision for gameEntity
-		XMFLOAT3 rot = XMFLOAT3(0.1, 0.0, 0.0);
+		for(int i = 0; i < gameArtifact->GetNumTiles(); i++)
+		{
+			//XMFLOAT3 rot = XMFLOAT3(0.1, 0.0, 0.0);
 
 		
-		if(manager->gameState == game)
-		{
-			for (int i = 0; i < gameArtifact->GetNumTiles(); i++)
+			if(manager->gameState == game)
 			{
-				GameEntity* tile = &gameArtifact->GetTileAt(i);
-				if(IsInFront(tile) && PointInFace(tile))
+				for (int i = 0; i < gameArtifact->GetNumTiles(); i++)
 				{
-					gameArtifact->GetTileAt(i).Rotate(rot);
-				}
+					GameEntity* tile = &gameArtifact->GetTileAt(i);
+					if(IsInFront(tile) && PointInFace(tile))
+					{
+						bool add = gameArtifact->TileClicked(i);
+						if(add == true){ this->elapsedTime -= (LEVEL_TIME / 5) / (gameArtifact->GetNumTiles()); if(this->elapsedTime <= 0){ this->elapsedTime = 0;} }
+					}
 
+				}
 			}
+			SetCapture(hMainWnd);
 		}
-		SetCapture(hMainWnd);
 	}
 	
 }

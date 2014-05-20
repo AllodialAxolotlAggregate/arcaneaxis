@@ -99,19 +99,29 @@ public:
 			m_ManyMeshes[i].LoadBuffers(vertices, m_gameEntity->mesh->r_Faces->r_Indices);
 
 			// load the GameEntity
-			int ind = i%6 -1;
+			int ind = i%6;
 			if(ind < 0) ind = 0;
 			else if(ind >5) ind = 5;
 			m_Tiles[i] = GameEntity(&m_ManyMeshes[i], m_SingleMaterial[ind], m_gameEntity->Position);
 		}
 	}
 
-	// Called from collision detection
-	void TileClicked(int indexOfTile)
+	// Called from collision detection - returns if we need to increment time more or not
+	bool TileClicked(int indexOfTile)
 	{
-		//this->GetTileAt(indexOfTile)
-
 		this->spellbook->AddToActiveSpell(new Rune( (indexOfTile % 6) ));
+
+		if(this->spellbook->increment == true)
+		{
+			this->spellbook->increment = false; // "reset"
+			return true;
+		}
+		else 
+		{
+			return false;
+		}
+
+		
 	}
 
 
