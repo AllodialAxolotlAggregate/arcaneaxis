@@ -99,7 +99,7 @@ bool DemoGame::Init()
 	this->manager->gameState = title;
 
 	time = .01;
-
+	camLock = true;
 	artifactTurnLeft = false;
 	artifactTurnRight = false;
 
@@ -130,10 +130,10 @@ void DemoGame::CreateGeometryBuffers()
 	// For screens
 	Vertex verts2[] = 
 	{
-		{ XMFLOAT3(-3.0f, 3.0f, 0.0f), white, XMFLOAT2(-1, 0), XMFLOAT3(0.0f, 0.0f, 0.0f) },
-		{ XMFLOAT3(3.0f, 3.0f, 0.0f), white, XMFLOAT2(0, 0), XMFLOAT3(0.0f, 0.0f, 0.0f) },
-		{ XMFLOAT3(-3.0f, -3.0f, 0.0f), white, XMFLOAT2(0, 1), XMFLOAT3(0.0f, 0.0f, 0.0f) },
-		{ XMFLOAT3(3.0f, -3.0f, 0.0f), white, XMFLOAT2(1, 1), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(-3.15f, 3.0f, 0.0f), white, XMFLOAT2(0,0), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(3.15f, 3.0f, 0.0f), white, XMFLOAT2(1, 0), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(3.15f, -3.0f, 0.0f), white, XMFLOAT2(1,1), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(-3.15f, -3.0f, 0.0f), white, XMFLOAT2(0, 1), XMFLOAT3(0.0f, 0.0f, 0.0f) },
 	};
 
 	UINT indices[] = { 0, 3, 2 };
@@ -142,10 +142,10 @@ void DemoGame::CreateGeometryBuffers()
 						0, 1, 4,
 						0, 4, 3,
 						0, 3, 2,};
-	UINT indices3[] = { 3, 2, 0,
-						2, 1, 0};
+	UINT indices3[] = { 0, 1,3};
 
-	UINT indices4[] = { 0,1,2, 3,2,1};
+	UINT indices4[] = {2,3,1,
+						1,3,0};
 
 	ma = new Material[MAX_MATERIAL];
 	
@@ -153,21 +153,26 @@ void DemoGame::CreateGeometryBuffers()
 	ma[0] = Material(device, deviceContext);
 	ma[0].LoadSamplerStateAndShaderResourceView(L"screens/titleScreen.png");
 	
-
+	// GES 1 is pause screen
 	ma[1] = Material(device, deviceContext);
-	ma[1].LoadSamplerStateAndShaderResourceView(L"wallpaper.jpg");
+	ma[1].LoadSamplerStateAndShaderResourceView(L"screens/paused.png");
+
+
 	ma[2] = Material(device, deviceContext);
 	ma[2].LoadSamplerStateAndShaderResourceView(L"rune.png");
 	mish = new Mesh[MAX_MESH];
 	
+	//title
 	mish[0] = Mesh(device, deviceContext);
 	mish[0].LoadNumbers(ARRAYSIZE(verts2), ARRAYSIZE(indices4));
 	mish[0].LoadBuffers(verts2, indices4);
 
-
+	// pause
 	mish[1] = Mesh(device, deviceContext);
-	mish[1].LoadNumbers(ARRAYSIZE(vertices), ARRAYSIZE(indices2));
-	mish[1].LoadBuffers(vertices, indices2);
+	mish[1].LoadNumbers(ARRAYSIZE(verts2), ARRAYSIZE(indices4));
+	mish[1].LoadBuffers(verts2, indices4);
+
+
 	mish[2] = Mesh(device, deviceContext);
 	mish[2].LoadNumbers(ARRAYSIZE(vertices), ARRAYSIZE(indices3));
 	mish[2].LoadBuffers(vertices, indices3);
@@ -176,7 +181,8 @@ void DemoGame::CreateGeometryBuffers()
 	ges[0] = GameEntity(&mish[0], &ma[0], XMFLOAT3(0.0, 0.0, 0.0)); // title screen
 
 
-	ges[1] = GameEntity(&mish[1], &ma[1], XMFLOAT3(0.0, 0.0, 0.0));
+	ges[1] = GameEntity(&mish[1], &ma[1], XMFLOAT3(0.0, 0.0, 0.0)); // pause screen
+
 	ges[2] = GameEntity(&mish[2], &ma[0], XMFLOAT3(-1.0, -1.0, 1.0));
 
 	font = new Font();
@@ -422,53 +428,53 @@ void DemoGame::Keyboard()
 		Release();
 		exit(0);
 	}
+	if(!camLock){
+		if(GetAsyncKeyState('W'))
+		{
+			camera->r_Position.z += CAMERA_SPEED;
+			camera->r_Target.z += CAMERA_SPEED;
+		}
 
-	if(GetAsyncKeyState('W'))
-	{
-		camera->r_Position.z += CAMERA_SPEED;
-		camera->r_Target.z += CAMERA_SPEED;
+		if(GetAsyncKeyState('A'))
+		{
+			camera->r_Position.x -= CAMERA_SPEED;
+			camera->r_Target.x -= CAMERA_SPEED;
+		}
+
+		if(GetAsyncKeyState('Q'))
+		{
+			camera->r_Position.y -= CAMERA_SPEED;
+			camera->r_Target.y -= CAMERA_SPEED;
+		}
+
+		if(GetAsyncKeyState('S'))
+		{
+			camera->r_Position.z -= CAMERA_SPEED;
+			camera->r_Target.z -= CAMERA_SPEED;
+		}
+
+		if(GetAsyncKeyState('D'))
+		{
+			camera->r_Position.x += CAMERA_SPEED;
+			camera->r_Target.x += CAMERA_SPEED;
+		}
+
+		if(GetAsyncKeyState('E'))
+		{
+			camera->r_Position.y += CAMERA_SPEED;
+			camera->r_Target.y += CAMERA_SPEED;
+		}
+
+		if(GetAsyncKeyState('Z'))
+		{
+			camera->r_Target.x -= CAMERA_SPEED;
+		}
+
+		if(GetAsyncKeyState('X'))
+		{
+			camera->r_Target.x += CAMERA_SPEED;
+		}
 	}
-
-	if(GetAsyncKeyState('A'))
-	{
-		camera->r_Position.x -= CAMERA_SPEED;
-		camera->r_Target.x -= CAMERA_SPEED;
-	}
-
-	if(GetAsyncKeyState('Q'))
-	{
-		camera->r_Position.y -= CAMERA_SPEED;
-		camera->r_Target.y -= CAMERA_SPEED;
-	}
-
-	if(GetAsyncKeyState('S'))
-	{
-		camera->r_Position.z -= CAMERA_SPEED;
-		camera->r_Target.z -= CAMERA_SPEED;
-	}
-
-	if(GetAsyncKeyState('D'))
-	{
-		camera->r_Position.x += CAMERA_SPEED;
-		camera->r_Target.x += CAMERA_SPEED;
-	}
-
-	if(GetAsyncKeyState('E'))
-	{
-		camera->r_Position.y += CAMERA_SPEED;
-		camera->r_Target.y += CAMERA_SPEED;
-	}
-
-	if(GetAsyncKeyState('Z'))
-	{
-		camera->r_Target.x -= CAMERA_SPEED;
-	}
-
-	if(GetAsyncKeyState('X'))
-	{
-		camera->r_Target.x += CAMERA_SPEED;
-	}
-
 	skybox->MoveTo(camera->GetPosition()); // move the skybox to teh camera
 
 
@@ -565,6 +571,7 @@ void DemoGame::DrawScene()
 	{
 		// do title stuff
 		this->ges[0].Draw();
+		LockCamera();
 	}
 	else if( manager->gameState == game)
 	{
@@ -573,13 +580,16 @@ void DemoGame::DrawScene()
 
 		// Important to do 2D stuff
 		//Draw2D();
+		LockCamera();
 		gameArtifact->Draw();
 	}
 	else if(manager->gameState == pause)
 	{
 		// Pause stuff
 		// Important to do 2D stuff
-		Draw2D();
+		//Draw2D();
+		ges[1].Draw();
+		LockCamera();
 	}
 	else if(manager->gameState == gameOver)
 	{

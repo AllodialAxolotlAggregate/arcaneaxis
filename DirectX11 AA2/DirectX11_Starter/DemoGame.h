@@ -96,6 +96,21 @@ private:
 
 	//gmb9280: added Artifact
 	Artifact* gameArtifact;
+	void LockCamera()
+	{
+		if(camLock != true)
+		{
+			camLock = true;
+		}
+	}
+	void UnlockCamera()
+	{
+		if(camLock == true)
+		{
+			camLock = false;
+		}
+	}
+	bool camLock;
 
 	// obj verts and inds
 	Vertex* objVertices; // array of vertices
