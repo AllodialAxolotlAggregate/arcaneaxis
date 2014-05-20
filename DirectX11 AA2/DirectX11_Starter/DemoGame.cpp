@@ -136,6 +136,14 @@ void DemoGame::CreateGeometryBuffers()
 		{ XMFLOAT3(-3.15f, -3.0f, 0.0f), white, XMFLOAT2(0, 1), XMFLOAT3(0.0f, 0.0f, 0.0f) },
 	};
 
+	Vertex vertButton[] = 
+	{
+		{ XMFLOAT3(-.9f, .125f, 0.0f), white, XMFLOAT2(0,0), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(.9f, .125, 0.0f), white, XMFLOAT2(1, 0), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(.9f, -.125f, 0.0f), white, XMFLOAT2(1,1), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(-.9f, -.125f, 0.0f), white, XMFLOAT2(0, 1), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+	};
+
 	UINT indices[] = { 0, 3, 2 };
 	UINT indices2[] = { 0, 2, 5,
 						0, 5, 1,
@@ -157,9 +165,9 @@ void DemoGame::CreateGeometryBuffers()
 	ma[1] = Material(device, deviceContext);
 	ma[1].LoadSamplerStateAndShaderResourceView(L"screens/paused.png");
 
-
+	// play button
 	ma[2] = Material(device, deviceContext);
-	ma[2].LoadSamplerStateAndShaderResourceView(L"rune.png");
+	ma[2].LoadSamplerStateAndShaderResourceView(L"buttons/play_btn.png");
 	mish = new Mesh[MAX_MESH];
 	
 	//title
@@ -172,10 +180,10 @@ void DemoGame::CreateGeometryBuffers()
 	mish[1].LoadNumbers(ARRAYSIZE(verts2), ARRAYSIZE(indices4));
 	mish[1].LoadBuffers(verts2, indices4);
 
-
+	// play button
 	mish[2] = Mesh(device, deviceContext);
-	mish[2].LoadNumbers(ARRAYSIZE(vertices), ARRAYSIZE(indices3));
-	mish[2].LoadBuffers(vertices, indices3);
+	mish[2].LoadNumbers(ARRAYSIZE(verts2), ARRAYSIZE(indices4));
+	mish[2].LoadBuffers(vertButton, indices4);
 
 	ges = new GameEntity[MAX_GAMEENTITY];
 	ges[0] = GameEntity(&mish[0], &ma[0], XMFLOAT3(0.0, 0.0, 0.0)); // title screen
@@ -183,7 +191,7 @@ void DemoGame::CreateGeometryBuffers()
 
 	ges[1] = GameEntity(&mish[1], &ma[1], XMFLOAT3(0.0, 0.0, 0.0)); // pause screen
 
-	ges[2] = GameEntity(&mish[2], &ma[0], XMFLOAT3(-1.0, -1.0, 1.0));
+	ges[2] = GameEntity(&mish[2], &ma[2], XMFLOAT3(0.0, -.5, -.5));
 
 	font = new Font();
 	//font->Initialize(device, deviceContext, "fontdata.txt", L"font.jpg");
@@ -571,6 +579,7 @@ void DemoGame::DrawScene()
 	{
 		// do title stuff
 		this->ges[0].Draw();
+		this->ges[2].Draw();
 		LockCamera();
 	}
 	else if( manager->gameState == game)
