@@ -41,10 +41,6 @@ public:
 		}
 		else*/ m_int = _int;
 		
-
-		// TODO: set texture path to actual rune texture dynamically instead of for demo
-		m_texturePath = "images/crow.png";  // for starters
-
 		// Runes will be given a texture path based on their integer values (for now)
 	}
 

@@ -137,7 +137,7 @@ private:
 	Light light;
 	XMVECTOR lightVector;
 
-	GameManager manager;
+	GameManager* manager;
 
 	// Menu bools
 	bool pausePressed;

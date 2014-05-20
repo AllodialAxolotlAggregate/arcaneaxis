@@ -95,7 +95,8 @@ bool DemoGame::Init()
 	camera->ComputeMatrices();
 
 	// init GameManager
-	GameManager manager();
+	this->manager = new GameManager();
+	this->manager->gameState = title;
 
 	time = .01;
 
@@ -120,12 +121,19 @@ void DemoGame::CreateGeometryBuffers()
 	// Set up the vertices
 	Vertex vertices[] = 
 	{
-		{ XMFLOAT3(0.0f, 0.0f, 0.0f), white, XMFLOAT2(0.5, 0.5), XMFLOAT3(0.0f, 0.0f, 0.0f) },		// 0
-		{ XMFLOAT3(+0.0f, +1.0f, +0.0f), red, XMFLOAT2(0.5, 0.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },		// 1
-		{ XMFLOAT3(-1.5f, -1.0f, +0.0f), green, XMFLOAT2(0.0, 1.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },	// 2
-		{ XMFLOAT3(+1.5f, -1.0f, +0.0f), blue, XMFLOAT2(1.0, 1.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },	// 3
-		{ XMFLOAT3(+1.5f, +1.0f, +0.0f), orange, XMFLOAT2(1.0, 0.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },	// 4
-		{ XMFLOAT3(-1.5f, +1.5f, +0.0f), purple, XMFLOAT2(0.0, 0.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },	// 5
+		{ XMFLOAT3(-1.0f, 1.0f, 0.0f), white, XMFLOAT2(0.5, 0.5), XMFLOAT3(0.0f, 0.0f, 0.0f) },		// 0
+		{ XMFLOAT3(+1.0f, +1.0f, +0.0f), red, XMFLOAT2(0.5, 0.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },		// 1
+		{ XMFLOAT3(1.0f, -1.0f, +0.0f), green, XMFLOAT2(0.0, 1.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },	// 2
+		{ XMFLOAT3(1.0f, -1.0f, +0.0f), blue, XMFLOAT2(1.0, 1.0), XMFLOAT3(0.0f, 0.0f, 0.0f) },	// 3
+	};
+
+	// For screens
+	Vertex verts2[] = 
+	{
+		{ XMFLOAT3(-3.0f, 3.0f, 0.0f), white, XMFLOAT2(-1, 0), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(3.0f, 3.0f, 0.0f), white, XMFLOAT2(0, 0), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(-3.0f, -3.0f, 0.0f), white, XMFLOAT2(0, 1), XMFLOAT3(0.0f, 0.0f, 0.0f) },
+		{ XMFLOAT3(3.0f, -3.0f, 0.0f), white, XMFLOAT2(1, 1), XMFLOAT3(0.0f, 0.0f, 0.0f) },
 	};
 
 	UINT indices[] = { 0, 3, 2 };
@@ -137,18 +145,26 @@ void DemoGame::CreateGeometryBuffers()
 	UINT indices3[] = { 3, 2, 0,
 						2, 1, 0};
 
+	UINT indices4[] = { 0,1,2, 3,2,1};
+
 	ma = new Material[MAX_MATERIAL];
 	
+	// GES 0 will be title screen
 	ma[0] = Material(device, deviceContext);
-	ma[0].LoadSamplerStateAndShaderResourceView(L"Ignite.jpg");
+	ma[0].LoadSamplerStateAndShaderResourceView(L"screens/titleScreen.png");
+	
+
 	ma[1] = Material(device, deviceContext);
 	ma[1].LoadSamplerStateAndShaderResourceView(L"wallpaper.jpg");
 	ma[2] = Material(device, deviceContext);
 	ma[2].LoadSamplerStateAndShaderResourceView(L"rune.png");
 	mish = new Mesh[MAX_MESH];
+	
 	mish[0] = Mesh(device, deviceContext);
-	mish[0].LoadNumbers(ARRAYSIZE(vertices), ARRAYSIZE(indices));
-	mish[0].LoadBuffers(vertices, indices);
+	mish[0].LoadNumbers(ARRAYSIZE(verts2), ARRAYSIZE(indices4));
+	mish[0].LoadBuffers(verts2, indices4);
+
+
 	mish[1] = Mesh(device, deviceContext);
 	mish[1].LoadNumbers(ARRAYSIZE(vertices), ARRAYSIZE(indices2));
 	mish[1].LoadBuffers(vertices, indices2);
@@ -157,7 +173,9 @@ void DemoGame::CreateGeometryBuffers()
 	mish[2].LoadBuffers(vertices, indices3);
 
 	ges = new GameEntity[MAX_GAMEENTITY];
-	ges[0] = GameEntity(&mish[0], &ma[0], XMFLOAT3(1.0, 1.0, -2.0));
+	ges[0] = GameEntity(&mish[0], &ma[0], XMFLOAT3(0.0, 0.0, 0.0)); // title screen
+
+
 	ges[1] = GameEntity(&mish[1], &ma[1], XMFLOAT3(0.0, 0.0, 0.0));
 	ges[2] = GameEntity(&mish[2], &ma[0], XMFLOAT3(-1.0, -1.0, 1.0));
 
@@ -195,7 +213,7 @@ void DemoGame::CreateGeometryBuffers()
 
 
 	// Create our Artifact's game entity
-	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(-6.0, 0.0, 10.0));
+	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(0.0, 0.0, 15.0));
 
 	gameArtifact = new Artifact(okamaGameSphere);
 
@@ -462,10 +480,10 @@ void DemoGame::Keyboard()
 
 	if(!GetAsyncKeyState('P') && pausePressed)
 	{
-		if(manager.gameState == game)
-				manager.gameState = pause;
-			else if(manager.gameState == pause)
-				manager.gameState = game;
+		if(this->manager->gameState == game)
+				this->manager->gameState = pause;
+			else if(manager->gameState == pause)
+				manager->gameState = game;
 		pausePressed = false;
 	}
 
@@ -477,7 +495,7 @@ void DemoGame::Keyboard()
 void DemoGame::UpdateScene(float dt)
 {
 	// Write out GameState
-	sentence[2].Initialize(manager.GetStateString(), -50, -15);
+	sentence[2].Initialize("Game State", -50, -15);
 
 	time -= dt;
 	if(time <= 0)
@@ -542,17 +560,36 @@ void DemoGame::DrawScene()
 	// Lighting
 	constbuffPerFrame.light = light;
 
-	for(int i = 0; i < MAX_GAMEENTITY; ++i)
-		ges[i].Draw();
+	// Switch for game state
+	if( manager->gameState == title)
+	{
+		// do title stuff
+		this->ges[0].Draw();
+	}
+	else if( manager->gameState == game)
+	{
+		/*for(int i = 0; i < MAX_GAMEENTITY; ++i)
+			ges[i].Draw();*/
 
-	// Important to do 2D stuff
-	Draw2D();
-
+		// Important to do 2D stuff
+		//Draw2D();
+		gameArtifact->Draw();
+	}
+	else if(manager->gameState == pause)
+	{
+		// Pause stuff
+		// Important to do 2D stuff
+		Draw2D();
+	}
+	else if(manager->gameState == gameOver)
+	{
+		// Game over stuff
+	}
 	deviceContext->UpdateSubresource( cbPerFrameBuffer, 0, NULL, &constbuffPerFrame, 0, 0 );
 	deviceContext->PSSetConstantBuffers(0, 1, &cbPerFrameBuffer);
 
-	gameArtifact->Draw();
-	skybox->Draw();
+	
+	//skybox->Draw();
 
 
 	// Present the buffer
@@ -573,45 +610,49 @@ void DemoGame::DrawScene()
 
 void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 {
-	mouseDragging = true;
-	this->dragStarted.x = cursorPos.x; 
-	this->dragStarted.y = cursorPos.y;
 
-	// TODO finish collision checking for the sphere
-	// Check collision for gameEntity
-	/*if(MouseIsOverEntity(&ges[1]))
+	if(this->manager->gameState == game)
 	{
-		sentence[0].Initialize("Hit!", 0, 0);
-	}*/
-	// Get and check every entity of our Artifact
-	for(int i = 0; i < gameArtifact->GetNumTiles(); i++)
-	{
-		if(MouseIsOverEntity(&gameArtifact->GetTileAt(i)))
+		mouseDragging = true;
+		this->dragStarted.x = cursorPos.x; 
+		this->dragStarted.y = cursorPos.y;
+
+		// TODO finish collision checking for the sphere
+		// Check collision for gameEntity
+		/*if(MouseIsOverEntity(&ges[1]))
 		{
 			sentence[0].Initialize("Hit!", 0, 0);
+		}*/
+		// Get and check every entity of our Artifact
+		for(int i = 0; i < gameArtifact->GetNumTiles(); i++)
+		{
+			if(MouseIsOverEntity(&gameArtifact->GetTileAt(i)))
+			{
+				sentence[0].Initialize("Hit!", 0, 0);
+			}
 		}
+		SetCapture(hMainWnd);
 	}
-	SetCapture(hMainWnd);
+	
 }
 
 void DemoGame::OnMouseUp(WPARAM btnState, int x, int y)
 {
+	if(this->manager->gameState == title)
+	{
+		this->manager->gameState = game; // TODO: button stuff
+	}
 	mouseDragging = false;
 	ReleaseCapture();
 }
 
 void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 {
-	// get the mouse position and store it back into our variable
+#pragma region MouseUpdates
 	// help from http://social.msdn.microsoft.com/Forums/en-US/1b563e35-8aea-4b98-8c76-490a8852ce9a/getting-the-mouse-position-in-screen-coordinates-using-c-no-net?forum=gametechnologiesdirectx101
     GetCursorPos(&cursorPos);
 
 	ScreenToClient(this->hMainWnd, &cursorPos); // translate to client coords
-
-	// Set the mouse world coordinates
-	float mouseX = (((2.0f * (float)x) / (float) windowWidth) - 1.0f)/(camera->r_ProjectionMatrix._11);
-	float mouseY = (((-2.0f * (float)y) / (float) windowHeight) + 1.0f)/(camera->r_ProjectionMatrix._22);
-
 	// find the width offset
 	RECT filler; 
 	GetWindowRect(this->hMainWnd, &filler); // right and bottom are width and height
@@ -621,57 +662,67 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 
 	windowOffset.x = widthoffset;
 	windowOffset.y = heightoffset;
-	mouseWorldX = (-camera->r_Position.z * mouseX) + camera->r_Position.x;
-	mouseWorldY = (-camera->r_Position.z * mouseY) + camera->r_Position.y;
-	//mouseWorldX -= windowOffset.x;
-	//mouseWorldY -= windowOffset.y;
+#pragma endregion
+	if(this->manager->gameState == game)
+	{
+		// Set the mouse world coordinates
+		float mouseX = (((2.0f * (float)x) / (float) windowWidth) - 1.0f)/(camera->r_ProjectionMatrix._11);
+		float mouseY = (((-2.0f * (float)y) / (float) windowHeight) + 1.0f)/(camera->r_ProjectionMatrix._22);
 
-	//cursorPos.x -= windowOffset.x; 
-	//cursorPos.y -= windowOffset.y;
+
+		mouseWorldX = (-camera->r_Position.z * mouseX) + camera->r_Position.x;
+		mouseWorldY = (-camera->r_Position.z * mouseY) + camera->r_Position.y;
+		//mouseWorldX -= windowOffset.x;
+		//mouseWorldY -= windowOffset.y;
+
+		//cursorPos.x -= windowOffset.x; 
+		//cursorPos.y -= windowOffset.y;
+		if(mouseDragging)
+		{
+			if( std::abs( cursorPos.y - dragStarted.y) > std::abs(cursorPos.x - dragStarted.x))
+			{
+				// Check to see if it's been dragged to the right or to the left
+				if(cursorPos.x < dragStarted.x)
+				{
+					// check amount
+					//float amt = -.001 * (cursorPos.x - dragStarted.x);
+					this->gameArtifact->AddAccel(-.003,0);
+				}
+				else if(cursorPos.x > dragStarted.x)
+				{
+					//float amt = .001 * (cursorPos.x - dragStarted.x);
+					this->gameArtifact->AddAccel(.003,0);
+				}
+			
+			}
+			else{
+				if(cursorPos.y < dragStarted.y)
+				{
+					//float amt = -.001 * (cursorPos.y - dragStarted.y);
+					this->gameArtifact->AddAccel(0, -.004);
+				}
+				else if(cursorPos.y > dragStarted.y)
+				{
+					//float amt = .001 * (cursorPos.y - dragStarted.y);
+					this->gameArtifact->AddAccel(0, .004);
+				}
+			}
+		
+		}
+	}
+
+
 
 	// Write it out
-	char stringX[30];
+	/*char stringX[30];
 	char stringY[30];
 	sprintf_s(stringX, 30, "%d", cursorPos.x);
 	sprintf_s(stringY, 30, "%d", cursorPos.y);
 	sentence[0].Initialize(stringX, 1, 10);
-	sentence[1].Initialize(stringY, 1, -10);
+	sentence[1].Initialize(stringY, 1, -10);*/
 
 
-
-	// Check for dragging (gmb9280)
-	if(mouseDragging)
-	{
-		if( std::abs( cursorPos.y - dragStarted.y) > std::abs(cursorPos.x - dragStarted.x))
-		{
-			// Check to see if it's been dragged to the right or to the left
-			if(cursorPos.x < dragStarted.x)
-			{
-				// check amount
-				//float amt = -.001 * (cursorPos.x - dragStarted.x);
-				this->gameArtifact->AddAccel(-.003,0);
-			}
-			else if(cursorPos.x > dragStarted.x)
-			{
-				//float amt = .001 * (cursorPos.x - dragStarted.x);
-				this->gameArtifact->AddAccel(.003,0);
-			}
-			
-		}
-		else{
-			if(cursorPos.y < dragStarted.y)
-			{
-				//float amt = -.001 * (cursorPos.y - dragStarted.y);
-				this->gameArtifact->AddAccel(0, -.004);
-			}
-			else if(cursorPos.y > dragStarted.y)
-			{
-				//float amt = .001 * (cursorPos.y - dragStarted.y);
-				this->gameArtifact->AddAccel(0, .004);
-			}
-		}
-		
-	}
+	
 	
 }
 
