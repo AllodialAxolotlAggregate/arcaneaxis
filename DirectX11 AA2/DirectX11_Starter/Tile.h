@@ -39,29 +39,6 @@ private:
 	void GenerateDisplayable()
 	{
 	}
-
-	// material for texture
-
-	// and/or game entity for tile
-
-	// center
-
-	// radii and/or vertices
-
-	// matrix
-
-	//method to check area input and see if it collides
-
-	// method to check screen area and see if it collides
-
-	// get image
-
-	// render image
-
-	// change image
-
-	// clicked y/n
-
 	
 };
 

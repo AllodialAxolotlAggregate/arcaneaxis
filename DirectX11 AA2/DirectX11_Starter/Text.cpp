@@ -68,7 +68,6 @@ void Text::Shutdown()
 void Text::Render(ID3D11DeviceContext* deviceContext, DirectX::XMFLOAT4X4 worldMatrix, DirectX::XMFLOAT4X4 projectionMatrix, DirectX::XMFLOAT4X4 orthoMatrix)
 {
 	RenderSentence(deviceContext, m_sentence1, worldMatrix, projectionMatrix, orthoMatrix);
-	//RenderSentence(deviceContext, m_sentence2, worldMatrix, projectionMatrix, orthoMatrix);
 }
 
 void Text::InitializeSentence(SentenceType** sentence, int maxLength, ID3D11Device* device)
@@ -173,8 +172,6 @@ void Text::UpdateSentence(SentenceType* sentence, char* text, int positionX, int
 	memset(vertices, 0, (sizeof(FontVertex) * sentence->vertexCount));
 
 	// Calculate the X and Y pixel position on the screen to start drawing to.
-	/*drawX = (float)(((m_ScreenWidth / 2) * -1) + positionX);
-	drawY = (float)((m_ScreenHeight / 2) - positionY);*/
 	drawX = positionX;
 	drawY = positionY;
 
@@ -243,7 +240,6 @@ void Text::RenderSentence(ID3D11DeviceContext* deviceContext, SentenceType* sent
 
 	// Create a pixel color vector with the input sentence color.
 	pixelColor = XMFLOAT4(sentence->red, sentence->green, sentence->blue, 1.0f);
-	//pixelColor = XMFLOAT4(1.0, 0.0, 0.0, 1.0f);
 
 	// Render the text using the font shader.
 	m_FontShader->Render(deviceContext, sentence->indexCount, worldMatrix, viewMatrix, projectionMatrix, m_Font->r_ShaderResourceView, pixelColor);

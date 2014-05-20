@@ -15,9 +15,6 @@ void Font::Initialize(ID3D11Device* device,ID3D11DeviceContext* deviceContext, c
 	LoadFontData(fontFilename);
 	//CreateWICTextureFromFile(device, deviceContext, UVFilename, 0, &m_ShaderResourceView);
 	CreateDDSTextureFromFile(device, UVFilename, nullptr, &m_ShaderResourceView);
-	//HRESULT hr = CreateDDSTextureFromFile(device, L"font2.dds", nullptr, &m_ShaderResourceView);
-	/*if (FAILED(hr))
-		CreateWICTextureFromFile(device, deviceContext, L"Ignite.jpg", 0, &m_ShaderResourceView);//*/
 }
 
 void Font::Shutdown()

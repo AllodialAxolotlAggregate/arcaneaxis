@@ -159,20 +159,6 @@ void FontShader::SetShaderParameters(ID3D11DeviceContext* deviceContext, XMFLOAT
 	unsigned int bufferNumber;
 	PixelBufferType* dataPtr2;
 
-	// Lock the constant buffer so it can be written to.
-	//deviceContext->Map(m_ConstantBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedResource);
-
-	//// Get a pointer to the data in the constant buffer.
-	//dataPtr = (VertexShaderConstantBuffer*)mappedResource.pData;
-
-	//// Copy the matrices into the constant buffer.
-	//dataPtr->world = worldMatrix;
-	//dataPtr->view = viewMatrix;
-	//dataPtr->projection = projectionMatrix;
-
-	//// Unlock the constant buffer.
- //   deviceContext->Unmap(m_ConstantBuffer, 0);
-
 	VertexShaderConstantBuffer vsConstantBufferData;
 	vsConstantBufferData.world		= worldMatrix;
 	vsConstantBufferData.view		= viewMatrix;

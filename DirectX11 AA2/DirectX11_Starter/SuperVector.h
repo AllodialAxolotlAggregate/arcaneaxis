@@ -173,15 +173,6 @@ public:
 		return (this->m_pData == nullptr ? true : false);
 	}
 
-	/*
-	// Friend operator assignment
-	friend std::ostream& operator<<(std::ostream& os, SuperVector& other)
-	{
-		//(friend needs to be kept in the header)
-		other.Print();
-		return os;
-	}*/
-
 	/* Constructor with size parameter (for swap, copy) */
 	SuperVector(int nSize): m_pData(new T[nSize]), m_nSize(nSize){ };
 

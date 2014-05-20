@@ -54,9 +54,6 @@ private:
 	DirectX::XMFLOAT3 m_Position;
 	DirectX::XMFLOAT3 m_Target;
 	DirectX::XMFLOAT3 m_Up;
-	/*float horizontalAngle;
-	float verticalAngle;
-	float initialFoV;*/
 
 	static Camera* m_Instance;
 };

@@ -136,10 +136,6 @@ void Sentence::Initialize(char* text, int positionX, int positionY)
 		// Initialize vertex array to zeros at first.
 		memset(vertices, 0, (sizeof(FontVertex) * m_VertexCount));
 
-		// Calculate the X and Y pixel position on the screen to start drawing to.
-		/*drawX = positionX;
-		drawY = positionY;*/
-
 		// Use the font class to build the vertex array from the sentence text and sentence draw location.
 		m_Font->BuildVertexArray((void*)vertices, text, m_Position.x, m_Position.y);
 
@@ -202,22 +198,11 @@ void Sentence::Release()
 	m_Color = XMFLOAT4(0.0, 0.0, 0.0, 0.0);
 	m_Position = XMFLOAT3(0.0, 0.0, 0.0);
 
-	/*if(m_Font != nullptr)
-		delete m_Font;
-
-	if(m_FontShader != nullptr)
-		delete m_FontShader;*/
 }
 
 void Sentence::WorldTransition()
 {
 	XMMATRIX trans = XMMatrixTranslation(m_Position.x, m_Position.y, m_Position.z);
-	/*XMMATRIX rotX = XMMatrixRotationY(m_Rotation.x);
-	XMMATRIX rotY = XMMatrixRotationY(m_Rotation.y);
-	XMMATRIX rotZ = XMMatrixRotationY(m_Rotation.z);
-	XMMATRIX scale = XMMatrixScaling(m_Scale.x, m_Scale.y, m_Scale.z);*/
-
-	//XMMATRIX w = scale * rotX * rotY * rotZ * trans;
 
 	XMStoreFloat4x4(&m_WorldMatrix, XMMatrixTranspose(trans));
 }

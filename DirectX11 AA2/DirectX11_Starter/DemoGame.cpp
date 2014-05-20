@@ -305,35 +305,19 @@ void DemoGame::CreateGeometryBuffers()
 
 	LoadObjModel(L"PentaSphere1.obj", *maSphere, *meSphere, true);
 
-	// skybox loading
-	/*skyboxMesh = new Mesh(device, deviceContext);
-	skyboxMaterial = new Material(device, deviceContext);
-	skyboxMaterial->LoadSamplerStateAndShaderResourceView(L"skybox/skymap.dds");
-	LoadObjModel(L"SkyCube.obj", *skyboxMaterial, *skyboxMesh, true);
-	skybox = new GameEntity(skyboxMesh, skyboxMaterial, this->camera->GetPosition() ); */
-
-
 	// Create our Artifact's game entity
 	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(0.0, 0.0, ARTIFACT_Z_AXIS));
 	gameArtifact = new Artifact(okamaGameSphere);
 
 	// Lighting
 	light.dir = XMFLOAT3(0.0, 0.0, -1.3);//XMFLOAT3(0.25f,0.5f,-1.0f);
-	//light.pad = 0.0f;
 	light.pad2 = 0.0f;
 	light.range = 25.0f;
 	light.att = XMFLOAT3(0.9f, 0.9f, 0.0f); //XMFLOAT3(0.4f, 0.2f, 0.0f);
 	light.ambient = XMFLOAT4(0.3f, 0.3f, 0.3f, 1.0f);
 	light.diffuse = XMFLOAT4(0.5f, 0.5f, 0.5f, 1.0f);
-	//light.pos = gameArtifact->GetPosition();
 	light.pos = XMFLOAT3(-6.0f,0.0f,15.0f);
 	light.cone = 20.0f;
-
-	/*lightVector = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
-	lightVector = XMVector3TransformCoord(lightVector, XMLoadFloat4x4(&gameArtifact->getGameEntity()->GetWorldMatrix()));
-	light.pos.x = XMVectorGetX(lightVector);
-	light.pos.y = XMVectorGetY(lightVector);
-	light.pos.z = XMVectorGetZ(lightVector);*/
 }
 
 // Loads shaders from compiled shader object (.cso) files, and uses the
@@ -393,18 +377,6 @@ void DemoGame::LoadShadersAndInputLayout()
 	//gameArtifact->LoadStuff(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc), vsConstantBuffer, &vsConstantBufferData);
 	gameArtifact->LoadStuff(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc), vsConstantBuffer, &vsConstantBufferData);  // LIGHTING WIP
 	fShader->LoadAConstantBuffer(vsConstantBuffer);
-
-	// Bob's Stuff
-	//maSphere->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
-	//maSphere->LoadShadersAndInputLayout(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc));   // LIGHTING WIP
-	//maSphere->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
-	//maSphere->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
-	//maSphere->LoadShadersAndInputLayout(L"LightVertexShader.cso", L"LightPixelShader.cso", lightVertexDesc, ARRAYSIZE(lightVertexDesc));   // LIGHTING WIP
-	//maSphere->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
-
-	// for the skybox
-	//skyboxMaterial->LoadShadersAndInputLayout(L"TextureVertexShader.cso", L"TexturePixelShader.cso", vertexDesc, ARRAYSIZE(vertexDesc));
-	//skyboxMaterial->LoadAConstantBuffer(vsConstantBuffer, &vsConstantBufferData);
 
 	// http://www.braynzarsoft.net/index.php?p=D3D11BLENDING#still
 
@@ -605,18 +577,6 @@ void DemoGame::UpdateScene(float dt)
 		time = .001;
 
 		gameArtifact->Spin(); // spins if we can
-
-
-		//light.pos = gameArtifact->getGameEntity()->GetPosition();
-		//light.pos.z += 5;
-		//light.dir.x = camera->GetTarget().x - light.pos.x;
-		//light.dir.y = camera->GetTarget().y - light.pos.y;
-		//light.dir.z = camera->GetTarget().z - light.pos.z;
-		
-		//okamaGameSphere->Rotate(XMFLOAT3(0.001,0,0));
-		//gameArtifact->getGameEntity()->Rotate(XMFLOAT3(0.001,0,0));
-		/*gameArtifact->getGameEntity()->Rotate(XMFLOAT3(0.001,0,0));
-		gameArtifact->getGameEntity()->MoveTo(XMFLOAT3(prevMousePos.x/5,-prevMousePos.y/5,okamaGameSphere->GetPosition().z));*/
 	}
 
 	Keyboard();
@@ -635,11 +595,6 @@ void DemoGame::Draw2D()
 
 	// Turn on the alpha blending.
 	deviceContext->OMSetBlendState(Transparency, blendFactor, 0xffffffff);
-
-	/*for(int i = 0; i < MAX_LINES; ++i)
-		sentence[i].Render(camera->r_ViewMatrix, camera->r_ProjectionMatrix);*/
-
-	//sentence[0].Render(camera->r_ViewMatrix, camera->r_ProjectionMatrix);
 
 	// Turn off the alpha blending.
 	deviceContext->OMSetBlendState(0, 0, 0xffffffff);
@@ -679,8 +634,6 @@ void DemoGame::DrawScene()
 	else if( manager->gameState == game)
 	{
 		elapsedTime += 1;
-		/*for(int i = 0; i < MAX_GAMEENTITY; ++i)
-			ges[i].Draw();*/
 
 		// Important to do 2D stuff
 		Draw2D();
@@ -700,7 +653,6 @@ void DemoGame::DrawScene()
 	{
 		// Pause stuff
 		// Important to do 2D stuff
-		//Draw2D();
 		ges[1].Draw();
 		LockCamera();
 	}
@@ -734,13 +686,6 @@ void DemoGame::DrawScene()
 
 void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 {
-	// TODO finish collision checking for the sphere
-	// Check collision for gameEntity
-	/*if(MouseIsOverEntity(&ges[1]))
-	{
-		sentence[0].Initialize("Hit!", 0, 0);
-	}*/
-
 	// Get and check every entity of our Artifact
 	if(this->manager->gameState == game)
 	{
@@ -750,9 +695,6 @@ void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 
 		for(int i = 0; i < gameArtifact->GetNumTiles(); i++)
 		{
-			XMFLOAT3 rot = XMFLOAT3(0.1, 0.0, 0.0);
-
-		
 			if(manager->gameState == game)
 			{
 				for (int i = 0; i < gameArtifact->GetNumTiles(); i++)
@@ -762,7 +704,6 @@ void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 					{
 						bool add = gameArtifact->TileClicked(i);
 						if(add == true){ this->elapsedTime -= (LEVEL_TIME / 5) / (gameArtifact->GetNumTiles()); if(this->elapsedTime <= 0){ this->elapsedTime = 0;} }
-						//tile->Rotate(rot);
 					}
 
 				}
@@ -809,11 +750,7 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 
 		mouseWorldX = (-camera->r_Position.z * mouseX) + camera->r_Position.x;
 		mouseWorldY = (-camera->r_Position.z * mouseY) + camera->r_Position.y;
-		//mouseWorldX -= windowOffset.x;
-		//mouseWorldY -= windowOffset.y;
 
-		//cursorPos.x -= windowOffset.x; 
-		//cursorPos.y -= windowOffset.y;
 		if(mouseDragging)
 		{
 			if( std::abs( cursorPos.y - dragStarted.y) > std::abs(cursorPos.x - dragStarted.x))
@@ -847,20 +784,6 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 		
 		}
 	}
-
-
-
-	// Write it out
-	/*char stringX[30];
-	char stringY[30];
-	sprintf_s(stringX, 30, "%d", cursorPos.x);
-	sprintf_s(stringY, 30, "%d", cursorPos.y);
-	sentence[0].Initialize(stringX, 1, 10);
-	sentence[1].Initialize(stringY, 1, -10);*/
-
-
-	
-	
 }
 
 // For Triangle collision (faces)
@@ -995,9 +918,6 @@ void DemoGame::LoadObjModel(std::wstring filename,
 	int triangleCount = 0;	//Total Triangles
 	int totalVerts = 0;
 	int meshTriangles = 0;
-
-	// set up meshMaterials to account for previous files
-	//meshMaterials.push_back(material.);
 
 
 #pragma region OBJ File Loader
@@ -1383,20 +1303,6 @@ void DemoGame::LoadObjModel(std::wstring filename,
 		return;
 	}
 
-	//subsetIndexStart.push_back(vIndex); //There won't be another index start after our last subset, so set it here
-
-	//sometimes "g" is defined at the very top of the file, then again before the first group of faces.
-	//This makes sure the first subset does not conatain "0" indices.
-	//if(subsetIndexStart[1] == 0)
-	//if(subsetIndexStart.size() == 2)
-	//{
-		/*if(subsetIndexStart[0] == 0)
-		{
-			subsetIndexStart.erase(subsetIndexStart.begin()+1);
-			meshSubsets--;
-		}*/
-	//}
-
 	//Make sure we have a default for the tex coord and normal
 	//if one or both are not specified
 	if(!hasNorm)
@@ -1479,17 +1385,7 @@ void DemoGame::LoadObjModel(std::wstring filename,
 			case 'd':
 				checkChar = fileIn.get();
 				if(checkChar == ' ')
-				{
-					//float Transparency;
-					//fileIn >> Transparency;
-
-					////'d' - 0 being most transparent, and 1 being opaque, opposite of Tr
-					////Transparency = 1.0f - Transparency;
-
-					////material[matCount-1].difColor.w = Transparency;
-
-					//if(Transparency > 0.0f)
-					//	material[matCount-1].transparent = true;					
+				{				
 				}
 				break;
 
@@ -1541,31 +1437,18 @@ void DemoGame::LoadObjModel(std::wstring filename,
 										if(fileNamePath == textureNameArray[i])
 										{
 											alreadyLoaded = true;
-											/*material[matCount-1].texArrayIndex = i;
-											material[matCount-1].hasTexture = true;*/
 										}
 									}
 
 									//if the texture is not already loaded, load it now
 									if(!alreadyLoaded)
 									{
-										//ID3D11ShaderResourceView* tempMeshSRV;
-										//hr = CreateWICTextureFromFile( device, deviceContext, fileNamePath.c_str(),
-                                        //    NULL, &tempMeshSRV, NULL );
 
 										// TO DO: ADD IN UNIQUE MATERIAL
 
 
 										maSphere->LoadSamplerStateAndShaderResourceView(fileNamePath.c_str());
 										textureNameArray.push_back(fileNamePath.c_str());
-
-										/*if(SUCCEEDED(hr))
-										{
-											textureNameArray.push_back(fileNamePath.c_str());
-											material[matCount-1].texArrayIndex = meshSRV.size();
-											meshSRV.push_back(tempMeshSRV);
-											material[matCount-1].hasTexture = true;
-										}*/
 									}	
 								}
 							}
@@ -1602,14 +1485,6 @@ void DemoGame::LoadObjModel(std::wstring filename,
 									checkChar = fileIn.get();
 									if(checkChar == ' ')
 									{
-										//New material, set its defaults
-										/*SurfaceMaterial tempMat;
-										material.push_back(tempMat);
-										fileIn >> material[matCount].matName;
-										material[matCount].transparent = false;
-										material[matCount].hasTexture = false;
-										material[matCount].texArrayIndex = 0;
-										matCount++;*/
 										kdset = false;
 									}
 								}
@@ -1626,7 +1501,6 @@ void DemoGame::LoadObjModel(std::wstring filename,
 	}	
 	else
 	{
-		//SwapChain->SetFullscreenState(false, NULL);	//Make sure we are out of fullscreen
 
 		std::wstring message = L"Could not open: ";
 		message += meshMatLib;
@@ -1664,13 +1538,6 @@ void DemoGame::LoadObjModel(std::wstring filename,
 
 	// store number of triangles
 	objMeshTraingles = meshTriangles;
-
-	/*
-	delete[] vertices;
-	vertices = nullptr;
-	delete[] listOfIndices;
-	listOfIndices = nullptr;
-	*/
 }
 
 #pragma endregion

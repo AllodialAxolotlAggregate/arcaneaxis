@@ -3,14 +3,4 @@
 
 #include "Spellbook.h"
 
-/*
-Spellbook::Spellbook(void)
-{
-}
-
-
-Spellbook::~Spellbook(void)
-{
-}*/
-
 #endif

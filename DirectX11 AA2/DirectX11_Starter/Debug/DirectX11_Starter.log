@@ -1,47 +1,16 @@
-﻿Build started 5/20/2014 4:54:21 PM.
+﻿Build started 5/20/2014 5:07:50 PM.
      1>Project "D:\Users\ahb9907\ArcaneAxis\DirectX11 AA2\DirectX11_Starter\DirectX11_Starter.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"D:\Users\ahb9907\ArcaneAxis\DirectX11 AA2\\DirectXTK\inc" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt DemoGame.cpp
-         DemoGame.cpp
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\artifact.h(39): warning C4305: '*=' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\artifact.h(40): warning C4305: '*=' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(105): warning C4305: '=' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(263): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(266): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(275): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(278): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(281): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(321): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(528): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(529): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(534): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(535): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(540): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(541): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(546): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(547): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(552): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(553): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(558): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(559): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(564): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(569): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(605): warning C4305: '=' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(690): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(753): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(800): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(801): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(826): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(831): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(839): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(844): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(1098): warning C4018: '<' : signed/unsigned mismatch
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(1222): warning C4018: '<' : signed/unsigned mismatch
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(1410): warning C4068: unknown pragma
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(1539): warning C4018: '<' : signed/unsigned mismatch
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(1659): warning C4018: '<' : signed/unsigned mismatch
-     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\supervector.h(202): warning C4018: '<' : signed/unsigned mismatch
-                 d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\supervector.h(198) : while compiling class template member function 'void SuperVector<T>::CopyContent(SuperVector<T> &,const SuperVector<T> &,const unsigned int)'
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I"D:\Users\ahb9907\ArcaneAxis\DirectX11 AA2\\DirectXTK\inc" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Artifact.cpp Camera.cpp DXGame.cpp DemoGame.cpp Font.cpp FontShader.cpp GameEntity.cpp Material.cpp Rune.cpp Sentence.cpp Spellbook.cpp Text.cpp Tile.cpp TileMap.cpp
+         TileMap.cpp
+         Tile.cpp
+         Text.cpp
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\text.cpp(175): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\text.cpp(176): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\text.cpp(226): warning C4101: 'result' : unreferenced local variable
+         Spellbook.cpp
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\supervector.h(193): warning C4018: '<' : signed/unsigned mismatch
+                 d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\supervector.h(189) : while compiling class template member function 'void SuperVector<T>::CopyContent(SuperVector<T> &,const SuperVector<T> &,const unsigned int)'
                  with
                  [
                      T=SuperVector<Rune *> *
@@ -56,6 +25,100 @@
                  [
                      T=SuperVector<Rune *> *
                  ]
+         Sentence.cpp
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\sentence.cpp(61): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\sentence.cpp(125): warning C4101: 'numLetters' : unreferenced local variable
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\sentence.cpp(126): warning C4101: 'drawY' : unreferenced local variable
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\sentence.cpp(126): warning C4101: 'drawX' : unreferenced local variable
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\sentence.cpp(166): warning C4101: 'result' : unreferenced local variable
+         Rune.cpp
+         FontShader.cpp
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\fontshader.cpp(24): warning C4101: 'constantBufferDesc' : unreferenced local variable
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\fontshader.cpp(158): warning C4101: 'dataPtr' : unreferenced local variable
+         Font.cpp
+         Camera.cpp
+         Artifact.cpp
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\artifact.h(39): warning C4305: '*=' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\artifact.h(40): warning C4305: '*=' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\supervector.h(193): warning C4018: '<' : signed/unsigned mismatch
+                 d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\supervector.h(189) : while compiling class template member function 'void SuperVector<T>::CopyContent(SuperVector<T> &,const SuperVector<T> &,const unsigned int)'
+                 with
+                 [
+                     T=SuperVector<Rune *> *
+                 ]
+                 d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\supervector.h(59) : see reference to function template instantiation 'void SuperVector<T>::CopyContent(SuperVector<T> &,const SuperVector<T> &,const unsigned int)' being compiled
+                 with
+                 [
+                     T=SuperVector<Rune *> *
+                 ]
+                 d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\spellbook.h(23) : see reference to class template instantiation 'SuperVector<T>' being compiled
+                 with
+                 [
+                     T=SuperVector<Rune *> *
+                 ]
+         Generating Code...
+         Compiling...
+         Material.cpp
+         GameEntity.cpp
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\gameentity.cpp(11): warning C4305: '=' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\gameentity.cpp(21): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\gameentity.cpp(58): warning C4305: '=' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\gameentity.cpp(60): warning C4305: '=' : truncation from 'double' to 'float'
+         DemoGame.cpp
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\artifact.h(39): warning C4305: '*=' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\artifact.h(40): warning C4305: '*=' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(105): warning C4305: '=' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(263): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(266): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(275): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(278): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(281): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(313): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(500): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(501): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(506): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(507): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(512): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(513): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(518): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(519): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(524): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(525): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(530): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(531): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(536): warning C4305: '-=' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(541): warning C4305: '+=' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(577): warning C4305: '=' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(643): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(741): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(742): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(763): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(768): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(776): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(781): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(1018): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(1142): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(1316): warning C4068: unknown pragma
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(1435): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\demogame.cpp(1533): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\supervector.h(193): warning C4018: '<' : signed/unsigned mismatch
+                 d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\supervector.h(189) : while compiling class template member function 'void SuperVector<T>::CopyContent(SuperVector<T> &,const SuperVector<T> &,const unsigned int)'
+                 with
+                 [
+                     T=SuperVector<Rune *> *
+                 ]
+                 d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\supervector.h(59) : see reference to function template instantiation 'void SuperVector<T>::CopyContent(SuperVector<T> &,const SuperVector<T> &,const unsigned int)' being compiled
+                 with
+                 [
+                     T=SuperVector<Rune *> *
+                 ]
+                 d:\users\ahb9907\arcaneaxis\directx11 aa2\directx11_starter\spellbook.h(23) : see reference to class template instantiation 'SuperVector<T>' being compiled
+                 with
+                 [
+                     T=SuperVector<Rune *> *
+                 ]
+         DXGame.cpp
+         Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Users\ahb9907\ArcaneAxis\DirectX11 AA2\Debug\DirectX11_Starter.exe" /INCREMENTAL /NOLOGO d3d11.lib d3dcompiler.lib dinput8.lib dxguid.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Users\ahb9907\ArcaneAxis\DirectX11 AA2\Debug\DirectX11_Starter.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Users\ahb9907\ArcaneAxis\DirectX11 AA2\Debug\DirectX11_Starter.lib" /MACHINE:X86 Debug\Artifact.obj
          Debug\Camera.obj
@@ -82,4 +145,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.62
+Time Elapsed 00:00:13.28

@@ -37,15 +37,6 @@ Camera::Camera(XMFLOAT3 aPosition, XMFLOAT3 aTarget, XMFLOAT3 anUp) :
 
 Camera::~Camera() {}
 
-//Camera Camera::operator += (XMFLOAT3 pos)
-//{
-//	m_Position.x += pos.x;
-//	m_Position.y += pos.y;
-//	m_Position.z += pos.z;
-//
-//	return *this;
-//}
-
 void Camera::ComputeMatrices()
 {
 	XMVECTOR pos = XMVectorSet(m_Position.x, m_Position.y, m_Position.z, 0.0);
