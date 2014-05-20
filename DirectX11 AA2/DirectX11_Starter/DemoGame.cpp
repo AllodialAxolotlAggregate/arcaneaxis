@@ -484,7 +484,7 @@ void DemoGame::UpdateScene(float dt)
 	{
 		time = .001;
 
-		//gameArtifact->Spin(); // spins if we can
+		gameArtifact->Spin(); // spins if we can
 
 
 		//light.pos = gameArtifact->getGameEntity()->GetPosition();
@@ -585,9 +585,19 @@ void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 	}*/
 	// Get and check every entity of our Artifact
 	XMFLOAT3 rot = XMFLOAT3(0.1, 0.0, 0.0);
+	
 	for(int i = 0; i < gameArtifact->GetNumTiles(); i++)
 	{
 		if(MouseIsOverEntity(&gameArtifact->GetTileAt(i)))
+		{
+			//sentence[0].Initialize("Hit!", 0, 0);
+			//gameArtifact->GetTileAt(i).Rotate(rot);
+		}
+	}
+
+	for(int i = 0; i < gameArtifact->GetNumTiles();i++)
+	{
+		if(PointInFace(&gameArtifact->GetTileAt(i)))
 		{
 			sentence[0].Initialize("Hit!", 0, 0);
 			gameArtifact->GetTileAt(i).Rotate(rot);
@@ -677,10 +687,39 @@ void DemoGame::OnMouseMove(WPARAM btnState, int x, int y)
 	
 }
 
-// Thanks Andre!
+// For Triangle collision (faces)
+bool DemoGame::PointInFace(GameEntity* e)
+{
+
+	XMVECTOR p = XMVectorSet(mouseWorldX, mouseWorldY, 0.0, 0.0);
+
+	XMVECTOR a = XMVectorSet(e->GetMesh()->GetVertices()[0].Position.x, e->GetMesh()->GetVertices()[0].Position.y, 0.0, 0.0);
+	XMVECTOR b = XMVectorSet(e->GetMesh()->GetVertices()[1].Position.x, e->GetMesh()->GetVertices()[1].Position.y, 0.0, 0.0);
+	XMVECTOR c = XMVectorSet(e->GetMesh()->GetVertices()[2].Position.x, e->GetMesh()->GetVertices()[2].Position.y, 0.0, 0.0);
+	
+	a -= p;
+	b -= p;
+	c -= p;
+
+	XMVECTOR u = XMVector2Cross(b, c);
+	XMVECTOR v = XMVector2Cross(c, a);
+	XMVECTOR d = XMVector2Dot(u,v);
+
+	if (XMVectorGetByIndex(d,0) < 0.0f)
+		return false;
+
+	XMVECTOR w = XMVector2Cross(a,b);
+	XMVECTOR ev = XMVector2Dot(u,w);
+
+	if (XMVectorGetByIndex(ev,0) < 0.0f)
+		return false;
+
+	return true;
+}
+
+// Rectangle Collision
 bool DemoGame::MouseIsOverEntity(GameEntity* e)
 {
-	//XMFLOAT3 newPosition = e->WorldMatrix * e->GetMesh()->GetVertices()[0].Position;
 	XMMATRIX x = XMLoadFloat4x4(&e->WorldMatrix);
 	XMVECTOR v = XMLoadFloat3(&e->GetMesh()->GetVertices()[2].Position);
 	XMVECTOR result = XMVector3Transform(v, x);
@@ -692,14 +731,8 @@ bool DemoGame::MouseIsOverEntity(GameEntity* e)
 	float maxY = end.y;
 	float minY = end.y;
 
-	/*float maxX = e->GetMesh()->GetVertices()[0].Position.x;
-	float minX = e->GetMesh()->GetVertices()[0].Position.x;
-	float maxY = e->GetMesh()->GetVertices()[0].Position.y;
-	float minY = e->GetMesh()->GetVertices()[0].Position.y; */
-
 	for (int i = 0; i < e->GetMesh()->GetNumberOfVertices(); i++)
 	{
-		//Vertex current = e->GetMesh()->GetVertices()[i];
 		XMVECTOR cv = XMLoadFloat3(&e->GetMesh()->GetVertices()[i].Position);
 		XMVECTOR result2 = XMVector3Transform(cv, x);
 		XMFLOAT3 current;
