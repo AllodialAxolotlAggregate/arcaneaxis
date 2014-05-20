@@ -195,7 +195,7 @@ void DemoGame::CreateGeometryBuffers()
 
 
 	// Create our Artifact's game entity
-	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(-6.0, 0.0, 10.0));
+	okamaGameSphere = new GameEntity(meSphere, maSphere, XMFLOAT3(0.0, 0.0, 0.0));
 
 	gameArtifact = new Artifact(okamaGameSphere);
 
@@ -484,7 +484,7 @@ void DemoGame::UpdateScene(float dt)
 	{
 		time = .001;
 
-		gameArtifact->Spin(); // spins if we can
+		//gameArtifact->Spin(); // spins if we can
 
 
 		//light.pos = gameArtifact->getGameEntity()->GetPosition();
@@ -579,18 +579,20 @@ void DemoGame::OnMouseDown(WPARAM btnState, int x, int y)
 
 	// TODO finish collision checking for the sphere
 	// Check collision for gameEntity
-	if(MouseIsOverEntity(&ges[1]))
+	/*if(MouseIsOverEntity(&ges[1]))
 	{
 		sentence[0].Initialize("Hit!", 0, 0);
-	}
+	}*/
 	// Get and check every entity of our Artifact
-	/*for(int i = 0; i < gameArtifact->GetNumTiles(); i++)
+	XMFLOAT3 rot = XMFLOAT3(0.1, 0.0, 0.0);
+	for(int i = 0; i < gameArtifact->GetNumTiles(); i++)
 	{
 		if(MouseIsOverEntity(&gameArtifact->GetTileAt(i)))
 		{
 			sentence[0].Initialize("Hit!", 0, 0);
+			gameArtifact->GetTileAt(i).Rotate(rot);
 		}
-	}*/
+	}
 	SetCapture(hMainWnd);
 }
 
@@ -680,7 +682,7 @@ bool DemoGame::MouseIsOverEntity(GameEntity* e)
 {
 	//XMFLOAT3 newPosition = e->WorldMatrix * e->GetMesh()->GetVertices()[0].Position;
 	XMMATRIX x = XMLoadFloat4x4(&e->WorldMatrix);
-	XMVECTOR v = XMLoadFloat3(&e->GetMesh()->GetVertices()[0].Position);
+	XMVECTOR v = XMLoadFloat3(&e->GetMesh()->GetVertices()[2].Position);
 	XMVECTOR result = XMVector3Transform(v, x);
 	XMFLOAT3 end;
 	XMStoreFloat3(&end, result);
@@ -698,7 +700,7 @@ bool DemoGame::MouseIsOverEntity(GameEntity* e)
 	for (int i = 0; i < e->GetMesh()->GetNumberOfVertices(); i++)
 	{
 		//Vertex current = e->GetMesh()->GetVertices()[i];
-		XMVECTOR cv = XMLoadFloat3(&e->GetMesh()->GetVertices()[1].Position);
+		XMVECTOR cv = XMLoadFloat3(&e->GetMesh()->GetVertices()[i].Position);
 		XMVECTOR result2 = XMVector3Transform(cv, x);
 		XMFLOAT3 current;
 		XMStoreFloat3(&current, result2);
